@@ -119,52 +119,54 @@ export default (() => {
         }
 
         // HTML content for the prompt
-        const promptHTML = `
-      <div class="modal fade" id="${promptId}" tabindex="-1" aria-labelledby="${promptId}Label" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-body text-center">
-              <svg class="d-inline-block mb-3" xmlns="http://www.w3.org/2000/svg" width="95" viewBox="0 0 250 283.6"><g stroke="#9ca3af" stroke-miterlimit="10"><path d="M.7 283.5V37.4C.7 17.3 17 .9 37.2.9h175.4C232.7.9 249 17.2 249 37.4v246.1" fill="none"/><path d="M240.2 41.7V283H9.5V41.7c0-17.6 14-31.9 31.5-31.9h167.9c17.2-.1 31.3 14.2 31.3 31.9z" fill="none"/><path d="M146.2,41.3h-45.1c-4.8,0-8.7-3.9-8.7-8.7s3.9-8.7,8.7-8.7h45.1c4.8,0,8.7,3.9,8.7,8.7S151.1,41.3,146.2,41.3z" fill="none"/></g><path class="d-none-dark" d="M144.9 37.6c2.7 0 5-2.2 5-5a4.95 4.95 0 0 0-5-5c-2.7 0-5 2.2-5 5s2.3 5 5 5z" fill="#cad0d9"/><path class="d-none d-block-dark" d="M144.9 37.6c2.7 0 5-2.2 5-5a4.95 4.95 0 0 0-5-5c-2.7 0-5 2.2-5 5s2.3 5 5 5z" fill="#4e5562"/><path d="M68.2 120.3H40.4c-7.6 0-13.9-6.2-13.9-13.8V80.8c0-7.6 6.2-13.8 13.9-13.8h27.8c7.6 0 13.9 6.2 13.9 13.8v25.7c-.1 7.6-6.3 13.8-13.9 13.8zm70.4 0h-27.8c-7.6 0-13.9-6.2-13.9-13.8V80.8c0-7.6 6.2-13.8 13.9-13.8h27.8c7.6 0 13.9 6.2 13.9 13.8v25.7c-.1 7.6-6.2 13.8-13.9 13.8zm70.5 0h-27.8c-7.6 0-13.9-6.2-13.9-13.8V80.8c0-7.6 6.2-13.8 13.9-13.8h27.8c7.6 0 13.9 6.2 13.9 13.8v25.7c0 7.6-6.3 13.8-13.9 13.8zM68.2 190.9H40.4c-7.6 0-13.9-6.2-13.9-13.8v-25.7c0-7.6 6.2-13.9 13.9-13.9h27.8c7.6 0 13.9 6.2 13.9 13.9V177c-.1 7.6-6.3 13.9-13.9 13.9zm140.9 0h-27.8c-7.6 0-13.9-6.2-13.9-13.8v-25.7c0-7.6 6.2-13.9 13.9-13.9h27.8c7.6 0 13.9 6.2 13.9 13.9V177c0 7.6-6.3 13.9-13.9 13.9zM68.2 261.2H40.4c-7.6 0-13.9-6.2-13.9-13.8v-25.7c0-7.6 6.2-13.9 13.9-13.9h27.8c7.6 0 13.9 6.2 13.9 13.9v25.7c-.1 7.8-6.3 13.8-13.9 13.8zm70.4 0h-27.8c-7.6 0-13.9-6.2-13.9-13.8v-25.7c0-7.6 6.2-13.9 13.9-13.9h27.8c7.6 0 13.9 6.2 13.9 13.9v25.7c-.1 7.8-6.2 13.8-13.9 13.8zm70.5 0h-27.8c-7.6 0-13.9-6.2-13.9-13.8v-25.7c0-7.6 6.2-13.9 13.9-13.9h27.8c7.6 0 13.9 6.2 13.9 13.9v25.7c0 7.8-6.3 13.8-13.9 13.8z" stroke="#9ca3af" fill="none"/><path d="M140.7 196H109c-9.3 0-16.9-7.6-16.9-16.9v-29.3c0-9.3 7.6-16.9 16.9-16.9h31.7c9.3 0 16.9 7.6 16.9 16.9v29.3c.1 9.3-7.4 16.9-16.9 16.9z" fill="#f55266"/><path d="M125.8 172.9c-.8 0-1.7-.5-2-1.5-.3-1.2.2-2.4 1.4-2.7l13.6-4.4-2.2-14.6-23.6 8.1c-1.2.3-2.4-.2-2.7-1.4s.2-2.4 1.4-2.7l24.6-8.5c1-.3 2-.2 2.9.3s1.4 1.4 1.5 2.2l2.4 16.3c.2 1.7-.8 3.6-2.7 4.1l-13.9 4.4c-.2.3-.5.4-.7.4zm13.1.2c-.3-1.2-1.5-1.9-2.7-1.4-.3 0-6.4 1.9-9.1 2.9-4.1 1.4-5.8 0-6.1-.2l-11.7-14.9c-2.4-3.4-6.1-3.6-7.8-3l-5.6 1.7-.8 4.7 7.5-2.4c.3 0 2-.3 3.2 1.4l11.9 15.2c1.4 1.7 3.6 2.4 5.9 2.4 1.7 0 3.2-.3 4.7-.8l9-2.7c1.2-.5 1.9-1.7 1.6-2.9zM128 185.3a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 1 1 6.8 0zm15.1-3.9a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 1 1 6.8 0z" fill="#fff"/></svg>
-              <h5 class="pt-1" id="${promptId}Label">Install Cartzilla app</h5>
-              ${browser === 'Safari' ? `<p class="fs-sm mb-0">Add Cartzilla to your home screen for quick and easy access to your shopping anytime, anywhere! Tap the <span class="fw-semibold">"Share"</span> icon in Safari and select <span class="fw-semibold">"Add to Home Screen"</span> from the options.</p>` : `<p class="fs-sm mb-0">Add Cartzilla to your home screen for quick and easy access to your shopping anytime, anywhere!</p>`}
-              <div class="d-flex flex-column align-items-center gap-3 pt-4">
-                ${
-                  browser === 'Safari'
-                    ? `
-                  <div class="d-flex justify-content-center gap-3 w-100">
-                    <button type="button" class="btn btn-secondary pe-3 w-100" id="timeoutPWAButton">
-                      <i class="ci-clock fs-base me-1 ms-n2"></i>
-                      Remind later
-                    </button>
-                    <button type="button" class="btn btn-outline-secondary pe-3 w-100" id="dismissPWAButton">
-                      <i class="ci-close fs-base me-1 ms-n2"></i>
-                      Dismiss forever
-                    </button>
-                  </div>
-                `
-                    : `
-                  <div class="d-flex justify-content-center gap-3 w-100">
-                    <button type="button" class="btn btn-primary w-100" id="installPWAButton">
-                      <i class="ci-download fs-base me-1 ms-n1"></i>
-                      Install
-                    </button>
-                    <button type="button" class="btn btn-secondary w-100" id="timeoutPWAButton">
-                      <i class="ci-clock fs-base me-1 ms-n2"></i>
-                      Remind later
-                    </button>
-                  </div>
-                  <button type="button" class="btn btn-outline-secondary border-0 mb-n1" id="dismissPWAButton">
-                    <i class="ci-close fs-lg me-1 ms-n2"></i>
-                    Dismiss forever
-                  </button>
-                `
-                }
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      `
+        // its just a pop showing download cartzilla app
+        // you can customize it as per you needs
+    //     const promptHTML = `
+    //   <div class="modal fade" id="${promptId}" tabindex="-1" aria-labelledby="${promptId}Label" aria-hidden="true">
+    //     <div class="modal-dialog">
+    //       <div class="modal-content">
+    //         <div class="modal-body text-center">
+    //           <svg class="d-inline-block mb-3" xmlns="http://www.w3.org/2000/svg" width="95" viewBox="0 0 250 283.6"><g stroke="#9ca3af" stroke-miterlimit="10"><path d="M.7 283.5V37.4C.7 17.3 17 .9 37.2.9h175.4C232.7.9 249 17.2 249 37.4v246.1" fill="none"/><path d="M240.2 41.7V283H9.5V41.7c0-17.6 14-31.9 31.5-31.9h167.9c17.2-.1 31.3 14.2 31.3 31.9z" fill="none"/><path d="M146.2,41.3h-45.1c-4.8,0-8.7-3.9-8.7-8.7s3.9-8.7,8.7-8.7h45.1c4.8,0,8.7,3.9,8.7,8.7S151.1,41.3,146.2,41.3z" fill="none"/></g><path class="d-none-dark" d="M144.9 37.6c2.7 0 5-2.2 5-5a4.95 4.95 0 0 0-5-5c-2.7 0-5 2.2-5 5s2.3 5 5 5z" fill="#cad0d9"/><path class="d-none d-block-dark" d="M144.9 37.6c2.7 0 5-2.2 5-5a4.95 4.95 0 0 0-5-5c-2.7 0-5 2.2-5 5s2.3 5 5 5z" fill="#4e5562"/><path d="M68.2 120.3H40.4c-7.6 0-13.9-6.2-13.9-13.8V80.8c0-7.6 6.2-13.8 13.9-13.8h27.8c7.6 0 13.9 6.2 13.9 13.8v25.7c-.1 7.6-6.3 13.8-13.9 13.8zm70.4 0h-27.8c-7.6 0-13.9-6.2-13.9-13.8V80.8c0-7.6 6.2-13.8 13.9-13.8h27.8c7.6 0 13.9 6.2 13.9 13.8v25.7c-.1 7.6-6.2 13.8-13.9 13.8zm70.5 0h-27.8c-7.6 0-13.9-6.2-13.9-13.8V80.8c0-7.6 6.2-13.8 13.9-13.8h27.8c7.6 0 13.9 6.2 13.9 13.8v25.7c0 7.6-6.3 13.8-13.9 13.8zM68.2 190.9H40.4c-7.6 0-13.9-6.2-13.9-13.8v-25.7c0-7.6 6.2-13.9 13.9-13.9h27.8c7.6 0 13.9 6.2 13.9 13.9V177c-.1 7.6-6.3 13.9-13.9 13.9zm140.9 0h-27.8c-7.6 0-13.9-6.2-13.9-13.8v-25.7c0-7.6 6.2-13.9 13.9-13.9h27.8c7.6 0 13.9 6.2 13.9 13.9V177c0 7.6-6.3 13.9-13.9 13.9zM68.2 261.2H40.4c-7.6 0-13.9-6.2-13.9-13.8v-25.7c0-7.6 6.2-13.9 13.9-13.9h27.8c7.6 0 13.9 6.2 13.9 13.9v25.7c-.1 7.8-6.3 13.8-13.9 13.8zm70.4 0h-27.8c-7.6 0-13.9-6.2-13.9-13.8v-25.7c0-7.6 6.2-13.9 13.9-13.9h27.8c7.6 0 13.9 6.2 13.9 13.9v25.7c-.1 7.8-6.2 13.8-13.9 13.8zm70.5 0h-27.8c-7.6 0-13.9-6.2-13.9-13.8v-25.7c0-7.6 6.2-13.9 13.9-13.9h27.8c7.6 0 13.9 6.2 13.9 13.9v25.7c0 7.8-6.3 13.8-13.9 13.8z" stroke="#9ca3af" fill="none"/><path d="M140.7 196H109c-9.3 0-16.9-7.6-16.9-16.9v-29.3c0-9.3 7.6-16.9 16.9-16.9h31.7c9.3 0 16.9 7.6 16.9 16.9v29.3c.1 9.3-7.4 16.9-16.9 16.9z" fill="#f55266"/><path d="M125.8 172.9c-.8 0-1.7-.5-2-1.5-.3-1.2.2-2.4 1.4-2.7l13.6-4.4-2.2-14.6-23.6 8.1c-1.2.3-2.4-.2-2.7-1.4s.2-2.4 1.4-2.7l24.6-8.5c1-.3 2-.2 2.9.3s1.4 1.4 1.5 2.2l2.4 16.3c.2 1.7-.8 3.6-2.7 4.1l-13.9 4.4c-.2.3-.5.4-.7.4zm13.1.2c-.3-1.2-1.5-1.9-2.7-1.4-.3 0-6.4 1.9-9.1 2.9-4.1 1.4-5.8 0-6.1-.2l-11.7-14.9c-2.4-3.4-6.1-3.6-7.8-3l-5.6 1.7-.8 4.7 7.5-2.4c.3 0 2-.3 3.2 1.4l11.9 15.2c1.4 1.7 3.6 2.4 5.9 2.4 1.7 0 3.2-.3 4.7-.8l9-2.7c1.2-.5 1.9-1.7 1.6-2.9zM128 185.3a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 1 1 6.8 0zm15.1-3.9a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 1 1 6.8 0z" fill="#fff"/></svg>
+    //           <h5 class="pt-1" id="${promptId}Label">Install Cartzilla app</h5>
+    //           ${browser === 'Safari' ? `<p class="fs-sm mb-0">Add Cartzilla to your home screen for quick and easy access to your shopping anytime, anywhere! Tap the <span class="fw-semibold">"Share"</span> icon in Safari and select <span class="fw-semibold">"Add to Home Screen"</span> from the options.</p>` : `<p class="fs-sm mb-0">Add Cartzilla to your home screen for quick and easy access to your shopping anytime, anywhere!</p>`}
+    //           <div class="d-flex flex-column align-items-center gap-3 pt-4">
+    //             ${
+    //               browser === 'Safari'
+    //                 ? `
+    //               <div class="d-flex justify-content-center gap-3 w-100">
+    //                 <button type="button" class="btn btn-secondary pe-3 w-100" id="timeoutPWAButton">
+    //                   <i class="ci-clock fs-base me-1 ms-n2"></i>
+    //                   Remind later
+    //                 </button>
+    //                 <button type="button" class="btn btn-outline-secondary pe-3 w-100" id="dismissPWAButton">
+    //                   <i class="ci-close fs-base me-1 ms-n2"></i>
+    //                   Dismiss forever
+    //                 </button>
+    //               </div>
+    //             `
+    //                 : `
+    //               <div class="d-flex justify-content-center gap-3 w-100">
+    //                 <button type="button" class="btn btn-primary w-100" id="installPWAButton">
+    //                   <i class="ci-download fs-base me-1 ms-n1"></i>
+    //                   Install
+    //                 </button>
+    //                 <button type="button" class="btn btn-secondary w-100" id="timeoutPWAButton">
+    //                   <i class="ci-clock fs-base me-1 ms-n2"></i>
+    //                   Remind later
+    //                 </button>
+    //               </div>
+    //               <button type="button" class="btn btn-outline-secondary border-0 mb-n1" id="dismissPWAButton">
+    //                 <i class="ci-close fs-lg me-1 ms-n2"></i>
+    //                 Dismiss forever
+    //               </button>
+    //             `
+    //             }
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   `
 
         // Append the prompt HTML to the body
         document.body.insertAdjacentHTML('beforeend', promptHTML)
