@@ -1,1 +1,0 @@
-chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js

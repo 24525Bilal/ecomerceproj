@@ -1,1 +1,0 @@
-chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js
