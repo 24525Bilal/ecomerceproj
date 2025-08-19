@@ -8,14 +8,42 @@
   <name>home-electronics Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+
+   <dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.7.3</version>
+   </dependency>
+ 
+
+   <dependency>
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>6.0.0</version>
+    <scope>provided</scope>
+   </dependency>
+
+
+
+
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>org.jetbrains</groupId>
+          <artifactId>annotations</artifactId>
+          <version>RELEASE</version>
+          <scope>compile</scope>
+      </dependency>
   </dependencies>
   <build>
     <finalName>home-electronics</finalName>
   </build>
+
+  
+
 </project>

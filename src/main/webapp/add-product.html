@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <link rel="stylesheet" href="assets/css/theme.min.css">
+</head>
+<body>
+
+  <div class="container py-5">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="h3 mb-0">Add New Product</h1>
+      <a href="account-marketplace-dashboard.html" class="btn btn-outline-secondary rounded-pill">
+        <i class="ci-arrow-left me-2"></i>Back to Dashboard
+      </a>
+    </div>
+
+    <!-- Product form card -->
+    <div class="card border-0 shadow-sm rounded-4">
+      <div class="card-body p-4">
+
+        <form>
+          <!-- Product Title -->
+          <div class="mb-3">
+            <label class="form-label fw-medium">Product Title</label>
+            <input type="text" class="form-control rounded-pill" placeholder="Enter product title">
+          </div>
+
+          <!-- Product Price -->
+          <div class="mb-3">
+            <label class="form-label fw-medium">Product Price ($)</label>
+            <input type="number" class="form-control rounded-pill" placeholder="Enter price">
+          </div>
+
+          <!-- Product Images -->
+          <div class="mb-3">
+            <label class="form-label fw-medium">Product Images</label>
+            <input type="file" class="form-control" multiple>
+            <small class="text-muted">You can upload multiple images</small>
+          </div>
+
+          <!-- Product Color Variants -->
+          <div class="mb-3">
+            <label class="form-label fw-medium">Color Variants</label>
+            <input type="text" class="form-control rounded-pill" placeholder="e.g. Black, White, Blue">
+          </div>
+
+          <!-- Product Size Variants -->
+          <div class="mb-4">
+            <label class="form-label fw-medium">Size Variants</label>
+            <input type="text" class="form-control rounded-pill" placeholder="e.g. 64GB, 128GB, 256GB">
+          </div>
+
+          <!-- ============================= -->
+          <!-- Extra Product Details Section -->
+          <!-- ============================= -->
+          <h5 class="mt-4 mb-3">Product Details</h5>
+
+          <!-- General Specs -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Model</label>
+              <input type="text" class="form-control rounded-pill" placeholder="e.g. iPhone 14 Plus">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Manufacturer</label>
+              <input type="text" class="form-control rounded-pill" placeholder="e.g. Apple Inc.">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Finish</label>
+              <input type="text" class="form-control rounded-pill" placeholder="e.g. Ceramic, Glass, Aluminium">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Capacity</label>
+              <input type="text" class="form-control rounded-pill" placeholder="e.g. 128GB">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Chip</label>
+              <input type="text" class="form-control rounded-pill" placeholder="e.g. A15 Bionic chip">
+            </div>
+          </div>
+
+          <!-- Display Specs -->
+          <h6 class="mt-3 mb-2">Display</h6>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Diagonal</label>
+              <input type="text" class="form-control rounded-pill" placeholder="e.g. 6.1&quot;">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Screen Type</label>
+              <input type="text" class="form-control rounded-pill" placeholder="e.g. Super Retina XDR">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Resolution</label>
+              <input type="text" class="form-control rounded-pill" placeholder="e.g. 2778×1284px at 458ppi">
+            </div>
+            <div class="col-md-6 mb-4">
+              <label class="form-label">Refresh Rate</label>
+              <input type="text" class="form-control rounded-pill" placeholder="e.g. 120Hz">
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-dark rounded-pill px-4">
+            <i class="ci-plus-circle me-2"></i> Save Product
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme-switcher.js"></script>
+</body>
+</html>
