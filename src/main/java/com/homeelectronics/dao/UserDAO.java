@@ -49,4 +49,36 @@ public class UserDAO {
             return true; // Assume exists to prevent signup on database error
         }
     }
+
+    // New method to check if a user with the given email and password exists for sign-in
+    public boolean isValidUser(String email, String password) {
+        String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, email);
+            stmt.setString(2, password);
+
+            ResultSet rs = stmt.executeQuery();
+            return rs.next(); // Returns true if a matching user is found
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    // New method to check if a user with a given email exists
+    public boolean isEmailExists(String email) {
+        String sql = "SELECT email FROM users WHERE email = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, email);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

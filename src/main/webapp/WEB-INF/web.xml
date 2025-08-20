@@ -11,7 +11,10 @@
         <welcome-file>home-electronics.html</welcome-file>
     </welcome-file-list>
 
-
+    <mime-mapping>
+        <extension>js</extension>
+        <mime-type>application/javascript</mime-type>
+    </mime-mapping>
 
 
   <display-name>Archetype Created Web Application</display-name>

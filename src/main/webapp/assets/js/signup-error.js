@@ -1,7 +1,10 @@
-// signup-error.js
+window.addEventListener("DOMContentLoaded", function () {
+    function getQueryParam(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+    }
 
-// Check if ?error=1 is present in the URL
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.has("error")) {
-    alert("❌ Signup failed. Email already registered.");
-}
+    if (getQueryParam("error") === "1") {
+        alert("Signup failed! Mone you are allready registerd.");
+    }
+});
