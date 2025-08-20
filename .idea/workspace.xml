@@ -10,298 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-addresses.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-marketplace-dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-marketplace-payouts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-marketplace-products.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-marketplace-purchases.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-marketplace-sales.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-marketplace-settings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-notifications.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-orders.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-reviews.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-signin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-wishlist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app-icons/icon-144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/theme.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/inter-variable-latin.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/cartzilla-icons.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/cartzilla-icons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/account/avatar-sm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/account/avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/account/cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/home/electronics/banner/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/home/electronics/banner/camera.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/home/electronics/banner/laptop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/home/electronics/hero-slider/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/home/electronics/hero-slider/02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/home/electronics/hero-slider/03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/home/electronics/vlog/01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/home/electronics/vlog/02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/home/electronics/vlog/03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/electronics-dark.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/electronics-light.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/fashion-1-dark.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/fashion-1-light.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/fashion-2-dark.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/fashion-2-light.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/furniture-dark.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/furniture-light.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/grocery-dark.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/grocery-light.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/marketplace-dark.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/marketplace-light.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/single-store-dark.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/demo-preview/single-store-light.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mega-menu/electronics/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/payment-methods/apple-pay-dark-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/payment-methods/google-pay-dark-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/payment-methods/mastercard.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/payment-methods/paypal-dark-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/payment-methods/paypal-icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/payment-methods/visa-dark-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/payment-methods/visa-light-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/banners/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/banners/ipad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/banners/iphone-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/banners/iphone-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/banners/laptop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/brands/apple-dark-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/brands/apple-light-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/brands/canon-dark-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/brands/canon-light-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/brands/motorola-dark-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/brands/motorola-light-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/brands/samsung-dark-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/brands/samsung-light-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/brands/sony-dark-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/brands/sony-light-mode.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/th01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/th02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/th03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/th04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/th05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/th06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/product/gallery/th07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/shop/electronics/thumbs/19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/customizer.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/theme-switcher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/theme.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/chart.js/chart.umd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/choices.js/choices.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/choices.js/choices.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/list.js/list.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/swiper/swiper-bundle.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/swiper/swiper-bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout-v1-cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout-v1-delivery-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout-v1-delivery-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout-v1-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout-v1-shipping.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout-v1-thankyou.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help-topics-v1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home-electronics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home-electronics/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home-electronics/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home-electronics/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home-electronics/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_accordion.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_alert.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_badge.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_breadcrumb.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_button-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_card.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_close.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_containers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_dropdown.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_images.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_list-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_modal.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_nav.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_navbar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_offcanvas.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_placeholders.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_popover.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_progress.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_reboot.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_root.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_spinners.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_tables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_toasts.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_tooltip.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_transitions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_type.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/forms/_floating-labels.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/forms/_form-check.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/forms/_form-control.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/forms/_form-range.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/forms/_form-select.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/forms/_form-text.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/forms/_input-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/forms/_labels.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_color-bg.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_colored-links.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_focus-ring.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_icon-link.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_position.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_ratio.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_stacks.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_stretched-link.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_text-truncation.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_visually-hidden.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/helpers/_vr.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_backdrop.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_border-radius.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_box-shadow.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_breakpoints.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_caret.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_clearfix.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_color-mode.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_container.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_gradients.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_image.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_lists.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_reset-text.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_table-variants.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_text-truncate.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_transition.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_utilities.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/mixins/_visually-hidden.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/utilities/_api.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/vendor/_rfs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/timezz/dist/native/index.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-catalog-electronics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-categories-electronics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-product-general-electronics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/autofocus.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/binded-label.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/code-highlight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/copy-text.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/count-input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/countdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/date-picker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/dropdown-hover.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/filter-list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/form-validation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/image-zoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/input-formatter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/lightbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/master-checkbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/password-toggle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/popover.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/pwa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/range-slider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/scroll-top-button.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/select-box.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/sticky-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/sticky-navbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/tooltip.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_animations.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_fonts.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_reboot.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_root.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_utilities.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_variables-dark.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_accordion.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_alert.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_breadcrumb.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_card.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_carousel.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_close.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_date-picker.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_dropdown.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_image-zoom.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_lightbox.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_list-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_nav.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_navbar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_popover.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_progress.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_scrollbar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_select-box.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_tables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_toasts.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_tooltip.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_type.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/terms-and-conditions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/SignupServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,28 +81,16 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.30114943&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.441">
-    <configuration name="DBTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.homeelectronics.db.DBTest" />
-      <module name="home-electronics" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.homeelectronics.db.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Tomcat 10.1.441" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.441" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="home-electronics:war exploded">
@@ -401,7 +100,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="d3717923-0046-4b9f-9a45-ddba63482d36" />
+        <option name="BASE_DIRECTORY_NAME" value="b6ff40f8-9a58-49c5-9cb6-d90f4b0d3035" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -409,7 +108,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="63275" />
+        <option name="DEBUG_PORT" value="55284" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -478,15 +177,6 @@
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.DBTest" />
-      <item itemvalue="Tomcat Server.Tomcat 10.1.441" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.DBTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -514,6 +204,10 @@
       <workItem from="1755612468987" duration="372000" />
       <workItem from="1755613189274" duration="5304000" />
       <workItem from="1755618844344" duration="4920000" />
+      <workItem from="1755649764683" duration="3469000" />
+      <workItem from="1755653276311" duration="995000" />
+      <workItem from="1755668134169" duration="1106000" />
+      <workItem from="1755669276568" duration="2790000" />
     </task>
     <servers />
   </component>

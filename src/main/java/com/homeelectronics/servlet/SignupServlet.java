@@ -1,3 +1,5 @@
+package com.homeelectronics.servlet;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -5,10 +7,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
 import com.homeelectronics.dao.UserDAO;
 import com.homeelectronics.model.User;
 
+/**
+ * Servlet that handles user signup requests.
+ * Uses query parameter approach to show error alerts.
+ */
 @WebServlet("/signup")
 public class SignupServlet extends HttpServlet {
 
@@ -16,24 +21,24 @@ public class SignupServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        // 1️⃣ Get form data
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
+        // 2️⃣ Create User object
         User user = new User(email, password);
-        UserDAO userDAO = new UserDAO();
 
+        // 3️⃣ Save user in DB
+        UserDAO userDAO = new UserDAO();
         boolean success = userDAO.saveUser(user);
 
+        // 4️⃣ Redirect based on result
         if (success) {
-            // Redirect to the sign-in page on successful signup
+            // ✅ Signup successful → go to sign-in page
             response.sendRedirect("account-signin.html");
         } else {
-            // Show a popup message if signup failed
-            response.setContentType("text/html");
-            response.getWriter().println("<script type='text/javascript'>");
-            response.getWriter().println("alert('❌ Signup failed. Email allready registered.');");
-            response.getWriter().println("window.location.href = 'account-signup.html';"); // Redirect back to the signup page
-            response.getWriter().println("</script>");
+            // ❌ Signup failed → redirect back to signup with error flag
+            response.sendRedirect("account-signup.html?error=1");
         }
     }
 }
