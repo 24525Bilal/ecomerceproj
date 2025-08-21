@@ -1,12 +1,12 @@
 @font-face {
     font-display: block;
-    font-family: cartzilla-icons;
-    src: url(cartzilla-icons.woff2) format("woff2")
+    font-family: BuyHive-icons;
+    src: url(BuyHive-icons.woff2) format("woff2")
 }
 
 [class*=" ci-"]:before,
 [class^=ci-]:before {
-    font-family: cartzilla-icons !important;
+    font-family: BuyHive-icons !important;
     font-style: normal;
     font-variant: normal;
     font-weight: 400 !important;

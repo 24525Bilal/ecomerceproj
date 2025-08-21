@@ -1,6 +1,6 @@
 // Settings
 const SETTINGS = {
-    appName: 'Cartzilla',
+    appName: 'BuyHive',
     // To clear cache on devices, always change SETTINGS.appVersion number after making changes.
     // The app will serve fresh content right away or after 2-3 refreshes (open / close)
     appVersion: '3.1.1',
@@ -24,8 +24,8 @@ const SETTINGS = {
         // Web font
         'assets/fonts/inter-variable-latin.woff2',
         // Icon font
-        'assets/icons/cartzilla-icons.woff2',
-        'assets/icons/cartzilla-icons.min.css',
+        'assets/icons/BuyHive-icons.woff2',
+        'assets/icons/BuyHive-icons.min.css',
         // Theme styles
         'assets/css/theme.min.css',
         // Theme scripts
