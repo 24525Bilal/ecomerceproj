@@ -11,40 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-addresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-addresses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-payouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-payouts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-purchases.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-purchases.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-sales.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-notifications.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-reviews.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/account-signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-wishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-wishlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/icons/cartzilla-icons.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/icons/cartzilla-icons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-thankyou.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-thankyou.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/help-topics-v1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/help-topics-v1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home-electronics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-catalog-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-catalog-electronics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-categories-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-categories-electronics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-product-general-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-product-general-electronics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/src/js/components/pwa.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/src/js/components/pwa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/terms-and-conditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/terms-and-conditions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/signin-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/signin-error.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +210,7 @@
       <workItem from="1755653276311" duration="995000" />
       <workItem from="1755668134169" duration="1106000" />
       <workItem from="1755669276568" duration="10688000" />
-      <workItem from="1755702015016" duration="16328000" />
+      <workItem from="1755702015016" duration="21909000" />
     </task>
     <servers />
   </component>

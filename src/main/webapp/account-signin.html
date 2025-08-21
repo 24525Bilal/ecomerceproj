@@ -212,17 +212,15 @@
                 <form class="needs-validation" action="/home_electronics/signin" method="post" novalidate="">
                     <div class="position-relative mb-4">
                         <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" required="">
-                        <div class="invalid-tooltip bg-transparent py-0">Enter a valid email address!</div>
-                 <!--  For showing error in if email fails  -->
-                        <div id="email-error" class="text-danger mt-1" style="display:none;">Enter a valid email address!</div>
+                        <div id="email-error" class="invalid-tooltip bg-transparent py-0">Enter a valid email address!</div>
+
 
                     </div>
                     <div class="mb-4">
                         <div class="password-toggle">
                             <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required="">
-                            <div class="invalid-tooltip bg-transparent py-0">Password is incorrect!</div>
-                     <!--  For showing error if singin fails in password    -->
-                            <div id="password-error" class="text-danger mt-1" style="display:none;">Password is incorrect!</div>
+                            <div id="password-error" class="invalid-tooltip bg-transparent py-0">Password is incorrect!</div>
+
 
                             <label class="password-toggle-button fs-lg" aria-label="Show/hide password">
                   <input type="checkbox" class="btn-check">
