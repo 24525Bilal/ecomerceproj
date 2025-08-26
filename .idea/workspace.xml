@@ -11,8 +11,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/signin-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/signin-error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-thankyou.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-thankyou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/help-topics-v1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/help-topics-v1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home-electronics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-catalog-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-catalog-electronics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-categories-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-categories-electronics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-product-general-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-product-general-electronics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/terms-and-conditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/terms-and-conditions.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +221,10 @@
       <workItem from="1755653276311" duration="995000" />
       <workItem from="1755668134169" duration="1106000" />
       <workItem from="1755669276568" duration="10688000" />
-      <workItem from="1755702015016" duration="21909000" />
+      <workItem from="1755702015016" duration="22025000" />
+      <workItem from="1755837607433" duration="927000" />
+      <workItem from="1756084633047" duration="360000" />
+      <workItem from="1756220698271" duration="2768000" />
     </task>
     <servers />
   </component>
