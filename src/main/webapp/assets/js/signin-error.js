@@ -16,6 +16,7 @@ if (errorType === "email") {
     passwordInput.classList.add("is-invalid"); // Bootstrap red border
 }
 
+
 // --- Clear error when user types again ---
 emailInput.addEventListener("input", () => {
     document.getElementById("email-error").style.display = "none";
@@ -26,3 +27,6 @@ passwordInput.addEventListener("input", () => {
     document.getElementById("password-error").style.display = "none";
     passwordInput.classList.remove("is-invalid");
 });
+
+
+
