@@ -10,9 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin-signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin-signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/signin-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/signin-error.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,39 +57,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DBConnection.executor": "Run",
-    "Application.DBTest.executor": "Run",
-    "JavaScript Debug.account-signup.html.executor": "Run",
-    "JavaScript Debug.admin-signin.html.executor": "Run",
-    "JavaScript Debug.home-electronics.html.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.home-electronics [clean].executor": "Run",
-    "Maven.home-electronics [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.signup-error.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 10.1.44.executor": "Run",
-    "Tomcat Server.Tomcat 10.1.441.executor": "Run",
-    "Tomcat Server.Tomcat.executor": "Run",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.30114943",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DBConnection.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DBTest.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.account-signup.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.admin-signin.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.home-electronics.html.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.home-electronics [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.home-electronics [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.signup-error.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.44.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.441.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat.executor&quot;: &quot;Run&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.30114943&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.441">
     <configuration name="admin-signin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/home_electronics/admin-signin.html">
       <method v="2" />
@@ -99,7 +98,6 @@
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 10.1.441" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.441" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="home-electronics:war exploded">
@@ -186,6 +184,11 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.admin-signin.html" />
+      <item itemvalue="JavaScript Debug.home-electronics.html" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.441" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.admin-signin.html" />
@@ -227,12 +230,24 @@
       <workItem from="1755837607433" duration="927000" />
       <workItem from="1756084633047" duration="360000" />
       <workItem from="1756220698271" duration="4246000" />
-      <workItem from="1756232027052" duration="6959000" />
+      <workItem from="1756232027052" duration="8061000" />
+      <workItem from="1756386588097" duration="6779000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
