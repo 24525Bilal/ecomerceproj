@@ -839,10 +839,10 @@
                             </nav>
                         </div>
                         <div class="offcanvas-header d-lg-block p-lg-0">
-                            <button type="button" class="btn btn-dark rounded-pill w-100 animate-scale mt-lg-4">
-                  <i class="ci-plus-circle fs-base animate-target me-2 ms-n1"></i>
-                  Add product
-                </button>
+                    <button type="button" class="btn btn-dark rounded-pill w-100 animate-scale mt-lg-4" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                        <i class="ci-plus-circle fs-base animate-target me-2 ms-n1"></i>
+                            Add product
+                    </button>
                         </div>
                     </div>
                 </aside>
@@ -924,10 +924,10 @@
                         </button>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-edit opacity-75 me-2"></i>
-                              Edit
-                            </a>
+                                                    <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
+                                                        <i class="ci-edit opacity-75 me-2"></i>
+                                                            Edit
+                                                    </a>
                                                 </li>
                                                 <li>
                                                     <a class="dropdown-item" href="#!">
@@ -992,10 +992,10 @@
                         </button>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-edit opacity-75 me-2"></i>
-                              Edit
-                            </a>
+                                                    <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
+                                                        <i class="ci-edit opacity-75 me-2"></i>
+                                                            Edit
+                                                    </a>
                                                 </li>
                                                 <li>
                                                     <a class="dropdown-item" href="#!">
@@ -1060,10 +1060,10 @@
                         </button>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-edit opacity-75 me-2"></i>
-                              Edit
-                            </a>
+                                                    <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
+                                                        <i class="ci-edit opacity-75 me-2"></i>
+                                                            Edit
+                                                    </a>
                                                 </li>
                                                 <li>
                                                     <a class="dropdown-item" href="#!">
@@ -1128,10 +1128,10 @@
                         </button>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-edit opacity-75 me-2"></i>
-                              Edit
-                            </a>
+                                                    <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
+                                                        <i class="ci-edit opacity-75 me-2"></i>
+                                                            Edit
+                                                    </a>
                                                 </li>
                                                 <li>
                                                     <a class="dropdown-item" href="#!">
@@ -1334,12 +1334,142 @@
         
     </div>
 
+    <!-- Add Product Modal -->
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="productName" class="form-label">Product Name</label>
+                        <input type="text" class="form-control" id="productName" placeholder="Enter product name">
+                    </div>
 
+                    <div class="mb-3">
+                        <label for="productDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="productDescription" rows="4" placeholder="Enter product description"></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="price" class="form-label">Price ($)</label>
+                            <input type="number" class="form-control" id="price" placeholder="Enter price">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="category" class="form-label">Category</label>
+                            <select class="form-select" id="category">
+                                <option selected>Select category</option>
+                                <option value="1">Mockups</option>
+                                <option value="2">Templates</option>
+                                <option value="3">Icons</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tags" class="form-label">Tags</label>
+                        <input type="text" class="form-control" id="tags" placeholder="e.g. design, ui, app">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="productImage" class="form-label">Upload Image</label>
+                        <input class="form-control" type="file" id="productImage" multiple>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--edit prodcut form-->
+<div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label fw-medium">Product Title</label>
+                        <input type="text" class="form-control rounded-pill" value="iPhone 14 Plus">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-medium">Product Price ($)</label>
+                        <input type="number" class="form-control rounded-pill" value="999">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-medium">Product Images</label>
+                        <input type="file" class="form-control" multiple>
+                        <small class="text-muted">Current images already uploaded</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-medium">Color Variants</label>
+                        <input type="text" class="form-control rounded-pill" value="Black, White, Blue">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-medium">Size Variants</label>
+                        <input type="text" class="form-control rounded-pill" value="6.1&quot;, 6.7&quot;">
+                    </div>
+
+                    <h6 class="mt-3 mb-2">Tech Specs</h6>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Processor</label>
+                            <input type="text" class="form-control rounded-pill" value="6-core">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Chip</label>
+                            <input type="text" class="form-control rounded-pill" value="A15 Bionic chip">
+                        </div>
+                    </div>
+
+                    <h6 class="mt-3 mb-2">Display</h6>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Diagonal</label>
+                            <input type="text" class="form-control rounded-pill" value="6.1&quot;">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Screen Type</label>
+                            <input type="text" class="form-control rounded-pill" value="Super Retina XDR">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Resolution</label>
+                            <input type="text" class="form-control rounded-pill" value="2778×1284px at 458ppi">
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label class="form-label">Refresh Rate</label>
+                            <input type="text" class="form-control rounded-pill" value="120Hz">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark rounded-pill px-4">
+                        <i class="ci-check me-2"></i> Save Changes
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Vendor scripts -->
     <script src="assets/vendor/choices.js/choices.min.js"></script>
     <script src="assets/vendor/list.js/list.min.js"></script>
 
-    <!-- Bootstrap + Theme scripts -- test>
+    <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
 
 
