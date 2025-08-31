@@ -42,7 +42,7 @@ public class SigninServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("userEmail", email);
 
-                // ✅ Optional: add cookie (useful for frontend or remember-me)
+                // adding cookie
                 Cookie loginCookie = new Cookie("userEmail", email);
                 loginCookie.setHttpOnly(true);   //
                 loginCookie.setMaxAge(30 * 60);  // 30 mins(true);     // only over HTTPS
@@ -51,6 +51,15 @@ public class SigninServlet extends HttpServlet {
 
                 // ✅ Valid user → Redirect to dashboard
                 response.sendRedirect("home-electronics.html");
+
+
+
+
+
+
+
+
+
             } else {
                 // ❌ Incorrect password → Redirect with a specific error flag
                 response.sendRedirect("account-signin.html?error=password");
