@@ -7,7 +7,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+//for session creating
+
+import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.Cookie;
+
+
 import com.homeelectronics.dao.UserDAO;
+
 
 
 @WebServlet("/signin")
@@ -30,6 +37,18 @@ public class SigninServlet extends HttpServlet {
             boolean isValidUser = userDAO.isValidUser(email, password);
 
             if (isValidUser) {
+
+                // ✅ Create session (main login tracking)
+                HttpSession session = request.getSession();
+                session.setAttribute("userEmail", email);
+
+                // ✅ Optional: add cookie (useful for frontend or remember-me)
+                Cookie loginCookie = new Cookie("userEmail", email);
+                loginCookie.setHttpOnly(true);   //
+                loginCookie.setMaxAge(30 * 60);  // 30 mins(true);     // only over HTTPS
+                response.addCookie(loginCookie);
+
+
                 // ✅ Valid user → Redirect to dashboard
                 response.sendRedirect("home-electronics.html");
             } else {
@@ -39,6 +58,15 @@ public class SigninServlet extends HttpServlet {
         } else {
             // ❌ Email doesn't exist → Redirect with a different error flag
             response.sendRedirect("account-signin.html?error=email");
+
         }
     }
 }
+
+
+
+
+
+
+
+
