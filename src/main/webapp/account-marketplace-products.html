@@ -1336,58 +1336,127 @@
 
     <!-- Add Product Modal -->
 <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+
+          <!-- Product Name -->
+          <div class="mb-3">
+            <label for="productName" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="productName" placeholder="Enter product name">
+          </div>
+
+          <!-- Product Description -->
+          <div class="mb-3">
+            <label for="productDescription" class="form-label">Description</label>
+            <textarea class="form-control" id="productDescription" rows="4" placeholder="Enter product description"></textarea>
+          </div>
+
+          <!-- Price & Category -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="price" class="form-label">Price ($)</label>
+              <input type="number" class="form-control" id="price" placeholder="Enter price">
             </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="productName" class="form-label">Product Name</label>
-                        <input type="text" class="form-control" id="productName" placeholder="Enter product name">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="productDescription" class="form-label">Description</label>
-                        <textarea class="form-control" id="productDescription" rows="4" placeholder="Enter product description"></textarea>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="price" class="form-label">Price ($)</label>
-                            <input type="number" class="form-control" id="price" placeholder="Enter price">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="category" class="form-label">Category</label>
-                            <select class="form-select" id="category">
-                                <option selected>Select category</option>
-                                <option value="1">Mockups</option>
-                                <option value="2">Templates</option>
-                                <option value="3">Icons</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="tags" class="form-label">Tags</label>
-                        <input type="text" class="form-control" id="tags" placeholder="e.g. design, ui, app">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="productImage" class="form-label">Upload Image</label>
-                        <input class="form-control" type="file" id="productImage" multiple>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save Product</button>
-                    </div>
-                </form>
+            <div class="col-md-6 mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select class="form-select" id="category">
+                <option selected>Select category</option>
+                <option value="1">Mockups</option>
+                <option value="2">Templates</option>
+                <option value="3">Icons</option>
+              </select>
             </div>
-        </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="mb-3">
+            <label for="tags" class="form-label">Tags</label>
+            <input type="text" class="form-control" id="tags" placeholder="e.g. design, ui, app">
+          </div>
+
+          <!-- Product Images -->
+          <div class="mb-3">
+            <label for="productImage" class="form-label">Upload Image</label>
+            <input class="form-control" type="file" id="productImage" multiple>
+            <small class="text-muted">You can upload multiple images</small>
+          </div>
+
+          <!-- Color Variants -->
+          <div class="mb-3">
+            <label class="form-label">Color Variants</label>
+            <input type="text" class="form-control" placeholder="e.g. Black, White, Blue">
+          </div>
+
+          <!-- Size Variants -->
+          <div class="mb-4">
+            <label class="form-label">Size Variants</label>
+            <input type="text" class="form-control" placeholder="e.g. 64GB, 128GB, 256GB">
+          </div>
+
+          <!-- Product Details Section -->
+          <h5 class="mt-4 mb-3">Product Details</h5>
+
+          <!-- General Specs -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Model</label>
+              <input type="text" class="form-control" placeholder="e.g. iPhone 14 Plus">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Manufacturer</label>
+              <input type="text" class="form-control" placeholder="e.g. Apple Inc.">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Finish</label>
+              <input type="text" class="form-control" placeholder="e.g. Ceramic, Glass, Aluminium">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Capacity</label>
+              <input type="text" class="form-control" placeholder="e.g. 128GB">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Chip</label>
+              <input type="text" class="form-control" placeholder="e.g. A15 Bionic chip">
+            </div>
+          </div>
+
+          <!-- Display Specs -->
+          <h6 class="mt-3 mb-2">Display</h6>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Diagonal</label>
+              <input type="text" class="form-control" placeholder="e.g. 6.1&quot;">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Screen Type</label>
+              <input type="text" class="form-control" placeholder="e.g. Super Retina XDR">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Resolution</label>
+              <input type="text" class="form-control" placeholder="e.g. 2778×1284px at 458ppi">
+            </div>
+            <div class="col-md-6 mb-4">
+              <label class="form-label">Refresh Rate</label>
+              <input type="text" class="form-control" placeholder="e.g. 120Hz">
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save Product</button>
+          </div>
+
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 <!--edit prodcut form-->
 <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
