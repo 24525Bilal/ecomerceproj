@@ -12,7 +12,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import com.homeelectronics.db.DBConnection;
 
-@WebServlet({"/UpdateUserDetailsServlet", "/UpdateContactServlet", "/UpdatePasswordServlet", "/DeleteAccountServlet", "/account-info"})
+@WebServlet({"/UpdateUserDetailsServlet", "/UpdateContactServlet", "/UpdatePasswordServlet", "/DeleteAccountServlet", "/account"})
 public class ProfileServlet extends HttpServlet {
 
     @Override
@@ -56,7 +56,7 @@ public class ProfileServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        request.getRequestDispatcher("account-info.jsp").forward(request, response);
+        request.getRequestDispatcher("/account-info.jsp").forward(request, response);
     }
 
     @Override
@@ -127,11 +127,11 @@ public class ProfileServlet extends HttpServlet {
 
             // Redirect with appropriate message
             if (success && !successMessage.isEmpty()) {
-                response.sendRedirect("account-info?success=" + java.net.URLEncoder.encode(successMessage, "UTF-8"));
+                response.sendRedirect("/home_electronics/account?success=" + java.net.URLEncoder.encode(successMessage, "UTF-8"));
             } else if (!errorMessage.isEmpty()) {
-                response.sendRedirect("account-info?error=" + java.net.URLEncoder.encode(errorMessage, "UTF-8"));
+                response.sendRedirect("/home_electronics/account?error=" + java.net.URLEncoder.encode(errorMessage, "UTF-8"));
             } else {
-                response.sendRedirect("account-info");
+                response.sendRedirect("/home_electronics/account");
             }
 
         } catch (SQLException e) {

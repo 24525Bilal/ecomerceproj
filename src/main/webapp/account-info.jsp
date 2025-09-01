@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="com.homeelectronics.model.Profile" %>
 <%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <%
@@ -1606,7 +1607,7 @@
                                 </li>
 
                                 <li class="nav-item me-lg-n1 me-xl-0">
-                                    <a class="nav-link" href="account-info.jsp">My Account</a>
+                                    <a class="nav-link" href="<c:url value='/account'/>">My Account</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="admin-signin.html">Admin</a>
@@ -1696,7 +1697,7 @@
                         </nav>
                         <h6 class="pt-4 ps-2 ms-1">Manage account</h6>
                         <nav class="list-group list-group-borderless">
-                            <a class="list-group-item list-group-item-action d-flex align-items-center pe-none active" href="account-info.html">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center pe-none active" href="/home_electronics/account">
                                 <i class="ci-user fs-base opacity-75 me-2"></i>
                                 Personal info
                             </a>

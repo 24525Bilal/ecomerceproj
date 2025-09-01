@@ -9,6 +9,9 @@ public class ProfileDAO {
     public ProfileDAO(Connection conn) {
         this.conn = conn;
     }
+
+
+
     // Get user ID by email - like UserDAO style
     public int getUserIdByEmail(String email) {
         String sql = "SELECT id FROM users WHERE email=?";
