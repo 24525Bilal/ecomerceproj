@@ -49,11 +49,19 @@ public class SigninServlet extends HttpServlet {
                 response.addCookie(loginCookie);
 
 
-                // ✅ Valid user → Redirect to dashboard
-                response.sendRedirect("home-electronics.html");
+//                // ✅ Valid user → Redirect to dashboard
+//                response.sendRedirect("home-electronics.html");
 
 
-
+                // EDIT: Check for a saved URL and redirect accordingly.
+                String requestedURI = (String) session.getAttribute("requestedURI");
+                if (requestedURI != null && !requestedURI.isEmpty()) {
+                    session.removeAttribute("requestedURI"); // Clean up the session
+                    response.sendRedirect(requestedURI);
+                } else {
+                    // If no URL was saved, redirect to the default dashboard.
+                    response.sendRedirect("home-electronics.html");
+                }
 
 
 
@@ -71,11 +79,6 @@ public class SigninServlet extends HttpServlet {
         }
     }
 }
-
-
-
-
-
 
 
 

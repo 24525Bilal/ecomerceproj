@@ -10,33 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/LogoutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/SigninServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/SigninServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-addresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-addresses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-payouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-payouts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-purchases.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-purchases.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-sales.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-notifications.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-reviews.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-wishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-wishlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-thankyou.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-thankyou.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/help-topics-v1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/help-topics-v1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home-electronics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-catalog-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-catalog-electronics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-categories-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-categories-electronics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-product-general-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-product-general-electronics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/terms-and-conditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/terms-and-conditions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/SignupServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/SignupServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-info.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,13 +96,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.441">
-    <configuration name="admin-signin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/home_electronics/admin-signin.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="home-electronics.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/home_electronics/home-electronics.html">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="Tomcat 10.1.441" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.441" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -209,17 +184,6 @@
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="JavaScript Debug.admin-signin.html" />
-      <item itemvalue="JavaScript Debug.home-electronics.html" />
-      <item itemvalue="Tomcat Server.Tomcat 10.1.441" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JavaScript Debug.admin-signin.html" />
-        <item itemvalue="JavaScript Debug.home-electronics.html" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -257,7 +221,7 @@
       <workItem from="1756220698271" duration="4246000" />
       <workItem from="1756232027052" duration="8061000" />
       <workItem from="1756386588097" duration="10479000" />
-      <workItem from="1756645472038" duration="15638000" />
+      <workItem from="1756645472038" duration="44009000" />
     </task>
     <servers />
   </component>
