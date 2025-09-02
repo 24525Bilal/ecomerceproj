@@ -59,6 +59,18 @@ public class SigninServlet extends HttpServlet {
                         if (userDetails != null) {
                             // Store the entire userDetails object in the session
                             session.setAttribute("userDetails", userDetails);
+
+                            // to show the greeting message
+                            // Prepare the greeting message and store it in the session
+                            String greetingMessage = "Hello, user"; // Default
+                            if (userDetails.getFirstName() != null && !userDetails.getFirstName().isEmpty()) {
+                                greetingMessage = "Hello, " + userDetails.getFirstName();
+                            }
+                            session.setAttribute("greetingMessage", greetingMessage);
+
+
+
+
                         }
                     }
                 } catch (SQLException e) {

@@ -42,6 +42,7 @@ public class ProfileServlet extends HttpServlet {
             if (userId != -1) {
                 Profile profile = profileDAO.getProfileByUserId(userId);
 
+
                 System.out.println("🔍 Profile: " + profile);
                 if (profile != null) {
                     System.out.println("🔍 Name: " + profile.getFirstName() + " " + profile.getLastName());

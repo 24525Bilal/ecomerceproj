@@ -1,3 +1,11 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -1570,8 +1578,27 @@
                                 </ul>
                                 <hr class="d-lg-none my-3">
                                 <ul class="navbar-nav ms-auto">
-                                    
-                                    
+
+
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link fs-5 px-3 dropdown-toggle"
+                                           href="account'>"
+                                           role="button"
+                                           data-bs-toggle="dropdown"
+                                           aria-expanded="false">
+                                            <%= session.getAttribute("greetingMessage") %>
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="logout">Logout</a></li>
+                                        </ul>
+                                    </li>
+
+
+
+
+
                                 </ul>
                             </div>
                         </div>
