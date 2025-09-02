@@ -7,6 +7,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+// i  added when new show the user name dyanamically
+import com.homeelectronics.model.Profile;
+import com.homeelectronics.dao.ProfileDAO;
+import com.homeelectronics.db.DBConnection;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 //for session creating
 
 import jakarta.servlet.http.HttpSession;
@@ -41,6 +48,26 @@ public class SigninServlet extends HttpServlet {
                 // ✅ Create session (main login tracking)
                 HttpSession session = request.getSession();
                 session.setAttribute("userEmail", email);
+
+                // implimented mainly to show the username everywhere
+                // Fetch user details and add them to the session
+                try (Connection conn = DBConnection.getConnection()) {
+                    ProfileDAO profileDAO = new ProfileDAO(conn);
+                    int userId = profileDAO.getUserIdByEmail(email);
+                    if (userId != -1) {
+                        Profile userDetails = profileDAO.getProfileByUserId(userId);
+                        if (userDetails != null) {
+                            // Store the entire userDetails object in the session
+                            session.setAttribute("userDetails", userDetails);
+                        }
+                    }
+                } catch (SQLException e) {
+                    // Log the error and handle it appropriately
+                    e.printStackTrace();
+                }
+
+
+
 
                 // adding cookie
                 Cookie loginCookie = new Cookie("userEmail", email);

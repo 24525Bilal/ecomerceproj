@@ -90,8 +90,16 @@ public class ProfileServlet extends HttpServlet {
             switch (servletPath) {
                 case "/UpdateUserDetailsServlet":
                     success = handleBasicInfoUpdate(request, profileDAO, userId);
-                    successMessage = success ? "Profile updated successfully!" : "";
-                    errorMessage = success ? "" : "Failed to update profile.";
+                    if (success) {
+                        // After a successful DB update, fetch the fresh data...
+                        Profile updatedProfile = profileDAO.getProfileByUserId(userId);
+                        // ...and update the userDetails object in the session.
+                        session.setAttribute("userDetails", updatedProfile);
+                        //
+                        successMessage = success ? "Profile updated successfully!" : "";
+                    }else {
+                        errorMessage = success ? "" : "Failed to update profile.";
+                    }
                     break;
 
                 case "/UpdateContactServlet":

@@ -1,3 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -8,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
 
     <!-- SEO Meta Tags -->
-    <title>BuyHive | Account - Payment Methods</title>
+    <title>BuyHive | Account - Orders History</title>
     <meta name="description" content="BuyHive - Multipurpose E-Commerce Bootstrap HTML Template">
     <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
     <meta name="author" content="Createx Studio">
@@ -28,6 +34,9 @@
     <!-- Font icons -->
     <link rel="preload" href="assets/icons/BuyHive-icons.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="stylesheet" href="assets/icons/BuyHive-icons.min.css">
+
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href="assets/vendor/choices.js/choices.min.css">
 
     <!-- Bootstrap + Theme styles -->
     <link rel="preload" href="assets/css/theme.min.css" as="style">
@@ -294,6 +303,118 @@
     </div>
 
 
+    <!-- Order details offcanvas -->
+    <div class="offcanvas offcanvas-end pb-sm-2 px-sm-2" id="orderDetails" tabindex="-1" aria-labelledby="orderDetailsLabel" style="width: 500px">
+
+        <!-- Header -->
+        <div class="offcanvas-header align-items-start py-3 pt-lg-4">
+            <div>
+                <h4 class="offcanvas-title mb-1" id="orderDetailsLabel">Order # 78A6431D409</h4>
+                <span class="d-flex align-items-center fs-sm fw-medium text-body-emphasis">
+            <span class="bg-info rounded-circle p-1 me-2"></span> In progress
+                </span>
+            </div>
+            <button type="button" class="btn-close mt-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="offcanvas-body d-flex flex-column gap-4 pt-2 pb-3">
+
+            <!-- Items -->
+            <div class="d-flex flex-column gap-3">
+
+                <!-- Item -->
+                <div class="d-flex align-items-center">
+                    <a class="flex-shrink-0" href="shop-product-general-electronics.html">
+              <img src="assets/img/shop/electronics/thumbs/01.png" width="110" alt="Smart Watch">
+            </a>
+                    <div class="w-100 min-w-0 ps-2 ps-sm-3">
+                        <h5 class="d-flex animate-underline mb-2">
+                            <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Smart Watch Series 7, White</a>
+                        </h5>
+                        <div class="h6 mb-2">$429.00</div>
+                        <div class="fs-xs">Qty: 1</div>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="d-flex align-items-center">
+                    <a class="flex-shrink-0" href="shop-product-general-electronics.html">
+              <img src="assets/img/shop/electronics/thumbs/08.png" width="110" alt="iPhone 14">
+            </a>
+                    <div class="w-100 min-w-0 ps-2 ps-sm-3">
+                        <h5 class="d-flex animate-underline mb-2">
+                            <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Apple iPhone 14 128GB White</a>
+                        </h5>
+                        <div class="h6 mb-2">$899.00</div>
+                        <div class="fs-xs">Qty: 1</div>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="d-flex align-items-center">
+                    <a class="flex-shrink-0" href="shop-product-general-electronics.html">
+              <img src="assets/img/shop/electronics/thumbs/09.png" width="110" alt="iPad Pro">
+            </a>
+                    <div class="w-100 min-w-0 ps-2 ps-sm-3">
+                        <h5 class="d-flex animate-underline mb-2">
+                            <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Tablet Apple iPad Pro M2</a>
+                        </h5>
+                        <div class="h6 mb-2">$989.00</div>
+                        <div class="fs-xs">Qty: 1</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Delivery + Payment info -->
+            <div class="border-top pt-4">
+                <h6>Delivery</h6>
+                <ul class="list-unstyled fs-sm mb-4">
+                    <li class="d-flex justify-content-between mb-1">
+                        Estimated delivery date:
+                        <span class="text-body-emphasis fw-medium text-end ms-2">Feb 8, 2025 / 10:00 - 12:00</span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-1">
+                        Shipping method:
+                        <span class="text-body-emphasis fw-medium text-end ms-2">Courier delivery</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        Shipping address:
+                        <span class="text-body-emphasis fw-medium text-end ms-2">567 Cherry Lane Apt B12,<br>Harrisburg</span>
+                    </li>
+                </ul>
+                <h6>Payment</h6>
+                <ul class="list-unstyled fs-sm m-0">
+                    <li class="d-flex justify-content-between mb-1">
+                        Payment method:
+                        <span class="text-body-emphasis fw-medium text-end ms-2">Cash on delivery </span>
+                    </li>
+                    <li class="d-flex justify-content-between mb-1">
+                        Tax collected:
+                        <span class="text-body-emphasis fw-medium text-end ms-2">$12.40</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        Shipping:
+                        <span class="text-body-emphasis fw-medium text-end ms-2">$26.50</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Total -->
+            <div class="d-flex align-items-center justify-content-between fs-sm border-top pt-4">
+                Estimated total:
+                <span class="h5 text-end ms-2 mb-0">$2,105.90</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="offcanvas-header">
+            <a class="btn btn-lg btn-secondary w-100" href="#!">Change the delivery time</a>
+        </div>
+    </div>
+
+
     <!-- Bonuses info modal -->
     <div class="modal fade" id="bonusesModal" tabindex="-1" aria-labelledby="bonusesModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -330,86 +451,6 @@
                                     <span class="text-dark-emphasis fw-semibold ms-2">100</span>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Add payment method modal -->
-    <div class="modal fade" id="addPaymentModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="addPaymentModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addPaymentModalLabel">Add new payment method</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs mb-3" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button type="button" class="nav-link active" id="card-tab" data-bs-toggle="tab" data-bs-target="#card-tab-pane" role="tab" aria-controls="card-tab-pane" aria-selected="true">
-                  <i class="ci-credit-card fs-base opacity-75 ms-n2 me-2"></i>
-                   Card
-                </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button type="button" class="nav-link" id="paypal-tab" data-bs-toggle="tab" data-bs-target="#paypal-tab-pane" role="tab" aria-controls="paypal-tab-pane" aria-selected="false">
-                  <img src="assets/img/payment-methods/paypal-icon.svg" class="me-2" width="14" alt="PayPal">
-                   PayPal
-                </button>
-                        </li>
-                    </ul>
-
-                    <div class="tab-content">
-
-                        <!-- Card tab -->
-                        <div class="tab-pane fade show active" id="card-tab-pane" role="tabpanel" aria-labelledby="card-tab">
-                            <form class="needs-validation" novalidate="">
-                                <div class="mb-3">
-                                    <label for="card-number" class="form-label">Card number</label>
-                                    <div class="position-relative" data-input-format="{&quot;creditCard&quot;: true}">
-                                        <input type="text" class="form-control form-icon-end" id="card-number" style="background-image: none" placeholder="XXXX XXXX XXXX XXXX" required="">
-                                        <span class="position-absolute d-flex top-50 end-0 translate-middle-y fs-5 text-body-tertiary me-3" data-card-icon=""></span>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="card-name" class="form-label">Name on card</label>
-                                    <input type="text" class="form-control" id="card-name" placeholder="Full name" required="">
-                                </div>
-                                <div class="row mb-4">
-                                    <div class="col-7">
-                                        <label for="card-expiration" class="form-label">Expiration date</label>
-                                        <input type="text" class="form-control" id="card-expiration" data-input-format="{&quot;date&quot;: true, &quot;datePattern&quot;: [&quot;m&quot;, &quot;y&quot;]}" placeholder="MM/YY" required="">
-                                    </div>
-                                    <div class="col-5">
-                                        <label for="card-cvc" class="form-label">CVC</label>
-                                        <input type="text" class="form-control" id="card-cvc" data-input-format="{&quot;numericOnly&quot;: true, &quot;blocks&quot;: [3]}" placeholder="XXX" required="">
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3">
-                                    <button type="reset" class="btn btn-secondary w-100" data-bs-dismiss="modal" data-bs-target="#addPaymentModal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary w-100">Add card</button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <!-- PayPal tab -->
-                        <div class="tab-pane fade" id="paypal-tab-pane" role="tabpanel" aria-labelledby="paypal-tab">
-                            <form class="needs-validation" novalidate="">
-                                <div class="mb-4">
-                                    <label for="paypal-email" class="form-label">Email associated with PayPal</label>
-                                    <input type="email" class="form-control" id="paypal-email" placeholder="Email address" required="">
-                                    <div class="invalid-feedback">Please provide a valid email address!</div>
-                                </div>
-                                <div class="d-flex gap-3">
-                                    <button type="reset" class="btn btn-secondary w-100" data-bs-dismiss="modal" data-bs-target="#addPaymentModal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary w-100">Continue</button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -503,7 +544,7 @@
                         <!-- Account button logged in state visible on screens > 768px wide (md breakpoint) -->
                         <div class="position-relative" id="accountBtn">
                             <a class="btn btn-icon btn-lg btn-secondary animate-scale fs-5 fw-normal position-relative rounded-circle ms-2 d-none d-md-inline-flex" href="account-orders.html" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="tooltip-sm text-nowrap"
-                                data-bs-container="#accountBtn" title="Susan Gardner">
+                                data-bs-container="#accountBtn" title="${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}">
                   <span class="animate-target">S</span>
                 </a>
                         </div>
@@ -1762,12 +1803,12 @@
                                                 <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Shop User</a>
                                                 <ul class="dropdown-menu">
                                                     <li><a class="dropdown-item" href="account-orders.html">Orders History</a></li>
-                                                    <li><a class="dropdown-item" href="account-wishlist.html">Wishlist</a></li>
-                                                    <li><a class="dropdown-item" href="account-payment.html">Payment Methods</a></li>
-                                                    <li><a class="dropdown-item" href="account-reviews.html">My Reviews</a></li>
+                                                    <li><a class="dropdown-item" href="account-wishlist.jsp">Wishlist</a></li>
+                                                    <li><a class="dropdown-item" href="account-payment.jsp">Payment Methods</a></li>
+                                                    <li><a class="dropdown-item" href="account-reviews.jsp">My Reviews</a></li>
                                                     <li><a class="dropdown-item" href="account-info.jsp">Personal Info</a></li>
-                                                    <li><a class="dropdown-item" href="account-addresses.html">Addresses</a></li>
-                                                    <li><a class="dropdown-item" href="account-notifications.html">Notifications</a></li>
+                                                    <li><a class="dropdown-item" href="account-addresses.jsp">Addresses</a></li>
+                                                    <li><a class="dropdown-item" href="account-notifications.jsp">Notifications</a></li>
                                                 </ul>
                                             </li>
                                             <li class="dropend">
@@ -1808,7 +1849,7 @@
                     <a class="d-flex align-items-center text-decoration-none" href="#accountSidebar" data-bs-toggle="offcanvas" aria-controls="accountSidebar">
                         <div class="h5 d-flex justify-content-center align-items-center flex-shrink-0 text-primary bg-primary-subtle lh-1 rounded-circle mb-0" style="width: 3rem; height: 3rem">S</div>
                         <div class="ps-3">
-                            <h5 class="h6 mb-1">Susan Gardner</h5>
+                            <h5 class="h6 mb-1">${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}</h5>
                             <div class="d-flex flex-nowrap fs-sm text-body">
                                 <svg class="text-warning flex-shrink-0 me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M1.333 9.667H7.5V16h-5c-.64 0-1.167-.527-1.167-1.167V9.667zm13.334 0v5.167c0 .64-.527 1.167-1.167 1.167h-5V9.667h6.167zM0 5.833V7.5c0 .64.527 1.167 1.167 1.167h.167H7.5v-1-3H1.167C.527 4.667 0 5.193 0 5.833zm14.833-1.166H8.5v3 1h6.167.167C15.473 8.667 16 8.14 16 7.5V5.833c0-.64-.527-1.167-1.167-1.167z"></path><path d="M8 5.363a.5.5 0 0 1-.495-.573C7.752 3.123 9.054-.03 12.219-.03c1.807.001 2.447.977 2.447 1.813 0 1.486-2.069 3.58-6.667 3.58zM12.219.971c-2.388 0-3.295 2.27-3.595 3.377 1.884-.088 3.072-.565 3.756-.971.949-.563 1.287-1.193 1.287-1.595 0-.599-.747-.811-1.447-.811z"></path><path d="M8.001 5.363c-4.598 0-6.667-2.094-6.667-3.58 0-.836.641-1.812 2.448-1.812 3.165 0 4.467 3.153 4.713 4.819a.5.5 0 0 1-.495.573zM3.782.971c-.7 0-1.448.213-1.448.812 0 .851 1.489 2.403 5.042 2.566C7.076 3.241 6.169.971 3.782.971z"></path></svg>                                100 bonuses available
                             </div>
@@ -1825,7 +1866,6 @@
         <div class="container py-5 mt-n2 mt-sm-0">
             <div class="row pt-md-2 pt-lg-3 pb-sm-2 pb-md-3 pb-lg-4 pb-xl-5">
 
-
                 <!-- Sidebar navigation that turns into offcanvas on screens < 992px wide (lg breakpoint) -->
                 <aside class="col-lg-3">
                     <div class="offcanvas-lg offcanvas-start pe-lg-0 pe-xl-4" id="accountSidebar">
@@ -1835,7 +1875,7 @@
                             <div class="d-flex align-items-center">
                                 <div class="h5 d-flex justify-content-center align-items-center flex-shrink-0 text-primary bg-primary-subtle lh-1 rounded-circle mb-0" style="width: 3rem; height: 3rem">S</div>
                                 <div class="min-w-0 ps-3">
-                                    <h5 class="h6 mb-1">Susan Gardner</h5>
+                                    <h5 class="h6 mb-1">${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}</h5>
                                     <div class="nav flex-nowrap text-nowrap min-w-0">
                                         <a class="nav-link animate-underline text-body p-0" href="#bonusesModal" data-bs-toggle="modal">
                         <svg class="text-warning flex-shrink-0 me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M1.333 9.667H7.5V16h-5c-.64 0-1.167-.527-1.167-1.167V9.667zm13.334 0v5.167c0 .64-.527 1.167-1.167 1.167h-5V9.667h6.167zM0 5.833V7.5c0 .64.527 1.167 1.167 1.167h.167H7.5v-1-3H1.167C.527 4.667 0 5.193 0 5.833zm14.833-1.166H8.5v3 1h6.167.167C15.473 8.667 16 8.14 16 7.5V5.833c0-.64-.527-1.167-1.167-1.167z"></path><path d="M8 5.363a.5.5 0 0 1-.495-.573C7.752 3.123 9.054-.03 12.219-.03c1.807.001 2.447.977 2.447 1.813 0 1.486-2.069 3.58-6.667 3.58zM12.219.971c-2.388 0-3.295 2.27-3.595 3.377 1.884-.088 3.072-.565 3.756-.971.949-.563 1.287-1.193 1.287-1.595 0-.599-.747-.811-1.447-.811z"></path><path d="M8.001 5.363c-4.598 0-6.667-2.094-6.667-3.58 0-.836.641-1.812 2.448-1.812 3.165 0 4.467 3.153 4.713 4.819a.5.5 0 0 1-.495.573zM3.782.971c-.7 0-1.448.213-1.448.812 0 .851 1.489 2.403 5.042 2.566C7.076 3.241 6.169.971 3.782.971z"></path></svg>
@@ -1851,20 +1891,20 @@
                         <!-- Body (Navigation) -->
                         <div class="offcanvas-body d-block pt-2 pt-lg-4 pb-lg-0">
                             <nav class="list-group list-group-borderless">
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-orders.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center pe-none active" href="account-orders.html">
                     <i class="ci-shopping-bag fs-base opacity-75 me-2"></i>
                     Orders
                     <span class="badge bg-primary rounded-pill ms-auto">1</span>
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-wishlist.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-wishlist.jsp">
                     <i class="ci-heart fs-base opacity-75 me-2"></i>
                     Wishlist
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center pe-none active" href="account-payment.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-payment.jsp">
                     <i class="ci-credit-card fs-base opacity-75 me-2"></i>
                     Payment methods
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-reviews.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-reviews.jsp">
                     <i class="ci-star fs-base opacity-75 me-2"></i>
                     My reviews
                   </a>
@@ -1875,11 +1915,11 @@
                     <i class="ci-user fs-base opacity-75 me-2"></i>
                     Personal info
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-addresses.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-addresses.jsp">
                     <i class="ci-map-pin fs-base opacity-75 me-2"></i>
                     Addresses
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-notifications.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-notifications.jsp">
                     <i class="ci-bell fs-base opacity-75 mt-1 me-2"></i>
                     Notifications
                   </a>
@@ -1896,7 +1936,7 @@
                   </a>
                             </nav>
                             <nav class="list-group list-group-borderless pt-3">
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-signin.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="logout">
                     <i class="ci-log-out fs-base opacity-75 me-2"></i>
                     Log out
                   </a>
@@ -1906,63 +1946,334 @@
                 </aside>
 
 
-                <!-- Payment methods content -->
+                <!-- Orders content -->
                 <div class="col-lg-9">
                     <div class="ps-lg-3 ps-xl-0">
 
-                        <!-- Page title -->
-                        <h1 class="h2 pb-2 pb-md-3">Payment methods</h1>
-
-                        <!-- Payment methods (Grid) -->
-                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 g-md-4 g-lg-3 g-xl-4">
-                            <div class="col">
-                                <div class="card h-100">
-                                    <div class="card-body pb-3">
-                                        <div class="d-flex align-items-start justify-content-between mb-4">
-                                            <img src="assets/img/payment-methods/mastercard.svg" class="m-n3" width="100" alt="Mastercard">
-                                            <span class="badge text-bg-info rounded-pill">Primary</span>
-                                        </div>
-                                        <div class="h6 mb-1">**** **** **** 8341</div>
-                                        <div class="text-danger fs-xs">Expired 05/24</div>
-                                    </div>
-                                    <div class="card-footer d-flex gap-3 bg-transparent border-0 pt-0 pb-4">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Remove</button>
-                                    </div>
-                                </div>
+                        <!-- Page title + Sorting selects -->
+                        <div class="row align-items-center pb-3 pb-md-4 mb-md-1 mb-lg-2">
+                            <div class="col-md-4 col-xl-6 mb-3 mb-md-0">
+                                <h1 class="h2 me-3 mb-0">Orders</h1>
                             </div>
-                            <div class="col">
-                                <div class="card h-100">
-                                    <div class="card-body pb-3">
-                                        <div class="d-flex align-items-start justify-content-between mb-4">
-                                            <img src="assets/img/payment-methods/visa-light-mode.svg" class="d-none-dark m-n3" width="100" alt="Visa">
-                                            <img src="assets/img/payment-methods/visa-dark-mode.svg" class="d-none d-block-dark m-n3" width="100" alt="Visa">
-                                            <div class="nav animate-underline">
-                                                <a class="nav-link animate-target fs-xs p-0" href="#!">Set as primary</a>
-                                            </div>
-                                        </div>
-                                        <div class="h6 mb-1">**** **** **** 1276</div>
-                                        <div class="text-body fs-xs">Expiration 01/27</div>
+                            <div class="col-md-8 col-xl-6">
+                                <div class="row row-cols-1 row-cols-sm-2 g-3 g-xxl-4">
+                                    <div class="col">
+                                        <select class="form-select" data-select="{
+                        &quot;placeholderValue&quot;: &quot;Select status&quot;,
+                        &quot;choices&quot;: [
+                          {
+                            &quot;value&quot;: &quot;&quot;,
+                            &quot;label&quot;: &quot;Select status&quot;,
+                            &quot;placeholder&quot;: true
+                          },
+                          {
+                            &quot;value&quot;: &quot;inprogress&quot;,
+                            &quot;label&quot;: &quot;<div class=\&quot;d-flex align-items-center text-nowrap\&quot;><span class=\&quot;bg-info rounded-circle p-1 me-2\&quot;></span>In progress</div>&quot;
+                          },
+                          {
+                            &quot;value&quot;: &quot;delivered&quot;,
+                            &quot;label&quot;: &quot;<div class=\&quot;d-flex align-items-center text-nowrap\&quot;><span class=\&quot;bg-success rounded-circle p-1 me-2\&quot;></span>Delivered</div>&quot;
+                          },
+                          {
+                            &quot;value&quot;: &quot;canceled&quot;,
+                            &quot;label&quot;: &quot;<div class=\&quot;d-flex align-items-center text-nowrap\&quot;><span class=\&quot;bg-danger rounded-circle p-1 me-2\&quot;></span>Canceled</div>&quot;
+                          },
+                          {
+                            &quot;value&quot;: &quot;delayed&quot;,
+                            &quot;label&quot;: &quot;<div class=\&quot;d-flex align-items-center text-nowrap\&quot;><span class=\&quot;bg-warning rounded-circle p-1 me-2\&quot;></span>Delayed</div>&quot;
+                          }
+                        ]
+                      }" data-select-template="true" aria-label="Status sorting"></select>
                                     </div>
-                                    <div class="card-footer d-flex gap-3 bg-transparent border-0 pt-0 pb-4">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Remove</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card border-0 h-100">
-                                    <span class="position-absolute top-0 start-0 w-100 h-100 border border-dashed border-secondary border-opacity-25 rounded d-none-dark"></span>
-                                    <span class="position-absolute top-0 start-0 w-100 h-100 border border-dashed border-light border-opacity-25 rounded d-none d-block-dark"></span>
-                                    <div class="card-body position-relative z-2 nav align-items-center justify-content-center py-5">
-                                        <a class="nav-link animate-underline stretched-link min-w-0 fs-base px-0" href="#addPaymentModal" data-bs-toggle="modal">
-                        <i class="ci-plus fs-lg ms-n2 me-2"></i>
-                        <span class="animate-target text-truncate">Add payment method</span>
-                      </a>
+                                    <div class="col">
+                                        <select class="form-select" data-select="{&quot;removeItemButton&quot;: false}" aria-label="Timeframe sorting">
+                        <option value="all-time">For all time</option>
+                        <option value="last-year">For last year</option>
+                        <option value="last-3-months">For last 3 months</option>
+                        <option value="last-30-days">For last 30 days</option>
+                        <option value="last-week">For last week</option>
+                      </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
+                        <!-- Sortable orders table -->
+                        <div data-filter-list="{&quot;listClass&quot;: &quot;orders-list&quot;, &quot;sortClass&quot;: &quot;orders-sort&quot;, &quot;valueNames&quot;: [&quot;date&quot;, &quot;total&quot;]}">
+                            <table class="table align-middle fs-sm text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="py-3 ps-0">
+                                            <span class="text-body fw-normal">Order <span class="d-none d-md-inline">#</span></span>
+                                        </th>
+                                        <th scope="col" class="py-3 d-none d-md-table-cell">
+                                            <button type="button" class="btn orders-sort fw-normal text-body p-0" data-sort="date">Order date</button>
+                                        </th>
+                                        <th scope="col" class="py-3 d-none d-md-table-cell">
+                                            <span class="text-body fw-normal">Status</span>
+                                        </th>
+                                        <th scope="col" class="py-3 d-none d-md-table-cell">
+                                            <button type="button" class="btn orders-sort fw-normal text-body p-0" data-sort="total">Total</button>
+                                        </th>
+                                        <th scope="col" class="py-3">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-body-emphasis orders-list">
+
+                                    <!-- Item -->
+                                    <tr>
+                                        <td class="fw-medium pt-2 pb-3 py-md-2 ps-0">
+                                            <a class="d-inline-block animate-underline text-body-emphasis text-decoration-none py-2" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                          <span class="animate-target">78A6431D409</span>
+                        </a>
+                                            <ul class="list-unstyled fw-normal text-body m-0 d-md-none">
+                                                <li>Feb 6, 2025</li>
+                                                <li class="d-flex align-items-center">
+                                                    <span class="bg-info rounded-circle p-1 me-2"></span> In progress
+                                                </li>
+                                                <li class="fw-medium text-body-emphasis">$2,105.90</li>
+                                            </ul>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            Feb 6, 2025
+                                            <span class="date d-none">25-02-06</span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            <span class="d-flex align-items-center">
+                          <span class="bg-info rounded-circle p-1 me-2"></span> In progress
+                                            </span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            $2,105.90
+                                            <span class="total d-none">210590</span>
+                                        </td>
+                                        <td class="py-3 pe-0">
+                                            <span class="d-flex align-items-center justify-content-end position-relative gap-1 gap-sm-2 ms-n2 ms-sm-0">
+                          <span><img src="assets/img/shop/electronics/thumbs/20.png" width="64" alt="Thumbnail"></span>
+                                            <span><img src="assets/img/shop/electronics/thumbs/16.png" width="64" alt="Thumbnail"></span>
+                                            <span><img src="assets/img/shop/electronics/thumbs/15.png" width="64" alt="Thumbnail"></span>
+                                            <a class="btn btn-icon btn-ghost btn-secondary stretched-link border-0" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                            <i class="ci-chevron-right fs-lg"></i>
+                          </a>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Item -->
+                                    <tr>
+                                        <td class="fw-medium pt-2 pb-3 py-md-2 ps-0">
+                                            <a class="d-inline-block animate-underline text-body-emphasis text-decoration-none py-2" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                          <span class="animate-target">47H76G09F33</span>
+                        </a>
+                                            <ul class="list-unstyled fw-normal text-body m-0 d-md-none">
+                                                <li>Dec 12, 2024</li>
+                                                <li class="d-flex align-items-center">
+                                                    <span class="bg-success rounded-circle p-1 me-2"></span> Delivered
+                                                </li>
+                                                <li class="fw-medium text-body-emphasis">$360.75</li>
+                                            </ul>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            Dec 12, 2024
+                                            <span class="date d-none">24-12-12</span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            <span class="d-flex align-items-center">
+                          <span class="bg-success rounded-circle p-1 me-2"></span> Delivered
+                                            </span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            $360.75
+                                            <span class="total d-none">36075</span>
+                                        </td>
+                                        <td class="py-3 pe-0">
+                                            <span class="d-flex align-items-center justify-content-end position-relative gap-1 gap-sm-2 ms-n2 ms-sm-0">
+                          <span><img src="assets/img/shop/electronics/thumbs/14.png" width="64" alt="Thumbnail"></span>
+                                            <a class="btn btn-icon btn-ghost btn-secondary stretched-link border-0" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                            <i class="ci-chevron-right fs-lg"></i>
+                          </a>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Item -->
+                                    <tr>
+                                        <td class="fw-medium pt-2 pb-3 py-md-2 ps-0">
+                                            <a class="d-inline-block animate-underline text-body-emphasis text-decoration-none py-2" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                          <span class="animate-target">502TR872W2</span>
+                        </a>
+                                            <ul class="list-unstyled fw-normal text-body m-0 d-md-none">
+                                                <li>Nov 7, 2024</li>
+                                                <li class="d-flex align-items-center">
+                                                    <span class="bg-success rounded-circle p-1 me-2"></span> Delivered
+                                                </li>
+                                                <li class="fw-medium text-body-emphasis">$4,268.00</li>
+                                            </ul>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            Nov 7, 2024
+                                            <span class="date d-none">24-11-07</span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            <span class="d-flex align-items-center">
+                          <span class="bg-success rounded-circle p-1 me-2"></span> Delivered
+                                            </span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            $4,268.00
+                                            <span class="total d-none">426800</span>
+                                        </td>
+                                        <td class="py-3 pe-0">
+                                            <span class="d-flex align-items-center justify-content-end position-relative gap-1 gap-sm-2 ms-n2 ms-sm-0">
+                          <span><img src="assets/img/shop/electronics/thumbs/12.png" width="64" alt="Thumbnail"></span>
+                                            <span><img src="assets/img/shop/electronics/thumbs/13.png" width="64" alt="Thumbnail"></span>
+                                            <span><img src="assets/img/shop/electronics/thumbs/18.png" width="64" alt="Thumbnail"></span>
+                                            <span class="fw-medium me-1">+3</span>
+                                            <a class="btn btn-icon btn-ghost btn-secondary stretched-link border-0" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                            <i class="ci-chevron-right fs-lg"></i>
+                          </a>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Item -->
+                                    <tr>
+                                        <td class="fw-medium pt-2 pb-3 py-md-2 ps-0">
+                                            <a class="d-inline-block animate-underline text-body-emphasis text-decoration-none py-2" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                          <span class="animate-target">34VB5540K83</span>
+                        </a>
+                                            <ul class="list-unstyled fw-normal text-body m-0 d-md-none">
+                                                <li>Sep 15, 2024</li>
+                                                <li class="d-flex align-items-center">
+                                                    <span class="bg-danger rounded-circle p-1 me-2"></span> Canceled
+                                                </li>
+                                                <li class="fw-medium text-body-emphasis">$987.50</li>
+                                            </ul>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            Sep 15, 2024
+                                            <span class="date d-none">24-09-15</span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            <span class="d-flex align-items-center">
+                          <span class="bg-danger rounded-circle p-1 me-2"></span> Canceled
+                                            </span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            $987.50
+                                            <span class="total d-none">98750</span>
+                                        </td>
+                                        <td class="py-3 pe-0">
+                                            <span class="d-flex align-items-center justify-content-end position-relative gap-1 gap-sm-2 ms-n2 ms-sm-0">
+                          <span><img src="assets/img/shop/electronics/thumbs/21.png" width="64" alt="Thumbnail"></span>
+                                            <span><img src="assets/img/shop/electronics/thumbs/11.png" width="64" alt="Thumbnail"></span>
+                                            <a class="btn btn-icon btn-ghost btn-secondary stretched-link border-0" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                            <i class="ci-chevron-right fs-lg"></i>
+                          </a>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Item -->
+                                    <tr>
+                                        <td class="fw-medium pt-2 pb-3 py-md-2 ps-0">
+                                            <a class="d-inline-block animate-underline text-body-emphasis text-decoration-none py-2" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                          <span class="animate-target">112P45A90V2</span>
+                        </a>
+                                            <ul class="list-unstyled fw-normal text-body m-0 d-md-none">
+                                                <li>May 12, 2024</li>
+                                                <li class="d-flex align-items-center">
+                                                    <span class="bg-success rounded-circle p-1 me-2"></span> Delivered
+                                                </li>
+                                                <li class="fw-medium text-body-emphasis">$53.00</li>
+                                            </ul>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            May 12, 2024
+                                            <span class="date d-none">24-05-12</span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            <span class="d-flex align-items-center">
+                          <span class="bg-success rounded-circle p-1 me-2"></span> Delivered
+                                            </span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            $53.00
+                                            <span class="total d-none">5300</span>
+                                        </td>
+                                        <td class="py-3 pe-0">
+                                            <span class="d-flex align-items-center justify-content-end position-relative gap-1 gap-sm-2 ms-n2 ms-sm-0">
+                          <span><img src="assets/img/shop/electronics/thumbs/17.png" width="64" alt="Thumbnail"></span>
+                                            <a class="btn btn-icon btn-ghost btn-secondary stretched-link border-0" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                            <i class="ci-chevron-right fs-lg"></i>
+                          </a>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Item -->
+                                    <tr>
+                                        <td class="fw-medium pt-2 pb-3 py-md-2 ps-0">
+                                            <a class="d-inline-block animate-underline text-body-emphasis text-decoration-none py-2" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                          <span class="animate-target">28BA67U0981</span>
+                        </a>
+                                            <ul class="list-unstyled fw-normal text-body m-0 d-md-none">
+                                                <li>Apr 20, 2024</li>
+                                                <li class="d-flex align-items-center">
+                                                    <span class="bg-danger rounded-circle p-1 me-2"></span> Canceled
+                                                </li>
+                                                <li class="fw-medium text-body-emphasis">$1,029.50</li>
+                                            </ul>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            Apr 20, 2024
+                                            <span class="date d-none">24-04-20</span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            <span class="d-flex align-items-center">
+                          <span class="bg-danger rounded-circle p-1 me-2"></span> Canceled
+                                            </span>
+                                        </td>
+                                        <td class="fw-medium py-3 d-none d-md-table-cell">
+                                            $1,029.50
+                                            <span class="total d-none">102950</span>
+                                        </td>
+                                        <td class="py-3 pe-0">
+                                            <span class="d-flex align-items-center justify-content-end position-relative gap-1 gap-sm-2 ms-n2 ms-sm-0">
+                          <span><img src="assets/img/shop/electronics/thumbs/19.png" width="64" alt="Thumbnail"></span>
+                                            <span><img src="assets/img/shop/electronics/thumbs/22.png" width="64" alt="Thumbnail"></span>
+                                            <a class="btn btn-icon btn-ghost btn-secondary stretched-link border-0" href="#orderDetails" data-bs-toggle="offcanvas" aria-controls="orderDetails" aria-label="Show order details">
+                            <i class="ci-chevron-right fs-lg"></i>
+                          </a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <!-- Pagination -->
+                        <nav class="pt-3 pb-2 pb-sm-0 mt-2 mt-md-3" aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item active" aria-current="page">
+                                    <span class="page-link">
+                      1
+                      <span class="visually-hidden">(current)</span>
+                                    </span>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">4</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -2219,7 +2530,8 @@
 
 
     <!-- Vendor scripts -->
-    <script src="assets/vendor/cleave.js/cleave.min.js"></script>
+    <script src="assets/vendor/choices.js/choices.min.js"></script>
+    <script src="assets/vendor/list.js/list.min.js"></script>
 
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>

@@ -1,8 +1,5 @@
 
 
-
-
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -436,8 +433,8 @@
 
                     <!-- Account button logged in state visible on screens > 768px wide (md breakpoint) -->
                     <div class="position-relative" id="accountBtn">
-                        <a class="btn btn-icon btn-lg btn-secondary animate-scale fs-5 fw-normal position-relative rounded-circle ms-2 d-none d-md-inline-flex" href="account-orders.html" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="tooltip-sm text-nowrap"
-                           data-bs-container="#accountBtn" title="Susan Gardner">
+                        <a class="btn btn-icon btn-lg btn-secondary animate-scale fs-5 fw-normal position-relative rounded-circle ms-2 d-none d-md-inline-flex" href="account-orders.jsp" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="tooltip-sm text-nowrap"
+                           data-bs-container="#accountBtn" title="${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}">
                             <span class="animate-target">S</span>
                         </a>
                     </div>
@@ -1604,7 +1601,8 @@
                                 </li>
 
                                 <li class="nav-item me-lg-n1 me-xl-0">
-                                    <a class="nav-link" href="<c:url value='/account'/>">My Account</a>
+                                    <%--    <a class="nav-link" href="<c:url value='/account'/>">My Account</a>--%>
+                                        <a class="nav-link" href="account-info.jsp">My Account</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="admin-signin.html">Admin</a>
@@ -1630,7 +1628,7 @@
                 <a class="d-flex align-items-center text-decoration-none" href="#accountSidebar" data-bs-toggle="offcanvas" aria-controls="accountSidebar">
                     <div class="h5 d-flex justify-content-center align-items-center flex-shrink-0 text-primary bg-primary-subtle lh-1 rounded-circle mb-0" style="width: 3rem; height: 3rem">S</div>
                     <div class="ps-3">
-                        <h5 class="h6 mb-1">Susan Gardner</h5>
+                        <h5 class="h6 mb-1">${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}</h5>
                         <div class="d-flex flex-nowrap fs-sm text-body">
                             <svg class="text-warning flex-shrink-0 me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M1.333 9.667H7.5V16h-5c-.64 0-1.167-.527-1.167-1.167V9.667zm13.334 0v5.167c0 .64-.527 1.167-1.167 1.167h-5V9.667h6.167zM0 5.833V7.5c0 .64.527 1.167 1.167 1.167h.167H7.5v-1-3H1.167C.527 4.667 0 5.193 0 5.833zm14.833-1.166H8.5v3 1h6.167.167C15.473 8.667 16 8.14 16 7.5V5.833c0-.64-.527-1.167-1.167-1.167z"></path><path d="M8 5.363a.5.5 0 0 1-.495-.573C7.752 3.123 9.054-.03 12.219-.03c1.807.001 2.447.977 2.447 1.813 0 1.486-2.069 3.58-6.667 3.58zM12.219.971c-2.388 0-3.295 2.27-3.595 3.377 1.884-.088 3.072-.565 3.756-.971.949-.563 1.287-1.193 1.287-1.595 0-.599-.747-.811-1.447-.811z"></path><path d="M8.001 5.363c-4.598 0-6.667-2.094-6.667-3.58 0-.836.641-1.812 2.448-1.812 3.165 0 4.467 3.153 4.713 4.819a.5.5 0 0 1-.495.573zM3.782.971c-.7 0-1.448.213-1.448.812 0 .851 1.489 2.403 5.042 2.566C7.076 3.241 6.169.971 3.782.971z"></path></svg>                                100 bonuses available
                         </div>
@@ -1675,35 +1673,35 @@
                     <!-- Body (Navigation) -->
                     <div class="offcanvas-body d-block pt-2 pt-lg-4 pb-lg-0">
                         <nav class="list-group list-group-borderless">
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-orders.html">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-orders.jsp">
                                 <i class="ci-shopping-bag fs-base opacity-75 me-2"></i>
                                 Orders
                                 <span class="badge bg-primary rounded-pill ms-auto">1</span>
                             </a>
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-wishlist.html">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-wishlist.jsp">
                                 <i class="ci-heart fs-base opacity-75 me-2"></i>
                                 Wishlist
                             </a>
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-payment.html">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-payment.jsp">
                                 <i class="ci-credit-card fs-base opacity-75 me-2"></i>
                                 Payment methods
                             </a>
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-reviews.html">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-reviews.jsp">
                                 <i class="ci-star fs-base opacity-75 me-2"></i>
                                 My reviews
                             </a>
                         </nav>
                         <h6 class="pt-4 ps-2 ms-1">Manage account</h6>
                         <nav class="list-group list-group-borderless">
-                            <a class="list-group-item list-group-item-action d-flex align-items-center pe-none active" href="/home_electronics/account">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center pe-none active" href="account-info.jsp">
                                 <i class="ci-user fs-base opacity-75 me-2"></i>
                                 Personal info
                             </a>
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-addresses.html">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-addresses.jsp">
                                 <i class="ci-map-pin fs-base opacity-75 me-2"></i>
                                 Addresses
                             </a>
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-notifications.html">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-notifications.jsp">
                                 <i class="ci-bell fs-base opacity-75 mt-1 me-2"></i>
                                 Notifications
                             </a>

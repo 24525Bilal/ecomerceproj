@@ -1,3 +1,8 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -8,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
 
     <!-- SEO Meta Tags -->
-    <title>BuyHive | Account - My Reviews</title>
+    <title>BuyHive | Account - Payment Methods</title>
     <meta name="description" content="BuyHive - Multipurpose E-Commerce Bootstrap HTML Template">
     <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
     <meta name="author" content="Createx Studio">
@@ -28,9 +33,6 @@
     <!-- Font icons -->
     <link rel="preload" href="assets/icons/BuyHive-icons.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="stylesheet" href="assets/icons/BuyHive-icons.min.css">
-
-    <!-- Vendor styles -->
-    <link rel="stylesheet" href="assets/vendor/choices.js/choices.min.css">
 
     <!-- Bootstrap + Theme styles -->
     <link rel="preload" href="assets/css/theme.min.css" as="style">
@@ -297,75 +299,6 @@
     </div>
 
 
-    <!-- Review details offcanvas -->
-    <div class="offcanvas offcanvas-end pb-sm-2 px-sm-2" id="reviewDetails" tabindex="-1" aria-labelledby="reviewDetailsLabel" style="width: 500px">
-
-        <!-- Header -->
-        <div class="offcanvas-header py-3 pt-lg-4">
-            <h4 class="offcanvas-title" id="reviewDetailsLabel">My review</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-
-        <!-- Body -->
-        <div class="offcanvas-body pt-2">
-
-            <!-- Product -->
-            <div class="d-flex align-items-center border-bottom mb-4">
-                <a class="flex-shrink-0" href="shop-product-general-electronics.html">
-            <img src="assets/img/shop/electronics/thumbs/07.png" width="110" alt="MacBook">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Laptop Apple MacBook Pro 13 M2</a>
-                    </h5>
-                    <div class="h6 mb-0">$1,200.00</div>
-                </div>
-            </div>
-
-            <!-- Review -->
-            <div class="d-flex align-items-center justify-content-between mb-3">
-                <div class="d-flex gap-1 fs-sm me-2 me-sm-3">
-                    <i class="ci-star-filled text-warning"></i>
-                    <i class="ci-star-filled text-warning"></i>
-                    <i class="ci-star-filled text-warning"></i>
-                    <i class="ci-star-filled text-warning"></i>
-                    <i class="ci-star-filled text-warning"></i>
-                </div>
-                <div class="fs-sm text-body-secondary">June 17, 2024</div>
-            </div>
-            <div class="d-flex gap-2 pb-2 mb-1">
-                <div class="d-flex fs-sm me-4">
-                    <span class="text-dark-emphasis fw-medium me-2">Color:</span> Space Gray
-                </div>
-                <div class="d-flex fs-sm">
-                    <span class="text-dark-emphasis fw-medium me-2">Model:</span> 256GB
-                </div>
-            </div>
-            <p class="fs-sm">After 6 months of using the laptop, I can say that it fully meets the needs. The main advantage is smooth operation without hangs, the function of scanning fingerprints to unlock the laptop works perfectly, it will be useful for those who
-                work in the office (confidentiality of information is guaranteed).</p>
-            <ul class="list-unstyled fs-sm pb-2 mb-1">
-                <li><span class="text-dark-emphasis fw-medium">Pros:</span> Touchpad, design, weight, performance, battery</li>
-                <li><span class="text-dark-emphasis fw-medium">Cons:</span> Warming up</li>
-            </ul>
-            <div class="nav align-items-center">
-                <div class="nav-link text-body-secondary px-0 ms-auto me-n1 pe-none">
-                    <i class="ci-thumbs-up fs-base me-1"></i> 0
-                </div>
-                <hr class="vr my-2 mx-3">
-                <div class="nav-link text-body-secondary px-0 ms-n1 pe-none">
-                    <i class="ci-thumbs-down fs-base me-1"></i> 0
-                </div>
-            </div>
-
-            <div class="pt-4 mt-2 mt-md-3">
-                <div class="d-flex align-items-center bg-body-tertiary text-dark-emphasis fs-sm rounded p-3 px-sm-4">
-                    <svg class="text-warning flex-shrink-0 me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M1.333 9.667H7.5V16h-5c-.64 0-1.167-.527-1.167-1.167V9.667zm13.334 0v5.167c0 .64-.527 1.167-1.167 1.167h-5V9.667h6.167zM0 5.833V7.5c0 .64.527 1.167 1.167 1.167h.167H7.5v-1-3H1.167C.527 4.667 0 5.193 0 5.833zm14.833-1.166H8.5v3 1h6.167.167C15.473 8.667 16 8.14 16 7.5V5.833c0-.64-.527-1.167-1.167-1.167z"></path><path d="M8 5.363a.5.5 0 0 1-.495-.573C7.752 3.123 9.054-.03 12.219-.03c1.807.001 2.447.977 2.447 1.813 0 1.486-2.069 3.58-6.667 3.58zM12.219.971c-2.388 0-3.295 2.27-3.595 3.377 1.884-.088 3.072-.565 3.756-.971.949-.563 1.287-1.193 1.287-1.595 0-.599-.747-.811-1.447-.811z"></path><path d="M8.001 5.363c-4.598 0-6.667-2.094-6.667-3.58 0-.836.641-1.812 2.448-1.812 3.165 0 4.467 3.153 4.713 4.819a.5.5 0 0 1-.495.573zM3.782.971c-.7 0-1.448.213-1.448.812 0 .851 1.489 2.403 5.042 2.566C7.076 3.241 6.169.971 3.782.971z"></path></svg>                    You have earned <span class="fw-semibold">+100 bonuses</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <!-- Bonuses info modal -->
     <div class="modal fade" id="bonusesModal" tabindex="-1" aria-labelledby="bonusesModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -410,108 +343,82 @@
     </div>
 
 
-    <!-- Review form modal -->
-    <div class="modal fade" id="reviewForm" data-bs-backdrop="static" tabindex="-1" aria-labelledby="reviewFormLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <form class="modal-content needs-validation" novalidate="">
-                <div class="modal-header d-block pb-3">
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="modal-title" id="reviewFormLabel">Leave a review for:</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <a class="flex-shrink-0" href="shop-product-general-electronics.html">
-                <img src="assets/img/shop/electronics/thumbs/10.png" width="110" alt="MacBook">
-              </a>
-                        <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                            <h5 class="d-flex animate-underline mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Apple iPhone 14 Plus 128GB Blue</a>
-                            </h5>
-                            <div class="h6 mb-0">$940.00</div>
+    <!-- Add payment method modal -->
+    <div class="modal fade" id="addPaymentModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="addPaymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addPaymentModalLabel">Add new payment method</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs mb-3" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button type="button" class="nav-link active" id="card-tab" data-bs-toggle="tab" data-bs-target="#card-tab-pane" role="tab" aria-controls="card-tab-pane" aria-selected="true">
+                  <i class="ci-credit-card fs-base opacity-75 ms-n2 me-2"></i>
+                   Card
+                </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button type="button" class="nav-link" id="paypal-tab" data-bs-toggle="tab" data-bs-target="#paypal-tab-pane" role="tab" aria-controls="paypal-tab-pane" aria-selected="false">
+                  <img src="assets/img/payment-methods/paypal-icon.svg" class="me-2" width="14" alt="PayPal">
+                   PayPal
+                </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+
+                        <!-- Card tab -->
+                        <div class="tab-pane fade show active" id="card-tab-pane" role="tabpanel" aria-labelledby="card-tab">
+                            <form class="needs-validation" novalidate="">
+                                <div class="mb-3">
+                                    <label for="card-number" class="form-label">Card number</label>
+                                    <div class="position-relative" data-input-format="{&quot;creditCard&quot;: true}">
+                                        <input type="text" class="form-control form-icon-end" id="card-number" style="background-image: none" placeholder="XXXX XXXX XXXX XXXX" required="">
+                                        <span class="position-absolute d-flex top-50 end-0 translate-middle-y fs-5 text-body-tertiary me-3" data-card-icon=""></span>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="card-name" class="form-label">Name on card</label>
+                                    <input type="text" class="form-control" id="card-name" placeholder="Full name" required="">
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-7">
+                                        <label for="card-expiration" class="form-label">Expiration date</label>
+                                        <input type="text" class="form-control" id="card-expiration" data-input-format="{&quot;date&quot;: true, &quot;datePattern&quot;: [&quot;m&quot;, &quot;y&quot;]}" placeholder="MM/YY" required="">
+                                    </div>
+                                    <div class="col-5">
+                                        <label for="card-cvc" class="form-label">CVC</label>
+                                        <input type="text" class="form-control" id="card-cvc" data-input-format="{&quot;numericOnly&quot;: true, &quot;blocks&quot;: [3]}" placeholder="XXX" required="">
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-3">
+                                    <button type="reset" class="btn btn-secondary w-100" data-bs-dismiss="modal" data-bs-target="#addPaymentModal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary w-100">Add card</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- PayPal tab -->
+                        <div class="tab-pane fade" id="paypal-tab-pane" role="tabpanel" aria-labelledby="paypal-tab">
+                            <form class="needs-validation" novalidate="">
+                                <div class="mb-4">
+                                    <label for="paypal-email" class="form-label">Email associated with PayPal</label>
+                                    <input type="email" class="form-control" id="paypal-email" placeholder="Email address" required="">
+                                    <div class="invalid-feedback">Please provide a valid email address!</div>
+                                </div>
+                                <div class="d-flex gap-3">
+                                    <button type="reset" class="btn btn-secondary w-100" data-bs-dismiss="modal" data-bs-target="#addPaymentModal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary w-100">Continue</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="modal-body pb-3">
-                    <div class="mb-3">
-                        <label for="review-name" class="form-label">Your name</label>
-                        <input type="text" class="form-control" id="review-name" value="Susan Gardner" readonly="">
-                        <div class="invalid-feedback">Please enter your name!</div>
-                        <small class="form-text">Will be displayed on the comment.</small>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Rating <span class="text-danger">*</span></label>
-                        <select class="form-select" data-select="{
-                &quot;placeholderValue&quot;: &quot;Choose rating&quot;,
-                &quot;choices&quot;: [
-                  {
-                    &quot;value&quot;: &quot;&quot;,
-                    &quot;label&quot;: &quot;Choose rating&quot;,
-                    &quot;placeholder&quot;: true
-                  },
-                  {
-                    &quot;value&quot;: &quot;1&quot;,
-                    &quot;label&quot;: &quot;<span class=\&quot;visually-hidden\&quot;>1 star</span>&quot;,
-                    &quot;customProperties&quot;: {
-                      &quot;icon&quot;: &quot;<span class=\&quot;d-flex gap-1 py-1\&quot;><i class=\&quot;ci-star-filled text-warning\&quot;></i></span>&quot;,
-                      &quot;selected&quot;: &quot;1 star&quot;
-                    }
-                  },
-                  {
-                    &quot;value&quot;: &quot;2&quot;,
-                    &quot;label&quot;: &quot;<span class=\&quot;visually-hidden\&quot;>2 stars</span>&quot;,
-                    &quot;customProperties&quot;: {
-                      &quot;icon&quot;: &quot;<span class=\&quot;d-flex gap-1 py-1\&quot;><i class=\&quot;ci-star-filled text-warning\&quot;></i><i class=\&quot;ci-star-filled text-warning\&quot;></i></span>&quot;,
-                      &quot;selected&quot;: &quot;2 stars&quot;
-                    }
-                  },
-                  {
-                    &quot;value&quot;: &quot;3&quot;,
-                    &quot;label&quot;: &quot;<span class=\&quot;visually-hidden\&quot;>3 stars</span>&quot;,
-                    &quot;customProperties&quot;: {
-                      &quot;icon&quot;: &quot;<span class=\&quot;d-flex gap-1 py-1\&quot;><i class=\&quot;ci-star-filled text-warning\&quot;></i><i class=\&quot;ci-star-filled text-warning\&quot;></i><i class=\&quot;ci-star-filled text-warning\&quot;></i></span>&quot;,
-                      &quot;selected&quot;: &quot;3 stars&quot;
-                    }
-                  },
-                  {
-                    &quot;value&quot;: &quot;4&quot;,
-                    &quot;label&quot;: &quot;<span class=\&quot;visually-hidden\&quot;>4 stars</span>&quot;,
-                    &quot;customProperties&quot;: {
-                      &quot;icon&quot;: &quot;<span class=\&quot;d-flex gap-1 py-1\&quot;><i class=\&quot;ci-star-filled text-warning\&quot;></i><i class=\&quot;ci-star-filled text-warning\&quot;></i><i class=\&quot;ci-star-filled text-warning\&quot;></i><i class=\&quot;ci-star-filled text-warning\&quot;></i></span>&quot;,
-                      &quot;selected&quot;: &quot;4 stars&quot;
-                    }
-                  },
-                  {
-                    &quot;value&quot;: &quot;5&quot;,
-                    &quot;label&quot;: &quot;<span class=\&quot;visually-hidden\&quot;>5 stars</span>&quot;,
-                    &quot;customProperties&quot;: {
-                      &quot;icon&quot;: &quot;<span class=\&quot;d-flex gap-1 py-1\&quot;><i class=\&quot;ci-star-filled text-warning\&quot;></i><i class=\&quot;ci-star-filled text-warning\&quot;></i><i class=\&quot;ci-star-filled text-warning\&quot;></i><i class=\&quot;ci-star-filled text-warning\&quot;></i><i class=\&quot;ci-star-filled text-warning\&quot;></i></span>&quot;,
-                      &quot;selected&quot;: &quot;5 stars&quot;
-                    }
-                  }
-                ]
-              }" data-select-template="true" required=""></select>
-                        <div class="invalid-feedback">Please choose your rating!</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="review-text">Review <span class="text-danger">*</span></label>
-                        <textarea class="form-control" rows="4" id="review-text" required=""></textarea>
-                        <div class="invalid-feedback">Please write a review!</div>
-                        <small class="form-text">Your review must be at least 50 characters.</small>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Pros</label>
-                        <input type="text" class="form-select" data-select="{&quot;placeholderValue&quot;: &quot;Type and hit \&quot;Enter\&quot;&quot;}">
-                    </div>
-                    <div>
-                        <label class="form-label">Cons</label>
-                        <input type="text" class="form-select" data-select="{&quot;placeholderValue&quot;: &quot;Type and hit \&quot;Enter\&quot;&quot;}">
-                    </div>
-                </div>
-                <div class="modal-footer flex-nowrap gap-3 border-0 px-4">
-                    <button type="reset" class="btn btn-secondary w-100 m-0" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary w-100 m-0">Submit review</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 
@@ -600,8 +507,8 @@
 
                         <!-- Account button logged in state visible on screens > 768px wide (md breakpoint) -->
                         <div class="position-relative" id="accountBtn">
-                            <a class="btn btn-icon btn-lg btn-secondary animate-scale fs-5 fw-normal position-relative rounded-circle ms-2 d-none d-md-inline-flex" href="account-orders.html" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="tooltip-sm text-nowrap"
-                                data-bs-container="#accountBtn" title="Susan Gardner">
+                            <a class="btn btn-icon btn-lg btn-secondary animate-scale fs-5 fw-normal position-relative rounded-circle ms-2 d-none d-md-inline-flex" href="account-orders.jsp" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="tooltip-sm text-nowrap"
+                               data-bs-container="#accountBtn" title="${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}">
                   <span class="animate-target">S</span>
                 </a>
                         </div>
@@ -1859,13 +1766,13 @@
                                             <li class="dropend">
                                                 <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Shop User</a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="account-orders.html">Orders History</a></li>
-                                                    <li><a class="dropdown-item" href="account-wishlist.html">Wishlist</a></li>
+                                                    <li><a class="dropdown-item" href="account-orders.jsp">Orders History</a></li>
+                                                    <li><a class="dropdown-item" href="account-wishlist.jsp">Wishlist</a></li>
                                                     <li><a class="dropdown-item" href="account-payment.html">Payment Methods</a></li>
-                                                    <li><a class="dropdown-item" href="account-reviews.html">My Reviews</a></li>
+                                                    <li><a class="dropdown-item" href="account-reviews.jsp">My Reviews</a></li>
                                                     <li><a class="dropdown-item" href="account-info.jsp">Personal Info</a></li>
-                                                    <li><a class="dropdown-item" href="account-addresses.html">Addresses</a></li>
-                                                    <li><a class="dropdown-item" href="account-notifications.html">Notifications</a></li>
+                                                    <li><a class="dropdown-item" href="account-addresses.jsp">Addresses</a></li>
+                                                    <li><a class="dropdown-item" href="account-notifications.jsp">Notifications</a></li>
                                                 </ul>
                                             </li>
                                             <li class="dropend">
@@ -1883,7 +1790,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                         <a class="nav-link" href="admin-signin.html">Admin</a>
+                                        <a class="nav-link" href="admin-signin.html">Admin</a>
                                     </li>
 
                                     <li class="nav-item me-lg-n2 me-xl-0">
@@ -1906,7 +1813,7 @@
                     <a class="d-flex align-items-center text-decoration-none" href="#accountSidebar" data-bs-toggle="offcanvas" aria-controls="accountSidebar">
                         <div class="h5 d-flex justify-content-center align-items-center flex-shrink-0 text-primary bg-primary-subtle lh-1 rounded-circle mb-0" style="width: 3rem; height: 3rem">S</div>
                         <div class="ps-3">
-                            <h5 class="h6 mb-1">Susan Gardner</h5>
+                            <h5 class="h6 mb-1">${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}</h5>
                             <div class="d-flex flex-nowrap fs-sm text-body">
                                 <svg class="text-warning flex-shrink-0 me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M1.333 9.667H7.5V16h-5c-.64 0-1.167-.527-1.167-1.167V9.667zm13.334 0v5.167c0 .64-.527 1.167-1.167 1.167h-5V9.667h6.167zM0 5.833V7.5c0 .64.527 1.167 1.167 1.167h.167H7.5v-1-3H1.167C.527 4.667 0 5.193 0 5.833zm14.833-1.166H8.5v3 1h6.167.167C15.473 8.667 16 8.14 16 7.5V5.833c0-.64-.527-1.167-1.167-1.167z"></path><path d="M8 5.363a.5.5 0 0 1-.495-.573C7.752 3.123 9.054-.03 12.219-.03c1.807.001 2.447.977 2.447 1.813 0 1.486-2.069 3.58-6.667 3.58zM12.219.971c-2.388 0-3.295 2.27-3.595 3.377 1.884-.088 3.072-.565 3.756-.971.949-.563 1.287-1.193 1.287-1.595 0-.599-.747-.811-1.447-.811z"></path><path d="M8.001 5.363c-4.598 0-6.667-2.094-6.667-3.58 0-.836.641-1.812 2.448-1.812 3.165 0 4.467 3.153 4.713 4.819a.5.5 0 0 1-.495.573zM3.782.971c-.7 0-1.448.213-1.448.812 0 .851 1.489 2.403 5.042 2.566C7.076 3.241 6.169.971 3.782.971z"></path></svg>                                100 bonuses available
                             </div>
@@ -1933,7 +1840,7 @@
                             <div class="d-flex align-items-center">
                                 <div class="h5 d-flex justify-content-center align-items-center flex-shrink-0 text-primary bg-primary-subtle lh-1 rounded-circle mb-0" style="width: 3rem; height: 3rem">S</div>
                                 <div class="min-w-0 ps-3">
-                                    <h5 class="h6 mb-1">Susan Gardner</h5>
+                                    <h5 class="h6 mb-1">${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}</h5>
                                     <div class="nav flex-nowrap text-nowrap min-w-0">
                                         <a class="nav-link animate-underline text-body p-0" href="#bonusesModal" data-bs-toggle="modal">
                         <svg class="text-warning flex-shrink-0 me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M1.333 9.667H7.5V16h-5c-.64 0-1.167-.527-1.167-1.167V9.667zm13.334 0v5.167c0 .64-.527 1.167-1.167 1.167h-5V9.667h6.167zM0 5.833V7.5c0 .64.527 1.167 1.167 1.167h.167H7.5v-1-3H1.167C.527 4.667 0 5.193 0 5.833zm14.833-1.166H8.5v3 1h6.167.167C15.473 8.667 16 8.14 16 7.5V5.833c0-.64-.527-1.167-1.167-1.167z"></path><path d="M8 5.363a.5.5 0 0 1-.495-.573C7.752 3.123 9.054-.03 12.219-.03c1.807.001 2.447.977 2.447 1.813 0 1.486-2.069 3.58-6.667 3.58zM12.219.971c-2.388 0-3.295 2.27-3.595 3.377 1.884-.088 3.072-.565 3.756-.971.949-.563 1.287-1.193 1.287-1.595 0-.599-.747-.811-1.447-.811z"></path><path d="M8.001 5.363c-4.598 0-6.667-2.094-6.667-3.58 0-.836.641-1.812 2.448-1.812 3.165 0 4.467 3.153 4.713 4.819a.5.5 0 0 1-.495.573zM3.782.971c-.7 0-1.448.213-1.448.812 0 .851 1.489 2.403 5.042 2.566C7.076 3.241 6.169.971 3.782.971z"></path></svg>
@@ -1949,20 +1856,20 @@
                         <!-- Body (Navigation) -->
                         <div class="offcanvas-body d-block pt-2 pt-lg-4 pb-lg-0">
                             <nav class="list-group list-group-borderless">
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-orders.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-orders.jsp">
                     <i class="ci-shopping-bag fs-base opacity-75 me-2"></i>
                     Orders
                     <span class="badge bg-primary rounded-pill ms-auto">1</span>
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-wishlist.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-wishlist.jsp">
                     <i class="ci-heart fs-base opacity-75 me-2"></i>
                     Wishlist
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-payment.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center pe-none active" href="account-payment.html">
                     <i class="ci-credit-card fs-base opacity-75 me-2"></i>
                     Payment methods
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center pe-none active" href="account-reviews.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-reviews.jsp">
                     <i class="ci-star fs-base opacity-75 me-2"></i>
                     My reviews
                   </a>
@@ -1973,11 +1880,11 @@
                     <i class="ci-user fs-base opacity-75 me-2"></i>
                     Personal info
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-addresses.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-addresses.jsp">
                     <i class="ci-map-pin fs-base opacity-75 me-2"></i>
                     Addresses
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-notifications.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-notifications.jsp">
                     <i class="ci-bell fs-base opacity-75 mt-1 me-2"></i>
                     Notifications
                   </a>
@@ -1994,7 +1901,7 @@
                   </a>
                             </nav>
                             <nav class="list-group list-group-borderless pt-3">
-                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-signin.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center" href="logout">
                     <i class="ci-log-out fs-base opacity-75 me-2"></i>
                     Log out
                   </a>
@@ -2004,182 +1911,63 @@
                 </aside>
 
 
-                <!-- Reviews content -->
+                <!-- Payment methods content -->
                 <div class="col-lg-9">
                     <div class="ps-lg-3 ps-xl-0">
 
-                        <!-- Page title + Sorting select -->
-                        <div class="row align-items-center pb-2 mb-sm-1">
-                            <div class="col-sm-6 col-md-7 col-xxl-8 mb-3 mb-md-0">
-                                <h1 class="h2 me-3 mb-0">My reviews</h1>
-                            </div>
-                            <div class="col-sm-6 col-md-5 col-xxl-4">
-                                <select class="form-select" data-select="{&quot;removeItemButton&quot;: false}" aria-label="Wishlist sorting">
-                    <option value="products-reviews">Products and reviews</option>
-                    <option value="reviews">My reviews</option>
-                    <option value="products">Products awaiting reviews</option>
-                  </select>
-                            </div>
-                        </div>
+                        <!-- Page title -->
+                        <h1 class="h2 pb-2 pb-md-3">Payment methods</h1>
 
-
-                        <!-- Review items (List) -->
-
-                        <!-- Item -->
-                        <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
-                            <div class="nav flex-nowrap position-relative align-items-center">
-                                <img src="assets/img/shop/electronics/thumbs/11.png" class="d-block my-xl-1" width="64" alt="Image">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Apple iPad 10.2" 2021 Wi-Fi 64 GB Space Gray (MK2K3RK/A)</a>
-                            </div>
-                            <div class="d-flex h6 fs-sm pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="flex-shrink-0 d-md-none" style="width: 64px"></div>
-                                <svg class="text-warning flex-shrink-0 me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M1.333 9.667H7.5V16h-5c-.64 0-1.167-.527-1.167-1.167V9.667zm13.334 0v5.167c0 .64-.527 1.167-1.167 1.167h-5V9.667h6.167zM0 5.833V7.5c0 .64.527 1.167 1.167 1.167h.167H7.5v-1-3H1.167C.527 4.667 0 5.193 0 5.833zm14.833-1.166H8.5v3 1h6.167.167C15.473 8.667 16 8.14 16 7.5V5.833c0-.64-.527-1.167-1.167-1.167z"></path><path d="M8 5.363a.5.5 0 0 1-.495-.573C7.752 3.123 9.054-.03 12.219-.03c1.807.001 2.447.977 2.447 1.813 0 1.486-2.069 3.58-6.667 3.58zM12.219.971c-2.388 0-3.295 2.27-3.595 3.377 1.884-.088 3.072-.565 3.756-.971.949-.563 1.287-1.193 1.287-1.595 0-.599-.747-.811-1.447-.811z"></path><path d="M8.001 5.363c-4.598 0-6.667-2.094-6.667-3.58 0-.836.641-1.812 2.448-1.812 3.165 0 4.467 3.153 4.713 4.819a.5.5 0 0 1-.495.573zM3.782.971c-.7 0-1.448.213-1.448.812 0 .851 1.489 2.403 5.042 2.566C7.076 3.241 6.169.971 3.782.971z"></path></svg>                                +100 bonuses for a review
-                            </div>
-                            <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="d-md-none" style="width: 64px"></div>
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#reviewForm">Leave a review</button>
-                            </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
-                            <div class="nav flex-nowrap position-relative align-items-center">
-                                <img src="assets/img/shop/electronics/thumbs/12.png" class="d-block my-xl-1" width="64" alt="Image">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Laptop Apple MacBook Pro 13 M2</a>
-                            </div>
-                            <div class="position-relative d-flex align-items-center text-decoration-none min-w-0 pt-1 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="flex-shrink-0 d-md-none" style="width: 64px"></div>
-                                <div class="h6 fs-sm text-body-secondary text-truncate p-0 me-3 me-sm-4 mb-0">+100 bonuses earned</div>
-                                <div class="d-flex gap-1 fs-sm me-2 me-sm-3">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
+                        <!-- Payment methods (Grid) -->
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 g-md-4 g-lg-3 g-xl-4">
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="card-body pb-3">
+                                        <div class="d-flex align-items-start justify-content-between mb-4">
+                                            <img src="assets/img/payment-methods/mastercard.svg" class="m-n3" width="100" alt="Mastercard">
+                                            <span class="badge text-bg-info rounded-pill">Primary</span>
+                                        </div>
+                                        <div class="h6 mb-1">**** **** **** 8341</div>
+                                        <div class="text-danger fs-xs">Expired 05/24</div>
+                                    </div>
+                                    <div class="card-footer d-flex gap-3 bg-transparent border-0 pt-0 pb-4">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Remove</button>
+                                    </div>
                                 </div>
-                                <a class="btn btn-icon btn-ghost btn-secondary stretched-link border-0" href="#reviewDetails" data-bs-toggle="offcanvas" aria-controls="reviewDetails" aria-label="Show review details">
-                    <i class="ci-chevron-right fs-lg"></i>
-                  </a>
                             </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
-                            <div class="nav flex-nowrap position-relative align-items-center">
-                                <img src="assets/img/shop/electronics/thumbs/13.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Razer Opus X Mercury Headphones (RZ04-03760200-R3M1)</a>
-                            </div>
-                            <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="d-md-none" style="width: 64px"></div>
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#reviewForm">Leave a review</button>
-                            </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
-                            <div class="nav flex-nowrap position-relative align-items-center">
-                                <img src="assets/img/shop/electronics/thumbs/14.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">3D virtual reality glasses VR Shinecon G10 for smartphones with a large screen</a>
-                            </div>
-                            <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="d-md-none" style="width: 64px"></div>
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#reviewForm">Leave a review</button>
-                            </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
-                            <div class="nav flex-nowrap position-relative align-items-center">
-                                <img src="assets/img/shop/electronics/thumbs/15.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Apple iPad Pro M2 2022 64 GB Space Gray</a>
-                            </div>
-                            <div class="d-flex h6 fs-sm pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="flex-shrink-0 d-md-none" style="width: 64px"></div>
-                                <svg class="text-warning flex-shrink-0 me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M1.333 9.667H7.5V16h-5c-.64 0-1.167-.527-1.167-1.167V9.667zm13.334 0v5.167c0 .64-.527 1.167-1.167 1.167h-5V9.667h6.167zM0 5.833V7.5c0 .64.527 1.167 1.167 1.167h.167H7.5v-1-3H1.167C.527 4.667 0 5.193 0 5.833zm14.833-1.166H8.5v3 1h6.167.167C15.473 8.667 16 8.14 16 7.5V5.833c0-.64-.527-1.167-1.167-1.167z"></path><path d="M8 5.363a.5.5 0 0 1-.495-.573C7.752 3.123 9.054-.03 12.219-.03c1.807.001 2.447.977 2.447 1.813 0 1.486-2.069 3.58-6.667 3.58zM12.219.971c-2.388 0-3.295 2.27-3.595 3.377 1.884-.088 3.072-.565 3.756-.971.949-.563 1.287-1.193 1.287-1.595 0-.599-.747-.811-1.447-.811z"></path><path d="M8.001 5.363c-4.598 0-6.667-2.094-6.667-3.58 0-.836.641-1.812 2.448-1.812 3.165 0 4.467 3.153 4.713 4.819a.5.5 0 0 1-.495.573zM3.782.971c-.7 0-1.448.213-1.448.812 0 .851 1.489 2.403 5.042 2.566C7.076 3.241 6.169.971 3.782.971z"></path></svg>                                +86 bonuses for a review
-                            </div>
-                            <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="d-md-none" style="width: 64px"></div>
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#reviewForm">Leave a review</button>
-                            </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
-                            <div class="nav flex-nowrap position-relative align-items-center">
-                                <img src="assets/img/shop/electronics/thumbs/16.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Mobile phone Apple iPhone 14 256GB Starlight</a>
-                            </div>
-                            <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="d-md-none" style="width: 64px"></div>
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#reviewForm">Leave a review</button>
-                            </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
-                            <div class="nav flex-nowrap position-relative align-items-center">
-                                <img src="assets/img/shop/electronics/thumbs/17.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Power Bank PBS 10000 mAh Black</a>
-                            </div>
-                            <div class="position-relative d-flex align-items-center text-decoration-none min-w-0 pt-1 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="flex-shrink-0 d-md-none" style="width: 64px"></div>
-                                <div class="d-flex gap-1 fs-sm me-2 me-sm-3">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star text-body-tertiary opacity-75"></i>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="card-body pb-3">
+                                        <div class="d-flex align-items-start justify-content-between mb-4">
+                                            <img src="assets/img/payment-methods/visa-light-mode.svg" class="d-none-dark m-n3" width="100" alt="Visa">
+                                            <img src="assets/img/payment-methods/visa-dark-mode.svg" class="d-none d-block-dark m-n3" width="100" alt="Visa">
+                                            <div class="nav animate-underline">
+                                                <a class="nav-link animate-target fs-xs p-0" href="#!">Set as primary</a>
+                                            </div>
+                                        </div>
+                                        <div class="h6 mb-1">**** **** **** 1276</div>
+                                        <div class="text-body fs-xs">Expiration 01/27</div>
+                                    </div>
+                                    <div class="card-footer d-flex gap-3 bg-transparent border-0 pt-0 pb-4">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Remove</button>
+                                    </div>
                                 </div>
-                                <a class="btn btn-icon btn-ghost btn-secondary stretched-link border-0" href="#reviewDetails" data-bs-toggle="offcanvas" aria-controls="reviewDetails" aria-label="Show review details">
-                    <i class="ci-chevron-right fs-lg"></i>
-                  </a>
+                            </div>
+                            <div class="col">
+                                <div class="card border-0 h-100">
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 border border-dashed border-secondary border-opacity-25 rounded d-none-dark"></span>
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 border border-dashed border-light border-opacity-25 rounded d-none d-block-dark"></span>
+                                    <div class="card-body position-relative z-2 nav align-items-center justify-content-center py-5">
+                                        <a class="nav-link animate-underline stretched-link min-w-0 fs-base px-0" href="#addPaymentModal" data-bs-toggle="modal">
+                        <i class="ci-plus fs-lg ms-n2 me-2"></i>
+                        <span class="animate-target text-truncate">Add payment method</span>
+                      </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Item -->
-                        <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
-                            <div class="nav flex-nowrap position-relative align-items-center">
-                                <img src="assets/img/shop/electronics/thumbs/18.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Apple iPhone 14 128GB Blue</a>
-                            </div>
-                            <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="d-md-none" style="width: 64px"></div>
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#reviewForm">Leave a review</button>
-                            </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
-                            <div class="nav flex-nowrap position-relative align-items-center">
-                                <img src="assets/img/shop/electronics/thumbs/19.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">VRB01 Camera Nikon Max</a>
-                            </div>
-                            <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
-                                <div class="d-md-none" style="width: 64px"></div>
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#reviewForm">Leave a review</button>
-                            </div>
-                        </div>
-
-                        <!-- Pagination -->
-                        <nav class="pt-3 pb-2 pb-sm-0 mt-2 mt-md-3" aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item active" aria-current="page">
-                                    <span class="page-link">
-                      1
-                      <span class="visually-hidden">(current)</span>
-                                    </span>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">4</a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -2436,7 +2224,7 @@
 
 
     <!-- Vendor scripts -->
-    <script src="assets/vendor/choices.js/choices.min.js"></script>
+    <script src="assets/vendor/cleave.js/cleave.min.js"></script>
 
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
