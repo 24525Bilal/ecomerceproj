@@ -432,7 +432,7 @@
                         <div class="position-relative" id="accountBtn">
                             <a class="btn btn-icon btn-lg btn-secondary animate-scale fs-5 fw-normal position-relative rounded-circle ms-2 d-none d-md-inline-flex" href="account-orders.jsp" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="tooltip-sm text-nowrap"
                                data-bs-container="#accountBtn" title="${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}">
-                  <span class="animate-target">S</span>
+                  <span class="animate-target">${sessionScope.userDetails.firstName.substring(0,1)}</span>
                 </a>
                         </div>
 
@@ -1735,7 +1735,7 @@
                 </div>
                 <div class="offcanvas-header border-top py-3 mt-3 d-md-none">
                     <a class="d-flex align-items-center text-decoration-none" href="#accountSidebar" data-bs-toggle="offcanvas" aria-controls="accountSidebar">
-                        <div class="h5 d-flex justify-content-center align-items-center flex-shrink-0 text-primary bg-primary-subtle lh-1 rounded-circle mb-0" style="width: 3rem; height: 3rem">S</div>
+                        <div class="h5 d-flex justify-content-center align-items-center flex-shrink-0 text-primary bg-primary-subtle lh-1 rounded-circle mb-0" style="width: 3rem; height: 3rem">${sessionScope.userDetails.firstName.substring(0,1)}</div>
                         <div class="ps-3">
                             <h5 class="h6 mb-1">${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}</h5>
                             <div class="d-flex flex-nowrap fs-sm text-body">
@@ -1762,7 +1762,7 @@
                         <!-- Header -->
                         <div class="offcanvas-header d-lg-block py-3 p-lg-0">
                             <div class="d-flex align-items-center">
-                                <div class="h5 d-flex justify-content-center align-items-center flex-shrink-0 text-primary bg-primary-subtle lh-1 rounded-circle mb-0" style="width: 3rem; height: 3rem">S</div>
+                                <div class="h5 d-flex justify-content-center align-items-center flex-shrink-0 text-primary bg-primary-subtle lh-1 rounded-circle mb-0" style="width: 3rem; height: 3rem">${sessionScope.userDetails.firstName.substring(0,1)}</div>
                                 <div class="min-w-0 ps-3">
                                     <h5 class="h6 mb-1">${sessionScope.userDetails.firstName} ${sessionScope.userDetails.lastName}</h5>
                                     <div class="nav flex-nowrap text-nowrap min-w-0">
