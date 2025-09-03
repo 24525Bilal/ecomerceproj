@@ -41,6 +41,26 @@ public class AuthFilter implements Filter {
             return;
         }
 
+        // --- Admin-only pages ---
+
+        boolean isAdminPage = path.contains("account-marketplace-dashboard.html")
+                || path.contains("account-marketplace-products.html")
+                || path.contains("account-marketplace-orders.html")
+                || path.contains("account-marketplace-sales.html");
+
+
+        if (isAdminPage) {
+            if (session != null && session.getAttribute("adminEmail") != null) {
+                // Admin is logged in, allow access
+                chain.doFilter(request, response);
+            } else {
+                // Not an admin or not logged in, redirect to admin login
+                res.sendRedirect(contextPath + "/admin-signin.html?error=auth");
+            }
+            return;
+        }
+
+
         // For all other pages, check if the user is logged in.
         if (session == null || session.getAttribute("userEmail") == null) {
             String requestedURI = req.getRequestURI();

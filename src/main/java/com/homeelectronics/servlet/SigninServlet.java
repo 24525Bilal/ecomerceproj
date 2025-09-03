@@ -69,8 +69,6 @@ public class SigninServlet extends HttpServlet {
                             session.setAttribute("greetingMessage", greetingMessage);
 
 
-
-
                         }
                     }
                 } catch (SQLException e) {
@@ -79,12 +77,10 @@ public class SigninServlet extends HttpServlet {
                 }
 
 
-
-
                 // adding cookie
                 Cookie loginCookie = new Cookie("userEmail", email);
                 loginCookie.setHttpOnly(true);   //
-                loginCookie.setMaxAge(30 * 60);  // 30 mins(true);     // only over HTTPS
+                loginCookie.setMaxAge(365 * 24 * 60 * 60);  // 1 year;     // only over HTTPS
                 response.addCookie(loginCookie);
 
 

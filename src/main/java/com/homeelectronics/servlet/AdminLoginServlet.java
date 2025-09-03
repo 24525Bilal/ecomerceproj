@@ -24,6 +24,16 @@ public class AdminLoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if (ADMIN_EMAIL.equals(email) && ADMIN_PASSWORD.equals(password)) {
+            // ✅ valid → Create session and redirect to dashboard
+            HttpSession session = request.getSession();
+            session.setAttribute("adminEmail", email); // Use a distinct attribute for admins
+
+            // 🍪 Add a cookie for the admin
+            Cookie adminCookie = new Cookie("adminEmail", email);
+            adminCookie.setHttpOnly(true);
+            adminCookie.setMaxAge(365 * 24 * 60 * 60); // Set cookie for 1 year
+            response.addCookie(adminCookie);
+
             // ✅ valid → redirect to dashboard
             response.sendRedirect("account-marketplace-dashboard.html");
         } else {

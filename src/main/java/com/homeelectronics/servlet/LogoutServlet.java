@@ -18,10 +18,15 @@ public class LogoutServlet extends HttpServlet {
             session.invalidate();
         }
 
-        // Delete cookie
+        // Delete user cookie
         Cookie cookie = new Cookie("userEmail", "");
         cookie.setMaxAge(0);
         response.addCookie(cookie);
+
+        // Delete admin cookie
+        Cookie adminCookie = new Cookie("adminEmail", "");
+        adminCookie.setMaxAge(0);
+        response.addCookie(adminCookie);
 
         // Redirect to login page
         response.sendRedirect("home-electronics.html");

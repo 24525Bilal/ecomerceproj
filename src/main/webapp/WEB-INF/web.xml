@@ -7,6 +7,10 @@
 
     <display-name>Archetype Created Web Application</display-name>
 
+    <session-config>
+        <session-timeout>-1</session-timeout>
+    </session-config>
+
     <welcome-file-list>
         <welcome-file>home-electronics.html</welcome-file>
     </welcome-file-list>
