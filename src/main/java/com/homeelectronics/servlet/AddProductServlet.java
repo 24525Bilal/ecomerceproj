@@ -91,7 +91,7 @@ public class AddProductServlet extends HttpServlet {
                         productDir.mkdirs();
                     }
 
-                    System.out.println("--- Saving images for product " + productId + " to: " + productSpecificPath + " ---");
+
 
                     List<String> imagePathsForDb = new ArrayList<>();
                     for (Part filePart : fileParts) {
