@@ -1462,81 +1462,135 @@
     </div>
   </div>
 </div>
-<!--edit prodcut form-->
+<!-- Edit Product Modal -->
 <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+
+          <!-- Product Name -->
+          <div class="mb-3">
+            <label class="form-label fw-medium">Product Name</label>
+            <input type="text" class="form-control rounded-pill" value="iPhone 14 Plus">
+          </div>
+
+          <!-- Product Description -->
+          <div class="mb-3">
+            <label class="form-label fw-medium">Description</label>
+            <textarea class="form-control" rows="4">Latest Apple iPhone with advanced features</textarea>
+          </div>
+
+          <!-- Price, Category & Stock -->
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-medium">Price ($)</label>
+              <input type="number" class="form-control rounded-pill" value="999">
             </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label fw-medium">Product Title</label>
-                        <input type="text" class="form-control rounded-pill" value="iPhone 14 Plus">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label fw-medium">Product Price ($)</label>
-                        <input type="number" class="form-control rounded-pill" value="999">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label fw-medium">Product Images</label>
-                        <input type="file" class="form-control" multiple>
-                        <small class="text-muted">Current images already uploaded</small>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label fw-medium">Color Variants</label>
-                        <input type="text" class="form-control rounded-pill" value="Black, White, Blue">
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="form-label fw-medium">Size Variants</label>
-                        <input type="text" class="form-control rounded-pill" value="6.1&quot;, 6.7&quot;">
-                    </div>
-
-                    <h6 class="mt-3 mb-2">Tech Specs</h6>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Processor</label>
-                            <input type="text" class="form-control rounded-pill" value="6-core">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Chip</label>
-                            <input type="text" class="form-control rounded-pill" value="A15 Bionic chip">
-                        </div>
-                    </div>
-
-                    <h6 class="mt-3 mb-2">Display</h6>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Diagonal</label>
-                            <input type="text" class="form-control rounded-pill" value="6.1&quot;">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Screen Type</label>
-                            <input type="text" class="form-control rounded-pill" value="Super Retina XDR">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Resolution</label>
-                            <input type="text" class="form-control rounded-pill" value="2778×1284px at 458ppi">
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <label class="form-label">Refresh Rate</label>
-                            <input type="text" class="form-control rounded-pill" value="120Hz">
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-dark rounded-pill px-4">
-                        <i class="ci-check me-2"></i> Save Changes
-                    </button>
-                </form>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-medium">Category</label>
+              <select class="form-select rounded-pill">
+                <option>Select category</option>
+                <option value="1" selected>Mockups</option>
+                <option value="2">Templates</option>
+                <option value="3">Icons</option>
+              </select>
             </div>
-        </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-medium">Stock Quantity</label>
+              <input type="number" class="form-control rounded-pill" value="50">
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="mb-3">
+            <label class="form-label fw-medium">Tags</label>
+            <input type="text" class="form-control rounded-pill" value="smartphone, apple, ios">
+          </div>
+
+          <!-- Product Images -->
+          <div class="mb-3">
+            <label class="form-label fw-medium">Product Images</label>
+            <input type="file" class="form-control" multiple>
+            <small class="text-muted">Current images already uploaded</small>
+          </div>
+
+          <!-- Color Variants -->
+          <div class="mb-3">
+            <label class="form-label fw-medium">Color Variants</label>
+            <input type="text" class="form-control rounded-pill" value="Black, White, Blue">
+          </div>
+
+          <!-- Size Variants -->
+          <div class="mb-4">
+            <label class="form-label fw-medium">Size Variants</label>
+            <input type="text" class="form-control rounded-pill" value="64GB, 128GB, 256GB">
+          </div>
+
+          <!-- Product Details Section -->
+          <h5 class="mt-4 mb-3">Product Details</h5>
+
+          <!-- General Specs -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Model</label>
+              <input type="text" class="form-control rounded-pill" value="iPhone 14 Plus">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Manufacturer</label>
+              <input type="text" class="form-control rounded-pill" value="Apple Inc.">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Finish</label>
+              <input type="text" class="form-control rounded-pill" value="Ceramic, Glass, Aluminium">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Capacity</label>
+              <input type="text" class="form-control rounded-pill" value="128GB">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Chip</label>
+              <input type="text" class="form-control rounded-pill" value="A15 Bionic chip">
+            </div>
+          </div>
+
+          <!-- Display Specs -->
+          <h6 class="mt-3 mb-2">Display</h6>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Diagonal</label>
+              <input type="text" class="form-control rounded-pill" value="6.1&quot;">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Screen Type</label>
+              <input type="text" class="form-control rounded-pill" value="Super Retina XDR">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Resolution</label>
+              <input type="text" class="form-control rounded-pill" value="2778×1284px at 458ppi">
+            </div>
+            <div class="col-md-6 mb-4">
+              <label class="form-label">Refresh Rate</label>
+              <input type="text" class="form-control rounded-pill" value="120Hz">
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-dark rounded-pill px-4">
+              <i class="ci-check me-2"></i> Save Changes
+            </button>
+          </div>
+
+        </form>
+      </div>
     </div>
+  </div>
 </div>
     <!-- Vendor scripts -->
     <script src="assets/vendor/choices.js/choices.min.js"></script>
