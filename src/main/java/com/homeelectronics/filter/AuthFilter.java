@@ -11,6 +11,7 @@ public class AuthFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
+        System.out.println("AuthFilter is processing: " + ((HttpServletRequest) request).getRequestURI());
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
@@ -45,7 +46,7 @@ public class AuthFilter implements Filter {
 
         // --- Admin-only pages ---
 
-        boolean isAdminPage = path.contains("account-marketplace-dashboard.html")
+        boolean isAdminPage = path.contains("account-marketplace-dashboard.jsp")
                 || path.contains("account-marketplace-products.html")
                 || path.contains("account-marketplace-orders.html")
                 || path.contains("account-marketplace-purchases.html")

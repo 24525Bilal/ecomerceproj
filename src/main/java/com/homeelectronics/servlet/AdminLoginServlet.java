@@ -1,7 +1,7 @@
 package com.homeelectronics.servlet;
 
 import java.io.IOException;
-import jakarta.servlet.*;
+
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import jakarta.servlet.ServletException;
@@ -41,12 +41,12 @@ public class AdminLoginServlet extends HttpServlet {
                 response.sendRedirect(requestedURI);
             } else {
                 // If no specific URL was requested, redirect to the default admin dashboard
-                response.sendRedirect("account-marketplace-dashboard.html");
+                response.sendRedirect("account-marketplace-dashboard.jsp");
             }
 
 
 //            // ✅ valid → redirect to dashboard
-//            response.sendRedirect("account-marketplace-dashboard.html");
+//            response.sendRedirect("account-marketplace-dashboard.jsp");
         } else {
             // ❌ invalid → redirect with error flag
             response.sendRedirect("admin-signin.html?error=invalid");
