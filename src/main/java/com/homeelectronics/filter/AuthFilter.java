@@ -37,7 +37,8 @@ public class AuthFilter implements Filter {
                 || uri.endsWith("home-electronics.html") // Allow homepage
                 || uri.startsWith(req.getContextPath() + "/assets/") // Allow CSS, JS, images
                 || uri.endsWith("admin-signin.html")
-                || uri.endsWith("adminlogin");
+                || uri.endsWith("adminlogin")
+                || uri.endsWith("logout");
         // Allow public pages and assets to pass through without a session.
         if (isPublicPage) {
             chain.doFilter(request, response);
