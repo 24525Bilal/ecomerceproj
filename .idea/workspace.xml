@@ -13,10 +13,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/AdminLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/AdminLoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/SigninServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/SigninServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home-electronics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home-electronics.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +216,7 @@
       <workItem from="1756220698271" duration="4246000" />
       <workItem from="1756232027052" duration="8061000" />
       <workItem from="1756386588097" duration="10479000" />
-      <workItem from="1756645472038" duration="100347000" />
+      <workItem from="1756645472038" duration="104028000" />
     </task>
     <servers />
   </component>

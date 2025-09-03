@@ -34,8 +34,19 @@ public class AdminLoginServlet extends HttpServlet {
             adminCookie.setMaxAge(365 * 24 * 60 * 60); // Set cookie for 1 year
             response.addCookie(adminCookie);
 
-            // ✅ valid → redirect to dashboard
-            response.sendRedirect("account-marketplace-dashboard.html");
+            //  redirection logic
+            String requestedURI = (String) session.getAttribute("adminRequestedURI");
+            if (requestedURI != null && !requestedURI.isEmpty()) {
+                session.removeAttribute("adminRequestedURI"); // Clean up the session attribute
+                response.sendRedirect(requestedURI);
+            } else {
+                // If no specific URL was requested, redirect to the default admin dashboard
+                response.sendRedirect("account-marketplace-dashboard.html");
+            }
+
+
+//            // ✅ valid → redirect to dashboard
+//            response.sendRedirect("account-marketplace-dashboard.html");
         } else {
             // ❌ invalid → redirect with error flag
             response.sendRedirect("admin-signin.html?error=invalid");

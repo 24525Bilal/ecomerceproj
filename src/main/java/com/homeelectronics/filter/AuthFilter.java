@@ -28,13 +28,15 @@ public class AuthFilter implements Filter {
 
 
         // EDIT: Updated the list of public pages to include the homepage and assets.
-        boolean isPublicPage = uri.endsWith("account-signin.html")
+        boolean isPublicPage = path.equals("/")
+                || uri.endsWith("account-signin.html")
                 || uri.endsWith("account-signup.html")
                 || uri.endsWith("signin")
                 || uri.endsWith("signup")
                 || uri.endsWith("home-electronics.html") // Allow homepage
-                || uri.startsWith(req.getContextPath() + "/assets/"); // Allow CSS, JS, images
-
+                || uri.startsWith(req.getContextPath() + "/assets/") // Allow CSS, JS, images
+                || uri.endsWith("admin-signin.html")
+                || uri.endsWith("adminlogin");
         // Allow public pages and assets to pass through without a session.
         if (isPublicPage) {
             chain.doFilter(request, response);
@@ -54,6 +56,10 @@ public class AuthFilter implements Filter {
                 // Admin is logged in, allow access
                 chain.doFilter(request, response);
             } else {
+                // Not an admin or not logged in, SAVE the requested URI
+                String requestedURI = req.getRequestURI();
+                // Use a separate session attribute for admin redirects
+                req.getSession().setAttribute("adminRequestedURI", requestedURI);
                 // Not an admin or not logged in, redirect to admin login
                 res.sendRedirect(contextPath + "/admin-signin.html?error=auth");
             }
