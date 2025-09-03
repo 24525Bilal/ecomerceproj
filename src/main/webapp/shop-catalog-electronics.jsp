@@ -1,3 +1,9 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.homeelectronics.model.Product" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -8,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
 
     <!-- SEO Meta Tags -->
-    <title>BuyHive | Help Topics v.1</title>
+    <title>BuyHive | Electronics Store - Catalog</title>
     <meta name="description" content="BuyHive - Multipurpose E-Commerce Bootstrap HTML Template">
     <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
     <meta name="author" content="Createx Studio">
@@ -30,7 +36,8 @@
     <link rel="stylesheet" href="assets/icons/BuyHive-icons.min.css">
 
     <!-- Vendor styles -->
-    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendor/choices.js/choices.min.css">
+    <link rel="stylesheet" href="assets/vendor/nouislider/nouislider.min.css">
 
     <!-- Bootstrap + Theme styles -->
     <link rel="preload" href="assets/css/theme.min.css" as="style">
@@ -298,7 +305,7 @@
 
 
     <!-- Navigation bar (Page header) -->
-    <header class="navbar navbar-expand-lg navbar-dark bg-dark d-block z-fixed p-0" data-sticky-navbar="{&quot;offset&quot;: 200}">
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark d-block z-fixed p-0" data-sticky-navbar="{&quot;offset&quot;: 500}">
         <div class="container d-block py-1 py-lg-3" data-bs-theme="dark">
             <div class="navbar-stuck-hide pt-1"></div>
             <div class="row flex-nowrap align-items-center g-0">
@@ -1525,164 +1532,42 @@
   </a>
 </li>
                                     <li class="nav-item dropdown position-static me-lg-n1 me-xl-0">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Shop</a>
-                                        <div class="dropdown-menu rounded-4 p-4">
-                                            <div class="d-flex flex-column flex-lg-row gap-4">
-                                                <div style="min-width: 190px">
-                                                    <div class="h6 mb-2">Electronics Store</div>
-                                                    <ul class="nav flex-column gap-2 mt-0">
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-categories-electronics.jsp">Categories Page</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Catalog with Side Filters</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-general-electronics.html">Product General Info</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-details-electronics.html">Product Details</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-reviews-electronics.html">Product Reviews</a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="h6 pt-4 mb-2">Fashion Store</div>
-                                                    <ul class="nav flex-column gap-2 mt-0">
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-fashion.html">Catalog with Side Filters</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-fashion.html">Product Page</a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="h6 pt-4 mb-2">Furniture Store</div>
-                                                    <ul class="nav flex-column gap-2 mt-0">
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-furniture.html">Catalog with Top Filters</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-furniture.html">Product Page</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div style="min-width: 190px">
-                                                    <div class="h6 mb-2">Grocery Store</div>
-                                                    <ul class="nav flex-column gap-2 mt-0">
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-grocery.html">Catalog with Side Filters</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-grocery.html">Product Page</a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="h6 pt-4 mb-2">Marketplace</div>
-                                                    <ul class="nav flex-column gap-2 mt-0">
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-marketplace.html">Catalog with Top Filters</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-marketplace.html">Digital Product Page</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-marketplace.html">Cart / Checkout</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div style="min-width: 190px">
-                                                    <div class="h6 mb-2">Checkout v.1</div>
-                                                    <ul class="nav flex-column gap-2 mt-0">
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-cart.html">Shopping Cart</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-delivery-1.html">Delivery Info (Step 1)</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-delivery-2.html">Delivery Info (Step 2)</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-shipping.html">Shipping Address</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-payment.html">Payment</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-thankyou.html">Thank You Page</a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="h6 pt-4 mb-2">Checkout v.2</div>
-                                                    <ul class="nav flex-column gap-2 mt-0">
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-cart.html">Shopping Cart</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-delivery.html">Delivery Info</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-pickup.html">Pickup from Store</a>
-                                                        </li>
-                                                        <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-thankyou.html">Thank You Page</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">
+    Shop
+  </a>
+  <div class="dropdown-menu rounded-4 p-4">
+    <div class="d-flex flex-column flex-lg-row gap-4">
+      <div style="min-width: 190px">
+        <div class="h6 mb-2">Electronics Store</div>
+        <ul class="nav flex-column gap-2 mt-0">
+          <li class="d-flex w-100 pt-1">
+            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-categories-electronics.jsp">Categories Page</a>
+          </li>
+          <li class="d-flex w-100 pt-1">
+            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Catalog with Side Filters</a>
+          </li>
+          <li class="d-flex w-100 pt-1">
+            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-general-electronics.html">Product General Info</a>
+          </li>
+          <li class="d-flex w-100 pt-1">
+            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-details-electronics.html">Product Details</a>
+          </li>
+          <li class="d-flex w-100 pt-1">
+            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-reviews-electronics.html">Product Reviews</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</li>
+                                    <li class="nav-item me-lg-n1 me-xl-0">
+                                        <a class="nav-link" href="account-info.jsp">My Account</a>
                                     </li>
-                                   <li class="nav-item me-lg-n1 me-xl-0">
-                                       <a class="nav-link" href="account-info.jsp">My Account</a>
-                                   </li>
 
-                                    <li class="nav-item dropdown me-lg-n1 me-xl-0">
-                                        <a class="nav-link dropdown-toggle active" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" data-bs-auto-close="outside" aria-expanded="false">Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="dropend">
-                                                <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">About</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="about-v1.html">About v.1</a></li>
-                                                    <li><a class="dropdown-item" href="about-v2.html">About v.2</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropend">
-                                                <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Blog</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="blog-grid-v1.html">Grid View v.1</a></li>
-                                                    <li><a class="dropdown-item" href="blog-grid-v2.html">Grid View v.2</a></li>
-                                                    <li><a class="dropdown-item" href="blog-list.html">List View</a></li>
-                                                    <li><a class="dropdown-item" href="blog-single-v1.html">Single Post v.1</a></li>
-                                                    <li><a class="dropdown-item" href="blog-single-v2.html">Single Post v.2</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropend">
-                                                <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Contact</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="contact-v1.html">Contact v.1</a></li>
-                                                    <li><a class="dropdown-item" href="contact-v2.html">Contact v.2</a></li>
-                                                    <li><a class="dropdown-item" href="contact-v3.html">Contact v.3</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropend">
-                                                <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Help Center</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="help-topics-v1.html">Help Topics v.1</a></li>
-                                                    <li><a class="dropdown-item" href="help-topics-v2.html">Help Topics v.2</a></li>
-                                                    <li><a class="dropdown-item" href="help-single-article-v1.html">Help Single Article v.1</a></li>
-                                                    <li><a class="dropdown-item" href="help-single-article-v2.html">Help Single Article v.2</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropend">
-                                                <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">404 Error</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="404-electronics.html">404 Electronics</a></li>
-                                                    <li><a class="dropdown-item" href="404-fashion.html">404 Fashion</a></li>
-                                                    <li><a class="dropdown-item" href="404-furniture.html">404 Furniture</a></li>
-                                                    <li><a class="dropdown-item" href="404-grocery.html">404 Grocery</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="dropdown-item" href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
-                                        </ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="admin-signin.html">Admin</a>
                                     </li>
+
                                     <li class="nav-item me-lg-n2 me-xl-0">
                                         <a class="nav-link" href="docs/installation.html">Docs</a>
                                     </li>
@@ -1719,559 +1604,536 @@
     <!-- Page content -->
     <main class="content-wrapper">
 
-        <!-- Hero -->
-        <section class="container pt-3 pt-sm-4">
-            <div class="position-relative px-4 px-sm-5 px-xl-0 py-5">
-                <span class="position-absolute top-0 start-0 w-100 h-100 rounded-5 d-none-dark rtl-flip" style="background: linear-gradient(-90deg, #accbee 0%, #e7f0fd 100%)"></span>
-                <span class="position-absolute top-0 start-0 w-100 h-100 rounded-5 d-none d-block-dark rtl-flip" style="background: linear-gradient(-90deg, #1b273a 0%, #1f2632 100%)"></span>
-                <div class="position-relative z-1">
-                    <h1 class="h2 text-center pt-md-2 pt-lg-3 pt-xl-4 mb-4">How can we help?</h1>
-                    <div class="position-relative mx-auto mb-4" style="max-width: 545px">
-                        <i class="ci-search position-absolute top-50 start-0 translate-middle-y text-body fs-lg ms-3"></i>
-                        <input type="search" class="form-control form-control-lg form-icon-start" placeholder="What do you need help with?" aria-label="Search field">
-                    </div>
-                    <div class="row justify-content-center g-4 pt-2 pt-sm-3 pb-md-2 pb-lg-3 pb-xl-4">
-                        <div class="col-6 col-md-3 col-xl-2 text-center">
-                            <div class="position-relative d-inline-block">
-                                <div class="position-relative d-inline-flex justify-content-center align-items-center text-body-emphasis" style="width: 48px; height: 48px">
-                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-50 rounded-circle d-none-dark"></span>
-                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-10 rounded-circle d-none d-block-dark"></span>
-                                    <i class="ci-delivery position-relative z-1 fs-xl"></i>
-                                </div>
-                                <h3 class="text-dark fs-sm fw-medium pt-1 mt-2 mb-0">
-                                    <a class="hover-effect-underline stretched-link text-decoration-none" href="help-single-article-v1.html">Track your order</a>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3 col-xl-2 text-center">
-                            <div class="position-relative d-inline-block">
-                                <div class="position-relative d-inline-flex justify-content-center align-items-center text-body-emphasis" style="width: 48px; height: 48px">
-                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-50 rounded-circle d-none-dark"></span>
-                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-10 rounded-circle d-none d-block-dark"></span>
-                                    <i class="ci-shopping-bag position-relative z-1 fs-xl"></i>
-                                </div>
-                                <h3 class="text-dark fs-sm fw-medium pt-1 mt-2 mb-0">
-                                    <a class="hover-effect-underline stretched-link text-decoration-none" href="help-single-article-v1.html">Edit or cancel order</a>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3 col-xl-2 text-center">
-                            <div class="position-relative d-inline-block">
-                                <div class="position-relative d-inline-flex justify-content-center align-items-center text-body-emphasis" style="width: 48px; height: 48px">
-                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-50 rounded-circle d-none-dark"></span>
-                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-10 rounded-circle d-none d-block-dark"></span>
-                                    <i class="ci-refresh-cw position-relative z-1 fs-xl"></i>
-                                </div>
-                                <h3 class="text-dark fs-sm fw-medium pt-1 mt-2 mb-0">
-                                    <a class="hover-effect-underline stretched-link text-decoration-none" href="help-single-article-v1.html">Returns &amp; refunds</a>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3 col-xl-2 text-center">
-                            <div class="position-relative d-inline-block">
-                                <div class="position-relative d-inline-flex justify-content-center align-items-center text-body-emphasis" style="width: 48px; height: 48px">
-                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-50 rounded-circle d-none-dark"></span>
-                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-10 rounded-circle d-none d-block-dark"></span>
-                                    <i class="ci-gift position-relative z-1 fs-xl"></i>
-                                </div>
-                                <h3 class="text-dark fs-sm fw-medium pt-1 mt-2 mb-0">
-                                    <a class="hover-effect-underline stretched-link text-decoration-none" href="help-single-article-v1.html">My bonus account</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Breadcrumb -->
+        <nav class="container pt-3 my-3 my-md-4" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home-electronics.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Catalog with sidebar filters</li>
+            </ol>
+        </nav>
 
 
-        <!-- Category cards -->
-        <section class="container pt-4">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 g-sm-3 g-md-4">
-
-                <!-- Category -->
-                <div class="col">
-                    <div class="card h-100 bg-body-tertiary border-0 p-md-2">
-                        <div class="card-body">
-                            <h3 class="h5 d-flex mb-4">
-                                <i class="ci-delivery fs-xl pe-1 mt-1 me-2"></i> Delivery
-                            </h3>
-                            <ul class="nav flex-column gap-3">
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Can I track my order in real-time?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Is there an option for express delivery?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Will my parcel be charged customs charges?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Do you offer international delivery?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Why does my statement have a recurring charge?</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-footer nav bg-transparent border-0 pt-0">
-                            <a class="nav-link animate-underline px-0 py-2" href="#!">
-                  <span class="animate-target">View all</span>
-                  <i class="ci-chevron-right fs-base ms-1"></i>
-                </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category -->
-                <div class="col">
-                    <div class="card h-100 bg-body-tertiary border-0 p-md-2">
-                        <div class="card-body">
-                            <h3 class="h5 d-flex mb-4">
-                                <i class="ci-refresh-cw fs-xl pe-1 mt-1 me-2"></i> Returns &amp; refunds
-                            </h3>
-                            <ul class="nav flex-column gap-3">
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">What is your returns policy?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">I paid with Afterpay, how do returns work?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">What happens to my refund if I return 45 days?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">How do I return something to you?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Can I return an exchange instead of a refund?</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-footer nav bg-transparent border-0 pt-0">
-                            <a class="nav-link animate-underline px-0 py-2" href="#!">
-                  <span class="animate-target">View all</span>
-                  <i class="ci-chevron-right fs-base ms-1"></i>
-                </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category -->
-                <div class="col">
-                    <div class="card h-100 bg-body-tertiary border-0 p-md-2">
-                        <div class="card-body">
-                            <h3 class="h5 d-flex mb-4">
-                                <i class="ci-credit-card fs-xl pe-1 mt-1 me-2"></i> Payment options
-                            </h3>
-                            <ul class="nav flex-column gap-3">
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">How do I place an order?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">My payment was declined, what should I do?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">When will I be charged for my order?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">How do I pay using Google Pay?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">How do I use my Gift Voucher to pay for an order?</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-footer nav bg-transparent border-0 pt-0">
-                            <a class="nav-link animate-underline px-0 py-2" href="#!">
-                  <span class="animate-target">View all</span>
-                  <i class="ci-chevron-right fs-base ms-1"></i>
-                </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category -->
-                <div class="col">
-                    <div class="card h-100 bg-body-tertiary border-0 p-md-2">
-                        <div class="card-body">
-                            <h3 class="h5 d-flex mb-4">
-                                <i class="ci-shopping-bag fs-xl pe-1 mt-1 me-2"></i> Order issues
-                            </h3>
-                            <ul class="nav flex-column gap-3">
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Can I amend my order after I've placed it?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">I've received a faulty item, what should I do?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">I've received an incorrect item, what do I do?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">I've bought a gift voucher, can I cancel or return it?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">What if isn't right on my customs invoice?</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-footer nav bg-transparent border-0 pt-0">
-                            <a class="nav-link animate-underline px-0 py-2" href="#!">
-                  <span class="animate-target">View all</span>
-                  <i class="ci-chevron-right fs-base ms-1"></i>
-                </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category -->
-                <div class="col">
-                    <div class="card h-100 bg-body-tertiary border-0 p-md-2">
-                        <div class="card-body">
-                            <h3 class="h5 d-flex mb-4">
-                                <i class="ci-archive fs-xl pe-1 mt-1 me-2"></i> Products &amp; stock
-                            </h3>
-                            <ul class="nav flex-column gap-3">
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Where can I find your size guide?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Where can I find your care instructions?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Can you tell me more about Collusion?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">How do I change my Fit Assistant Information?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">What are your adhesive product guidelines?</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-footer nav bg-transparent border-0 pt-0">
-                            <a class="nav-link animate-underline px-0 py-2" href="#!">
-                  <span class="animate-target">View all</span>
-                  <i class="ci-chevron-right fs-base ms-1"></i>
-                </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category -->
-                <div class="col">
-                    <div class="card h-100 bg-body-tertiary border-0 p-md-2">
-                        <div class="card-body">
-                            <h3 class="h5 d-flex mb-4">
-                                <i class="ci-settings fs-xl pe-1 mt-1 me-2"></i> Managing account
-                            </h3>
-                            <ul class="nav flex-column gap-3">
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">How do I create an account?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">I'm having trouble signing into my account.</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">I'm having problems using your App.</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">Do I need to create an account to shop with you?</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link hover-effect-underline fw-normal p-0" href="help-single-article-v1.html">I'd like to delete my account what should I do?</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-footer nav bg-transparent border-0 pt-0">
-                            <a class="nav-link animate-underline px-0 py-2" href="#!">
-                  <span class="animate-target">View all</span>
-                  <i class="ci-chevron-right fs-base ms-1"></i>
-                </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Page title -->
+        <h1 class="h3 container mb-4">Shop catalog</h1>
 
 
-        <!-- Popular articles (Carousel) -->
-        <section class="container py-5 mt-1 mt-sm-2 mt-md-3 mt-lg-4 mt-xl-5">
-            <h2 class="text-center pb-2 pb-sm-3 pb-lg-4">Popular articles</h2>
-
-            <!-- Nav pills -->
-            <div class="row g-0 overflow-x-auto pb-3 mb-2 mb-md-3 mb-lg-4">
-                <div class="col-auto mx-auto">
-                    <ul class="nav nav-pills flex-nowrap text-nowrap">
-                        <li class="nav-item">
-                            <a class="nav-link rounded active" aria-current="page" href="#!">Delivery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link rounded" href="#!">Returns &amp; refunds</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link rounded" href="#!">Payment</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link rounded" href="#!">Order issues</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link rounded" href="#!">Products &amp; stock</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link rounded" href="#!">Account</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Carousel -->
-            <div class="position-relative pb-xl-2 mx-2 mx-sm-0">
-                <div class="swiper" data-swiper="{
-            &quot;slidesPerView&quot;: 1,
-            &quot;spaceBetween&quot;: 24,
-            &quot;loop&quot;: true,
-            &quot;autoHeight&quot;: true,
-            &quot;navigation&quot;: {
-              &quot;prevEl&quot;: &quot;.btn-prev&quot;,
-              &quot;nextEl&quot;: &quot;.btn-next&quot;
-            },
-            &quot;breakpoints&quot;: {
-              &quot;500&quot;: {
-                &quot;slidesPerView&quot;: 2
-              },
-              &quot;992&quot;: {
-                &quot;slidesPerView&quot;: 3
-              }
-            }
-          }">
-                    <div class="swiper-wrapper">
-
-                        <!-- Article -->
-                        <article class="swiper-slide">
-                            <a class="ratio d-flex hover-effect-scale rounded overflow-hidden" href="help-single-article-v1.html" style="--cz-aspect-ratio: calc(306 / 416 * 100%)">
-                  <img src="assets/img/help/article01.jpg" class="hover-effect-target" alt="Image">
-                </a>
-                            <div class="pt-4">
-                                <div class="text-body-tertiary fs-xs pb-2 mt-n1 mb-1">October 2, 2024</div>
-                                <h3 class="h5 mb-0">
-                                    <a class="hover-effect-underline" href="help-single-article-v1.html">When should I place an order to ensure Express Delivery?</a>
-                                </h3>
-                            </div>
-                        </article>
-
-                        <!-- Article -->
-                        <article class="swiper-slide">
-                            <a class="ratio d-flex hover-effect-scale rounded overflow-hidden" href="help-single-article-v1.html" style="--cz-aspect-ratio: calc(306 / 416 * 100%)">
-                  <img src="assets/img/help/article02.jpg" class="hover-effect-target" alt="Image">
-                </a>
-                            <div class="pt-4">
-                                <div class="text-body-tertiary fs-xs pb-2 mt-n1 mb-1">July 17, 2024</div>
-                                <h3 class="h5 mb-0">
-                                    <a class="hover-effect-underline" href="help-single-article-v1.html">Why does my statement have a recurring delivery charge?</a>
-                                </h3>
-                            </div>
-                        </article>
-
-                        <!-- Article -->
-                        <article class="swiper-slide">
-                            <a class="ratio d-flex hover-effect-scale rounded overflow-hidden" href="help-single-article-v1.html" style="--cz-aspect-ratio: calc(306 / 416 * 100%)">
-                  <img src="assets/img/help/article03.jpg" class="hover-effect-target" alt="Image">
-                </a>
-                            <div class="pt-4">
-                                <div class="text-body-tertiary fs-xs pb-2 mt-n1 mb-1">June 13, 2024</div>
-                                <h3 class="h5 mb-0">
-                                    <a class="hover-effect-underline" href="help-single-article-v1.html">How can I find information about your international delivery?</a>
-                                </h3>
-                            </div>
-                        </article>
-
-                        <!-- Article -->
-                        <article class="swiper-slide">
-                            <a class="ratio d-flex hover-effect-scale rounded overflow-hidden" href="help-single-article-v1.html" style="--cz-aspect-ratio: calc(306 / 416 * 100%)">
-                  <img src="assets/img/help/article04.jpg" class="hover-effect-target" alt="Image">
-                </a>
-                            <div class="pt-4">
-                                <div class="text-body-tertiary fs-xs pb-2 mt-n1 mb-1">May 30, 2024</div>
-                                <h3 class="h5 mb-0">
-                                    <a class="hover-effect-underline" href="help-single-article-v1.html">Will my parcel be charged additional customs charges?</a>
-                                </h3>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-
-                <!-- Prev button -->
-                <div class="position-absolute top-50 start-0 z-2 translate-middle hover-effect-target mt-n5">
-                    <button type="button" class="btn btn-prev btn-icon btn-outline-secondary bg-body rounded-circle animate-slide-start" aria-label="Prev">
-              <i class="ci-chevron-left fs-lg animate-target"></i>
+        <!-- Banners that are turned into collaspse on screens < 768px wide (sm breakpoint) -->
+        <section class="accordion container pb-4 pb-md-5 mb-xl-3">
+            <div class="accordion-item border-0">
+                <div class="accordion-header d-md-none" id="offersHeading">
+                    <button type="button" class="accordion-button w-auto fw-medium collapsed border border-dashed border-danger border-opacity-50 rounded py-2 px-3" data-bs-toggle="collapse" data-bs-target="#offers" aria-expanded="false" aria-controls="offers">
+              <span class="d-inline-flex ci-percent fs-lg text-danger rounded-circle me-2"></span>
+              <span class="me-2">See latest offers</span>
             </button>
                 </div>
-
-                <!-- Next button -->
-                <div class="position-absolute top-50 start-100 z-2 translate-middle hover-effect-target mt-n5">
-                    <button type="button" class="btn btn-next btn-icon btn-outline-secondary bg-body rounded-circle animate-slide-end" aria-label="Next">
-              <i class="ci-chevron-right fs-lg animate-target"></i>
-            </button>
+                <div class="accordion-collapse collapse d-md-block" id="offers" aria-labelledby="offersHeading">
+                    
                 </div>
             </div>
         </section>
 
-        <hr class="my-0 my-sm-2 my-md-3 my-lg-4">
 
-        <!-- FAQ (Accordion) -->
-        <section class="container py-5 mb-1 mb-sm-2 mb-md-3 mb-lg-4 mb-xl-5">
-            <div class="row pt-xl-2">
-                <div class="col-md-4 col-xl-3 mb-4 mb-md-0" style="margin-top: -120px">
-                    <div class="sticky-md-top text-center text-md-start pe-md-4 pe-lg-5 pe-xl-0" style="padding-top: 120px;">
-                        <h2>Popular FAQs</h2>
-                        <p class="pb-2 pb-md-3">Still have unanswered questions and need to get in touch?</p>
-                        <a class="btn btn-lg btn-primary" href="#!">Contact us</a>
+        <!-- Selected filters + Sorting -->
+        <section class="container mb-4">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="d-md-flex align-items-start">
+                        <div class="h6 fs-sm fw-normal text-nowrap translate-middle-y mt-3 mb-0 me-4">Found <span class="fw-semibold">732</span> items</div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button type="button" class="btn btn-sm btn-secondary">
+                  <i class="ci-close fs-sm ms-n1 me-1"></i>
+                  Sale
+                </button>
+                            <button type="button" class="btn btn-sm btn-secondary">
+                  <i class="ci-close fs-sm ms-n1 me-1"></i>
+                  Asus
+                </button>
+                            <button type="button" class="btn btn-sm btn-secondary">
+                  <i class="ci-close fs-sm ms-n1 me-1"></i>
+                  1 TB
+                </button>
+                            <button type="button" class="btn btn-sm btn-secondary">
+                  <i class="ci-close fs-sm ms-n1 me-1"></i>
+                  $340 - $1,250
+                </button>
+                            <button type="button" class="btn btn-sm btn-secondary bg-transparent border-0 text-decoration-underline px-0 ms-2">
+                  Clear all
+                </button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-8 offset-xl-1">
-
-                    <!-- Accordion of questions -->
-                    <div class="accordion" id="faq">
-
-                        <!-- Question -->
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="faqHeading-1">
-                                <button type="button" class="accordion-button hover-effect-underline collapsed" data-bs-toggle="collapse" data-bs-target="#faqCollapse-1" aria-expanded="false" aria-controls="faqCollapse-1">
-                    <span class="me-2">How long will delivery take?</span>
-                  </button>
-                            </h3>
-                            <div class="accordion-collapse collapse" id="faqCollapse-1" aria-labelledby="faqHeading-1" data-bs-parent="#faq">
-                                <div class="accordion-body">Delivery times vary based on your location and the chosen shipping method. Generally, our standard delivery takes up to 5 days, while our Express Delivery ensures your order reaches you within 1 day. Please note that these
-                                    times may be subject to occasional variations due to unforeseen circumstances, but we do our best to meet these estimates.</div>
-                            </div>
-                        </div>
-
-                        <!-- Question -->
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="faqHeading-2">
-                                <button type="button" class="accordion-button hover-effect-underline collapsed" data-bs-toggle="collapse" data-bs-target="#faqCollapse-2" aria-expanded="false" aria-controls="faqCollapse-2">
-                    <span class="me-2">What payment methods do you accept?</span>
-                  </button>
-                            </h3>
-                            <div class="accordion-collapse collapse" id="faqCollapse-2" aria-labelledby="faqHeading-2" data-bs-parent="#faq">
-                                <div class="accordion-body">We offer a range of secure payment options to provide you with flexibility and convenience. Accepted methods include major credit/debit cards, PayPal, and other secure online payment gateways. You can find the complete
-                                    list of accepted payment methods during the checkout process.</div>
-                            </div>
-                        </div>
-
-                        <!-- Question -->
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="faqHeading-3">
-                                <button type="button" class="accordion-button hover-effect-underline collapsed" data-bs-toggle="collapse" data-bs-target="#faqCollapse-3" aria-expanded="false" aria-controls="faqCollapse-3">
-                    <span class="me-2">Do you ship internationally?</span>
-                  </button>
-                            </h3>
-                            <div class="accordion-collapse collapse" id="faqCollapse-3" aria-labelledby="faqHeading-3" data-bs-parent="#faq">
-                                <div class="accordion-body">Yes, we proudly offer international shipping to cater to our global customer base. Shipping costs and delivery times will be automatically calculated at the checkout based on your selected destination. Please note that
-                                    any customs duties or taxes applicable in your country are the responsibility of the customer.</div>
-                            </div>
-                        </div>
-
-                        <!-- Question -->
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="faqHeading-4">
-                                <button type="button" class="accordion-button hover-effect-underline collapsed" data-bs-toggle="collapse" data-bs-target="#faqCollapse-4" aria-expanded="false" aria-controls="faqCollapse-4">
-                    <span class="me-2">Do I need an account to place an order?</span>
-                  </button>
-                            </h3>
-                            <div class="accordion-collapse collapse" id="faqCollapse-4" aria-labelledby="faqHeading-4" data-bs-parent="#faq">
-                                <div class="accordion-body">While you can place an order as a guest, creating an account comes with added benefits. By having an account, you can easily track your orders, manage your preferences, and enjoy a quicker checkout process for future purchases.
-                                    It also allows us to provide you with personalized recommendations and exclusive offers.</div>
-                            </div>
-                        </div>
-
-                        <!-- Question -->
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="faqHeading-5">
-                                <button type="button" class="accordion-button hover-effect-underline collapsed" data-bs-toggle="collapse" data-bs-target="#faqCollapse-5" aria-expanded="false" aria-controls="faqCollapse-5">
-                    <span class="me-2">How can I track my order?</span>
-                  </button>
-                            </h3>
-                            <div class="accordion-collapse collapse" id="faqCollapse-5" aria-labelledby="faqHeading-5" data-bs-parent="#faq">
-                                <div class="accordion-body">Once your order is dispatched, you will receive a confirmation email containing a unique tracking number. You can use this tracking number on our website to monitor the real-time status of your shipment. Additionally, logging
-                                    into your account will grant you access to a comprehensive order history, including tracking information.</div>
-                            </div>
-                        </div>
-
-                        <!-- Question -->
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="faqHeading-6">
-                                <button type="button" class="accordion-button hover-effect-underline collapsed" data-bs-toggle="collapse" data-bs-target="#faqCollapse-6" aria-expanded="false" aria-controls="faqCollapse-6">
-                    <span class="me-2">What are the product refund conditions?</span>
-                  </button>
-                            </h3>
-                            <div class="accordion-collapse collapse" id="faqCollapse-6" aria-labelledby="faqHeading-6" data-bs-parent="#faq">
-                                <div class="accordion-body">Our refund policy is designed to ensure customer satisfaction. Details can be found in our [refund policy page](insert link). In essence, we accept returns within [insert number] days of receiving the product, provided
-                                    it is in its original condition with all tags and packaging intact. Refunds are processed promptly once the returned item is inspected and approved.</div>
-                            </div>
-                        </div>
-
-                        <!-- Question -->
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="faqHeading-7">
-                                <button type="button" class="accordion-button hover-effect-underline collapsed" data-bs-toggle="collapse" data-bs-target="#faqCollapse-7" aria-expanded="false" aria-controls="faqCollapse-7">
-                    <span class="me-2">Where can I find your size guide?</span>
-                  </button>
-                            </h3>
-                            <div class="accordion-collapse collapse" id="faqCollapse-7" aria-labelledby="faqHeading-7" data-bs-parent="#faq">
-                                <div class="accordion-body">Our comprehensive size guide is conveniently located on each product page to assist you in choosing the right fit. Additionally, you can find the size guide in the main menu under "Size Guide." We recommend referring to
-                                    these resources to ensure your selected items match your preferred sizing.</div>
-                            </div>
-                        </div>
-
-                        <!-- Question -->
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="faqHeading-8">
-                                <button type="button" class="accordion-button hover-effect-underline collapsed" data-bs-toggle="collapse" data-bs-target="#faqCollapse-8" aria-expanded="false" aria-controls="faqCollapse-8">
-                    <span class="me-2">Do I need to create an account to shop with you?</span>
-                  </button>
-                            </h3>
-                            <div class="accordion-collapse collapse" id="faqCollapse-8" aria-labelledby="faqHeading-8" data-bs-parent="#faq">
-                                <div class="accordion-body">While guest checkout is available for your convenience, creating an account enhances your overall shopping experience. With an account, you can easily track your order status, save multiple shipping addresses, and enjoy
-                                    a streamlined checkout process. Moreover, account holders receive early access to promotions and exclusive offers. Signing up is quick and hassle-free!</div>
-                            </div>
-                        </div>
-
-                        <!-- Question -->
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="faqHeading-9">
-                                <button type="button" class="accordion-button hover-effect-underline collapsed" data-bs-toggle="collapse" data-bs-target="#faqCollapse-9" aria-expanded="false" aria-controls="faqCollapse-9">
-                    <span class="me-2">Is there a minimum order value for free shipping?</span>
-                  </button>
-                            </h3>
-                            <div class="accordion-collapse collapse" id="faqCollapse-9" aria-labelledby="faqHeading-9" data-bs-parent="#faq">
-                                <div class="accordion-body">Yes, we offer free shipping on orders exceeding $250. Orders below this threshold are subject to standard shipping fees, which will be displayed during the checkout process.</div>
-                            </div>
-                        </div>
-
-                        <!-- Question -->
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="faqHeading-10">
-                                <button type="button" class="accordion-button hover-effect-underline collapsed" data-bs-toggle="collapse" data-bs-target="#faqCollapse-10" aria-expanded="false" aria-controls="faqCollapse-10">
-                    <span class="me-2">Can I modify or cancel my order after placing it?</span>
-                  </button>
-                            </h3>
-                            <div class="accordion-collapse collapse" id="faqCollapse-10" aria-labelledby="faqHeading-10" data-bs-parent="#faq">
-                                <div class="accordion-body">Once an order is confirmed, our system processes it promptly to ensure timely dispatch. Therefore, modifications or cancellations are challenging after this point. However, please contact our customer support as soon as
-                                    possible, and we will do our best to assist you based on the order status.</div>
-                            </div>
+                <div class="col-lg-3 mt-3 mt-lg-0">
+                    <div class="d-flex align-items-center justify-content-lg-end text-nowrap">
+                        <label class="form-label fw-semibold mb-0 me-2">Sort by:</label>
+                        <div style="width: 190px">
+                            <select class="form-select border-0 rounded-0 px-1" data-select="{
+                  &quot;removeItemButton&quot;: false,
+                  &quot;classNames&quot;: {
+                    &quot;containerInner&quot;: [&quot;form-select&quot;, &quot;border-0&quot;, &quot;rounded-0&quot;, &quot;px-1&quot;]
+                  }
+                }">
+                  <option value="Relevance">Relevance</option>
+                  <option value="Popularity">Popularity</option>
+                  <option value="Price: Low to High">Price: Low to High</option>
+                  <option value="Price: High to Low">Price: High to Low</option>
+                  <option value="Newest Arrivals">Newest Arrivals</option>
+                </select>
                         </div>
                     </div>
                 </div>
             </div>
+            <hr class="d-lg-none my-3">
         </section>
+
+
+        <!-- Products grid + Sidebar with filters -->
+        <section class="container pb-5 mb-sm-2 mb-md-3 mb-lg-4 mb-xl-5">
+            <div class="row">
+
+                <!-- Filter sidebar that turns into offcanvas on screens < 992px wide (lg breakpoint) -->
+                <aside class="col-lg-3">
+                    <div class="offcanvas-lg offcanvas-start" id="filterSidebar">
+                        <div class="offcanvas-header py-3">
+                            <h5 class="offcanvas-title">Filter and sort</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#filterSidebar" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body flex-column pt-2 py-lg-0">
+
+                            <!-- Status -->
+                            <div class="w-100 border rounded p-3 p-xl-4 mb-3 mb-xl-4">
+                                <h4 class="h6">Status</h4>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                      <i class="ci-percent fs-sm me-1 ms-n1"></i>
+                      Sale
+                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Same Day Delivery</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Available to Order</button>
+                                </div>
+                            </div>
+
+                            <!-- Categories -->
+                            <div class="w-100 border rounded p-3 p-xl-4 mb-3 mb-xl-4">
+                                <h4 class="h6 mb-2">Categories</h4>
+                                <ul class="list-unstyled d-block m-0">
+                                    <li class="nav d-block pt-2 mt-1">
+                                        <a class="nav-link animate-underline fw-normal p-0" href="#!">
+                        <span class="animate-target text-truncate me-3">Smartphones</span>
+                        <span class="text-body-secondary fs-xs ms-auto">218</span>
+                      </a>
+                                    </li>
+                                    <li class="nav d-block pt-2 mt-1">
+                                        <a class="nav-link animate-underline fw-normal p-0" href="#!">
+                        <span class="animate-target text-truncate me-3">Accessories</span>
+                        <span class="text-body-secondary fs-xs ms-auto">372</span>
+                      </a>
+                                    </li>
+                                    <li class="nav d-block pt-2 mt-1">
+                                        <a class="nav-link animate-underline fw-normal p-0" href="#!">
+                        <span class="animate-target text-truncate me-3">Tablets</span>
+                        <span class="text-body-secondary fs-xs ms-auto">110</span>
+                      </a>
+                                    </li>
+                                    <li class="nav d-block pt-2 mt-1">
+                                        <a class="nav-link animate-underline fw-normal p-0" href="#!">
+                        <span class="animate-target text-truncate me-3">Wearable Electronics</span>
+                        <span class="text-body-secondary fs-xs ms-auto">142</span>
+                      </a>
+                                    </li>
+                                    <li class="nav d-block pt-2 mt-1">
+                                        <a class="nav-link animate-underline fw-normal p-0" href="#!">
+                        <span class="animate-target text-truncate me-3">Computers &amp; Laptops</span>
+                        <span class="text-body-secondary fs-xs ms-auto">205</span>
+                      </a>
+                                    </li>
+                                    <li class="nav d-block pt-2 mt-1">
+                                        <a class="nav-link animate-underline fw-normal p-0" href="#!">
+                        <span class="animate-target text-truncate me-3">Cameras, Photo &amp; Video</span>
+                        <span class="text-body-secondary fs-xs ms-auto">78</span>
+                      </a>
+                                    </li>
+                                    <li class="nav d-block pt-2 mt-1">
+                                        <a class="nav-link animate-underline fw-normal p-0" href="#!">
+                        <span class="animate-target text-truncate me-3">Headphones</span>
+                        <span class="text-body-secondary fs-xs ms-auto">121</span>
+                      </a>
+                                    </li>
+                                    <li class="nav d-block pt-2 mt-1">
+                                        <a class="nav-link animate-underline fw-normal p-0" href="#!">
+                        <span class="animate-target text-truncate me-3">Video Games</span>
+                        <span class="text-body-secondary fs-xs ms-auto">89</span>
+                      </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Price range -->
+                            <div class="w-100 border rounded p-3 p-xl-4 mb-3 mb-xl-4">
+                                <h4 class="h6 mb-2" id="slider-label">Price</h4>
+                                <div class="range-slider" data-range-slider="{&quot;startMin&quot;: 340, &quot;startMax&quot;: 1250, &quot;min&quot;: 0, &quot;max&quot;: 1600, &quot;step&quot;: 1, &quot;tooltipPrefix&quot;: &quot;$&quot;}" aria-labelledby="slider-label">
+                                    <div class="range-slider-ui"></div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="position-relative w-50">
+                                            <i class="ci-dollar-sign position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                            <input type="number" class="form-control form-icon-start" min="0" data-range-slider-min="">
+                                        </div>
+                                        <i class="ci-minus text-body-emphasis mx-2"></i>
+                                        <div class="position-relative w-50">
+                                            <i class="ci-dollar-sign position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                            <input type="number" class="form-control form-icon-start" min="0" data-range-slider-max="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Brand (checkboxes) -->
+                            <div class="w-100 border rounded p-3 p-xl-4 mb-3 mb-xl-4">
+                                <h4 class="h6">Brand</h4>
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="apple" checked="">
+                                            <label for="apple" class="form-check-label text-body-emphasis">Apple</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">64</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="asus">
+                                            <label for="asus" class="form-check-label text-body-emphasis">Asus</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">310</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="bao">
+                                            <label for="bao" class="form-check-label text-body-emphasis">Bang &amp; Olufsen</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">47</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="bosh">
+                                            <label for="bosh" class="form-check-label text-body-emphasis">Bosh</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">112</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="cobra">
+                                            <label for="cobra" class="form-check-label text-body-emphasis">Cobra</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">96</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="dell">
+                                            <label for="dell" class="form-check-label text-body-emphasis">Dell</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">178</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="foxconn">
+                                            <label for="foxconn" class="form-check-label text-body-emphasis">Foxconn</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">95</span>
+                                    </div>
+                                    <div class="accordion mb-n2">
+                                        <div class="accordion-item border-0">
+                                            <div class="accordion-collapse collapse" id="more-brands">
+                                                <div class="d-flex flex-column gap-1">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="hp">
+                                                            <label for="hp" class="form-check-label text-body-emphasis">Hewlett Packard</label>
+                                                        </div>
+                                                        <span class="text-body-secondary fs-xs">61</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="huawei">
+                                                            <label for="huawei" class="form-check-label text-body-emphasis">Huawei</label>
+                                                        </div>
+                                                        <span class="text-body-secondary fs-xs">417</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="panasonic">
+                                                            <label for="panasonic" class="form-check-label text-body-emphasis">Panasonic</label>
+                                                        </div>
+                                                        <span class="text-body-secondary fs-xs">123</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="samsung">
+                                                            <label for="samsung" class="form-check-label text-body-emphasis">Samsung</label>
+                                                        </div>
+                                                        <span class="text-body-secondary fs-xs">284</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="sony">
+                                                            <label for="sony" class="form-check-label text-body-emphasis">Sony</label>
+                                                        </div>
+                                                        <span class="text-body-secondary fs-xs">133</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="toshiba">
+                                                            <label for="toshiba" class="form-check-label text-body-emphasis">Toshiba</label>
+                                                        </div>
+                                                        <span class="text-body-secondary fs-xs">39</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="xiaomi">
+                                                            <label for="xiaomi" class="form-check-label text-body-emphasis">Xiaomi</label>
+                                                        </div>
+                                                        <span class="text-body-secondary fs-xs">421</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-header">
+                                                <button type="button" class="accordion-button w-auto fs-sm fw-medium collapsed animate-underline py-2" data-bs-toggle="collapse" data-bs-target="#more-brands" aria-expanded="false" aria-controls="more-brands" aria-label="Show/hide more brands">
+                            <span class="animate-target me-2" data-label-collapsed="Show all" data-label-expanded="Show less"></span>
+                          </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SSD size (checkboxes) -->
+                            <div class="w-100 border rounded p-3 p-xl-4 mb-3 mb-xl-4">
+                                <h4 class="h6">SSD size</h4>
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="tb-2">
+                                            <label for="tb-2" class="form-check-label text-body-emphasis">2 TB</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">13</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="tb-1">
+                                            <label for="tb-1" class="form-check-label text-body-emphasis">1 TB</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">28</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="gb-512" checked="">
+                                            <label for="gb-512" class="form-check-label text-body-emphasis">512 GB</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">47</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="gb-256">
+                                            <label for="gb-256" class="form-check-label text-body-emphasis">256 GB</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">56</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="gb-128">
+                                            <label for="gb-128" class="form-check-label text-body-emphasis">128 GB</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">69</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="gb-64">
+                                            <label for="gb-64" class="form-check-label text-body-emphasis">64 GB or less</label>
+                                        </div>
+                                        <span class="text-body-secondary fs-xs">141</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Color -->
+                            <div class="w-100 border rounded p-3 p-xl-4">
+                                <h4 class="h6">Color</h4>
+                                <div class="nav d-block mt-n2">
+                                    <button type="button" class="nav-link w-auto animate-underline fw-normal pt-2 pb-0 px-0">
+                      <span class="rounded-circle me-2" style="width: .875rem; height: .875rem; margin-top: .125rem; background-color: #8bc4ab"></span>
+                      <span class="animate-target">Green</span>
+                    </button>
+                                    <button type="button" class="nav-link w-auto animate-underline fw-normal mt-1 pt-2 pb-0 px-0">
+                      <span class="rounded-circle me-2" style="width: .875rem; height: .875rem; margin-top: .125rem; background-color: #ee7976"></span>
+                      <span class="animate-target">Coral red</span>
+                    </button>
+                                    <button type="button" class="nav-link w-auto animate-underline fw-normal mt-1 pt-2 pb-0 px-0">
+                      <span class="rounded-circle me-2" style="width: .875rem; height: .875rem; margin-top: .125rem; background-color: #df8fbf"></span>
+                      <span class="animate-target">Light pink</span>
+                    </button>
+                                    <button type="button" class="nav-link w-auto animate-underline fw-normal mt-1 pt-2 pb-0 px-0">
+                      <span class="rounded-circle me-2" style="width: .875rem; height: .875rem; margin-top: .125rem; background-color: #9acbf1"></span>
+                      <span class="animate-target">Sky blue</span>
+                    </button>
+                                    <button type="button" class="nav-link w-auto animate-underline fw-normal mt-1 pt-2 pb-0 px-0">
+                      <span class="rounded-circle me-2" style="width: .875rem; height: .875rem; margin-top: .125rem; background-color: #364254"></span>
+                      <span class="animate-target">Black</span>
+                    </button>
+                                    <button type="button" class="nav-link w-auto animate-underline fw-normal mt-1 pt-2 pb-0 px-0">
+                      <span class="border rounded-circle me-2" style="width: .875rem; height: .875rem; margin-top: .125rem; background-color: #ffffff"></span>
+                      <span class="animate-target">White</span>
+                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+
+                <!-- Product grid -->
+                <div class="col-lg-9">
+                        <!-- dynamic loop for the product structure -->
+                    <div class="row row-cols-2 row-cols-md-3 g-4 pb-3 mb-3">
+
+                        <c:forEach var="product" items="${products}">
+                            <div class="col">
+                                <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
+                                    <div class="position-relative">
+                                        <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
+                                            <div class="d-flex flex-column gap-2">
+                                                <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
+                                                    <i class="ci-heart fs-base animate-target"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
+                                                    <i class="ci-refresh-cw fs-base animate-target"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
+                                            <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
+                                                <i class="ci-more-vertical fs-lg"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
+                                                <li><a class="dropdown-item" href="#!"><i class="ci-heart fs-sm ms-n1 me-2"></i>Add to Wishlist</a></li>
+                                                <li><a class="dropdown-item" href="#!"><i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>Compare</a></li>
+                                            </ul>
+                                        </div>
+                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html?id=${product.id}">
+                                                <%-- Placeholder for a sale badge. You can add logic here later. --%>
+                                                <%-- <span class="badge bg-danger position-absolute top-0 start-0 mt-2 ms-2 mt-lg-3 ms-lg-3">-21%</span> --%>
+                                            <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
+                                                <img src="${product.thumbnailUrl}" alt="${product.name}">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
+                                            <%-- Placeholder for star ratings. You can add this feature later. --%>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="d-flex gap-1 fs-xs">
+                                                <i class="ci-star-filled text-warning"></i>
+                                                <i class="ci-star-filled text-warning"></i>
+                                                <i class="ci-star-filled text-warning"></i>
+                                                <i class="ci-star-filled text-warning"></i>
+                                                <i class="ci-star text-body-tertiary opacity-75"></i>
+                                            </div>
+                                            <span class="text-body-tertiary fs-xs">(0)</span>
+                                        </div>
+                                        <h3 class="pb-1 mb-2">
+                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html?id=${product.id}">
+                                                <span class="animate-target">${product.name}</span>
+                                            </a>
+                                        </h3>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="h5 lh-1 mb-0">$<c:out value="${product.price}"/></div>
+                                            <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
+                                                <i class="ci-shopping-cart fs-base animate-target"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
+                                        <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
+                                        <ul class="list-unstyled d-flex flex-column gap-2 m-0">
+                                            <c:if test="${not empty product.diagonal}">
+                                                <li class="d-flex align-items-center">
+                                                    <span class="fs-xs">Display:</span>
+                                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">${product.diagonal} ${product.screenType}</span>
+                                                </li>
+                                            </c:if>
+                                            <c:if test="${not empty product.chip}">
+                                                <li class="d-flex align-items-center">
+                                                    <span class="fs-xs">Chip:</span>
+                                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">${product.chip}</span>
+                                                </li>
+                                            </c:if>
+                                            <c:if test="${not empty product.capacity}">
+                                                <li class="d-flex align-items-center">
+                                                    <span class="fs-xs">Capacity:</span>
+                                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">${product.capacity}</span>
+                                                </li>
+                                            </c:if>
+                                            <c:if test="${not empty product.resolution}">
+                                                <li class="d-flex align-items-center">
+                                                    <span class="fs-xs">Resolution:</span>
+                                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">${product.resolution}</span>
+                                                </li>
+                                            </c:if>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:forEach>
+
+                    </div>
+
+                </div>
+
+                    <!-- Pagination -->
+                    <nav class="border-top mt-4 pt-3" aria-label="Catalog pagination">
+                        <ul class="pagination pagination-lg pt-2 pt-md-3">
+                            <li class="page-item disabled me-auto">
+                                <a class="page-link d-flex align-items-center h-100 fs-lg px-2" href="#!" aria-label="Previous page">
+                    <i class="ci-chevron-left mx-1"></i>
+                  </a>
+                            </li>
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">
+                    1
+                    <span class="visually-hidden">(current)</span>
+                                </span>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">3</a>
+                            </li>
+                            <li class="page-item">
+                                <span class="page-link pe-none">...</span>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">16</a>
+                            </li>
+                            <li class="page-item ms-auto">
+                                <a class="page-link d-flex align-items-center h-100 fs-lg px-2" href="#!" aria-label="Next page">
+                    <i class="ci-chevron-right mx-1"></i>
+                  </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Subscription form + Vlog -->
+        
     </main>
 
 
     <!-- Page footer -->
-    <footer class="footer position-relative bg-dark border-top">
+    <footer class="footer position-relative bg-dark">
         <span class="position-absolute top-0 start-0 w-100 h-100 bg-body d-none d-block-dark"></span>
         <div class="container position-relative z-1 pt-sm-2 pt-md-3 pt-lg-4" data-bs-theme="dark">
 
@@ -2491,7 +2353,17 @@
             <!-- Copyright + Payment methods -->
             
         </div>
+
+        <!-- Additional spacing to accommodate the sticky offcanvas toggle button -->
+        <div class="d-lg-none" style="height: 3.75rem"></div>
     </footer>
+
+
+    <!-- Filter offcanvas toggle that is visible on screens < 992px wide (lg breakpoint) -->
+    <button type="button" class="fixed-bottom z-sticky w-100 btn btn-lg btn-dark border-0 border-top border-light border-opacity-10 rounded-0 pb-4 d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#filterSidebar" aria-controls="filterSidebar" data-bs-theme="light">
+      <i class="ci-filter fs-base me-2"></i>
+      Filters
+    </button>
 
 
     <!-- Back to top button -->
@@ -2509,7 +2381,8 @@
 
 
     <!-- Vendor scripts -->
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/choices.js/choices.min.js"></script>
+    <script src="assets/vendor/nouislider/nouislider.min.js"></script>
 
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
