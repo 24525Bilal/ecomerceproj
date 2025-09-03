@@ -48,6 +48,7 @@ public class AuthFilter implements Filter {
         boolean isAdminPage = path.contains("account-marketplace-dashboard.html")
                 || path.contains("account-marketplace-products.html")
                 || path.contains("account-marketplace-orders.html")
+                || path.contains("account-marketplace-purchases.html")
                 || path.contains("account-marketplace-sales.html");
 
 
