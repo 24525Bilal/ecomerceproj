@@ -2090,38 +2090,66 @@
                 </div>
 
                     <!-- Pagination -->
-                    <nav class="border-top mt-4 pt-3" aria-label="Catalog pagination">
-                        <ul class="pagination pagination-lg pt-2 pt-md-3">
-                            <li class="page-item disabled me-auto">
-                                <a class="page-link d-flex align-items-center h-100 fs-lg px-2" href="#!" aria-label="Previous page">
-                    <i class="ci-chevron-left mx-1"></i>
-                  </a>
-                            </li>
-                            <li class="page-item active" aria-current="page">
-                                <span class="page-link">
-                    1
-                    <span class="visually-hidden">(current)</span>
-                                </span>
-                            </li>
+                <nav class="border-top mt-4 pt-3" aria-label="Catalog pagination">
+                    <ul class="pagination pagination-lg pt-2 pt-md-3">
+
+                        <li class="page-item ${currentPage == 1 ? 'disabled' : ''} me-auto">
+                            <a class="page-link d-flex align-items-center h-100 fs-lg px-2" href="${currentPage > 1 ? 'products?page=' : ''}${currentPage > 1 ? currentPage - 1 : '#!'}" aria-label="Previous page">
+                                <i class="ci-chevron-left mx-1"></i>
+                            </a>
+                        </li>
+
+                        <%-- Logic to determine the range of pages to display --%>
+                        <c:set var="startPage" value="${currentPage - 2 > 1 ? currentPage - 2 : 1}" />
+                        <c:set var="endPage" value="${currentPage + 2 < totalPages ? currentPage + 2 : totalPages}" />
+
+                        <c:if test="${startPage > 1}">
                             <li class="page-item">
-                                <a class="page-link" href="#!">2</a>
+                                <a class="page-link" href="products?page=1">1</a>
                             </li>
+                            <c:if test="${startPage > 2}">
+                                <li class="page-item">
+                                    <span class="page-link pe-none">...</span>
+                                </li>
+                            </c:if>
+                        </c:if>
+
+                        <c:forEach begin="${startPage}" end="${endPage}" var="i">
+                            <c:choose>
+                                <c:when test="${currentPage == i}">
+                                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">
+                            ${i}
+                            <span class="visually-hidden">(current)</span>
+                        </span>
+                                    </li>
+                                </c:when>
+                                <c:otherwise>
+                                    <li class="page-item">
+                                        <a class="page-link" href="products?page=${i}">${i}</a>
+                                    </li>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+
+                        <c:if test="${endPage < totalPages}">
+                            <c:if test="${endPage < totalPages - 1}">
+                                <li class="page-item">
+                                    <span class="page-link pe-none">...</span>
+                                </li>
+                            </c:if>
                             <li class="page-item">
-                                <a class="page-link" href="#!">3</a>
+                                <a class="page-link" href="products?page=${totalPages}">${totalPages}</a>
                             </li>
-                            <li class="page-item">
-                                <span class="page-link pe-none">...</span>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#!">16</a>
-                            </li>
-                            <li class="page-item ms-auto">
-                                <a class="page-link d-flex align-items-center h-100 fs-lg px-2" href="#!" aria-label="Next page">
-                    <i class="ci-chevron-right mx-1"></i>
-                  </a>
-                            </li>
-                        </ul>
-                    </nav>
+                        </c:if>
+
+                        <li class="page-item ${currentPage == totalPages ? 'disabled' : ''} ms-auto">
+                            <a class="page-link d-flex align-items-center h-100 fs-lg px-2" href="${currentPage < totalPages ? 'products?page=' : ''}${currentPage < totalPages ? currentPage + 1 : '#!'}" aria-label="Next page">
+                                <i class="ci-chevron-right mx-1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
                 </div>
             </div>
         </section>

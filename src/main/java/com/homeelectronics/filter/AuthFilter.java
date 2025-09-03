@@ -38,6 +38,8 @@ public class AuthFilter implements Filter {
                 || uri.endsWith("admin-signin.html")
                 || uri.endsWith("adminlogin")
                 || uri.endsWith("logout")
+                || uri.endsWith("shop-catalog-electronics.jsp")
+                || uri.endsWith("products")
                 || uri.endsWith("shop-product-general-electronics.html");
         // Allow public pages and assets to pass through without a session.
         if (isPublicPage) {
@@ -50,6 +52,7 @@ public class AuthFilter implements Filter {
         boolean isAdminPage = path.contains("account-marketplace-dashboard.jsp")
                 || path.contains("account-marketplace-products.html")
                 || path.contains("account-marketplace-orders.html")
+                || path.contains("addProduct")
                 || path.contains("account-marketplace-purchases.html")
                 || path.contains("account-marketplace-sales.html");
 
