@@ -38,7 +38,8 @@ public class AuthFilter implements Filter {
                 || uri.startsWith(req.getContextPath() + "/assets/") // Allow CSS, JS, images
                 || uri.endsWith("admin-signin.html")
                 || uri.endsWith("adminlogin")
-                || uri.endsWith("logout");
+                || uri.endsWith("logout")
+                || uri.endsWith("shop-product-general-electronics.html");
         // Allow public pages and assets to pass through without a session.
         if (isPublicPage) {
             chain.doFilter(request, response);
