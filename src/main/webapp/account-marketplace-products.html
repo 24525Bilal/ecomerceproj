@@ -1334,7 +1334,7 @@
         
     </div>
 
-    <!-- Add Product Modal -->
+<!-- Add Product Modal -->
 <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
@@ -1357,13 +1357,13 @@
             <textarea class="form-control" id="productDescription" rows="4" placeholder="Enter product description"></textarea>
           </div>
 
-          <!-- Price & Category -->
+          <!-- Price, Category & Stock -->
           <div class="row">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-4 mb-3">
               <label for="price" class="form-label">Price ($)</label>
               <input type="number" class="form-control" id="price" placeholder="Enter price">
             </div>
-            <div class="col-md-6 mb-3">
+            <div class="col-md-4 mb-3">
               <label for="category" class="form-label">Category</label>
               <select class="form-select" id="category">
                 <option selected>Select category</option>
@@ -1371,6 +1371,10 @@
                 <option value="2">Templates</option>
                 <option value="3">Icons</option>
               </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="stockQuantity" class="form-label">Stock Quantity</label>
+              <input type="number" class="form-control" id="stockQuantity" placeholder="Enter stock quantity">
             </div>
           </div>
 
