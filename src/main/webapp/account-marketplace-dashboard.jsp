@@ -725,7 +725,7 @@
                         <li>
                             <a class="dropdown-item" href="account-marketplace-payouts.html">
                   <i class="ci-dollar-sign fs-base opacity-75 me-2"></i>
-                  Payouts
+                  Users
                 </a>
                         </li>
                         <li>
