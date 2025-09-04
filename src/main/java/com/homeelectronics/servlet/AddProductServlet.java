@@ -109,16 +109,16 @@ public class AddProductServlet extends HttpServlet {
                 }
 
                 // On success, redirect back to the products page.
-                response.sendRedirect("account-marketplace-products.html?status=success");
+                response.sendRedirect("account-marketplace-products.jsp");
 
             } else {
                 // On failure, redirect back to the products page with an error.
-                response.sendRedirect("account-marketplace-products.html?status=error");
+                response.sendRedirect("account-marketplace-products.jsp");
             }
         } catch (Exception e) {
             e.printStackTrace();
             // On any unexpected error, redirect back to the products page.
-            response.sendRedirect("account-marketplace-products.html?status=error");
+            response.sendRedirect("account-marketplace-products.jsp");
         }
     }
 

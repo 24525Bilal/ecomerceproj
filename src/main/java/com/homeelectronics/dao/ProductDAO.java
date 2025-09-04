@@ -151,4 +151,126 @@ public class ProductDAO {
         }
         return count;
     }
+
+// the code below is added for the function of the admin product page
+
+    /**
+     * Fetches a paginated list of all products for the marketplace page.
+     */
+    public List<Product> getAllProducts(int page, int pageSize) {
+        List<Product> products = new ArrayList<>();
+        String sql = "SELECT p.*, pi.image_path FROM products p " +
+                "LEFT JOIN (SELECT product_id, image_path, ROW_NUMBER() OVER(PARTITION BY product_id ORDER BY id) as rn FROM product_images) pi " +
+                "ON p.id = pi.product_id AND pi.rn = 1 " +
+                "ORDER BY p.id DESC LIMIT ? OFFSET ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, pageSize);
+            stmt.setInt(2, (page - 1) * pageSize);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setPrice(rs.getDouble("price"));
+                product.setStockQuantity(rs.getInt("stock_quantity"));
+                product.setThumbnailUrl(rs.getString("image_path"));
+                products.add(product);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
+
+    /**
+     * Fetches a single, complete product by its ID.
+     */
+    public Product getProductById(int productId) {
+        Product product = null;
+        String sql = "SELECT * FROM products WHERE id = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, productId);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setDescription(rs.getString("description"));
+                product.setPrice(rs.getDouble("price"));
+                product.setStockQuantity(rs.getInt("stock_quantity"));
+                product.setCategory(rs.getString("category"));
+                product.setTags(rs.getString("tags"));
+                product.setColor(rs.getString("color"));
+                product.setSize(rs.getString("size"));
+                product.setModel(rs.getString("model"));
+                product.setManufacturer(rs.getString("manufacturer"));
+                product.setFinish(rs.getString("finish"));
+                product.setCapacity(rs.getString("capacity"));
+                product.setChip(rs.getString("chip"));
+                product.setDiagonal(rs.getString("diagonal"));
+                product.setScreenType(rs.getString("screen_type"));
+                product.setResolution(rs.getString("resolution"));
+                product.setRefreshRate(rs.getString("refresh_rate"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return product;
+    }
+
+    /**
+     * Updates an existing product in the database.
+     */
+    public void updateProduct(Product product) {
+        String sql = "UPDATE products SET name=?, description=?, price=?, stock_quantity=?, category=?, tags=?, color=?, size=?, model=?, manufacturer=?, finish=?, capacity=?, chip=?, diagonal=?, screen_type=?, resolution=?, refresh_rate=? WHERE id=?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, product.getName());
+            stmt.setString(2, product.getDescription());
+            stmt.setDouble(3, product.getPrice());
+            stmt.setInt(4, product.getStockQuantity());
+            stmt.setString(5, product.getCategory());
+            stmt.setString(6, product.getTags());
+            stmt.setString(7, product.getColor());
+            stmt.setString(8, product.getSize());
+            stmt.setString(9, product.getModel());
+            stmt.setString(10, product.getManufacturer());
+            stmt.setString(11, product.getFinish());
+            stmt.setString(12, product.getCapacity());
+            stmt.setString(13, product.getChip());
+            stmt.setString(14, product.getDiagonal());
+            stmt.setString(15, product.getScreenType());
+            stmt.setString(16, product.getResolution());
+            stmt.setString(17, product.getRefreshRate());
+            stmt.setInt(18, product.getId());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Deletes a product from the database using its ID.
+     */
+    public void deleteProduct(int productId) {
+        String sql = "DELETE FROM products WHERE id = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, productId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
 }

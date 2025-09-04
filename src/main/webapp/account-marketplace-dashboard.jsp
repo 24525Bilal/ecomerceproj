@@ -572,7 +572,7 @@
                                     <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Marketplace User</a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="account-marketplace-dashboard.html">Dashboard</a></li>
-                                        <li><a class="dropdown-item" href="account-marketplace-products.html">Products</a></li>
+                                        <li><a class="dropdown-item" href="account-marketplace-products.jsp">Products</a></li>
                                         <li><a class="dropdown-item" href="account-marketplace-sales.html">Sales</a></li>
                                         <li><a class="dropdown-item" href="account-marketplace-payouts.html">Payouts</a></li>
                                         <li><a class="dropdown-item" href="account-marketplace-purchases.html">Purchases</a></li>
@@ -711,7 +711,7 @@
                 </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="account-marketplace-products.html">
+                            <a class="dropdown-item" href="account-marketplace-products.jsp">
                   <i class="ci-layers fs-base opacity-75 me-2"></i>
                   Products (4)
                 </a>
@@ -805,7 +805,7 @@
                     <i class="ci-grid fs-base opacity-75 me-2"></i>
                     Dashboard
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-products.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-products.jsp">
                     <i class="ci-layers fs-base opacity-75 me-2"></i>
                     Products (4)
                   </a>

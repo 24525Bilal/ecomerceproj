@@ -1878,7 +1878,7 @@
                                                 <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Marketplace User</a>
                                                 <ul class="dropdown-menu">
                                                     <li><a class="dropdown-item" href="account-marketplace-dashboard.jsp">Dashboard</a></li>
-                                                    <li><a class="dropdown-item" href="account-marketplace-products.html">Products</a></li>
+                                                    <li><a class="dropdown-item" href="account-marketplace-products.jsp">Products</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-sales.html">Sales</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-payouts.html">Payouts</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-purchases.html">Purchases</a></li>
