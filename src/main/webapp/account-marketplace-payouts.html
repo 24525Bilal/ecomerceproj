@@ -860,23 +860,24 @@
                     <!-- Payouts table -->
 <div class="table-responsive" data-filter-list='{"listClass":"payouts-list","sortClass":"payouts-sort","valueNames":["amount","date"]}'>
 <style>
-  /* Match product table spacing and increase column width */
+  /* Match product table spacing, increase column width and row height */
   .table.order-table th,
   .table.order-table td {
-    padding: 15px 30px;   /* increased horizontal padding */
+    padding: 40px 50px;   /* increased vertical and horizontal padding */
     vertical-align: middle;
+    line-height: 1.5;     /* ensures rows are taller */
   }
 
   /* First column wider (User ID) */
   .table.order-table th:first-child,
   .table.order-table td:first-child {
-    min-width: 180px;
+    min-width: 200px;
   }
 
   /* Other columns consistent width */
   .table.order-table th,
   .table.order-table td {
-    min-width: 140px;
+    min-width: 160px;
   }
 
   /* Optional: make header more prominent */
