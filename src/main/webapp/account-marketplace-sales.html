@@ -879,229 +879,149 @@
                         </div>
 
                         <!-- Sales list (table) -->
-                        <table class="table align-middle fs-sm mb-0">
-                            <thead>
-                                <tr>
-                                    <th class="ps-0" scope="col">
-                                        <span class="fw-normal text-body">Product</span>
-                                    </th>
-                                    <th class="d-none d-md-table-cell" scope="col">
-                                        <button type="button" class="btn fw-normal text-body product-sort p-0" data-sort="date">Date</button>
-                                    </th>
-                                    <th class="d-none d-md-table-cell" scope="col">
-                                        <span class="fw-normal text-body">Status</span>
-                                    </th>
-                                    <th class="text-end d-none d-sm-table-cell" scope="col">
-                                        <button type="button" class="btn fw-normal text-body product-sort p-0 me-n2" data-sort="tendered">Tendered</button>
-                                    </th>
-                                    <th class="text-end pe-0" scope="col">
-                                        <button type="button" class="btn fw-normal text-body product-sort p-0 me-n2" data-sort="earning">Earning</button>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="product-list">
+<table class="table align-middle fs-sm mb-0">
+  <thead>
+    <tr>
+      <th scope="col">
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;">Order ID</button>
+      </th>
+      <th scope="col">Order Date</th>
+      <th scope="col">Customer ID</th>
+      <th scope="col">Delivery Date</th>
+      <th scope="col">Order Status</th>
+      <th scope="col" class="text-end">Amount</th>
+    </tr>
+  </thead>
+  <tbody class="order-list">
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                            <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                <img src="assets/img/account/products/01.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ms-1">
-                                                <span class="badge fs-xs text-info bg-info-subtle rounded-pill d-md-none mb-1">Pending</span>
-                                                <h6 class="product mb-1 mb-md-0">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">Smart watches series 9 mockup</a>
-                                                </h6>
-                                                <div class="fs-body-emphasis d-sm-none mb-1">$15.00</div>
-                                                <div class="fs-body-emphasis d-md-none">June 30, 2024</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">June 30, 2024<span class="date visually-hidden">1719745200</span></td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="badge fs-xs text-info bg-info-subtle rounded-pill">Pending</span>
-                                    </td>
-                                    <td class="tendered text-end d-none d-sm-table-cell py-3">$15.00</td>
-                                    <td class="earning text-end py-3 pe-0">$11.25</td>
-                                </tr>
+    <!-- Order 1 -->
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
+                data-bs-toggle="modal" data-bs-target="#orderModal">#1001</button>
+      </td>
+      <td>September 4, 2025</td>
+      <td>CUST12345</td>
+      <td>September 6, 2025</td>
+      <td>
+        <select class="form-select form-select-sm">
+          <option value="pending" selected>Pending</option>
+          <option value="packed">Packed</option>
+          <option value="shipped">Shipped</option>
+          <option value="out_for_delivery">Out for Delivery</option>
+          <option value="delivered">Delivered</option>
+        </select>
+      </td>
+      <td class="text-end">$120.00</td>
+    </tr>
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                            <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                <img src="assets/img/account/products/02.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ms-1">
-                                                <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Completed</span>
-                                                <h6 class="product mb-1 mb-md-0">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">3D box mockup bold rebrand</a>
-                                                </h6>
-                                                <div class="fs-body-emphasis d-sm-none mb-1">$16.00</div>
-                                                <div class="fs-body-emphasis d-md-none">June 29, 2024</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">June 29, 2024<span class="date visually-hidden">1719658800</span></td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill">Completed</span>
-                                    </td>
-                                    <td class="tendered text-end d-none d-sm-table-cell py-3">$16.00</td>
-                                    <td class="earning text-end py-3 pe-0">$12.00</td>
-                                </tr>
+    <!-- Order 2 -->
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
+                data-bs-toggle="modal" data-bs-target="#orderModal">#1002</button>
+      </td>
+      <td>September 3, 2025</td>
+      <td>CUST67890</td>
+      <td>September 5, 2025</td>
+      <td>
+        <select class="form-select form-select-sm">
+          <option value="pending" selected>Pending</option>
+          <option value="packed">Packed</option>
+          <option value="shipped">Shipped</option>
+          <option value="out_for_delivery">Out for Delivery</option>
+          <option value="delivered">Delivered</option>
+        </select>
+      </td>
+      <td class="text-end">$75.00</td>
+    </tr>
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                            <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                <img src="assets/img/account/products/03.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ms-1">
-                                                <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Completed</span>
-                                                <h6 class="product mb-1 mb-md-0">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">iPhone 15 pro mockups</a>
-                                                </h6>
-                                                <div class="fs-body-emphasis d-sm-none mb-1">$19.00</div>
-                                                <div class="fs-body-emphasis d-md-none">June 29, 2024</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">June 29, 2024<span class="date visually-hidden">1719658800</span></td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill">Completed</span>
-                                    </td>
-                                    <td class="tendered text-end d-none d-sm-table-cell py-3">$19.00</td>
-                                    <td class="earning text-end py-3 pe-0">$14.25</td>
-                                </tr>
+    <!-- Order 3 -->
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
+                data-bs-toggle="modal" data-bs-target="#orderModal">#1003</button>
+      </td>
+      <td>September 2, 2025</td>
+      <td>CUST24680</td>
+      <td>September 4, 2025</td>
+      <td>
+        <select class="form-select form-select-sm">
+          <option value="pending">Pending</option>
+          <option value="packed">Packed</option>
+          <option value="shipped" selected>Shipped</option>
+          <option value="out_for_delivery">Out for Delivery</option>
+          <option value="delivered">Delivered</option>
+        </select>
+      </td>
+      <td class="text-end">$95.00</td>
+    </tr>
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                            <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                <img src="assets/img/account/products/04.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ms-1">
-                                                <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Completed</span>
-                                                <h6 class="product mb-1 mb-md-0">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">A collection of colorful items</a>
-                                                </h6>
-                                                <div class="fs-body-emphasis d-sm-none mb-1">$21.00</div>
-                                                <div class="fs-body-emphasis d-md-none">June 28, 2024</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">June 28, 2024<span class="date visually-hidden">1719572400</span></td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill">Completed</span>
-                                    </td>
-                                    <td class="tendered text-end d-none d-sm-table-cell py-3">$21.00</td>
-                                    <td class="earning text-end py-3 pe-0">$15.75</td>
-                                </tr>
+    <!-- Order 4 -->
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
+                data-bs-toggle="modal" data-bs-target="#orderModal">#1004</button>
+      </td>
+      <td>September 1, 2025</td>
+      <td>CUST13579</td>
+      <td>September 3, 2025</td>
+      <td>
+        <select class="form-select form-select-sm">
+          <option value="pending">Pending</option>
+          <option value="packed" selected>Packed</option>
+          <option value="shipped">Shipped</option>
+          <option value="out_for_delivery">Out for Delivery</option>
+          <option value="delivered">Delivered</option>
+        </select>
+      </td>
+      <td class="text-end">$60.00</td>
+    </tr>
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                            <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                <img src="assets/img/account/products/05.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ms-1">
-                                                <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Completed</span>
-                                                <h6 class="product mb-1 mb-md-0">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">House plants website template</a>
-                                                </h6>
-                                                <div class="fs-body-emphasis d-sm-none mb-1">$35.00</div>
-                                                <div class="fs-body-emphasis d-md-none">June 27, 2024</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">June 27, 2024<span class="date visually-hidden">1719486000</span></td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill">Completed</span>
-                                    </td>
-                                    <td class="tendered text-end d-none d-sm-table-cell py-3">$35.00</td>
-                                    <td class="earning text-end py-3 pe-0">$26.25</td>
-                                </tr>
+    <!-- Order 5 -->
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
+                data-bs-toggle="modal" data-bs-target="#orderModal">#1005</button>
+      </td>
+      <td>August 31, 2025</td>
+      <td>CUST11223</td>
+      <td>September 2, 2025</td>
+      <td>
+        <select class="form-select form-select-sm">
+          <option value="pending">Pending</option>
+          <option value="packed">Packed</option>
+          <option value="shipped">Shipped</option>
+          <option value="out_for_delivery" selected>Out for Delivery</option>
+          <option value="delivered">Delivered</option>
+        </select>
+      </td>
+      <td class="text-end">$150.00</td>
+    </tr>
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                            <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                <img src="assets/img/account/products/06.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ms-1">
-                                                <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Completed</span>
-                                                <h6 class="product mb-1 mb-md-0">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">Isometric smartphone mockups</a>
-                                                </h6>
-                                                <div class="fs-body-emphasis d-sm-none mb-1">$24.00</div>
-                                                <div class="fs-body-emphasis d-md-none">June 26, 2024</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">June 26, 2024<span class="date visually-hidden">1719399600</span></td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill">Completed</span>
-                                    </td>
-                                    <td class="tendered text-end d-none d-sm-table-cell py-3">$24.00</td>
-                                    <td class="earning text-end py-3 pe-0">$18.00</td>
-                                </tr>
+    <!-- Order 6 -->
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
+                data-bs-toggle="modal" data-bs-target="#orderModal">#1006</button>
+      </td>
+      <td>August 30, 2025</td>
+      <td>CUST44556</td>
+      <td>September 1, 2025</td>
+      <td>
+        <select class="form-select form-select-sm">
+          <option value="pending">Pending</option>
+          <option value="packed">Packed</option>
+          <option value="shipped">Shipped</option>
+          <option value="out_for_delivery">Out for Delivery</option>
+          <option value="delivered" selected>Delivered</option>
+        </select>
+      </td>
+      <td class="text-end">$200.00</td>
+    </tr>
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                            <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                <img src="assets/img/account/products/07.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ms-1">
-                                                <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Completed</span>
-                                                <h6 class="product mb-1 mb-md-0">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">A stunning set of tablet pro mockups</a>
-                                                </h6>
-                                                <div class="fs-body-emphasis d-sm-none mb-1">$18.00</div>
-                                                <div class="fs-body-emphasis d-md-none">June 26, 2024</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">June 26, 2024<span class="date visually-hidden">1719399600</span></td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill">Completed</span>
-                                    </td>
-                                    <td class="tendered text-end d-none d-sm-table-cell py-3">$18.00</td>
-                                    <td class="earning text-end py-3 pe-0">$13.50</td>
-                                </tr>
-
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                            <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                <img src="assets/img/account/products/08.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ms-1">
-                                                <span class="badge fs-xs text-danger bg-danger-subtle rounded-pill d-md-none mb-1">Canceled</span>
-                                                <h6 class="product mb-1 mb-md-0">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">Multi device mockup PSD</a>
-                                                </h6>
-                                                <div class="fs-body-emphasis d-sm-none mb-1">$27.00</div>
-                                                <div class="fs-body-emphasis d-md-none">June 25, 2024</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">June 25, 2024<span class="date visually-hidden">1719313200</span></td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="badge fs-xs text-danger bg-danger-subtle rounded-pill">Canceled</span>
-                                    </td>
-                                    <td class="tendered text-end d-none d-sm-table-cell py-3">$27.00</td>
-                                    <td class="earning text-end py-3 pe-0">$0.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
+  </tbody>
+</table>
 
                         <!-- Pagination -->
                         <div class="d-flex align-items-center justify-content-between pt-4 gap-3">
@@ -1311,7 +1231,86 @@
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
 
+<!-- Static Order Details Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderModalLabel">Order Details - #ORDERID</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
 
+        <!-- Order ID -->
+        <p><strong>Order ID:</strong> #ORDERID</p>
+
+        <!-- Products Table -->
+        <h6>Products</h6>
+        <table class="table table-bordered table-sm align-middle">
+          <thead>
+            <tr>
+              <th>P_ID</th>
+              <th style="width:80px;">Image</th>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Price ($)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>101</td>
+              <td>
+                <div style="width:60px; height:60px; overflow:hidden;">
+                  <img src="assets/img/account/products/01.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+              </td>
+              <td>
+                <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
+                        onclick="window.location.href='shop-product-general-electronics.html';">
+                  Smart Watch Series 9
+                </button>
+              </td>
+              <td>2</td>
+              <td>60.00</td>
+            </tr>
+            <tr>
+              <td>102</td>
+              <td>
+                <div style="width:60px; height:60px; overflow:hidden;">
+                  <img src="assets/img/account/products/02.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+              </td>
+              <td>
+                <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
+                        onclick="window.location.href='shop-product-general-electronics.html';">
+                  3D Box Mockup
+                </button>
+              </td>
+              <td>1</td>
+              <td>60.00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Shipping Address -->
+        <h6>Shipping Address</h6>
+        <p>John Doe, 123 Main St, Springfield, IL, 62704</p>
+
+        <!-- Payment Method -->
+        <h6>Payment Method</h6>
+        <p>Credit Card (Visa)</p>
+
+        <!-- Transaction ID -->
+        <h6>Transaction ID</h6>
+        <p>TXN1234567890</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 
 </html>
