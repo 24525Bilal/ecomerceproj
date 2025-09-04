@@ -863,308 +863,239 @@
 
                         <!-- Sales list (table) -->
 <!-- Sales list (table) -->
-                        <table class="table align-middle fs-sm mb-0">
-                            <thead>
-                                <tr>
-                                    <th class="ps-0" scope="col">
-                                        <span class="fw-normal text-body">Product</span>
-                                    </th>
-                                    <th class="d-none d-md-table-cell" scope="col">
-                                        <span class="fw-normal text-body">Status</span>
-                                    </th>
-                                    <th class="text-end d-none d-md-table-cell" scope="col">
-                                        <button type="button" class="btn fw-normal text-body product-sort p-0 me-n2" data-sort="sales">Sales</button>
-                                    </th>
-                                    <th class="text-end d-none d-sm-table-cell" scope="col">
-                                        <button type="button" class="btn fw-normal text-body product-sort p-0 me-n2" data-sort="earnings">Earnings</button>
-                                    </th>
-                                    <th class="text-end d-none d-sm-table-cell" scope="col">
-                                        <span class="fw-normal text-body">Stock</span>
-                                    </th>
-                                    <th class="text-end ps-0 ps-sm-3 pe-0" scope="col">
-                                        <span class="fw-normal text-body">Action</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="product-list">
+<table class="table align-middle fs-sm mb-0">
+    <thead>
+        <tr>
+            <th class="ps-0" scope="col">
+                <span class="fw-normal text-body">Product</span>
+            </th>
+            <th class="d-none d-md-table-cell" scope="col">
+                <span class="fw-normal text-body">Status</span>
+            </th>
+            <th class="text-end d-none d-sm-table-cell" scope="col">
+                <span class="fw-normal text-body">Stock</span>
+            </th>
+            <th class="text-end ps-0 ps-sm-3 pe-0" scope="col">
+                <span class="fw-normal text-body">Action</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody class="product-list">
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
-                                            <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
-                                                <img src="assets/img/account/products/09.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ps-sm-3 ms-1">
-                                                <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
-                                                <h6 class="product mb-2">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">iPhone 15 pro mockups</a>
-                                                </h6>
-                                                <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
-                                                    <div class="h6 mb-0 me-1 me-md-0">$19</div>
-                                                    <div class="d-flex gap-2">
-                                                        <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                            <i class="ci-heart text-body-secondary me-1"></i> 13
-                                                        </div>
-                                                        <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                            <i class="ci-message-circle text-body-secondary me-1"></i> 4
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="fs-xs text-nowrap d-md-none mt-2 mb-1"><span class="text-body-secondary">Sales:</span> 47</div>
-                                                <div class="fs-xs text-nowrap d-sm-none"><span class="text-body-secondary">Earnings:</span> $669.75</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
-                                    </td>
-                                    <td class="sales d-none d-md-table-cell text-end py-3">47</td>
-                                    <td class="text-end d-none d-sm-table-cell py-3">$669.75<span class="earnings visually-hidden">66975</span></td>
-                                    <td class="text-end d-none d-sm-table-cell py-3">120</td>
-                                    <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
-                                        <div class="dropdown">
-                                            <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
-                          <i class="ci-more-vertical fs-base"></i>
-                        </button>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li>
-                                                    <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
-                                                        <i class="ci-edit opacity-75 me-2"></i>
-                                                            Edit
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-zap fs-base opacity-75 me-2"></i>
-                              Promote
+        <!-- Item -->
+        <tr>
+            <td class="py-3 ps-0">
+                <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
+                    <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
+                        <img src="assets/img/account/products/09.jpg" class="hover-effect-target" alt="Image">
+                    </div>
+                    <div class="ps-2 ps-sm-3 ms-1">
+                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
+                        <h6 class="product mb-2">
+                            <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">iPhone 15 pro mockups</a>
+                        </h6>
+                        <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
+                            <div class="h6 mb-0 me-1 me-md-0">$19</div>
+                            <div class="d-flex gap-2">
+                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
+                                    <i class="ci-heart text-body-secondary me-1"></i> 13
+                                </div>
+                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
+                                    <i class="ci-message-circle text-body-secondary me-1"></i> 4
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="d-none d-md-table-cell py-3">
+                <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
+            </td>
+            <td class="text-end d-none d-sm-table-cell py-3">120</td>
+            <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
+                        <i class="ci-more-vertical fs-base"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
+                                <i class="ci-edit opacity-75 me-2"></i>
+                                Edit
                             </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-archive opacity-75 me-2"></i>
-                              Move to archive
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#!">
+                                <i class="ci-trash opacity-75 me-2"></i>
+                                Delete
                             </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item text-danger" href="#!">
-                              <i class="ci-trash opacity-75 me-2"></i>
-                              Delete
-                            </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
-                                            <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
-                                                <img src="assets/img/account/products/10.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ps-sm-3 ms-1">
-                                                <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
-                                                <h6 class="product mb-2">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">3D box mockup bold rebrand</a>
-                                                </h6>
-                                                <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
-                                                    <div class="h6 mb-0 me-1 me-md-0">$16</div>
-                                                    <div class="d-flex gap-2">
-                                                        <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                            <i class="ci-heart text-body-secondary me-1"></i> 25
-                                                        </div>
-                                                        <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                            <i class="ci-message-circle text-body-secondary me-1"></i> 2
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="fs-xs text-nowrap d-md-none mt-2 mb-1"><span class="text-body-secondary">Sales:</span> 56</div>
-                                                <div class="fs-xs text-nowrap d-sm-none"><span class="text-body-secondary">Earnings:</span> $672.00</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
-                                    </td>
-                                    <td class="sales d-none d-md-table-cell text-end py-3">56</td>
-                                    <td class="text-end d-none d-sm-table-cell py-3">$672.00<span class="earnings visually-hidden">67200</span></td>
-                                    <td class="text-end d-none d-sm-table-cell py-3">75</td>
-                                    <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
-                                        <div class="dropdown">
-                                            <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
-                          <i class="ci-more-vertical fs-base"></i>
-                        </button>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li>
-                                                    <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
-                                                        <i class="ci-edit opacity-75 me-2"></i>
-                                                            Edit
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-zap fs-base opacity-75 me-2"></i>
-                              Promote
+        <!-- Item -->
+        <tr>
+            <td class="py-3 ps-0">
+                <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
+                    <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
+                        <img src="assets/img/account/products/10.jpg" class="hover-effect-target" alt="Image">
+                    </div>
+                    <div class="ps-2 ps-sm-3 ms-1">
+                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
+                        <h6 class="product mb-2">
+                            <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">3D box mockup bold rebrand</a>
+                        </h6>
+                        <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
+                            <div class="h6 mb-0 me-1 me-md-0">$16</div>
+                            <div class="d-flex gap-2">
+                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
+                                    <i class="ci-heart text-body-secondary me-1"></i> 25
+                                </div>
+                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
+                                    <i class="ci-message-circle text-body-secondary me-1"></i> 2
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="d-none d-md-table-cell py-3">
+                <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
+            </td>
+            <td class="text-end d-none d-sm-table-cell py-3">75</td>
+            <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
+                        <i class="ci-more-vertical fs-base"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
+                                <i class="ci-edit opacity-75 me-2"></i>
+                                Edit
                             </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-archive opacity-75 me-2"></i>
-                              Move to archive
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#!">
+                                <i class="ci-trash opacity-75 me-2"></i>
+                                Delete
                             </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item text-danger" href="#!">
-                              <i class="ci-trash opacity-75 me-2"></i>
-                              Delete
-                            </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
-                                            <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
-                                                <img src="assets/img/account/products/11.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ps-sm-3 ms-1">
-                                                <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
-                                                <h6 class="product mb-2">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">Smartphone mockups for UI designs</a>
-                                                </h6>
-                                                <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
-                                                    <div class="h6 mb-0 me-1 me-md-0">$18</div>
-                                                    <div class="d-flex gap-2">
-                                                        <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                            <i class="ci-heart text-body-secondary me-1"></i> 36
-                                                        </div>
-                                                        <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                            <i class="ci-message-circle text-body-secondary me-1"></i> 8
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="fs-xs text-nowrap d-md-none mt-2 mb-1"><span class="text-body-secondary">Sales:</span> 152</div>
-                                                <div class="fs-xs text-nowrap d-sm-none"><span class="text-body-secondary">Earnings:</span> $2,052.00</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
-                                    </td>
-                                    <td class="sales d-none d-md-table-cell text-end py-3">152</td>
-                                    <td class="text-end d-none d-sm-table-cell py-3">$2,052.00<span class="earnings visually-hidden">205200</span></td>
-                                    <td class="text-end d-none d-sm-table-cell py-3">200</td>
-                                    <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
-                                        <div class="dropdown">
-                                            <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
-                          <i class="ci-more-vertical fs-base"></i>
-                        </button>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li>
-                                                    <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
-                                                        <i class="ci-edit opacity-75 me-2"></i>
-                                                            Edit
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-zap fs-base opacity-75 me-2"></i>
-                              Promote
+        <!-- Item -->
+        <tr>
+            <td class="py-3 ps-0">
+                <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
+                    <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
+                        <img src="assets/img/account/products/11.jpg" class="hover-effect-target" alt="Image">
+                    </div>
+                    <div class="ps-2 ps-sm-3 ms-1">
+                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
+                        <h6 class="product mb-2">
+                            <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">Smartphone mockups for UI designs</a>
+                        </h6>
+                        <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
+                            <div class="h6 mb-0 me-1 me-md-0">$18</div>
+                            <div class="d-flex gap-2">
+                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
+                                    <i class="ci-heart text-body-secondary me-1"></i> 36
+                                </div>
+                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
+                                    <i class="ci-message-circle text-body-secondary me-1"></i> 8
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="d-none d-md-table-cell py-3">
+                <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
+            </td>
+            <td class="text-end d-none d-sm-table-cell py-3">200</td>
+            <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
+                        <i class="ci-more-vertical fs-base"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
+                                <i class="ci-edit opacity-75 me-2"></i>
+                                Edit
                             </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-archive opacity-75 me-2"></i>
-                              Move to archive
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#!">
+                                <i class="ci-trash opacity-75 me-2"></i>
+                                Delete
                             </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item text-danger" href="#!">
-                              <i class="ci-trash opacity-75 me-2"></i>
-                              Delete
-                            </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
 
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
-                                            <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
-                                                <img src="assets/img/account/products/12.jpg" class="hover-effect-target" alt="Image">
-                                            </div>
-                                            <div class="ps-2 ps-sm-3 ms-1">
-                                                <span class="badge fs-xs text-warning bg-warning-subtle rounded-pill d-md-none mb-1">Archived</span>
-                                                <h6 class="product mb-2">
-                                                    <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">Multi device mockup PSD</a>
-                                                </h6>
-                                                <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
-                                                    <div class="h6 mb-0 me-1 me-md-0">$27</div>
-                                                    <div class="d-flex gap-2">
-                                                        <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                            <i class="ci-heart text-body-secondary me-1"></i> 9
-                                                        </div>
-                                                        <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                            <i class="ci-message-circle text-body-secondary me-1"></i> 12
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="fs-xs text-nowrap d-md-none mt-2 mb-1"><span class="text-body-secondary">Sales:</span> 43</div>
-                                                <div class="fs-xs text-nowrap d-sm-none"><span class="text-body-secondary">Earnings:</span> $870.75</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell py-3">
-                                        <span class="status badge fs-xs text-warning bg-warning-subtle rounded-pill">Archived</span>
-                                    </td>
-                                    <td class="sales d-none d-md-table-cell text-end py-3">43</td>
-                                    <td class="text-end d-none d-sm-table-cell py-3">$870.75<span class="earnings visually-hidden">87075</span></td>
-                                    <td class="text-end d-none d-sm-table-cell py-3">50</td>
-                                    <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
-                                        <div class="dropdown">
-                                            <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
-                          <i class="ci-more-vertical fs-base"></i>
-                        </button>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li>
-                                                    <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
-                                                        <i class="ci-edit opacity-75 me-2"></i>
-                                                            Edit
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-zap fs-base opacity-75 me-2"></i>
-                              Promote
+        <!-- Item -->
+        <tr>
+            <td class="py-3 ps-0">
+                <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
+                    <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
+                        <img src="assets/img/account/products/12.jpg" class="hover-effect-target" alt="Image">
+                    </div>
+                    <div class="ps-2 ps-sm-3 ms-1">
+                        <span class="badge fs-xs text-warning bg-warning-subtle rounded-pill d-md-none mb-1">Archived</span>
+                        <h6 class="product mb-2">
+                            <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">Multi device mockup PSD</a>
+                        </h6>
+                        <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
+                            <div class="h6 mb-0 me-1 me-md-0">$27</div>
+                            <div class="d-flex gap-2">
+                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
+                                    <i class="ci-heart text-body-secondary me-1"></i> 9
+                                </div>
+                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
+                                    <i class="ci-message-circle text-body-secondary me-1"></i> 12
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="d-none d-md-table-cell py-3">
+                <span class="status badge fs-xs text-warning bg-warning-subtle rounded-pill">Archived</span>
+            </td>
+            <td class="text-end d-none d-sm-table-cell py-3">50</td>
+            <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
+                        <i class="ci-more-vertical fs-base"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
+                                <i class="ci-edit opacity-75 me-2"></i>
+                                Edit
                             </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#!">
-                              <i class="ci-archive opacity-75 me-2"></i>
-                              Move to archive
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#!">
+                                <i class="ci-trash opacity-75 me-2"></i>
+                                Delete
                             </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item text-danger" href="#!">
-                              <i class="ci-trash opacity-75 me-2"></i>
-                              Delete
-                            </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
                     </div>
                 </div>
             </div>
