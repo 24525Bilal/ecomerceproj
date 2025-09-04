@@ -1,3 +1,11 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -881,221 +889,98 @@
                         </tr>
                         </thead>
                         <tbody class="product-list">
-
-                        <!-- Item -->
-                        <tr>
-                            <td class="py-3 ps-0">
-                                <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
-                                    <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
-                                        <img src="assets/img/account/products/09.jpg" class="hover-effect-target" alt="Image">
-                                    </div>
-                                    <div class="ps-2 ps-sm-3 ms-1">
-                                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
-                                        <h6 class="product mb-2">
-                                            <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">iPhone 15 pro mockups</a>
-                                        </h6>
-                                        <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
-                                            <div class="h6 mb-0 me-1 me-md-0">$19</div>
-                                            <div class="d-flex gap-2">
-                                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                    <i class="ci-heart text-body-secondary me-1"></i> 13
-                                                </div>
-                                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                    <i class="ci-message-circle text-body-secondary me-1"></i> 4
+                        <c:forEach var="product" items="${productList}">
+                            <tr>
+                                <td class="py-3 ps-0">
+                                    <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
+                                        <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
+                                            <img src="${product.thumbnailUrl}" class="hover-effect-target" alt="Image">
+                                        </div>
+                                        <div class="ps-2 ps-sm-3 ms-1">
+                                            <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
+                                            <h6 class="product mb-2">
+                                                <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">${product.name}</a>
+                                            </h6>
+                                            <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
+                                                <div class="h6 mb-0 me-1 me-md-0"><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="$" /></div>
+                                                <div class="d-flex gap-2">
+                                                    <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
+                                                        <i class="ci-heart text-body-secondary me-1"></i> 0
+                                                    </div>
+                                                    <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
+                                                        <i class="ci-message-circle text-body-secondary me-1"></i> 0
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td class="d-none d-md-table-cell py-3">
-                                <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
-                            </td>
-                            <td class="text-end d-none d-sm-table-cell py-3">120</td>
-                            <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
-                                        <i class="ci-more-vertical fs-base"></i>
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                        <li>
-                                            <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
-                                                <i class="ci-edit opacity-75 me-2"></i>
-                                                Edit
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-danger" href="#!">
-                                                <i class="ci-trash opacity-75 me-2"></i>
-                                                Delete
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <!-- Item -->
-                        <tr>
-                            <td class="py-3 ps-0">
-                                <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
-                                    <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
-                                        <img src="assets/img/account/products/10.jpg" class="hover-effect-target" alt="Image">
+                                </td>
+                                <td class="d-none d-md-table-cell py-3">
+                                    <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
+                                </td>
+                                <td class="text-end d-none d-sm-table-cell py-3">${product.stockQuantity}</td>
+                                <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
+                                    <div class="dropdown">
+                                        <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
+                                            <i class="ci-more-vertical fs-base"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li>
+                                                <a class="dropdown-item edit-btn" href="#editProductModal" data-bs-toggle="modal" data-product-id="${product.id}">
+                                                    <i class="ci-edit opacity-75 me-2"></i>
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item text-danger" href="deleteProduct?productId=${product.id}" onclick="return confirm('Are you sure you want to delete this product?');">
+                                                    <i class="ci-trash opacity-75 me-2"></i>
+                                                    Delete
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="ps-2 ps-sm-3 ms-1">
-                                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
-                                        <h6 class="product mb-2">
-                                            <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">3D box mockup bold rebrand</a>
-                                        </h6>
-                                        <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
-                                            <div class="h6 mb-0 me-1 me-md-0">$16</div>
-                                            <div class="d-flex gap-2">
-                                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                    <i class="ci-heart text-body-secondary me-1"></i> 25
-                                                </div>
-                                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                    <i class="ci-message-circle text-body-secondary me-1"></i> 2
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="d-none d-md-table-cell py-3">
-                                <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
-                            </td>
-                            <td class="text-end d-none d-sm-table-cell py-3">75</td>
-                            <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
-                                        <i class="ci-more-vertical fs-base"></i>
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                        <li>
-                                            <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
-                                                <i class="ci-edit opacity-75 me-2"></i>
-                                                Edit
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-danger" href="#!">
-                                                <i class="ci-trash opacity-75 me-2"></i>
-                                                Delete
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <!-- Item -->
-                        <tr>
-                            <td class="py-3 ps-0">
-                                <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
-                                    <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
-                                        <img src="assets/img/account/products/11.jpg" class="hover-effect-target" alt="Image">
-                                    </div>
-                                    <div class="ps-2 ps-sm-3 ms-1">
-                                        <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
-                                        <h6 class="product mb-2">
-                                            <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">Smartphone mockups for UI designs</a>
-                                        </h6>
-                                        <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
-                                            <div class="h6 mb-0 me-1 me-md-0">$18</div>
-                                            <div class="d-flex gap-2">
-                                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                    <i class="ci-heart text-body-secondary me-1"></i> 36
-                                                </div>
-                                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                    <i class="ci-message-circle text-body-secondary me-1"></i> 8
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="d-none d-md-table-cell py-3">
-                                <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
-                            </td>
-                            <td class="text-end d-none d-sm-table-cell py-3">200</td>
-                            <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
-                                        <i class="ci-more-vertical fs-base"></i>
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                        <li>
-                                            <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
-                                                <i class="ci-edit opacity-75 me-2"></i>
-                                                Edit
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-danger" href="#!">
-                                                <i class="ci-trash opacity-75 me-2"></i>
-                                                Delete
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <!-- Item -->
-                        <tr>
-                            <td class="py-3 ps-0">
-                                <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative py-1">
-                                    <div class="ratio bg-body-secondary rounded overflow-hidden flex-shrink-sm-0" style="--cz-aspect-ratio: calc(110 / 142 * 100%); max-width: 142px">
-                                        <img src="assets/img/account/products/12.jpg" class="hover-effect-target" alt="Image">
-                                    </div>
-                                    <div class="ps-2 ps-sm-3 ms-1">
-                                        <span class="badge fs-xs text-warning bg-warning-subtle rounded-pill d-md-none mb-1">Archived</span>
-                                        <h6 class="product mb-2">
-                                            <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">Multi device mockup PSD</a>
-                                        </h6>
-                                        <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
-                                            <div class="h6 mb-0 me-1 me-md-0">$27</div>
-                                            <div class="d-flex gap-2">
-                                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                    <i class="ci-heart text-body-secondary me-1"></i> 9
-                                                </div>
-                                                <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
-                                                    <i class="ci-message-circle text-body-secondary me-1"></i> 12
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="d-none d-md-table-cell py-3">
-                                <span class="status badge fs-xs text-warning bg-warning-subtle rounded-pill">Archived</span>
-                            </td>
-                            <td class="text-end d-none d-sm-table-cell py-3">50</td>
-                            <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-icon btn-ghost btn-sm btn-secondary rounded-circle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
-                                        <i class="ci-more-vertical fs-base"></i>
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                        <li>
-                                            <a class="dropdown-item" href="#editProductModal" data-bs-toggle="modal">
-                                                <i class="ci-edit opacity-75 me-2"></i>
-                                                Edit
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-danger" href="#!">
-                                                <i class="ci-trash opacity-75 me-2"></i>
-                                                Delete
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
+
+
+                    <!-- Pagination -->
+                    <div class="d-flex align-items-center justify-content-between pt-4 gap-3">
+                        <div class="fs-sm">
+                            Showing
+                            <span class="fw-semibold">
+                                <c:set var="startRange" value="${(currentPage - 1) * 10 + 1}" />
+                                <c:set var="endRange" value="${(currentPage * 10) > totalProducts ? totalProducts : (currentPage * 10)}" />
+                                ${startRange}
+                            </span>
+                            of
+                            <span class="fw-semibold">${totalPages * 10}</span>
+                            <span class="d-none d-sm-inline">results</span>
+                        </div>
+                        <nav aria-label="Pagination">
+                            <ul class="pagination">
+                                <li class="page-item <c:if test="${currentPage == 1}">disabled</c:if>">
+                                    <a class="page-link page-link-icon" href="?page=${currentPage - 1}" aria-label="Previous">
+                                        <i class="ci-arrow-left"></i>
+                                    </a>
+                                </li>
+                                <c:forEach var="i" begin="1" end="${totalPages}">
+                                    <li class="page-item <c:if test="${currentPage == i}">active</c:if>">
+                                        <a class="page-link" href="?page=${i}">${i}</a>
+                                    </li>
+                                </c:forEach>
+                                <li class="page-item <c:if test="${currentPage == totalPages}">disabled</c:if>">
+                                    <a class="page-link page-link-icon" href="?page=${currentPage + 1}" aria-label="Next">
+                                        <i class="ci-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -1406,122 +1291,108 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="updateProduct" method="post" enctype="multipart/form-data">
+                    <input type="hidden" id="editProductId" name="id">
 
-                    <!-- Product Name -->
                     <div class="mb-3">
-                        <label class="form-label fw-medium">Product Name</label>
-                        <input type="text" class="form-control rounded-pill" value="iPhone 14 Plus">
+                        <label for="editProductName" class="form-label fw-medium">Product Name</label>
+                        <input type="text" class="form-control rounded-pill" id="editProductName" name="productName" required>
                     </div>
 
-                    <!-- Product Description -->
                     <div class="mb-3">
-                        <label class="form-label fw-medium">Description</label>
-                        <textarea class="form-control" rows="4">Latest Apple iPhone with advanced features</textarea>
+                        <label for="editProductDescription" class="form-label fw-medium">Description</label>
+                        <textarea class="form-control" id="editProductDescription" name="productDescription" rows="4"></textarea>
                     </div>
 
-                    <!-- Price, Category & Stock -->
                     <div class="row">
                         <div class="col-md-4 mb-3">
-                            <label class="form-label fw-medium">Price ($)</label>
-                            <input type="number" class="form-control rounded-pill" value="999">
+                            <label for="editPrice" class="form-label fw-medium">Price ($)</label>
+                            <input type="number" class="form-control rounded-pill" id="editPrice" name="price" step="0.01" required>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label class="form-label fw-medium">Category</label>
-                            <select class="form-select rounded-pill">
-                                <option>Select category</option>
-                                <option value="1" selected>Mockups</option>
-                                <option value="2">Templates</option>
-                                <option value="3">Icons</option>
+                            <label for="editCategory" class="form-label fw-medium">Category</label>
+                            <select class="form-select rounded-pill" id="editCategory" name="category" required>
+                                <option value="" disabled selected>Select category</option>
+                                <option value="Computers">Computers</option>
+                                <option value="Smartphones">Smartphones</option>
+                                <option value="Headphones">Headphones</option>
+                                <option value="Cameras">Cameras</option>
+                                <option value="Gaming">Gaming</option>
+                                <option value="Accessories">Accessories</option>
                             </select>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label class="form-label fw-medium">Stock Quantity</label>
-                            <input type="number" class="form-control rounded-pill" value="50">
+                            <label for="editStockQuantity" class="form-label fw-medium">Stock Quantity</label>
+                            <input type="number" class="form-control rounded-pill" id="editStockQuantity" name="stockQuantity" required>
                         </div>
                     </div>
 
-                    <!-- Tags -->
                     <div class="mb-3">
-                        <label class="form-label fw-medium">Tags</label>
-                        <input type="text" class="form-control rounded-pill" value="smartphone, apple, ios">
+                        <label for="editTags" class="form-label fw-medium">Tags</label>
+                        <input type="text" class="form-control rounded-pill" id="editTags" name="tags" placeholder="Comma-separated">
                     </div>
 
-                    <!-- Product Images -->
                     <div class="mb-3">
-                        <label class="form-label fw-medium">Product Images</label>
-                        <input type="file" class="form-control" multiple>
-                        <small class="text-muted">Current images already uploaded</small>
+                        <label for="editColor" class="form-label fw-medium">Color Variants</label>
+                        <input type="text" class="form-control rounded-pill" id="editColor" name="color" placeholder="e.g. Black, White, Blue">
                     </div>
 
-                    <!-- Color Variants -->
-                    <div class="mb-3">
-                        <label class="form-label fw-medium">Color Variants</label>
-                        <input type="text" class="form-control rounded-pill" value="Black, White, Blue">
-                    </div>
-
-                    <!-- Size Variants -->
                     <div class="mb-4">
-                        <label class="form-label fw-medium">Size Variants</label>
-                        <input type="text" class="form-control rounded-pill" value="64GB, 128GB, 256GB">
+                        <label for="editSize" class="form-label fw-medium">Size Variants</label>
+                        <input type="text" class="form-control rounded-pill" id="editSize" name="size" placeholder="e.g. 64GB, 128GB, 256GB">
                     </div>
 
-                    <!-- Product Details Section -->
                     <h5 class="mt-4 mb-3">Product Details</h5>
 
-                    <!-- General Specs -->
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Model</label>
-                            <input type="text" class="form-control rounded-pill" value="iPhone 14 Plus">
+                            <label for="editModel" class="form-label">Model</label>
+                            <input type="text" class="form-control rounded-pill" id="editModel" name="model">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Manufacturer</label>
-                            <input type="text" class="form-control rounded-pill" value="Apple Inc.">
+                            <label for="editManufacturer" class="form-label">Manufacturer</label>
+                            <input type="text" class="form-control rounded-pill" id="editManufacturer" name="manufacturer">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Finish</label>
-                            <input type="text" class="form-control rounded-pill" value="Ceramic, Glass, Aluminium">
+                            <label for="editFinish" class="form-label">Finish</label>
+                            <input type="text" class="form-control rounded-pill" id="editFinish" name="finish">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Capacity</label>
-                            <input type="text" class="form-control rounded-pill" value="128GB">
+                            <label for="editCapacity" class="form-label">Capacity</label>
+                            <input type="text" class="form-control rounded-pill" id="editCapacity" name="capacity">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Chip</label>
-                            <input type="text" class="form-control rounded-pill" value="A15 Bionic chip">
+                            <label for="editChip" class="form-label">Chip</label>
+                            <input type="text" class="form-control rounded-pill" id="editChip" name="chip">
                         </div>
                     </div>
 
-                    <!-- Display Specs -->
                     <h6 class="mt-3 mb-2">Display</h6>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Diagonal</label>
-                            <input type="text" class="form-control rounded-pill" value="6.1&quot;">
+                            <label for="editDiagonal" class="form-label">Diagonal</label>
+                            <input type="text" class="form-control rounded-pill" id="editDiagonal" name="diagonal">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Screen Type</label>
-                            <input type="text" class="form-control rounded-pill" value="Super Retina XDR">
+                            <label for="editScreenType" class="form-label">Screen Type</label>
+                            <input type="text" class="form-control rounded-pill" id="editScreenType" name="screenType">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Resolution</label>
-                            <input type="text" class="form-control rounded-pill" value="2778×1284px at 458ppi">
+                            <label for="editResolution" class="form-label">Resolution</label>
+                            <input type="text" class="form-control rounded-pill" id="editResolution" name="resolution">
                         </div>
                         <div class="col-md-6 mb-4">
-                            <label class="form-label">Refresh Rate</label>
-                            <input type="text" class="form-control rounded-pill" value="120Hz">
+                            <label for="editRefreshRate" class="form-label">Refresh Rate</label>
+                            <input type="text" class="form-control rounded-pill" id="editRefreshRate" name="refreshRate">
                         </div>
                     </div>
 
-                    <!-- Footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-dark rounded-pill px-4">
                             <i class="ci-check me-2"></i> Save Changes
                         </button>
                     </div>
-
                 </form>
             </div>
         </div>
@@ -1533,8 +1404,8 @@
 
 <!-- Bootstrap + Theme scripts -->
 <script src="assets/js/theme.min.js"></script>
-
-
+<!-- for edit product -->
+<script src="assets/js/product-edit.js"></script>
 </body>
 
 </html>
