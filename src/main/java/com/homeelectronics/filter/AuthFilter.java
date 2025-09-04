@@ -55,6 +55,7 @@ public class AuthFilter implements Filter {
                 || path.contains("account-marketplace-orders.html")
                 || path.contains("addProduct")
                 || path.contains("account-marketplace-purchases.html")
+                || path.contains("account-marketplace-payouts.html")
                 || path.contains("account-marketplace-sales.html");
 
 
