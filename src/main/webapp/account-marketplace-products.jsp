@@ -1291,7 +1291,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="updateProduct" method="post" enctype="multipart/form-data">
+                <form action="updateProduct" method="post">
                     <input type="hidden" id="editProductId" name="id">
 
                     <div class="mb-3">
