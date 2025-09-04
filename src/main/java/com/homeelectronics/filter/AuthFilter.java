@@ -40,6 +40,7 @@ public class AuthFilter implements Filter {
                 || uri.endsWith("logout")
                 || uri.endsWith("shop-catalog-electronics.jsp")
                 || uri.endsWith("products")
+                || path.startsWith("/product-images/")
                 || uri.endsWith("shop-product-general-electronics.html");
         // Allow public pages and assets to pass through without a session.
         if (isPublicPage) {

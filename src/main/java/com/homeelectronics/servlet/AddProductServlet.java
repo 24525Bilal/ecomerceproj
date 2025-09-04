@@ -84,6 +84,8 @@ public class AddProductServlet extends HttpServlet {
                 if (!fileParts.isEmpty()) {
                     // Define the physical save location (e.g., D:\product_image).
                     String baseUploadPath = "D:" + File.separator + "product_image";
+
+                    System.out.println("--- File Upload Location: " + baseUploadPath + " ---");
                     // Create a unique folder for this product (e.g., D:\product_image\101).
                     String productSpecificPath = baseUploadPath + File.separator + productId;
                     File productDir = new File(productSpecificPath);

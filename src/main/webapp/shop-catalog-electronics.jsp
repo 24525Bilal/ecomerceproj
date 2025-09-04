@@ -1565,7 +1565,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link" href="admin-signin.html">Admin</a>
+                                        <a class="nav-link" href="account-marketplace-dashboard.jsp">Admin</a>
                                     </li>
 
                                     <li class="nav-item me-lg-n2 me-xl-0">
@@ -2021,6 +2021,7 @@
                                                 <%-- <span class="badge bg-danger position-absolute top-0 start-0 mt-2 ms-2 mt-lg-3 ms-lg-3">-21%</span> --%>
                                             <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
                                                 <img src="${product.thumbnailUrl}" alt="${product.name}">
+<%--                                                     <img src="${pageContext.request.contextPath}/${product.thumbnailUrl}" alt="${product.name}">--%>
                                             </div>
                                         </a>
                                     </div>
