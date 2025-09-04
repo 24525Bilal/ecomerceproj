@@ -932,7 +932,9 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item text-danger" href="deleteProduct?productId=${product.id}" onclick="return confirm('Are you sure you want to delete this product?');">
+
+                                                <!-- here using product-delete.js to perfom dopost to the DeleteProductServlet  -->
+                                                <a class="dropdown-item text-danger delete-btn" href="javascript:void(0);" data-product-id="${product.id}">
                                                     <i class="ci-trash opacity-75 me-2"></i>
                                                     Delete
                                                 </a>
@@ -953,10 +955,10 @@
                             <span class="fw-semibold">
                                 <c:set var="startRange" value="${(currentPage - 1) * 10 + 1}" />
                                 <c:set var="endRange" value="${(currentPage * 10) > totalProducts ? totalProducts : (currentPage * 10)}" />
-                                ${startRange}
+                                ${startRange}-${endRange}
                             </span>
                             of
-                            <span class="fw-semibold">${totalPages * 10}</span>
+                            <span class="fw-semibold">${totalProducts}</span>
                             <span class="d-none d-sm-inline">results</span>
                         </div>
                         <nav aria-label="Pagination">
@@ -1292,7 +1294,7 @@
             </div>
             <div class="modal-body">
                 <form action="updateProduct" method="post">
-                    <input type="hidden" id="editProductId" name="id">
+                    <input type="hidden" id="editProductId" name="productId">
 
                     <div class="mb-3">
                         <label for="editProductName" class="form-label fw-medium">Product Name</label>
@@ -1406,6 +1408,9 @@
 <script src="assets/js/theme.min.js"></script>
 <!-- for edit product -->
 <script src="assets/js/product-edit.js"></script>
+
+<!-- for deleting /for dopost -->
+<script src="assets/js/product-delete.js"></script>
 </body>
 
 </html>

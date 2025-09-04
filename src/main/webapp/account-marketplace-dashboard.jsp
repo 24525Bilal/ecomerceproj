@@ -805,7 +805,7 @@
                     <i class="ci-grid fs-base opacity-75 me-2"></i>
                     Dashboard
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-products.jsp">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-products">
                     <i class="ci-layers fs-base opacity-75 me-2"></i>
                     Products (4)
                   </a>

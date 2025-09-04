@@ -26,6 +26,7 @@ public class MarketplaceProductsServlet extends HttpServlet {
         request.setAttribute("productList", productList);
         request.setAttribute("totalPages", totalPages);
         request.setAttribute("currentPage", page);
+        request.setAttribute("totalProducts", totalProducts);
 
         request.getRequestDispatcher("account-marketplace-products.jsp").forward(request, response);
     }
