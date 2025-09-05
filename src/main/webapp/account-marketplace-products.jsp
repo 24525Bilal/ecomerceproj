@@ -823,7 +823,7 @@
                             </a>
                             <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-payouts.html">
                                 <i class="ci-dollar-sign fs-base opacity-75 me-2"></i>
-                                Payouts
+                                Users
                             </a>
                         </nav>
                         <h6 class="pt-4 ps-2 ms-1">User account</h6>
