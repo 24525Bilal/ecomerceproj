@@ -897,9 +897,19 @@
                                             <img src="${product.thumbnailUrl}" class="hover-effect-target" alt="Image">
                                         </div>
                                         <div class="ps-2 ps-sm-3 ms-1">
-                                            <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
+
+                                            <c:choose>
+                                                <c:when test="${product.stockQuantity == 0}">
+                                                    <span class="badge fs-xs text-danger bg-danger-subtle rounded-pill d-md-none mb-1">Sold</span>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Active</span>
+                                                </c:otherwise>
+                                            </c:choose>
+
+
                                             <h6 class="product mb-2">
-                                                <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">${product.name}</a>
+                                                <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-general-electronics.html">${product.name}</a>
                                             </h6>
                                             <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
                                                 <div class="h6 mb-0 me-1 me-md-0"><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="$" /></div>
@@ -916,7 +926,17 @@
                                     </div>
                                 </td>
                                 <td class="d-none d-md-table-cell py-3">
-                                    <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
+
+                                    <c:choose>
+                                        <c:when test="${product.stockQuantity == 0}">
+                                            <span class="status badge fs-xs text-danger bg-danger-subtle rounded-pill">Sold</span>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <span class="status badge fs-xs text-success bg-success-subtle rounded-pill">Active</span>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
                                 <td class="text-end d-none d-sm-table-cell py-3">${product.stockQuantity}</td>
                                 <td class="text-end py-3 ps-0 ps-sm-3 pe-0">
