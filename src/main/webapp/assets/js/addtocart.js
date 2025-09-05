@@ -6,7 +6,7 @@ function addToCart() {
     // Get the total stock quantity from the hidden input field
     var totalStock = parseInt(document.getElementById('stockQuantity').value);
 
-    // Get the quantity the user selected
+    // Get the quantity the user selected from the count input field
     var selectedQuantity = parseInt(document.getElementById('productQuantity').value);
 
     if (totalStock <= 0) {
@@ -16,7 +16,26 @@ function addToCart() {
         // Not enough stock for the selected quantity
         alert("Cannot add " + selectedQuantity + " items. Only " + totalStock + " available.");
     } else {
-        // Product is in stock and selected quantity is valid, proceed to cart page
-        window.location.href = "checkout-v1-cart.html";
+        // Product is in stock and selected quantity is valid, create a form and submit
+        const productId = document.querySelector('.add-to-cart-btn').getAttribute('data-product-id');
+
+        const form = document.createElement('form');
+        form.setAttribute('method', 'POST');
+        form.setAttribute('action', 'addProductToCart'); // The servlet URL
+
+        const productIdInput = document.createElement('input');
+        productIdInput.setAttribute('type', 'hidden');
+        productIdInput.setAttribute('name', 'productId');
+        productIdInput.setAttribute('value', productId);
+        form.appendChild(productIdInput);
+
+        const quantityInput = document.createElement('input');
+        quantityInput.setAttribute('type', 'hidden');
+        quantityInput.setAttribute('name', 'quantity');
+        quantityInput.setAttribute('value', selectedQuantity);
+        form.appendChild(quantityInput);
+
+        document.body.appendChild(form);
+        form.submit();
     }
 }

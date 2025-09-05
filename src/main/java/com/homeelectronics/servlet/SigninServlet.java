@@ -22,7 +22,10 @@ import jakarta.servlet.http.Cookie;
 
 import com.homeelectronics.dao.UserDAO;
 
-
+// added while for cart
+import com.homeelectronics.model.CartItem;
+import com.homeelectronics.dao.CartDAO;
+import java.util.List;
 
 @WebServlet("/signin")
 public class SigninServlet extends HttpServlet {
@@ -57,6 +60,7 @@ public class SigninServlet extends HttpServlet {
                     if (userId != -1) {
                         Profile userDetails = profileDAO.getProfileByUserId(userId);
                         if (userDetails != null) {
+
                             // Store the entire userDetails object in the session
                             session.setAttribute("userDetails", userDetails);
 
@@ -67,6 +71,15 @@ public class SigninServlet extends HttpServlet {
                                 greetingMessage = "Hello, " + userDetails.getFirstName();
                             }
                             session.setAttribute("greetingMessage", greetingMessage);
+
+
+                            // for the cart
+                            // 1. Fetch the user's persistent cart from the database
+                            CartDAO cartDAO = new CartDAO();
+                            List<CartItem> cartItems = cartDAO.getCartItemsByUserId(userId);
+
+                            // 2. Store the list of cart items in the session
+                            session.setAttribute("cartItems", cartItems);
 
 
                         }
@@ -97,9 +110,6 @@ public class SigninServlet extends HttpServlet {
                     // If no URL was saved, redirect to the default dashboard.
                     response.sendRedirect("home-electronics.html");
                 }
-
-
-
 
 
 

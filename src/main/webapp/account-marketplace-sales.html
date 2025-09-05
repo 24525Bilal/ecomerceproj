@@ -508,7 +508,7 @@
                                         <div class="h6 mb-2">Checkout v.1</div>
                                         <ul class="nav flex-column gap-2 mt-0">
                                             <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-cart.html">Shopping Cart</a>
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-cart.jsp">Shopping Cart</a>
                                             </li>
                                             <li class="d-flex w-100 pt-1">
                                                 <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-delivery-1.html">Delivery Info (Step 1)</a>

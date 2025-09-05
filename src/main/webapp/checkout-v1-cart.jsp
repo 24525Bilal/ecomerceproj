@@ -1,3 +1,9 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -290,7 +296,8 @@
         <div class="offcanvas-header flex-column align-items-start">
             <div class="d-flex align-items-center justify-content-between w-100 mb-3 mb-md-4">
                 <span class="text-light-emphasis">Subtotal:</span>
-                <span class="h6 mb-0">$2,317.00</span>
+<%--                <span class="h6 mb-0">$2,317.00</span>--%>
+                <span class="h3 mb-0">$<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
             </div>
             <div class="d-flex w-100 gap-3">
                 <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.html">View cart</a>
@@ -1642,147 +1649,48 @@
                                     </th>
                                 </tr>
                             </thead>
+
                             <tbody class="align-middle">
-
-                                <!-- Item -->
+                            <c:forEach var="item" items="${cartItems}">
                                 <tr>
                                     <td class="py-3 ps-0">
                                         <div class="d-flex align-items-center">
-                                            <a class="flex-shrink-0" href="shop-product-electronics.jsp">
-                          <img src="assets/img/shop/electronics/thumbs/08.png" width="110" alt="iPhone 14">
-                        </a>
-                                            <div class="w-100 min-w-0 ps-2 ps-xl-3">
-                                                <h5 class="d-flex animate-underline mb-2">
-                                                    <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Apple iPhone 14 128GB</a>
-                                                </h5>
-                                                <ul class="list-unstyled gap-1 fs-xs mb-0">
-                                                    <li><span class="text-body-secondary">Color:</span> <span class="text-dark-emphasis fw-medium">White</span></li>
-                                                    <li><span class="text-body-secondary">Model:</span> <span class="text-dark-emphasis fw-medium">128GB</span></li>
-                                                    <li class="d-xl-none"><span class="text-body-secondary">Price:</span> <span class="text-dark-emphasis fw-medium">$899.00</span></li>
-                                                </ul>
-                                                <div class="count-input rounded-2 d-md-none mt-3">
-                                                    <button type="button" class="btn btn-sm btn-icon" data-decrement="" aria-label="Decrement quantity">
-                              <i class="ci-minus"></i>
-                            </button>
-                                                    <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                                                    <button type="button" class="btn btn-sm btn-icon" data-increment="" aria-label="Increment quantity">
-                              <i class="ci-plus"></i>
-                            </button>
-                                                </div>
+                                            <div class="ratio bg-body-secondary flex-shrink-0 rounded" style="width: 100px; --cz-aspect-ratio: calc(110 / 100 * 100%)">
+                                                <img src="${item.product.thumbnailUrl}" alt="${item.product.name}">
+                                            </div>
+                                            <div class="ps-3 ps-sm-4">
+                                                <a class="d-block text-dark-emphasis fw-medium text-truncate" href="productDetails?id=${item.product.id}">${item.product.name}</a>
+                                                <p class="fs-sm text-body-secondary mb-0">Model: ${item.product.model}</p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="h6 py-3 d-none d-xl-table-cell">$899.00</td>
-                                    <td class="py-3 d-none d-md-table-cell">
-                                        <div class="count-input">
-                                            <button type="button" class="btn btn-icon" data-decrement="" aria-label="Decrement quantity">
-                          <i class="ci-minus"></i>
-                        </button>
-                                            <input type="number" class="form-control" value="1" readonly="">
-                                            <button type="button" class="btn btn-icon" data-increment="" aria-label="Increment quantity">
-                          <i class="ci-plus"></i>
-                        </button>
+                                    <td class="py-3 px-0">
+                                        <div class="h6 mb-0">$<fmt:formatNumber value="${item.product.price}" pattern="0.00"/></div>
+                                    </td>
+                                    <td class="py-3 px-0 text-center">
+                                        <div class="count-input rounded-pill mx-auto">
+                                            <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
+                                                <i class="ci-minus"></i>
+                                            </button>
+                                            <input type="number" class="form-control form-control-sm" value="${item.quantity}" readonly="">
+                                            <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
+                                                <i class="ci-plus"></i>
+                                            </button>
                                         </div>
                                     </td>
-                                    <td class="h6 py-3 d-none d-md-table-cell">$899.00</td>
-                                    <td class="text-end py-3 px-0">
-                                        <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
+                                    <td class="py-3 px-0 text-end">
+                                        <div class="h6 mb-0">$<fmt:formatNumber value="${item.totalPrice}" pattern="0.00"/></div>
+                                    </td>
+                                    <td class="py-3 ps-0 text-end">
+                                        <form action="removeFromCart" method="post" class="d-inline">
+                                            <input type="hidden" name="productId" value="${item.product.id}">
+                                            <button type="submit" class="btn-close ms-auto" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove from cart" aria-label="Remove from cart"></button>
+                                        </form>
                                     </td>
                                 </tr>
-
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-center">
-                                            <a class="position-relative flex-shrink-0" href="shop-product-electronics.jsp">
-                          <span class="badge text-bg-danger position-absolute top-0 start-0">-10%</span>
-                          <img src="assets/img/shop/electronics/thumbs/09.png" width="110" alt="iPad Pro">
-                        </a>
-                                            <div class="w-100 min-w-0 ps-2 ps-xl-3">
-                                                <h5 class="d-flex animate-underline mb-2">
-                                                    <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Tablet Apple iPad Pro M2</a>
-                                                </h5>
-                                                <ul class="list-unstyled gap-1 fs-xs mb-0">
-                                                    <li><span class="text-body-secondary">Color:</span> <span class="text-dark-emphasis fw-medium">Black</span></li>
-                                                    <li><span class="text-body-secondary">Model:</span> <span class="text-dark-emphasis fw-medium">256GB</span></li>
-                                                    <li class="d-xl-none"><span class="text-body-secondary">Price:</span> <span class="text-dark-emphasis fw-medium">$989.00 <del class="text-body-tertiary fw-normal">$1,099.00</del></span></li>
-                                                </ul>
-                                                <div class="count-input rounded-2 d-md-none mt-3">
-                                                    <button type="button" class="btn btn-sm btn-icon" data-decrement="" aria-label="Decrement quantity">
-                              <i class="ci-minus"></i>
-                            </button>
-                                                    <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                                                    <button type="button" class="btn btn-sm btn-icon" data-increment="" aria-label="Increment quantity">
-                              <i class="ci-plus"></i>
-                            </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="h6 py-3 d-none d-xl-table-cell">$989.00 <del class="text-body-tertiary fs-xs fw-normal">$1,099.00</del></td>
-                                    <td class="py-3 d-none d-md-table-cell">
-                                        <div class="count-input">
-                                            <button type="button" class="btn btn-icon" data-decrement="" aria-label="Decrement quantity">
-                          <i class="ci-minus"></i>
-                        </button>
-                                            <input type="number" class="form-control" value="1" readonly="">
-                                            <button type="button" class="btn btn-icon" data-increment="" aria-label="Increment quantity">
-                          <i class="ci-plus"></i>
-                        </button>
-                                        </div>
-                                    </td>
-                                    <td class="h6 py-3 d-none d-md-table-cell">$989.00</td>
-                                    <td class="text-end py-3 px-0">
-                                        <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
-                                    </td>
-                                </tr>
-
-                                <!-- Item -->
-                                <tr>
-                                    <td class="py-3 ps-0">
-                                        <div class="d-flex align-items-center">
-                                            <a class="flex-shrink-0" href="shop-product-electronics.jsp">
-                          <img src="assets/img/shop/electronics/thumbs/01.png" width="110" alt="Smart Watch">
-                        </a>
-                                            <div class="w-100 min-w-0 ps-2 ps-xl-3">
-                                                <h5 class="d-flex animate-underline mb-2">
-                                                    <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Smart Watch Series 7</a>
-                                                </h5>
-                                                <ul class="list-unstyled gap-1 fs-xs mb-0">
-                                                    <li><span class="text-body-secondary">Color:</span> <span class="text-dark-emphasis fw-medium">White</span></li>
-                                                    <li><span class="text-body-secondary">Model:</span> <span class="text-dark-emphasis fw-medium">44 mm</span></li>
-                                                    <li class="d-xl-none"><span class="text-body-secondary">Price:</span> <span class="text-dark-emphasis fw-medium">$429.00</span></li>
-                                                </ul>
-                                                <div class="count-input rounded-2 d-md-none mt-3">
-                                                    <button type="button" class="btn btn-sm btn-icon" data-decrement="" aria-label="Decrement quantity">
-                              <i class="ci-minus"></i>
-                            </button>
-                                                    <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                                                    <button type="button" class="btn btn-sm btn-icon" data-increment="" aria-label="Increment quantity">
-                              <i class="ci-plus"></i>
-                            </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="h6 py-3 d-none d-xl-table-cell">$429.00</td>
-                                    <td class="py-3 d-none d-md-table-cell">
-                                        <div class="count-input">
-                                            <button type="button" class="btn btn-icon" data-decrement="" aria-label="Decrement quantity">
-                          <i class="ci-minus"></i>
-                        </button>
-                                            <input type="number" class="form-control" value="1" readonly="">
-                                            <button type="button" class="btn btn-icon" data-increment="" aria-label="Increment quantity">
-                          <i class="ci-plus"></i>
-                        </button>
-                                        </div>
-                                    </td>
-                                    <td class="h6 py-3 d-none d-md-table-cell">$429.00</td>
-                                    <td class="text-end py-3 px-0">
-                                        <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
-                                    </td>
-                                </tr>
+                            </c:forEach>
                             </tbody>
+
                         </table>
 
                         <div class="nav position-relative z-2 mb-4 mb-lg-0">
@@ -1803,16 +1711,16 @@
                                 <h5 class="border-bottom pb-4 mb-4">Order summary</h5>
                                 <ul class="list-unstyled fs-sm gap-3 mb-0">
                                     <li class="d-flex justify-content-between">
-                                        Subtotal (3 items):
-                                        <span class="text-dark-emphasis fw-medium">$2,427.00</span>
+                                        Subtotal (<c:out value="${cartItems.size()}"/> items):
+                                        <span class="text-dark-emphasis fw-medium">$<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
                                     </li>
                                     <li class="d-flex justify-content-between">
                                         Saving:
-                                        <span class="text-danger fw-medium">-$110.00</span>
+                                        <span class="text-danger fw-medium">-₹0.00</span>
                                     </li>
                                     <li class="d-flex justify-content-between">
                                         Tax collected:
-                                        <span class="text-dark-emphasis fw-medium">$73.40</span>
+                                        <span class="text-dark-emphasis fw-medium">₹0.00</span>
                                     </li>
                                     <li class="d-flex justify-content-between">
                                         Shipping:
@@ -1822,7 +1730,7 @@
                                 <div class="border-top pt-4 mt-4">
                                     <div class="d-flex justify-content-between mb-3">
                                         <span class="fs-sm">Estimated total:</span>
-                                        <span class="h5 mb-0">$2,390.40</span>
+                                        <span class="h5 mb-0">₹<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
                                     </div>
                                     <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.html">
                       Proceed to checkout
