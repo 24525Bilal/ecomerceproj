@@ -453,7 +453,7 @@
                                                 <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Catalog with Side Filters</a>
                                             </li>
                                             <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-electronics.html">Product General Info</a>
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-electronics.jsp">Product General Info</a>
                                             </li>
                                             <li class="d-flex w-100 pt-1">
                                                 <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-details-electronics.html">Product Details</a>

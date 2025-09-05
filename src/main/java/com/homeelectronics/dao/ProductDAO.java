@@ -223,6 +223,31 @@ public class ProductDAO {
         return product;
     }
 
+
+    /**
+     * Fetches all image paths for a specific product ID., added getImageUrlsByProductId when making product page dyanamic
+     */
+    public List<String> getImageUrlsByProductId(int productId) {
+        List<String> imageUrls = new ArrayList<>();
+        String sql = "SELECT image_path FROM product_images WHERE product_id = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, productId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    imageUrls.add(rs.getString("image_path"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return imageUrls;
+    }
+
+
+
+
+
     /**
      * Updates an existing product in the database.
      */

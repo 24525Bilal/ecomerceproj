@@ -214,12 +214,12 @@
 
             <!-- Item -->
             <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-electronics.html">
+                <a class="flex-shrink-0" href="shop-product-electronics.jsp">
             <img src="assets/img/shop/electronics/thumbs/08.png" width="110" alt="iPhone 14">
           </a>
                 <div class="w-100 min-w-0 ps-2 ps-sm-3">
                     <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Apple iPhone 14 128GB White</a>
+                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Apple iPhone 14 128GB White</a>
                     </h5>
                     <div class="h6 pb-1 mb-2">$899.00</div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -239,13 +239,13 @@
 
             <!-- Item -->
             <div class="d-flex align-items-center">
-                <a class="position-relative flex-shrink-0" href="shop-product-electronics.html">
+                <a class="position-relative flex-shrink-0" href="shop-product-electronics.jsp">
             <span class="badge text-bg-danger position-absolute top-0 start-0">-10%</span>
             <img src="assets/img/shop/electronics/thumbs/09.png" width="110" alt="iPad Pro">
           </a>
                 <div class="w-100 min-w-0 ps-2 ps-sm-3">
                     <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Tablet Apple iPad Pro M2</a>
+                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Tablet Apple iPad Pro M2</a>
                     </h5>
                     <div class="h6 pb-1 mb-2">$989.00 <del class="text-body-tertiary fs-xs fw-normal">$1,099.00</del></div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -265,12 +265,12 @@
 
             <!-- Item -->
             <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-electronics.html">
+                <a class="flex-shrink-0" href="shop-product-electronics.jsp">
             <img src="assets/img/shop/electronics/thumbs/01.png" width="110" alt="Smart Watch">
           </a>
                 <div class="w-100 min-w-0 ps-2 ps-sm-3">
                     <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Smart Watch Series 7, White</a>
+                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Smart Watch Series 7, White</a>
                     </h5>
                     <div class="h6 pb-1 mb-2">$429.00</div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -1620,7 +1620,7 @@
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Catalog with Side Filters</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-electronics.html">Product General Info</a>
+                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-electronics.jsp">Product General Info</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-details-electronics.html">Product Details</a>
@@ -1968,7 +1968,7 @@
                                                 <input type="checkbox" class="form-check-input select-card-check" checked="">
                                             </div>
                                         </div>
-                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.html">
+                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.jsp">
                         <span class="badge bg-danger position-absolute top-0 start-0 mt-2 ms-2 mt-lg-3 ms-lg-3">-21%</span>
                         <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
                           <img src="assets/img/shop/electronics/01.png" alt="VR Glasses">
@@ -1987,7 +1987,7 @@
                                             <span class="text-body-tertiary fs-xs">(123)</span>
                                         </div>
                                         <h3 class="pb-1 mb-2">
-                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.html">
+                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.jsp">
                           <span class="animate-target">VRB01 Virtual Reality Glasses</span>
                         </a>
                                         </h3>
@@ -2010,7 +2010,7 @@
                                                 <input type="checkbox" class="form-check-input select-card-check" checked="">
                                             </div>
                                         </div>
-                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.html">
+                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.jsp">
                                             <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
                                                 <img src="assets/img/shop/electronics/02.png" alt="iPhone 14">
                                             </div>
@@ -2028,7 +2028,7 @@
                                             <span class="text-body-tertiary fs-xs">(142)</span>
                                         </div>
                                         <h3 class="pb-1 mb-2">
-                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.html">
+                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.jsp">
                           <span class="animate-target">Apple iPhone 14 128GB White</span>
                         </a>
                                         </h3>
@@ -2051,7 +2051,7 @@
                                                 <input type="checkbox" class="form-check-input select-card-check">
                                             </div>
                                         </div>
-                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.html">
+                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.jsp">
                                             <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
                                                 <img src="assets/img/shop/electronics/03.png" alt="Smart Watch">
                                             </div>
@@ -2069,7 +2069,7 @@
                                             <span class="text-body-tertiary fs-xs">(67)</span>
                                         </div>
                                         <h3 class="pb-1 mb-2">
-                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.html">
+                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.jsp">
                           <span class="animate-target">Smart Watch Series 7, White</span>
                         </a>
                                         </h3>
@@ -2092,7 +2092,7 @@
                                                 <input type="checkbox" class="form-check-input select-card-check">
                                             </div>
                                         </div>
-                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.html">
+                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.jsp">
                                             <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
                                                 <img src="assets/img/shop/electronics/05.png" alt="iPad Air">
                                             </div>
@@ -2110,7 +2110,7 @@
                                             <span class="text-body-tertiary fs-xs">(12)</span>
                                         </div>
                                         <h3 class="pb-1 mb-2">
-                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.html">
+                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.jsp">
                           <span class="animate-target">Tablet Apple iPad Air M1</span>
                         </a>
                                         </h3>
@@ -2133,7 +2133,7 @@
                                                 <input type="checkbox" class="form-check-input select-card-check">
                                             </div>
                                         </div>
-                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.html">
+                                        <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.jsp">
                                             <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
                                                 <img src="assets/img/shop/electronics/06.png" alt="AirPods 2">
                                             </div>
@@ -2151,7 +2151,7 @@
                                             <span class="text-body-tertiary fs-xs">(78)</span>
                                         </div>
                                         <h3 class="pb-1 mb-2">
-                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.html">
+                                            <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.jsp">
                           <span class="animate-target">Headphones Apple AirPods 2 Pro</span>
                         </a>
                                         </h3>
