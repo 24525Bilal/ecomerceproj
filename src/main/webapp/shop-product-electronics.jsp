@@ -1811,27 +1811,43 @@
                         <!-- Price -->
                         <div class="d-flex flex-wrap align-items-center mb-3">
                             <div class="h4 mb-0 me-3">$${product.price}</div>
-                            <div class="d-flex align-items-center text-success fs-sm ms-auto">
-                                <i class="ci-check-circle fs-base me-2"></i> Available to order
+                            <div class="d-flex align-items-center fs-sm ms-auto
+                                <c:choose>
+                                    <c:when test="${product.stockQuantity > 0}">text-success">
+                                             <i class="ci-check-circle fs-base me-2"></i> Available to order
+                                    </c:when>
+                                     <c:otherwise>text-danger">
+                                            <i class="ci-slash-circle fs-base me-2"></i> Sold out!
+                                     </c:otherwise>
+                                </c:choose>
+
+
+
                             </div>
                         </div>
 
                         <!-- Count + Buttons -->
                         <div class="d-flex flex-wrap flex-sm-nowrap flex-md-wrap flex-lg-nowrap gap-3 gap-lg-2 gap-xl-3 mb-4">
+
+                            <!-- adding hidden input fild to store the stock quantity for functioning the addtocart js-->
+                                     <input type="hidden" id="stockQuantity" value="${product.stockQuantity}">
+
                             <div class="count-input flex-shrink-0 order-sm-1">
                                 <button type="button" class="btn btn-icon btn-lg" data-decrement="" aria-label="Decrement quantity">
                                     <i class="ci-minus"></i>
                                 </button>
-                                <input type="number" class="form-control form-control-lg" value="1" min="1" max="5" readonly="">
+                                <input type="number" class="form-control form-control-lg" value="1" min="1" max="${product.stockQuantity}" readonly="" id="productQuantity">
                                 <button type="button" class="btn btn-icon btn-lg" data-increment="" aria-label="Increment quantity">
                                     <i class="ci-plus"></i>
                                 </button>
                             </div>
-                            <button type="button" class="btn btn-icon btn-lg btn-secondary animate-pulse order-sm-3 order-md-2 order-lg-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-sm" data-bs-title="Add to Wishlist" aria-label="Add to Wishlist">
-                                <i class="ci-heart fs-lg animate-target"></i>
-                            </button>
 
-                            <button type="button" class="btn btn-lg btn-primary w-100 animate-slide-end order-sm-2 order-md-4 order-lg-2">
+                            <!-- whishlist dynamic -->
+                            <a class="btn btn-icon btn-lg btn-secondary animate-pulse order-sm-3 order-md-2 order-lg-3" href="addtowishlist?id=${product.id}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-sm" data-bs-title="Add to Wishlist" aria-label="Add to Wishlist">
+                                <i class="ci-heart fs-lg animate-target"></i>
+                            </a>
+
+                            <button type="button" class="btn btn-lg btn-primary w-100 animate-slide-end order-sm-2 order-md-4 order-lg-2" onclick="addToCart()">
                                 <i class="ci-shopping-cart fs-lg animate-target ms-n1 me-2"></i>
                                 Add to cart
                             </button>
@@ -1916,22 +1932,22 @@
                 <div class="container d-flex align-items-center">
                     <div class="d-flex align-items-center min-w-0 ms-n2 me-3">
                         <div class="ratio ratio-1x1 flex-shrink-0" style="width: 50px">
-                            <img src="assets/img/shop/electronics/thumbs/10.png" alt="iPhone 14">
+                            <img src="${imageUrls[0]}" alt="${product.name}">
                         </div>
                         <div class="w-100 min-w-0 ps-2">
-                            <h4 class="fs-sm fw-medium text-truncate mb-1">Apple iPhone 14 Plus 128GB Blue</h4>
-                            <div class="h6 mb-0">$940.00</div>
+                            <h4 class="fs-sm fw-medium text-truncate mb-1">${product.name}</h4>
+                            <div class="h6 mb-0">$${product.price}</div>
                         </div>
                     </div>
                     <div class="d-flex gap-2 ms-auto">
-                        <button type="button" class="btn btn-icon btn-secondary animate-pulse" aria-label="Add to Wishlist">
+                        <a class="btn btn-icon btn-secondary animate-pulse" href="addtowishlist?id=${product.id}" aria-label="Add to Wishlist">
                             <i class="ci-heart fs-base animate-target"></i>
-                        </button>
-                        <button type="button" class="btn btn-primary animate-slide-end d-none d-sm-inline-flex">
+                        </a>
+                        <button type="button" class="btn btn-primary animate-slide-end d-none d-sm-inline-flex" onclick="addToCart()">
                             <i class="ci-shopping-cart fs-base animate-target ms-n1 me-2"></i>
                             Add to cart
                         </button>
-                        <button type="button" class="btn btn-icon btn-primary animate-slide-end d-sm-none" aria-label="Add to Cart">
+                        <button type="button" class="btn btn-icon btn-primary animate-slide-end d-sm-none" onclick="addToCart()" aria-label="Add to Cart">
                             <i class="ci-shopping-cart fs-lg animate-target"></i>
                         </button>
                     </div>
@@ -2199,7 +2215,7 @@
                     <div class="border rounded p-3 p-lg-4">
                         <div class="d-flex align-items-center mb-3">
                             <div class="ratio ratio-1x1 flex-shrink-0" style="width: 110px">
-                                <img src="assets/img/shop/electronics/thumbs/10.png" width="110" alt="iPhone 14">
+                                <img src="${imageUrls[0]}" width="110" alt="${product.name}">
                             </div>
                             <div class="w-100 min-w-0 ps-2 ps-sm-3">
                                 <div class="d-flex align-items-center gap-2 mb-2">
@@ -2212,19 +2228,18 @@
                                     </div>
                                     <span class="text-body-tertiary fs-xs">68</span>
                                 </div>
-                                <h4 class="fs-sm fw-medium mb-2">Apple iPhone 14 Plus 128GB Blue</h4>
-                                <div class="h5 mb-0">$940.00</div>
+                                <h4 class="fs-sm fw-medium mb-2">${product.name}</h4>
+                                <div class="h5 mb-0">$${product.price}</div>
                             </div>
                         </div>
                         <div class="d-flex gap-2 gap-lg-3">
-                            <button type="button" class="btn btn-primary w-100 animate-slide-end">
+                            <button type="button" class="btn btn-primary w-100 animate-slide-end" onclick="addToCart()">
                                 <i class="ci-shopping-cart fs-base animate-target ms-n1 me-2"></i>
                                 Add to cart
                             </button>
-                            <button type="button" class="btn btn-icon btn-secondary animate-pulse" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-sm" data-bs-title="Add to Wishlist" aria-label="Add to Wishlist">
+                            <a class="btn btn-icon btn-secondary animate-pulse" href="addtowishlist?id=${product.id}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-sm" data-bs-title="Add to Wishlist" aria-label="Add to Wishlist">
                                 <i class="ci-heart fs-base animate-target"></i>
-                            </button>
-
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -2509,6 +2524,9 @@
 
 <!-- Bootstrap + Theme scripts -->
 <script src="assets/js/theme.min.js"></script>
+
+<!-- adding js for the add to cart functioning  -->
+<script src="assets/js/addtocart.js"></script>
 
 
 </body>

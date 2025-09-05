@@ -3,14 +3,20 @@
  * Checks if the product is in stock before proceeding.
  */
 function addToCart() {
-    // Get the stock quantity from the JSP using Expression Language
-    var stockQuantity = parseInt('<c:out value="${product.quantity}"/>');
+    // Get the total stock quantity from the hidden input field
+    var totalStock = parseInt(document.getElementById('stockQuantity').value);
 
-    if (stockQuantity <= 0) {
+    // Get the quantity the user selected
+    var selectedQuantity = parseInt(document.getElementById('productQuantity').value);
+
+    if (totalStock <= 0) {
         // Product is sold out, show an alert
-        alert("product soldout\nCheck After Sometimes");
+        alert("Product Sold Out\nCheck later");
+    } else if (selectedQuantity > totalStock) {
+        // Not enough stock for the selected quantity
+        alert("Cannot add " + selectedQuantity + " items. Only " + totalStock + " available.");
     } else {
-        // Product is in stock, proceed to cart page
+        // Product is in stock and selected quantity is valid, proceed to cart page
         window.location.href = "checkout-v1-cart.html";
     }
 }
