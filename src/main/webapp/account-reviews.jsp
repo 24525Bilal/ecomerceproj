@@ -214,12 +214,12 @@
 
             <!-- Item -->
             <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-general-electronics.html">
+                <a class="flex-shrink-0" href="shop-product-electronics.html">
             <img src="assets/img/shop/electronics/thumbs/08.png" width="110" alt="iPhone 14">
           </a>
                 <div class="w-100 min-w-0 ps-2 ps-sm-3">
                     <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Apple iPhone 14 128GB White</a>
+                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Apple iPhone 14 128GB White</a>
                     </h5>
                     <div class="h6 pb-1 mb-2">$899.00</div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -239,13 +239,13 @@
 
             <!-- Item -->
             <div class="d-flex align-items-center">
-                <a class="position-relative flex-shrink-0" href="shop-product-general-electronics.html">
+                <a class="position-relative flex-shrink-0" href="shop-product-electronics.html">
             <span class="badge text-bg-danger position-absolute top-0 start-0">-10%</span>
             <img src="assets/img/shop/electronics/thumbs/09.png" width="110" alt="iPad Pro">
           </a>
                 <div class="w-100 min-w-0 ps-2 ps-sm-3">
                     <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Tablet Apple iPad Pro M2</a>
+                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Tablet Apple iPad Pro M2</a>
                     </h5>
                     <div class="h6 pb-1 mb-2">$989.00 <del class="text-body-tertiary fs-xs fw-normal">$1,099.00</del></div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -265,12 +265,12 @@
 
             <!-- Item -->
             <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-general-electronics.html">
+                <a class="flex-shrink-0" href="shop-product-electronics.html">
             <img src="assets/img/shop/electronics/thumbs/01.png" width="110" alt="Smart Watch">
           </a>
                 <div class="w-100 min-w-0 ps-2 ps-sm-3">
                     <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Smart Watch Series 7, White</a>
+                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Smart Watch Series 7, White</a>
                     </h5>
                     <div class="h6 pb-1 mb-2">$429.00</div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -317,12 +317,12 @@
 
             <!-- Product -->
             <div class="d-flex align-items-center border-bottom mb-4">
-                <a class="flex-shrink-0" href="shop-product-general-electronics.html">
+                <a class="flex-shrink-0" href="shop-product-electronics.html">
             <img src="assets/img/shop/electronics/thumbs/07.png" width="110" alt="MacBook">
           </a>
                 <div class="w-100 min-w-0 ps-2 ps-sm-3">
                     <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Laptop Apple MacBook Pro 13 M2</a>
+                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Laptop Apple MacBook Pro 13 M2</a>
                     </h5>
                     <div class="h6 mb-0">$1,200.00</div>
                 </div>
@@ -426,12 +426,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="d-flex align-items-center">
-                        <a class="flex-shrink-0" href="shop-product-general-electronics.html">
+                        <a class="flex-shrink-0" href="shop-product-electronics.html">
                 <img src="assets/img/shop/electronics/thumbs/10.png" width="110" alt="MacBook">
               </a>
                         <div class="w-100 min-w-0 ps-2 ps-sm-3">
                             <h5 class="d-flex animate-underline mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Apple iPhone 14 Plus 128GB Blue</a>
+                                <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Apple iPhone 14 Plus 128GB Blue</a>
                             </h5>
                             <div class="h6 mb-0">$940.00</div>
                         </div>
@@ -1759,7 +1759,7 @@
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Catalog with Side Filters</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-general-electronics.html">Product General Info</a>
+                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-electronics.html">Product General Info</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-details-electronics.html">Product Details</a>
@@ -2035,7 +2035,7 @@
                         <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
                             <div class="nav flex-nowrap position-relative align-items-center">
                                 <img src="assets/img/shop/electronics/thumbs/11.png" class="d-block my-xl-1" width="64" alt="Image">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Apple iPad 10.2" 2021 Wi-Fi 64 GB Space Gray (MK2K3RK/A)</a>
+                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-electronics.html">Apple iPad 10.2" 2021 Wi-Fi 64 GB Space Gray (MK2K3RK/A)</a>
                             </div>
                             <div class="d-flex h6 fs-sm pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
                                 <div class="flex-shrink-0 d-md-none" style="width: 64px"></div>
@@ -2051,7 +2051,7 @@
                         <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
                             <div class="nav flex-nowrap position-relative align-items-center">
                                 <img src="assets/img/shop/electronics/thumbs/12.png" class="d-block my-xl-1" width="64" alt="Image">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Laptop Apple MacBook Pro 13 M2</a>
+                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-electronics.html">Laptop Apple MacBook Pro 13 M2</a>
                             </div>
                             <div class="position-relative d-flex align-items-center text-decoration-none min-w-0 pt-1 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
                                 <div class="flex-shrink-0 d-md-none" style="width: 64px"></div>
@@ -2073,7 +2073,7 @@
                         <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
                             <div class="nav flex-nowrap position-relative align-items-center">
                                 <img src="assets/img/shop/electronics/thumbs/13.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Razer Opus X Mercury Headphones (RZ04-03760200-R3M1)</a>
+                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-electronics.html">Razer Opus X Mercury Headphones (RZ04-03760200-R3M1)</a>
                             </div>
                             <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
                                 <div class="d-md-none" style="width: 64px"></div>
@@ -2085,7 +2085,7 @@
                         <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
                             <div class="nav flex-nowrap position-relative align-items-center">
                                 <img src="assets/img/shop/electronics/thumbs/14.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">3D virtual reality glasses VR Shinecon G10 for smartphones with a large screen</a>
+                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-electronics.html">3D virtual reality glasses VR Shinecon G10 for smartphones with a large screen</a>
                             </div>
                             <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
                                 <div class="d-md-none" style="width: 64px"></div>
@@ -2097,7 +2097,7 @@
                         <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
                             <div class="nav flex-nowrap position-relative align-items-center">
                                 <img src="assets/img/shop/electronics/thumbs/15.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Apple iPad Pro M2 2022 64 GB Space Gray</a>
+                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-electronics.html">Apple iPad Pro M2 2022 64 GB Space Gray</a>
                             </div>
                             <div class="d-flex h6 fs-sm pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
                                 <div class="flex-shrink-0 d-md-none" style="width: 64px"></div>
@@ -2113,7 +2113,7 @@
                         <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
                             <div class="nav flex-nowrap position-relative align-items-center">
                                 <img src="assets/img/shop/electronics/thumbs/16.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Mobile phone Apple iPhone 14 256GB Starlight</a>
+                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-electronics.html">Mobile phone Apple iPhone 14 256GB Starlight</a>
                             </div>
                             <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
                                 <div class="d-md-none" style="width: 64px"></div>
@@ -2125,7 +2125,7 @@
                         <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
                             <div class="nav flex-nowrap position-relative align-items-center">
                                 <img src="assets/img/shop/electronics/thumbs/17.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Power Bank PBS 10000 mAh Black</a>
+                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-electronics.html">Power Bank PBS 10000 mAh Black</a>
                             </div>
                             <div class="position-relative d-flex align-items-center text-decoration-none min-w-0 pt-1 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
                                 <div class="flex-shrink-0 d-md-none" style="width: 64px"></div>
@@ -2146,7 +2146,7 @@
                         <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
                             <div class="nav flex-nowrap position-relative align-items-center">
                                 <img src="assets/img/shop/electronics/thumbs/18.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">Apple iPhone 14 128GB Blue</a>
+                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-electronics.html">Apple iPhone 14 128GB Blue</a>
                             </div>
                             <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
                                 <div class="d-md-none" style="width: 64px"></div>
@@ -2158,7 +2158,7 @@
                         <div class="d-md-flex align-items-center justify-content-between gap-4 border-bottom py-3">
                             <div class="nav flex-nowrap position-relative align-items-center">
                                 <img src="assets/img/shop/electronics/thumbs/19.png" class="d-block my-xl-1" width="64" alt="Product thumb">
-                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-general-electronics.html">VRB01 Camera Nikon Max</a>
+                                <a class="nav-link stretched-link hover-effect-underline ps-3 p-0" href="shop-product-electronics.html">VRB01 Camera Nikon Max</a>
                             </div>
                             <div class="d-flex pt-2 pt-md-0 ps-3 ps-md-0 mb-2 mb-md-0">
                                 <div class="d-md-none" style="width: 64px"></div>

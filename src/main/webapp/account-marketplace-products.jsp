@@ -461,7 +461,7 @@
                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Catalog with Side Filters</a>
                                         </li>
                                         <li class="d-flex w-100 pt-1">
-                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-general-electronics.html">Product General Info</a>
+                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-electronics.html">Product General Info</a>
                                         </li>
                                         <li class="d-flex w-100 pt-1">
                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-details-electronics.html">Product Details</a>
@@ -909,7 +909,7 @@
 
 
                                             <h6 class="product mb-2">
-                                                <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-general-electronics.html">${product.name}</a>
+                                                <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-electronics.html">${product.name}</a>
                                             </h6>
                                             <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
                                                 <div class="h6 mb-0 me-1 me-md-0"><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="$" /></div>

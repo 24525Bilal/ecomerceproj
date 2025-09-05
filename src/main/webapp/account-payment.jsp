@@ -210,12 +210,12 @@
 
             <!-- Item -->
             <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-general-electronics.html">
+                <a class="flex-shrink-0" href="shop-product-electronics.html">
             <img src="assets/img/shop/electronics/thumbs/08.png" width="110" alt="iPhone 14">
           </a>
                 <div class="w-100 min-w-0 ps-2 ps-sm-3">
                     <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Apple iPhone 14 128GB White</a>
+                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Apple iPhone 14 128GB White</a>
                     </h5>
                     <div class="h6 pb-1 mb-2">$899.00</div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -235,13 +235,13 @@
 
             <!-- Item -->
             <div class="d-flex align-items-center">
-                <a class="position-relative flex-shrink-0" href="shop-product-general-electronics.html">
+                <a class="position-relative flex-shrink-0" href="shop-product-electronics.html">
             <span class="badge text-bg-danger position-absolute top-0 start-0">-10%</span>
             <img src="assets/img/shop/electronics/thumbs/09.png" width="110" alt="iPad Pro">
           </a>
                 <div class="w-100 min-w-0 ps-2 ps-sm-3">
                     <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Tablet Apple iPad Pro M2</a>
+                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Tablet Apple iPad Pro M2</a>
                     </h5>
                     <div class="h6 pb-1 mb-2">$989.00 <del class="text-body-tertiary fs-xs fw-normal">$1,099.00</del></div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -261,12 +261,12 @@
 
             <!-- Item -->
             <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-general-electronics.html">
+                <a class="flex-shrink-0" href="shop-product-electronics.html">
             <img src="assets/img/shop/electronics/thumbs/01.png" width="110" alt="Smart Watch">
           </a>
                 <div class="w-100 min-w-0 ps-2 ps-sm-3">
                     <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Smart Watch Series 7, White</a>
+                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.html">Smart Watch Series 7, White</a>
                     </h5>
                     <div class="h6 pb-1 mb-2">$429.00</div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -1660,7 +1660,7 @@
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Catalog with Side Filters</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-general-electronics.html">Product General Info</a>
+                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-electronics.html">Product General Info</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-details-electronics.html">Product Details</a>
