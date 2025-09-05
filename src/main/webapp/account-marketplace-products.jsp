@@ -815,7 +815,7 @@
                             </a>
                             <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill pe-none active" href="account-marketplace-products.html">
                                 <i class="ci-layers fs-base opacity-75 me-2"></i>
-                                Products (4)
+                                Products (${totalProducts})
                             </a>
                             <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-sales.html">
                                 <i class="ci-pie-chart fs-base opacity-75 me-2"></i>
@@ -862,7 +862,7 @@
 
                     <!-- Header -->
                     <div class="d-sm-flex align-items-center justify-content-between gap-3 pb-2 pb-sm-3 mb-md-2">
-                        <h1 class="h2 text-nowrap mb-sm-0">Products (4)</h1>
+                        <h1 class="h2 text-nowrap mb-sm-0">Products (${totalProducts})</h1>
                         <div class="position-relative w-100" style="max-width: 300px">
                             <i class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                             <input type="search" class="product-search form-control form-icon-start rounded-pill" placeholder="Search">
