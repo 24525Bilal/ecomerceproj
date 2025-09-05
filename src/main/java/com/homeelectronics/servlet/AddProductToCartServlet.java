@@ -21,12 +21,20 @@ import java.util.List;
 
 @WebServlet("/addProductToCart")
 public class AddProductToCartServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Attempt to get the session without creating a new one if it doesn't exist.
         HttpSession session = request.getSession(false);
-        Integer userId = (Integer) session.getAttribute("userId");
+        Integer userId = (session != null) ? (Integer) session.getAttribute("userId") : null;
 
         if (userId == null) {
-            // Redirect to login if user is not authenticated
+            // Redirect to login if user is not authenticated.
+            // Save the current URL so we can redirect back after a successful login.
+            String requestedURI = request.getRequestURI();
+            if (session == null) {
+                session = request.getSession(); // Create a new session to store the requestedURI
+            }
+            session.setAttribute("requestedURI", requestedURI);
             response.sendRedirect("account-signin.html");
             return;
         }
@@ -49,5 +57,4 @@ public class AddProductToCartServlet extends HttpServlet {
             // Handle invalid product ID or quantity
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid product ID or quantity.");
         }
-    }
-}
+    }}

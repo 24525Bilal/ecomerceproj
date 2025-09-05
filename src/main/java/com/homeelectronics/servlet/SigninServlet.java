@@ -58,6 +58,8 @@ public class SigninServlet extends HttpServlet {
                     ProfileDAO profileDAO = new ProfileDAO(conn);
                     int userId = profileDAO.getUserIdByEmail(email);
                     if (userId != -1) {
+                        // Add this line to store the userId in the session
+                        session.setAttribute("userId", userId);
                         Profile userDetails = profileDAO.getProfileByUserId(userId);
                         if (userDetails != null) {
 

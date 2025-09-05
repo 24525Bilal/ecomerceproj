@@ -44,6 +44,8 @@ public class AuthFilter implements Filter {
                 || uri.endsWith("/productDetails")
                 || uri.contains("getProductDetails")
                 || uri.endsWith("shop-product-electronics.jsp");
+//                || uri.endsWith("/cartPage")
+//                || path.equals("/addProductToCart")
         // Allow public pages and assets to pass through without a session.
         if (isPublicPage) {
             chain.doFilter(request, response);
