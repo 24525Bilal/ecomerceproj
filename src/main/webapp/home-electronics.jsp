@@ -4,7 +4,10 @@
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%@ page import="com.homeelectronics.dao.ProductDAO" %>
+<%@ page import="com.homeelectronics.model.Product" %>
 
+<%@ page import="java.util.List" %>
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
@@ -819,1115 +822,122 @@
             <!-- Product grid -->
             <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 pt-4">
 
-                <!-- Item -->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="position-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
+                <%
+                    ProductDAO productDAO = new ProductDAO();
+                    List<Product> trendingProducts = productDAO.getLatestProducts(12);
+                    request.setAttribute("trendingProducts", trendingProducts);
+                %>
+
+                <c:forEach var="product" items="${trendingProducts}">
+                    <div class="col">
+                        <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
+                            <div class="position-relative">
+                                <span class="badge bg-info position-absolute top-0 start-0 z-2 mt-2 ms-2 mt-lg-3 ms-lg-3">New</span>
+                                <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
+                                    <div class="d-flex flex-column gap-2">
+                                        <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
+                                            <i class="ci-heart fs-base animate-target"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
+                                            <i class="ci-refresh-cw fs-base animate-target"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
+                                    <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
+                                        <i class="ci-more-vertical fs-lg"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
+                                        <li>
+                                            <a class="dropdown-item" href="#!">
+                                                <i class="ci-heart fs-sm ms-n1 me-2"></i>
+                                                Add to Wishlist
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#!">
+                                                <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
+                                                Compare
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.jsp?id=<c:out value="${product.id}"/>">
+                                    <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
+                                        <img src="${product.thumbnailUrl}" alt="<c:out value="${product.name}"/>">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
+                                <h3 class="pb-1 mb-2">
+                                    <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-electronics.jsp?id=<c:out value="${product.id}"/>">
+                                        <span class="animate-target"><c:out value="${product.name}"/></span>
+                                    </a>
+                                </h3>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="h5 lh-1 mb-0">$<c:out value="${product.price}"/></div>
+                                    <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
+                                        <i class="ci-shopping-cart fs-base animate-target"></i>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
+                            <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
+                                <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
+                                <ul class="list-unstyled d-flex flex-column gap-2 m-0">
+                                    <c:if test="${not empty product.model}">
+                                        <li class="d-flex align-items-center">
+                                            <span class="fs-xs">Model:</span>
+                                            <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                            <span class="text-dark-emphasis fs-xs fw-medium text-end"><c:out value="${product.model}"/></span>
+                                        </li>
+                                    </c:if>
+                                    <c:if test="${not empty product.manufacturer}">
+                                        <li class="d-flex align-items-center">
+                                            <span class="fs-xs">Manufacturer:</span>
+                                            <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                            <span class="text-dark-emphasis fs-xs fw-medium text-end"><c:out value="${product.manufacturer}"/></span>
+                                        </li>
+                                    </c:if>
+                                    <c:if test="${not empty product.capacity}">
+                                        <li class="d-flex align-items-center">
+                                            <span class="fs-xs">Capacity:</span>
+                                            <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                            <span class="text-dark-emphasis fs-xs fw-medium text-end"><c:out value="${product.capacity}"/></span>
+                                        </li>
+                                    </c:if>
+                                    <c:if test="${not empty product.chip}">
+                                        <li class="d-flex align-items-center">
+                                            <span class="fs-xs">Chip:</span>
+                                            <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                            <span class="text-dark-emphasis fs-xs fw-medium text-end"><c:out value="${product.chip}"/></span>
+                                        </li>
+                                    </c:if>
+                                    <c:if test="${not empty product.diagonal}">
+                                        <li class="d-flex align-items-center">
+                                            <span class="fs-xs">Diagonal:</span>
+                                            <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                            <span class="text-dark-emphasis fs-xs fw-medium text-end"><c:out value="${product.diagonal}"/></span>
+                                        </li>
+                                    </c:if>
+                                    <c:if test="${not empty product.screenType}">
+                                        <li class="d-flex align-items-center">
+                                            <span class="fs-xs">Screen Type:</span>
+                                            <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                            <span class="text-dark-emphasis fs-xs fw-medium text-end"><c:out value="${product.screenType}"/></span>
+                                        </li>
+                                    </c:if>
+                                    <c:if test="${not empty product.resolution}">
+                                        <li class="d-flex align-items-center">
+                                            <span class="fs-xs">Resolution:</span>
+                                            <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
+                                            <span class="text-dark-emphasis fs-xs fw-medium text-end"><c:out value="${product.resolution}"/></span>
+                                        </li>
+                                    </c:if>
                                 </ul>
                             </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-
-                  <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                    <img src="assets/img/shop/electronics/01.png" alt="VR Glasses">
-                  </div>
-                </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star text-body-tertiary opacity-75"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(123)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">VRB01 Virtual Reality Glasses</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$340.99 <del class="text-body-tertiary fs-sm fw-normal">$430.00</del></div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Display:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">OLED 1440x1600</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Graphics:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Adreno 540</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Sound:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">2x3.5mm jack</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Input:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">4 built-in cameras</span>
-                                </li>
-                            </ul>
                         </div>
                     </div>
-                </div>
-
-                <!-- Item -->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="position-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                                    <img src="assets/img/shop/electronics/02.png" alt="iPhone 14">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-half text-warning"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(142)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Apple iPhone 14 128GB White</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$899.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Display:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">6.1" XDR</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Capacity:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">128 GB</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Chip:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">A15 Bionic</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Camera:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">12 + 12 MP</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Weight:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">172 grams</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item -->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="position-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                                    <img src="assets/img/shop/electronics/03.png" alt="Smart Watch">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(67)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Smart Watch Series 7, White</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$429.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Display:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">45mm OLED</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Chip:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">64-bit Dual-core</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Connectivity:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Wi-Fi, Bluetooth</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Power:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Lithium-ion battery</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Weight:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">37.0 grams</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item -->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="position-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-
-                  <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                    <img src="assets/img/shop/electronics/04.png" alt="MacBook">
-                  </div>
-                </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-half text-warning"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(51)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Laptop Apple MacBook Pro 13 M2</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$1,200.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Chip:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Apple M2</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Memory:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">8 GB unified</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Storage:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">256 GB SSD</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Display:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">13.3-inch Retina</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item -->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="posittion-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                                    <img src="assets/img/shop/electronics/05.png" alt="iPad Air">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(12)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Tablet Apple iPad Air M1</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$540.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Display:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">10.9" LED</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Capacity:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">64 GB</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Chip:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Apple M1</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Camera:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">12 MP Wide</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Weight:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">462 grams</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item -->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="position-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                                    <img src="assets/img/shop/electronics/06.png" alt="AirPods 2">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star text-body-tertiary opacity-75"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(78)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Headphones Apple AirPods 2 Pro</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$224.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Audio:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Noise Cancellation</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Sensors:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Touch control</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Chip:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Apple H2</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Weight:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">50.8 grams</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item -->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="posittion-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                                    <img src="assets/img/shop/electronics/07.png" alt="iPad Pro">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-half text-warning"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(49)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Tablet Apple iPad Pro M1</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$739.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Display:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">11" LED</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Capacity:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">128 GB</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Chip:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Apple M1</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Camera:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">12 MP Wide</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Weight:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">470 grams</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item -->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="posittion-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                                    <img src="assets/img/shop/electronics/08.png" alt="Bluetooth Headphones">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-half text-warning"></i>
-                                    <i class="ci-star text-body-tertiary opacity-75"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(136)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Wireless Bluetooth Headphones Sony</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$299.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Audio:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Noise Cancellation</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Connectivity:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Bluetooth, 3.5mm jack</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Material:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Leather, Plastic</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Weight:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">185 grams</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-                <!-- Item 9-->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="posittion-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                                    <img src="assets/img/shop/electronics/08.png" alt="Bluetooth Headphones">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-half text-warning"></i>
-                                    <i class="ci-star text-body-tertiary opacity-75"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(136)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Wireless Bluetooth Headphones Sony</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$299.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Audio:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Noise Cancellation</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Connectivity:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Bluetooth, 3.5mm jack</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Material:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Leather, Plastic</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Weight:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">185 grams</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Item 10-->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="posittion-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                                    <img src="assets/img/shop/electronics/08.png" alt="Bluetooth Headphones">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-half text-warning"></i>
-                                    <i class="ci-star text-body-tertiary opacity-75"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(136)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Wireless Bluetooth Headphones Sony</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$299.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Audio:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Noise Cancellation</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Connectivity:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Bluetooth, 3.5mm jack</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Material:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Leather, Plastic</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Weight:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">185 grams</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Item 11-->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="posittion-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                                    <img src="assets/img/shop/electronics/08.png" alt="Bluetooth Headphones">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-half text-warning"></i>
-                                    <i class="ci-star text-body-tertiary opacity-75"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(136)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Wireless Bluetooth Headphones Sony</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$299.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Audio:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Noise Cancellation</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Connectivity:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Bluetooth, 3.5mm jack</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Material:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Leather, Plastic</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Weight:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">185 grams</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Item 12-->
-                <div class="col">
-                    <div class="product-card animate-underline hover-effect-opacity bg-body rounded">
-                        <div class="posittion-relative">
-                            <div class="position-absolute top-0 end-0 z-2 hover-effect-target opacity-0 mt-3 me-3">
-                                <div class="d-flex flex-column gap-2">
-                                    <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
-                      <i class="ci-heart fs-base animate-target"></i>
-                    </button>
-                                    <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                      <i class="ci-refresh-cw fs-base animate-target"></i>
-                    </button>
-                                </div>
-                            </div>
-                            <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
-                                <button type="button" class="btn btn-icon btn-sm btn-secondary bg-body" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions">
-                    <i class="ci-more-vertical fs-lg"></i>
-                  </button>
-                                <ul class="dropdown-menu dropdown-menu-end fs-xs p-2" style="min-width: auto">
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-heart fs-sm ms-n1 me-2"></i>
-                        Add to Wishlist
-                      </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#!">
-                        <i class="ci-refresh-cw fs-sm ms-n1 me-2"></i>
-                        Compare
-                      </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
-                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
-                                    <img src="assets/img/shop/electronics/08.png" alt="Bluetooth Headphones">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-100 min-w-0 px-1 pb-2 px-sm-3 pb-sm-3">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="d-flex gap-1 fs-xs">
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-filled text-warning"></i>
-                                    <i class="ci-star-half text-warning"></i>
-                                    <i class="ci-star text-body-tertiary opacity-75"></i>
-                                </div>
-                                <span class="text-body-tertiary fs-xs">(136)</span>
-                            </div>
-                            <h3 class="pb-1 mb-2">
-                                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
-                    <span class="animate-target">Wireless Bluetooth Headphones Sony</span>
-                  </a>
-                            </h3>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="h5 lh-1 mb-0">$299.00</div>
-                                <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
-                    <i class="ci-shopping-cart fs-base animate-target"></i>
-                  </button>
-                            </div>
-                        </div>
-                        <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
-                            <span class="position-absolute top-0 start-0 w-100 bg-body mt-n2 py-2"></span>
-                            <ul class="list-unstyled d-flex flex-column gap-2 m-0">
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Audio:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Noise Cancellation</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Connectivity:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Bluetooth, 3.5mm jack</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Material:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">Leather, Plastic</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <span class="fs-xs">Weight:</span>
-                                    <span class="d-block flex-grow-1 border-bottom border-dashed px-1 mt-2 mx-2"></span>
-                                    <span class="text-dark-emphasis fs-xs fw-medium text-end">185 grams</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+                </c:forEach>
             </div>
         </section>
 
