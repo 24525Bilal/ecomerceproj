@@ -23,7 +23,8 @@ public class CartDAO {
     public List<CartItem> getCartItemsByUserId(int userId) {
         List<CartItem> cartItems = new ArrayList<>();
         // Fetches product details and quantity for a user's cart
-        String sql = "SELECT ci.quantity, p.id, p.name, p.price, p.model FROM carts c JOIN cart_items ci ON c.id = ci.cart_id JOIN products p ON ci.product_id = p.id WHERE c.user_id = ?";
+
+        String sql = "SELECT ci.quantity, p.id, p.name, p.price, p.model, p.thumbnail_url FROM carts c JOIN cart_items ci ON c.id = ci.cart_id JOIN products p ON ci.product_id = p.id WHERE c.user_id = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, userId);
@@ -35,7 +36,6 @@ public class CartDAO {
                     product.setPrice(rs.getDouble("price"));
                     product.setModel(rs.getString("model"));
                     // Use a static placeholder image for now, as product_images table structure wasn't provided
-//                    product.setThumbnailUrl("assets/img/shop/electronics/thumbs/18.png");
                     product.setThumbnailUrl(rs.getString("thumbnail_url"));
                     int quantity = rs.getInt("quantity");
                     cartItems.add(new CartItem(product, quantity));

@@ -1656,7 +1656,8 @@
                                     <td class="py-3 ps-0">
                                         <div class="d-flex align-items-center">
                                             <div class="ratio bg-body-secondary flex-shrink-0 rounded" style="width: 100px; --cz-aspect-ratio: calc(110 / 100 * 100%)">
-                                                <img src="${item.product.thumbnailUrl}" alt="${item.product.name}">
+<%--                                                <img src="${Item.product.thumbnailUrl}" alt="${Item.product.name}">--%>
+                                                    <img src="${pageContext.request.contextPath}/${item.product.thumbnailUrl}" alt="${item.product.name}">
                                             </div>
                                             <div class="ps-3 ps-sm-4">
                                                 <a class="d-block text-dark-emphasis fw-medium text-truncate" href="productDetails?id=${item.product.id}">${item.product.name}</a>
