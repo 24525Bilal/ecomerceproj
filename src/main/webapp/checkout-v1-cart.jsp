@@ -1627,18 +1627,17 @@
                                     <td class="py-3 px-0 text-center">
 
                                         <!--  for inc or dec quantity  -->
-                                        <form action="updateCart" method="post" class="d-flex align-items-center justify-content-between">
-                                            <input type="hidden" name="productId" value="${item.product.id}">
-                                            <div class="count-input rounded-pill mx-auto">
-                                                <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity" data-product-id="${item.product.id}">
-                                                    <i class="ci-minus"></i>
-                                                </button>
-                                                <input type="number" name="quantity" class="form-control form-control-sm" value="${item.quantity}" readonly="">
-                                                <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity" data-product-id="${item.product.id}">
-                                                    <i class="ci-plus"></i>
-                                                </button>
-                                            </div>
-                                        </form>
+                                        <div class="count-input rounded-pill mx-auto">
+                                            <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
+                                                <i class="ci-minus"></i>
+                                            </button>
+                                            <input type="number" class="form-control form-control-sm" value="${item.quantity}" readonly="">
+                                            <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
+                                                <i class="ci-plus"></i>
+                                            </button>
+                                        </div>
+
+
 
 
                                     </td>
