@@ -214,82 +214,34 @@
 
         <!-- Items -->
         <div class="offcanvas-body d-flex flex-column gap-4 pt-2">
-
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-electronics.jsp">
-            <img src="assets/img/shop/electronics/thumbs/08.png" width="110" alt="iPhone 14">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Apple iPhone 14 128GB White</a>
-                    </h5>
-                    <div class="h6 pb-1 mb-2">$899.00</div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="count-input rounded-2">
-                            <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
-                  <i class="ci-minus"></i>
-                </button>
-                            <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                            <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
-                  <i class="ci-plus"></i>
-                </button>
+            <c:forEach var="item" items="${cartItems}">
+                <div class="d-flex align-items-center">
+                    <a class="flex-shrink-0" href="productDetails?id=${item.product.id}">
+                        <img src="${pageContext.request.contextPath}/${item.product.thumbnailUrl}" width="110" alt="${item.product.name}">
+                    </a>
+                    <div class="w-100 min-w-0 ps-2 ps-sm-3">
+                        <h5 class="d-flex animate-underline mb-2">
+                            <a class="d-block fs-sm fw-medium text-truncate animate-target" href="productDetails?id=${item.product.id}">${item.product.name}</a>
+                        </h5>
+                        <div class="h6 pb-1 mb-2">$<fmt:formatNumber value="${item.product.price}" pattern="0.00"/></div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="count-input rounded-2">
+                                <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
+                                    <i class="ci-minus"></i>
+                                </button>
+                                <input type="number" class="form-control form-control-sm" value="${item.quantity}" readonly="">
+                                <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
+                                    <i class="ci-plus"></i>
+                                </button>
+                            </div>
+                            <form action="removeFromCart" method="post" class="d-inline">
+                                <input type="hidden" name="productId" value="${item.product.id}">
+                                <button type="submit" class="btn-close ms-auto" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove from cart" aria-label="Remove from cart"></button>
+                            </form>
                         </div>
-                        <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
                     </div>
                 </div>
-            </div>
-
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="position-relative flex-shrink-0" href="shop-product-electronics.jsp">
-            <span class="badge text-bg-danger position-absolute top-0 start-0">-10%</span>
-            <img src="assets/img/shop/electronics/thumbs/09.png" width="110" alt="iPad Pro">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Tablet Apple iPad Pro M2</a>
-                    </h5>
-                    <div class="h6 pb-1 mb-2">$989.00 <del class="text-body-tertiary fs-xs fw-normal">$1,099.00</del></div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="count-input rounded-2">
-                            <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
-                  <i class="ci-minus"></i>
-                </button>
-                            <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                            <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
-                  <i class="ci-plus"></i>
-                </button>
-                        </div>
-                        <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-electronics.jsp">
-            <img src="assets/img/shop/electronics/thumbs/01.png" width="110" alt="Smart Watch">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Smart Watch Series 7, White</a>
-                    </h5>
-                    <div class="h6 pb-1 mb-2">$429.00</div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="count-input rounded-2">
-                            <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
-                  <i class="ci-minus"></i>
-                </button>
-                            <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                            <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
-                  <i class="ci-plus"></i>
-                </button>
-                        </div>
-                        <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
 
         <!-- Footer -->
@@ -403,7 +355,7 @@
 
                         <!-- Cart button -->
                         <button type="button" class="btn btn-icon btn-lg btn-secondary position-relative rounded-circle ms-2" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart" aria-label="Shopping cart">
-                <span class="position-absolute top-0 start-100 mt-n1 ms-n3 badge text-bg-success border border-3 border-dark rounded-pill" style="--cz-badge-padding-y: .25em; --cz-badge-padding-x: .42em">3</span>
+                <span class="position-absolute top-0 start-100 mt-n1 ms-n3 badge text-bg-success border border-3 border-dark rounded-pill" style="--cz-badge-padding-y: .25em; --cz-badge-padding-x: .42em"><c:out value="${cartItems.size()}"/></span>
                 <span class="position-absolute top-0 start-0 d-flex align-items-center justify-content-center w-100 h-100 rounded-circle animate-slide-end fs-lg">
                   <i class="ci-shopping-cart animate-target ms-n1"></i>
                 </span>
@@ -1642,11 +1594,15 @@
                                     <th scope="col" class="text-body fs-sm fw-normal py-3 d-none d-xl-table-cell"><span class="text-body">Price</span></th>
                                     <th scope="col" class="text-body fs-sm fw-normal py-3 d-none d-md-table-cell"><span class="text-body">Quantity</span></th>
                                     <th scope="col" class="text-body fs-sm fw-normal py-3 d-none d-md-table-cell"><span class="text-body">Total</span></th>
+
+                                    <!-- for clear cart funtion/ form , /giving dopost -->
                                     <th scope="col" class="py-0 px-0">
                                         <div class="nav justify-content-end">
-                                            <button type="button" class="nav-link d-inline-block text-decoration-underline text-nowrap py-3 px-0">Clear cart</button>
+                                            <a href="#" class="nav-link d-inline-block text-decoration-underline text-nowrap py-3 px-0" onclick="clearCart(event)">Clear cart</a>
                                         </div>
                                     </th>
+
+
                                 </tr>
                             </thead>
 
@@ -2019,6 +1975,9 @@
 
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
+
+<!-- for clear cart function  -->
+    <script src="assets/js/clearcart.js"></script>
 
 
 </body>

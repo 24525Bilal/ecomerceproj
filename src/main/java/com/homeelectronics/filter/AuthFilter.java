@@ -15,45 +15,24 @@ public class AuthFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
-
-
-        // Get the full path of the request from the context root.
         String uri = req.getRequestURI();
         String contextPath = req.getContextPath();
-        String path = uri.substring(contextPath.length()); // This gives us the path relative to your application
+        String path = uri.substring(contextPath.length());
 
-//        // --- DIAGNOSTIC LOGGING ---
-//        // This will print every path your server receives to the console.
-//        System.out.println("AuthFilter is checking path: " + path);
+        // Define a list of pages that require a logged-in user.
+        boolean isUserProtectedPage = path.equals("/cartPage")
+                || path.equals("/addProductToCart")
+                || path.equals("/removeFromCart")
+                || path.equals("/clearCart")
+                || uri.endsWith("account-info.jsp")
+                || uri.endsWith("account-addresses.jsp")
+                || uri.endsWith("account-orders.jsp")
+                || uri.endsWith("account-notifications.jsp")
+                || uri.endsWith("account-payment.jsp")
+                || uri.endsWith("account-reviews.jsp");
 
 
-        // EDIT: Updated the list of public pages to include the homepage and assets.
-        boolean isPublicPage = path.equals("/")
-                || uri.endsWith("account-signin.html")
-                || uri.endsWith("account-signup.html")
-                || uri.endsWith("signin")
-                || uri.endsWith("signup")
-                || uri.endsWith("home-electronics.html") // Allow homepage
-                || uri.startsWith(req.getContextPath() + "/assets/") // Allow CSS, JS, images
-                || uri.endsWith("admin-signin.html")
-                || uri.endsWith("adminlogin")
-                || uri.endsWith("logout")
-                || uri.endsWith("shop-catalog-electronics.jsp")
-                || uri.endsWith("products")
-                || path.startsWith("/product-images/")
-                || uri.endsWith("/productDetails")
-                || uri.contains("getProductDetails")
-                || uri.endsWith("shop-product-electronics.jsp");
-//                || uri.endsWith("/cartPage")
-//                || path.equals("/addProductToCart")
-        // Allow public pages and assets to pass through without a session.
-        if (isPublicPage) {
-            chain.doFilter(request, response);
-            return;
-        }
-
-        // --- Admin-only pages ---
-
+        // Define a list of pages that require a logged-in admin.
         boolean isAdminPage = path.contains("account-marketplace-dashboard.jsp")
                 || path.contains("account-marketplace-products.jsp")
                 || path.contains("account-marketplace-products")
@@ -64,31 +43,33 @@ public class AuthFilter implements Filter {
                 || path.contains("account-marketplace-sales.html");
 
 
-        if (isAdminPage) {
-            if (session != null && session.getAttribute("adminEmail") != null) {
-                // Admin is logged in, allow access
+        if (isUserProtectedPage) {
+            // Check if the user is logged in for user-protected pages.
+            if (session != null && session.getAttribute("userEmail") != null) {
                 chain.doFilter(request, response);
             } else {
-                // Not an admin or not logged in, SAVE the requested URI
+                // Not logged in, redirect to user sign-in.
                 String requestedURI = req.getRequestURI();
-                // Use a separate session attribute for admin redirects
-                req.getSession().setAttribute("adminRequestedURI", requestedURI);
-                // Not an admin or not logged in, redirect to admin login
-                res.sendRedirect(contextPath + "/admin-signin.html?error=auth");
+                req.getSession().setAttribute("requestedURI", requestedURI);
+                res.sendRedirect(contextPath + "/account-signin.html");
             }
             return;
         }
 
-
-        // For all other pages, check if the user is logged in.
-        if (session == null || session.getAttribute("userEmail") == null) {
-            String requestedURI = req.getRequestURI();
-            req.getSession().setAttribute("requestedURI", requestedURI);
-            res.sendRedirect("account-signin.html?error=sessionExpired");
+        if (isAdminPage) {
+            // Check if the admin is logged in for admin pages.
+            if (session != null && session.getAttribute("adminEmail") != null) {
+                chain.doFilter(request, response);
+            } else {
+                // Not logged in as admin, redirect to admin sign-in.
+                String requestedURI = req.getRequestURI();
+                req.getSession().setAttribute("adminRequestedURI", requestedURI);
+                res.sendRedirect(contextPath + "/admin-signin.html");
+            }
             return;
         }
 
-        // If the user is logged in, continue the request.
+        // For all other pages (not explicitly user- or admin-protected), allow access.
         chain.doFilter(request, response);
     }
 }

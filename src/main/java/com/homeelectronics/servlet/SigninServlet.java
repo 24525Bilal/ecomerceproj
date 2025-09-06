@@ -105,9 +105,11 @@ public class SigninServlet extends HttpServlet {
 
                 // EDIT: Check for a saved URL and redirect accordingly.
                 String requestedURI = (String) session.getAttribute("requestedURI");
-                if (requestedURI != null && !requestedURI.isEmpty()) {
-                    session.removeAttribute("requestedURI"); // Clean up the session
-                    response.sendRedirect(requestedURI);
+                //now always redirect to the cart page after a successful sign-in from a protected resource
+                if (requestedURI != null && (requestedURI.equals("/addProductToCart")
+                                             || requestedURI.equals("/cartPage"))) {
+                    session.removeAttribute("requestedURI"); // clean the session
+                    response.sendRedirect("cartPage"); // redirect to get page
                 } else {
                     // If no URL was saved, redirect to the default dashboard.
                     response.sendRedirect("home-electronics.html");

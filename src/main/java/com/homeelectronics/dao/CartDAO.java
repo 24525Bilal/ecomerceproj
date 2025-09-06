@@ -24,7 +24,14 @@ public class CartDAO {
         List<CartItem> cartItems = new ArrayList<>();
         // Fetches product details and quantity for a user's cart
 
-        String sql = "SELECT ci.quantity, p.id, p.name, p.price, p.model, p.thumbnail_url FROM carts c JOIN cart_items ci ON c.id = ci.cart_id JOIN products p ON ci.product_id = p.id WHERE c.user_id = ?";
+         // SQL query to join with product_images and order by cart_items.id in descending order.
+        String sql = "SELECT ci.quantity, p.id, p.name, p.price, p.model, pi.image_path " +
+                "FROM carts c " +
+                "JOIN cart_items ci ON c.id = ci.cart_id " +
+                "JOIN products p ON ci.product_id = p.id " +
+                "LEFT JOIN (SELECT product_id, image_path, ROW_NUMBER() OVER(PARTITION BY product_id ORDER BY id) as rn FROM product_images) pi " +
+                "ON p.id = pi.product_id AND pi.rn = 1 " +
+                "WHERE c.user_id = ? ORDER BY ci.id DESC";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, userId);
@@ -35,8 +42,8 @@ public class CartDAO {
                     product.setName(rs.getString("name"));
                     product.setPrice(rs.getDouble("price"));
                     product.setModel(rs.getString("model"));
-                    // Use a static placeholder image for now, as product_images table structure wasn't provided
-                    product.setThumbnailUrl(rs.getString("thumbnail_url"));
+                    // Set the thumbnail URL from the joined product_images table
+                    product.setThumbnailUrl(rs.getString("image_path"));
                     int quantity = rs.getInt("quantity");
                     cartItems.add(new CartItem(product, quantity));
                 }
@@ -109,4 +116,19 @@ public class CartDAO {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Deletes all products from the user's cart.
+     */
+    public void clearCartByUserId(int userId) {
+        String sql = "DELETE FROM cart_items WHERE cart_id = (SELECT id FROM carts WHERE user_id = ?)";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, userId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
