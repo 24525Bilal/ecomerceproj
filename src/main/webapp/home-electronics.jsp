@@ -1,4 +1,5 @@
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
@@ -8,6 +9,9 @@
 <%@ page import="com.homeelectronics.model.Product" %>
 
 <%@ page import="java.util.List" %>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
@@ -208,7 +212,7 @@
                 <h4 class="offcanvas-title" id="shoppingCartLabel">Shopping cart</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <p class="fs-sm">Buy <span class="text-dark-emphasis fw-semibold">$183</span> more to get <span class="text-dark-emphasis fw-semibold">Free Shipping</span></p>
+            <p class="fs-sm"> <span class="text-dark-emphasis fw-semibold">🛒 “Buy all you can with pleasure – your cart is waiting!”</span>  <span class="text-dark-emphasis fw-semibold"></span></p>
             <div class="progress w-100" role="progressbar" aria-label="Free shipping progress" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 4px">
                 <div class="progress-bar bg-warning rounded-pill" style="width: 75%"></div>
             </div>
@@ -216,92 +220,44 @@
 
         <!-- Items -->
         <div class="offcanvas-body d-flex flex-column gap-4 pt-2">
-
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-general-electronics.html">
-            <img src="assets/img/shop/electronics/thumbs/08.png" width="110" alt="iPhone 14">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Apple iPhone 14 128GB White</a>
-                    </h5>
-                    <div class="h6 pb-1 mb-2">$899.00</div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="count-input rounded-2">
-                            <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
-                  <i class="ci-minus"></i>
-                </button>
-                            <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                            <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
-                  <i class="ci-plus"></i>
-                </button>
+            <c:forEach var="item" items="${cartItems}">
+                <div class="d-flex align-items-center">
+                    <a class="flex-shrink-0" href="productDetails?id=${item.product.id}">
+                        <img src="${pageContext.request.contextPath}/${item.product.thumbnailUrl}" width="110" alt="${item.product.name}">
+                    </a>
+                    <div class="w-100 min-w-0 ps-2 ps-sm-3">
+                        <h5 class="d-flex animate-underline mb-2">
+                            <a class="d-block fs-sm fw-medium text-truncate animate-target" href="productDetails?id=${item.product.id}">${item.product.name}</a>
+                        </h5>
+                        <div class="h6 pb-1 mb-2">$<fmt:formatNumber value="${item.product.price}" pattern="0.00"/></div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="count-input rounded-2">
+                                <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
+                                    <i class="ci-minus"></i>
+                                </button>
+                                <input type="number" class="form-control form-control-sm" value="${item.quantity}" readonly="">
+                                <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
+                                    <i class="ci-plus"></i>
+                                </button>
+                            </div>
+                            <form action="removeFromCart" method="post" class="d-inline">
+                                <input type="hidden" name="productId" value="${item.product.id}">
+                                <button type="submit" class="btn-close ms-auto" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove from cart" aria-label="Remove from cart"></button>
+                            </form>
                         </div>
-                        <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
                     </div>
                 </div>
-            </div>
-
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="position-relative flex-shrink-0" href="shop-product-general-electronics.html">
-            <span class="badge text-bg-danger position-absolute top-0 start-0">-10%</span>
-            <img src="assets/img/shop/electronics/thumbs/09.png" width="110" alt="iPad Pro">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Tablet Apple iPad Pro M2</a>
-                    </h5>
-                    <div class="h6 pb-1 mb-2">$989.00 <del class="text-body-tertiary fs-xs fw-normal">$1,099.00</del></div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="count-input rounded-2">
-                            <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
-                  <i class="ci-minus"></i>
-                </button>
-                            <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                            <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
-                  <i class="ci-plus"></i>
-                </button>
-                        </div>
-                        <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-general-electronics.html">
-            <img src="assets/img/shop/electronics/thumbs/01.png" width="110" alt="Smart Watch">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Smart Watch Series 7, White</a>
-                    </h5>
-                    <div class="h6 pb-1 mb-2">$429.00</div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="count-input rounded-2">
-                            <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
-                  <i class="ci-minus"></i>
-                </button>
-                            <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                            <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
-                  <i class="ci-plus"></i>
-                </button>
-                        </div>
-                        <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
 
         <!-- Footer -->
         <div class="offcanvas-header flex-column align-items-start">
             <div class="d-flex align-items-center justify-content-between w-100 mb-3 mb-md-4">
                 <span class="text-light-emphasis">Subtotal:</span>
-                <span class="h6 mb-0">$2,317.00</span>
+                <span class="h6 mb-0">$<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
             </div>
             <div class="d-flex w-100 gap-3">
-                <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.html">View cart</a>
+                <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.jsp">View cart</a>
                 <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.html">Checkout</a>
             </div>
         </div>
@@ -321,7 +277,7 @@
             </button>
 
                     <!-- Navbar brand (Logo) -->
-                    <a href="home-electronics.html" class="navbar-brand me-0">
+                    <a href="home-electronics.jsp" class="navbar-brand me-0">
               <span class="d-none d-sm-flex flex-shrink-0 text-primary me-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"><path d="M36 18.01c0 8.097-5.355 14.949-12.705 17.2a18.12 18.12 0 0 1-5.315.79C9.622 36 2.608 30.313.573 22.611.257 21.407.059 20.162 0 18.879v-1.758c.02-.395.059-.79.099-1.185.099-.908.277-1.817.514-2.686C2.687 5.628 9.682 0 18 0c5.572 0 10.551 2.528 13.871 6.517 1.502 1.797 2.648 3.91 3.359 6.201.494 1.659.771 3.436.771 5.292z" fill="currentColor"></path><g fill="#fff"><path d="M17.466 21.624c-.514 0-.988-.316-1.146-.829-.198-.632.138-1.303.771-1.501l7.666-2.469-1.205-8.254-13.317 4.621a1.19 1.19 0 0 1-1.521-.75 1.19 1.19 0 0 1 .751-1.521l13.89-4.818c.553-.197 1.166-.138 1.64.158a1.82 1.82 0 0 1 .85 1.284l1.344 9.183c.138.987-.494 1.994-1.482 2.33l-7.864 2.528-.375.04zm7.31.138c-.178-.632-.85-1.007-1.482-.81l-5.177 1.58c-2.331.79-3.28.02-3.418-.099l-6.56-8.412a4.25 4.25 0 0 0-4.406-1.758l-3.122.987c-.237.889-.415 1.777-.514 2.686l4.228-1.363a1.84 1.84 0 0 1 1.857.81l6.659 8.551c.751.948 2.015 1.323 3.359 1.323.909 0 1.857-.178 2.687-.474l5.078-1.54c.632-.178 1.008-.829.81-1.481z"></path><use href="#czlogo"></use><use href="#czlogo" x="8.516" y="-2.172"></use></g><defs><path id="czlogo" d="M18.689 28.654a1.94 1.94 0 0 1-1.936 1.935 1.94 1.94 0 0 1-1.936-1.935 1.94 1.94 0 0 1 1.936-1.935 1.94 1.94 0 0 1 1.936 1.935z"></path></defs></svg>
               </span>
@@ -406,7 +362,7 @@
 
                         <!-- Cart button -->
                         <button type="button" class="btn btn-icon btn-lg btn-secondary position-relative rounded-circle ms-2" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart" aria-label="Shopping cart">
-                <span class="position-absolute top-0 start-100 mt-n1 ms-n3 badge text-bg-success border border-3 border-dark rounded-pill" style="--cz-badge-padding-y: .25em; --cz-badge-padding-x: .42em">3</span>
+                <span class="position-absolute top-0 start-100 mt-n1 ms-n3 badge text-bg-success border border-3 border-dark rounded-pill" style="--cz-badge-padding-y: .25em; --cz-badge-padding-x: .42em"><c:out value="${cartItems.size()}"/></span>
                 <span class="position-absolute top-0 start-0 d-flex align-items-center justify-content-center w-100 h-100 rounded-circle animate-slide-end fs-lg">
                   <i class="ci-shopping-cart animate-target ms-n1"></i>
                 </span>
@@ -621,7 +577,7 @@
                             <div class="col-lg-9 d-lg-flex pt-3 pt-lg-0 ps-lg-0">
                                 <ul class="navbar-nav position-relative">
                                     <li class="nav-item me-lg-n1 me-xl-0 position-relative px-2 mx-n2">
-  <a class="nav-link d-block mb-0" href="home-electronics.html">
+  <a class="nav-link d-block mb-0" href="home-electronics.jsp">
     <span class="fw-medium">Home</span>
   </a>
 </li>
@@ -674,6 +630,33 @@
                                 <hr class="d-lg-none my-3">
                                 <ul class="navbar-nav ms-auto">
 
+
+                                    <!-- greeting message -->
+
+                                    <li class="nav-item dropdown">
+                                        <c:choose>
+                                            <c:when test="${not empty sessionScope.greetingMessage}">
+                                                <a class="nav-link fs-5 px-3 dropdown-toggle"
+                                                   href="account"
+                                                   role="button"
+                                                   data-bs-toggle="dropdown"
+                                                   aria-expanded="false">
+                                                    <c:out value="${sessionScope.greetingMessage}"/>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="logout">Logout</a></li>
+                                                </ul>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <a class="nav-link fs-5 px-3" href="account-signin.html">
+                                                    Sign In
+                                                </a>
+                                            </c:otherwise>
+                                        </c:choose>
+
+
+
+                                    </li>
 
                                 </ul>
                             </div>
@@ -862,8 +845,9 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-electronics.jsp?id=<c:out value="${product.id}"/>">
-                                    <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
+                                    <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="productDetails?id=${product.id}">
+
+                                <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
                                         <img src="${product.thumbnailUrl}" alt="<c:out value="${product.name}"/>">
                                     </div>
                                 </a>
@@ -973,7 +957,7 @@
                 <div class="row">
                     <div class="col-md-4 d-sm-flex flex-md-column align-items-center align-items-md-start pb-3 mb-sm-4">
                         <h4 class="mb-sm-0 mb-md-4 me-4">
-                            <a class="text-dark-emphasis text-decoration-none" href="home-electronics.html">BuyHive</a>
+                            <a class="text-dark-emphasis text-decoration-none" href="home-electronics.jsp">BuyHive</a>
                         </h4>
                         <p class="text-body fs-sm text-sm-end text-md-start mb-sm-0 mb-md-3 ms-0 ms-sm-auto ms-md-0 me-4">Got questions? Contact us 24/7</p>
                         <div class="dropdown" style="max-width: 250px">

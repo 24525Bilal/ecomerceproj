@@ -1581,19 +1581,28 @@
 
 
 
+                                    <!-- greeting message -->
+
                                     <li class="nav-item dropdown">
+                                        <c:choose>
+                                        <c:when test="${not empty sessionScope.greetingMessage}">
                                         <a class="nav-link fs-5 px-3 dropdown-toggle"
-                                           href="account'>"
+                                           href="account"
                                            role="button"
                                            data-bs-toggle="dropdown"
                                            aria-expanded="false">
-                                            <%= session.getAttribute("greetingMessage") %>
+                                            <c:out value="${sessionScope.greetingMessage}"/>
                                         </a>
-
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="logout">Logout</a></li>
                                         </ul>
-                                    </li>
+                                        </c:when>
+                                        <c:otherwise>
+                                        <a class="nav-link fs-5 px-3" href="account-signin.html">
+                                            Sign In
+                                        </a>
+                                        </c:otherwise>
+                                        </c:choose>
 
 
 
