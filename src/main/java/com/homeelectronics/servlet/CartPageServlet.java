@@ -26,6 +26,8 @@ public class CartPageServlet extends HttpServlet {
             List<CartItem> cartItems = cartDAO.getCartItemsByUserId(userId);
             double subtotal = cartItems.stream().mapToDouble(CartItem::getTotalPrice).sum();
 
+
+
             request.setAttribute("cartItems", cartItems);
             request.setAttribute("subtotal", subtotal);
             request.getRequestDispatcher("/checkout-v1-cart.jsp").forward(request, response);

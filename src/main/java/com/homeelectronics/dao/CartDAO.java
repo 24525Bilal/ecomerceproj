@@ -35,7 +35,8 @@ public class CartDAO {
                     product.setPrice(rs.getDouble("price"));
                     product.setModel(rs.getString("model"));
                     // Use a static placeholder image for now, as product_images table structure wasn't provided
-                    product.setThumbnailUrl("assets/img/shop/electronics/thumbs/18.png");
+//                    product.setThumbnailUrl("assets/img/shop/electronics/thumbs/18.png");
+                    product.setThumbnailUrl(rs.getString("thumbnail_url"));
                     int quantity = rs.getInt("quantity");
                     cartItems.add(new CartItem(product, quantity));
                 }
