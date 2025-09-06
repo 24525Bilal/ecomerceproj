@@ -257,7 +257,7 @@
                 <span class="h6 mb-0">$<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
             </div>
             <div class="d-flex w-100 gap-3">
-                <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.jsp">View cart</a>
+                <a class="btn btn-lg btn-secondary w-100" href="cartPage">View cart</a>
                 <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.html">Checkout</a>
             </div>
         </div>
@@ -399,7 +399,7 @@
 
                                         <!-- Buttton visible on screens > 991px wide (lg breakpoint) -->
                                         <div class="cursor-pointer d-none d-lg-block" data-bs-toggle="dropdown" data-bs-trigger="hover" data-bs-theme="dark">
-                                            <a class="position-absolute top-0 start-0 w-100 h-100" href="shop-categories-electronics.jsp">
+                                            <a class="position-absolute top-0 start-0 w-100 h-100" href="products">
                           <span class="visually-hidden">Categories</span>
                         </a>
                                             <button type="button" class="btn btn-lg btn-secondary dropdown-toggle w-100 rounded-bottom-0 justify-content-start pe-none">
@@ -417,7 +417,7 @@
                                         <!-- Mega menu -->
                                         <ul class="dropdown-menu dropdown-menu-static w-100 rounded-top-0 rounded-bottom-4 py-1 p-lg-1" style="--cz-dropdown-spacer: 0; --cz-dropdown-item-padding-y: .625rem; --cz-dropdown-item-spacer: 0">
                                             <li class="d-lg-none pt-2">
-                                                <a class="dropdown-item fw-medium" href="shop-categories-electronics.jsp">
+                                                <a class="dropdown-item fw-medium" href="products">
                             <i class="ci-grid fs-xl opacity-60 pe-1 me-2"></i>
                             All Categories
                             
@@ -621,10 +621,10 @@
                                     </li>
 
                                     <li class="nav-item me-lg-n2 me-xl-0">
-                                        <a class="nav-link" href="docs/installation.html">Docs</a>
+                                        <a class="nav-link" href="">Help</a>
                                     </li>
                                     <li class="nav-item me-lg-n2 me-xl-0">
-                                        <a class="nav-link" href="docs/typography.html">Components</a>
+                                        <a class="nav-link" href="">T&Cs</a>
                                     </li>
                                 </ul>
                                 <hr class="d-lg-none my-3">
@@ -711,7 +711,7 @@
                                         <div class="swiper-slide text-center text-xl-start pt-5 py-xl-5">
                                             <p class="text-body">Feel the real quality sound</p>
                                             <h2 class="display-4 pb-2 pb-xl-4">Headphones ProMax</h2>
-                                            <a class="btn btn-lg btn-primary" href="shop-product-general-electronics.html">
+                                            <a class="btn btn-lg btn-primary" href="products">
                           Shop now
                           <i class="ci-arrow-up-right fs-lg ms-2 me-n1"></i>
                         </a>
@@ -719,7 +719,7 @@
                                         <div class="swiper-slide text-center text-xl-start pt-5 py-xl-5">
                                             <p class="text-body">Deal of the week</p>
                                             <h2 class="display-4 pb-2 pb-xl-4">Powerful iPad Pro M2</h2>
-                                            <a class="btn btn-lg btn-primary" href="shop-product-general-electronics.html">
+                                            <a class="btn btn-lg btn-primary" href="products">
                           Shop now
                           <i class="ci-arrow-up-right fs-lg ms-2 me-n1"></i>
                         </a>
@@ -821,9 +821,6 @@
                                         <button type="button" class="btn btn-icon btn-secondary animate-pulse d-none d-lg-inline-flex" aria-label="Add to Wishlist">
                                             <i class="ci-heart fs-base animate-target"></i>
                                         </button>
-                                        <button type="button" class="btn btn-icon btn-secondary animate-rotate d-none d-lg-inline-flex" aria-label="Compare">
-                                            <i class="ci-refresh-cw fs-base animate-target"></i>
-                                        </button>
                                     </div>
                                 </div>
                                 <div class="dropdown d-lg-none position-absolute top-0 end-0 z-2 mt-2 me-2">
@@ -860,9 +857,12 @@
                                 </h3>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="h5 lh-1 mb-0">$<c:out value="${product.price}"/></div>
-                                    <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart">
+
+                                    <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart" data-product-id="${product.id}" onclick="handleAddToCart(event, false)">
                                         <i class="ci-shopping-cart fs-base animate-target"></i>
                                     </button>
+
+
                                 </div>
                             </div>
                             <div class="product-card-details position-absolute top-100 start-0 w-100 bg-body rounded-bottom shadow mt-n2 p-3 pt-1">
@@ -1189,6 +1189,9 @@
 
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
+
+  <!-- add to cart (here doing without redirecting) -->
+    <script src="assets/js/addtocart.js"></script>
 
 
 </body>

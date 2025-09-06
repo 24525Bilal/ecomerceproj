@@ -22,7 +22,7 @@
     </session-config>
 
     <welcome-file-list>
-        <welcome-file>home-electronics.html</welcome-file>
+        <welcome-file>home-electronics.jsp</welcome-file>
     </welcome-file-list>
 
     <mime-mapping>

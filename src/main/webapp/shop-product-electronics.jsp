@@ -1847,7 +1847,7 @@
                                 <i class="ci-heart fs-lg animate-target"></i>
                             </a>
 
-                            <button type="button" class="btn btn-lg btn-primary w-100 animate-slide-end order-sm-2 order-md-4 order-lg-2" onclick="addToCart(event)" data-product-id="${product.id}">
+                            <button type="button" class="btn btn-lg btn-primary w-100 animate-slide-end order-sm-2 order-md-4 order-lg-2" onclick="handleAddToCart(event, true)" data-product-id="${product.id}">
                                 <i class="ci-shopping-cart fs-lg animate-target ms-n1 me-2"></i>
                                 Add to cart
                             </button>

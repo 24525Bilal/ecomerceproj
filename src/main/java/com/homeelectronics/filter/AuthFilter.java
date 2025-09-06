@@ -29,6 +29,7 @@ public class AuthFilter implements Filter {
                 || uri.endsWith("account-orders.jsp")
                 || uri.endsWith("account-notifications.jsp")
                 || uri.endsWith("account-payment.jsp")
+                || uri.endsWith("checkout-v1-cart.jsp")
                 || uri.endsWith("account-reviews.jsp");
 
 
