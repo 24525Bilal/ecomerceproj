@@ -1270,52 +1270,60 @@
         <!-- Order ID -->
         <p><strong>Order ID:</strong> #ORDERID</p>
 
-        <!-- Products Table -->
-        <h6>Products</h6>
-        <table class="table table-bordered table-sm align-middle">
-          <thead>
-            <tr>
-              <th>P_ID</th>
-              <th>Product Detail</th>
-              <th>Quantity</th>
-              <th>Price ($)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>101</td>
-              <td>
-                <div class="d-flex align-items-center">
-                  <div style="width:60px; height:60px; overflow:hidden; margin-right:10px;">
-                    <img src="assets/img/account/products/01.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
-                  </div>
-                  <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
-                          onclick="window.location.href='shop-product-general-electronics.html';">
-                    Smart Watch Series 9
-                  </button>
-                </div>
-              </td>
-              <td>2</td>
-              <td>60.00</td>
-            </tr>
-            <tr>
-              <td>102</td>
-              <td>
-                <div class="d-flex align-items-center">
-                  <div style="width:60px; height:60px; overflow:hidden; margin-right:10px;">
-                    <img src="assets/img/account/products/02.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
-                  </div>
-                  <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
-                          onclick="window.location.href='shop-product-general-electronics.html';">
-                    3D Box Mockup
-                  </button>
-                </div>
-              </td>
-              <td>1</td>
-              <td>60.00</td>
-            </tr>
-          </tbody>
-        </table>
+<!-- Products Table -->
+<h6>Products</h6>
+<table class="table table-bordered table-sm align-middle">
+  <thead>
+    <tr>
+      <th>P_ID</th>
+      <th>Product Detail</th>
+      <th>Quantity</th>
+      <th>Price ($)</th>
+      <th>Total ($)</th> <!-- New column -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>101</td>
+      <td>
+        <div class="d-flex align-items-center">
+          <div style="width:60px; height:60px; overflow:hidden; margin-right:10px;">
+            <img src="assets/img/account/products/01.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
+                  onclick="window.location.href='shop-product-general-electronics.html';">
+            Smart Watch Series 9
+          </button>
+        </div>
+      </td>
+      <td>2</td>
+      <td>60.00</td>
+      <td>120.00</td> <!-- Total per item -->
+    </tr>
+    <tr>
+      <td>102</td>
+      <td>
+        <div class="d-flex align-items-center">
+          <div style="width:60px; height:60px; overflow:hidden; margin-right:10px;">
+            <img src="assets/img/account/products/02.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
+                  onclick="window.location.href='shop-product-general-electronics.html';">
+            3D Box Mockup
+          </button>
+        </div>
+      </td>
+      <td>1</td>
+      <td>60.00</td>
+      <td>60.00</td> <!-- Total per item -->
+    </tr>
+    <!-- Total Row -->
+    <tr>
+      <td colspan="4" class="text-end fw-bold">Total</td>
+      <td class="fw-bold">180.00</td>
+    </tr>
+  </tbody>
+</table>
 
         <!-- Shipping Address -->
         <h6>Shipping Address</h6>
