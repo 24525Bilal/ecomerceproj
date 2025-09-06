@@ -11,9 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/dao/CartDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/dao/CartDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/SigninServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/SigninServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-cart.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -260,7 +257,7 @@
       <workItem from="1756386588097" duration="10479000" />
       <workItem from="1756645472038" duration="126043000" />
       <workItem from="1756901460984" duration="33179000" />
-      <workItem from="1756982137585" duration="91576000" />
+      <workItem from="1756982137585" duration="94410000" />
     </task>
     <servers />
   </component>
