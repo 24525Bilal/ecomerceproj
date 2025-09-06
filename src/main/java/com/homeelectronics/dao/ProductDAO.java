@@ -295,6 +295,53 @@ public class ProductDAO {
 
 
 
+    /**
+     * Fetches a list of the most recently added products (12 products). in home-electroincs page
+     */
+    public List<Product> getLatestProducts(int count) {
+        List<Product> products = new ArrayList<>();
+        // This SQL query joins the products with their images and uses a window function
+        // to efficiently get the first image for each product.
+        String sql = "WITH NumberedImages AS (" +
+                "    SELECT " +
+                "        p.*, " +
+                "        pi.image_path, " +
+                "        ROW_NUMBER() OVER(PARTITION BY p.id ORDER BY pi.id) as rn " +
+                "    FROM products p " +
+                "    LEFT JOIN product_images pi ON p.id = pi.product_id" +
+                ") " +
+                "SELECT * FROM NumberedImages WHERE rn = 1 " +
+                "ORDER BY id DESC LIMIT ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, count);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Product product = new Product();
+                    product.setId(rs.getInt("id"));
+                    product.setName(rs.getString("name"));
+                    product.setPrice(rs.getDouble("price"));
+                    product.setThumbnailUrl(rs.getString("image_path"));
+
+                    product.setModel(rs.getString("model"));
+                    product.setManufacturer(rs.getString("manufacturer"));
+                    product.setCapacity(rs.getString("capacity"));
+                    product.setChip(rs.getString("chip"));
+                    product.setDiagonal(rs.getString("diagonal"));
+                    product.setScreenType(rs.getString("screen_type"));
+                    product.setResolution(rs.getString("resolution"));
+                    products.add(product);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
+
 
 
 

@@ -29,6 +29,6 @@ public class LogoutServlet extends HttpServlet {
         response.addCookie(adminCookie);
 
         // Redirect to login page
-        response.sendRedirect("home-electronics.html");
+        response.sendRedirect("home-electronics.jsp");
     }
 }

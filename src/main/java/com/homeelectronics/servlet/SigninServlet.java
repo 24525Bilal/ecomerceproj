@@ -100,7 +100,7 @@ public class SigninServlet extends HttpServlet {
 
 
 //                // ✅ Valid user → Redirect to dashboard
-//                response.sendRedirect("home-electronics.html");
+//                response.sendRedirect("home-electronics.jsp");
 
 
                 // EDIT: Check for a saved URL and redirect accordingly.
@@ -112,7 +112,7 @@ public class SigninServlet extends HttpServlet {
                     response.sendRedirect("cartPage"); // redirect to get page
                 } else {
                     // If no URL was saved, redirect to the default dashboard.
-                    response.sendRedirect("home-electronics.html");
+                    response.sendRedirect("home-electronics.jsp");
                 }
 
 
