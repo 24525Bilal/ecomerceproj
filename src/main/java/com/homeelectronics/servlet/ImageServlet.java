@@ -11,15 +11,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-/**
- * ImageServlet is responsible for serving product images stored on disk.
- *
- * Example: if DB stores "product-images/2/boat.jpg"
- *          and browser requests "http://localhost:8080/product-images/2/boat.jpg"
- *
- * This servlet will fetch the actual file from "D:/product_image/2/boat.jpg"
- * and stream it back to the client.
- */
+// because of the server is not respoinding to the out side path folder , this servlet do thatSS
+//  ImageServlet is responsible for serving product images stored on disk.
+
+ //Example: if DB stores "product-images/2/boat.jpg"
+ //         and browser requests "http://localhost:8080/product-images/2/boat.jpg"
+
+ // This servlet will fetch the actual file from "D:/product_image/2/boat.jpg"
+ //and stream it back to the client.
+
 @WebServlet("/product-images/*")  // Any request starting with /product-images will be handled here
 public class ImageServlet extends HttpServlet {
 
@@ -47,8 +47,9 @@ public class ImageServlet extends HttpServlet {
         // Build the absolute file path correctly
         File imageFile = new File(BASE_DIR, requestedPath);
 
-        System.out.println("Requested path = " + requestedPath);
-        System.out.println("Resolved file = " + imageFile.getAbsolutePath());
+        // for checking the image is laoding or not
+       // System.out.println("Requested path = " + requestedPath);
+      //  System.out.println("Resolved file = " + imageFile.getAbsolutePath());
 
         if (!imageFile.exists() || imageFile.isDirectory()) {
             response.sendError(HttpServletResponse.SC_NOT_FOUND, "Image not found.");

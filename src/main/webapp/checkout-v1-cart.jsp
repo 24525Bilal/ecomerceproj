@@ -1616,10 +1616,11 @@
                         <table class="table position-relative z-2 mb-4">
                             <thead>
                                 <tr>
+
                                     <th scope="col" class="fs-sm fw-normal py-3 ps-0"><span class="text-body">Product</span></th>
                                     <th scope="col" class="text-body fs-sm fw-normal py-3 d-none d-xl-table-cell"><span class="text-body">Price</span></th>
-                                    <th scope="col" class="text-body fs-sm fw-normal py-3 d-none d-md-table-cell"><span class="text-body">Quantity</span></th>
-                                    <th scope="col" class="text-body fs-sm fw-normal py-3 d-none d-md-table-cell"><span class="text-body">Total</span></th>
+                                    <th scope="col" class="text-body fs-sm fw-normal py-3 d-none d-md-table-cell text-center"><span class="text-body">Quantity</span></th>
+                                    <th scope="col" class="text-body fs-sm fw-normal py-3 d-none d-md-table-cell text-end"><span class="text-body">Total</span></th>
 
                                     <!-- for clear cart funtion/ form , /giving dopost -->
                                     <th scope="col" class="py-0 px-0">
@@ -1642,18 +1643,22 @@
                                                     <img src="${pageContext.request.contextPath}/${item.product.thumbnailUrl}" alt="${item.product.name}">
                                             </div>
                                             <div class="ps-3 ps-sm-4">
-                                                <a class="d-block text-dark-emphasis fw-medium text-truncate" href="productDetails?id=${item.product.id}">${item.product.name}</a>
+                                                <h5 class="d-flex animate-underline mb-2">
+                                                <a class="d-block fs-sm fw-medium text-truncate animate-target" href="productDetails?id=${item.product.id}">${item.product.name}</a>
+                                                </h5>
+
                                                 <p class="fs-sm text-body-secondary mb-0">Model: ${item.product.model}</p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="py-3 px-0">
+                                    <td class="h6 py-3 d-none d-xl-table-cell">
                                         <div class="h6 mb-0">$<fmt:formatNumber value="${item.product.price}" pattern="0.00"/></div>
                                     </td>
-                                    <td class="py-3 px-0 text-center">
+                                    <td class="py-3 px-0 text-center d-none d-md-table-cell">
 
-                                        <!--  for inc or dec quantity  -->
-                                        <div class="count-input rounded-pill mx-auto">
+
+                                    <!--  for inc or dec quantity  -->
+                                        <div class="count-input">
                                             <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
                                                 <i class="ci-minus"></i>
                                             </button>
@@ -1667,7 +1672,7 @@
 
 
                                     </td>
-                                    <td class="py-3 px-0 text-end">
+                                    <td class="h6 py-3 px-0 text-end d-none d-md-table-cell">
                                         <div class="h6 mb-0">$<fmt:formatNumber value="${item.totalPrice}" pattern="0.00"/></div>
                                     </td>
                                     <td class="py-3 ps-0 text-end">
@@ -1683,7 +1688,7 @@
                         </table>
 
                         <div class="nav position-relative z-2 mb-4 mb-lg-0">
-                            <a class="nav-link animate-underline px-0" href="/home_electronics/products">
+                        <a class="nav-link animate-underline px-0" href="/home_electronics/products">
                   <i class="ci-chevron-left fs-lg me-1"></i>
                   <span class="animate-target">Continue shopping</span>
                 </a>

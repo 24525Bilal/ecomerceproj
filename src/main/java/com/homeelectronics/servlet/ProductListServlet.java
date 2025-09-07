@@ -11,8 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-import jakarta.servlet.http.HttpSession; // Import HttpSession
-
 
 // Fetches Products for Display
 //  It gets the products for the current page and sends them to the JSP.
@@ -33,6 +31,7 @@ public class ProductListServlet extends HttpServlet {
                 // Keep page = 1 if the parameter is not a valid number
             }
         }
+
 
         ProductDAO productDAO = new ProductDAO();
         List<Product> products = productDAO.getProducts(page, PRODUCTS_PER_PAGE);
