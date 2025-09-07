@@ -11,6 +11,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import jakarta.servlet.http.HttpSession; // Import HttpSession
+
+
 // Fetches Products for Display
 //  It gets the products for the current page and sends them to the JSP.
 @WebServlet("/products")
@@ -39,6 +42,8 @@ public class ProductListServlet extends HttpServlet {
         request.setAttribute("products", products);
         request.setAttribute("totalPages", totalPages);
         request.setAttribute("currentPage", page);
+
+
 
         request.getRequestDispatcher("shop-catalog-electronics.jsp").forward(request, response);
     }
