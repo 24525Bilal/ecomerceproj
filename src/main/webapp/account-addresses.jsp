@@ -346,115 +346,29 @@
 
 
     <!-- Add new address modal -->
-    <div class="modal fade" id="newAddressModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="newAddressModalLabel" aria-hidden="true">
+    <div class="modal fade" id="newAddressModal" tabindex="-1" aria-labelledby="newAddressModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="newAddressModalLabel">Add new address</h5>
+                    <h5 class="modal-title" id="newAddressModalLabel">Add a New Address</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row g-3 g-lg-4 needs-validation" novalidate="">
-                        <div class="col-lg-6">
-                            <div class="position-relative">
-                                <label class="form-label">Country</label>
-                                <select class="form-select" data-select="{&quot;searchEnabled&quot;: true}" aria-label="Select country" required="">
-                    <option value="">Select country...</option>
-                    <optgroup label="Africa">
-                      <option value="Nigeria">Nigeria</option>
-                      <option value="South Africa">South Africa</option>
-                      <option value="Kenya">Kenya</option>
-                      <option value="Egypt">Egypt</option>
-                      <option value="Ethiopia">Ethiopia</option>
-                    </optgroup>
-                    <optgroup label="Asia">
-                      <option value="China">China</option>
-                      <option value="India">India</option>
-                      <option value="Japan">Japan</option>
-                      <option value="South Korea">South Korea</option>
-                      <option value="Saudi Arabia">Saudi Arabia</option>
-                    </optgroup>
-                    <optgroup label="Europe">
-                      <option value="Germany">Germany</option>
-                      <option value="France">France</option>
-                      <option value="United Kingdom">United Kingdom</option>
-                      <option value="Italy">Italy</option>
-                      <option value="Spain">Spain</option>
-                    </optgroup>
-                    <optgroup label="North America">
-                      <option value="United States">United States</option>
-                      <option value="Canada">Canada</option>
-                      <option value="Mexico">Mexico</option>
-                      <option value="Jamaica">Jamaica</option>
-                      <option value="Costa Rica">Costa Rica</option>
-                    </optgroup>
-                    <optgroup label="South America">
-                      <option value="Brazil">Brazil</option>
-                      <option value="Argentina">Argentina</option>
-                      <option value="Colombia">Colombia</option>
-                      <option value="Chile">Chile</option>
-                      <option value="Peru">Peru</option>
-                    </optgroup>
-                    <optgroup label="Oceania">
-                      <option value="Australia">Australia</option>
-                      <option value="New Zealand">New Zealand</option>
-                      <option value="Papua New Guinea">Papua New Guinea</option>
-                      <option value="Fiji">Fiji</option>
-                      <option value="Solomon Islands">Solomon Islands</option>
-                    </optgroup>
-                  </select>
-                                <div class="invalid-feedback">Please select your country!</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative">
-                                <label class="form-label">City</label>
-                                <select class="form-select" data-select="{&quot;searchEnabled&quot;: true}" aria-label="Select city" required="">
-                    <option value="">Select city...</option>
-                    <option value="Austin">Austin</option>
-                    <option value="Charlotte">Charlotte</option>
-                    <option value="Chicago">Chicago</option>
-                    <option value="Columbus">Columbus</option>
-                    <option value="Dallas">Dallas</option>
-                    <option value="Houston">Houston</option>
-                    <option value="Jacksonville">Jacksonville</option>
-                    <option value="Los Angeles">Los Angeles</option>
-                    <option value="New York">New York</option>
-                    <option value="Orlando">Orlando</option>
-                    <option value="Philadelphia">Philadelphia</option>
-                    <option value="Phoenix">Phoenix</option>
-                    <option value="San Antonio">San Antonio</option>
-                    <option value="San Diego">San Diego</option>
-                    <option value="San Jose">San Jose</option>
-                  </select>
-                                <div class="invalid-feedback">Please select your city!</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="position-relative">
-                                <label for="add-zip" class="form-label">ZIP code</label>
-                                <input type="text" class="form-control" id="add-zip" required="">
-                                <div class="invalid-feedback">Please enter your ZIP code!</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="position-relative">
-                                <label for="add-address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="add-address" required="">
-                                <div class="invalid-feedback">Please enter your address!</div>
-                            </div>
-                        </div>
+                    <form class="row g-3 g-lg-4 needs-validation" method="post" action="account-addresses" novalidate>
+                        <input type="hidden" name="action" value="add">
+                        <div class="col-sm-6"><label class="form-label" for="add-country">Country</label><input class="form-control" type="text" name="country" id="add-country" required></div>
+                        <div class="col-sm-6"><label class="form-label" for="add-state">State</label><input class="form-control" type="text" name="state" id="add-state" required></div>
+                        <div class="col-sm-4"><label class="form-label" for="add-zip">ZIP Code</label><input class="form-control" type="text" name="zipCode" id="add-zip" required></div>
+                        <div class="col-sm-8"><label class="form-label" for="add-address">Address</label><input class="form-control" type="text" name="address" id="add-address" required></div>
                         <div class="col-12">
-                            <div class="form-check mb-0">
-                                <input type="checkbox" class="form-check-input" id="set-primary-3">
-                                <label for="set-primary-3" class="form-check-label">Set as primary address</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="setPrimary" id="add-set-primary">
+                                <label class="form-check-label" for="add-set-primary">Set as primary address</label>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="d-flex gap-3 pt-2 pt-sm-0">
-                                <button type="submit" class="btn btn-primary">Add address</button>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
+                        <div class="col-12 d-flex gap-3 pt-2">
+                            <button class="btn btn-primary" type="submit">Add Address</button>
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
                         </div>
                     </form>
                 </div>
@@ -1952,261 +1866,75 @@
 
 
                 <!-- Addresses content -->
+                <%-- ======================================================================= --%>
+                <%-- SECTION 1: DYNAMIC ADDRESS LIST & EDIT FORMS                            --%>
+                <%-- ======================================================================= --%>
+
                 <div class="col-lg-9">
                     <div class="ps-lg-3 ps-xl-0">
+                        <h1 class="h2 mb-4">Your Addresses</h1>
 
-                        <!-- Page title -->
-                        <h1 class="h2 mb-1 mb-sm-2">Addresses</h1>
+                        <c:if test="${empty addresses}">
+                            <div class="alert alert-info" role="alert">
+                                You have not added any addresses yet. Add one below to get started!
+                            </div>
+                        </c:if>
 
-                        <!-- Primary shipping address -->
-                        <div class="border-bottom py-4">
-                            <div class="nav flex-nowrap align-items-center justify-content-between pb-1 mb-3">
-                                <div class="d-flex align-items-center gap-3 me-4">
-                                    <h2 class="h6 mb-0">Shipping address</h2>
-                                    <span class="badge text-bg-info rounded-pill">Primary</span>
+                        <c:forEach var="address" items="${addresses}">
+                            <div class="border-bottom py-4">
+                                <div class="d-flex justify-content-between align-items-center pb-1 mb-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <h2 class="h6 mb-0">Shipping Address</h2>
+                                        <c:if test="${address.primary}">
+                                            <span class="badge text-bg-info rounded-pill">Primary</span>
+                                        </c:if>
+                                    </div>
+                                    <a class="nav-link text-decoration-underline p-0" data-bs-toggle="collapse" data-bs-target=".address-toggle-${address.id}" role="button" aria-expanded="false">Edit</a>
                                 </div>
-                                <a class="nav-link hiding-collapse-toggle text-decoration-underline p-0 collapsed" href=".primary-address" data-bs-toggle="collapse" aria-expanded="false" aria-controls="primaryAddressPreview primaryAddressEdit">Edit</a>
-                            </div>
-                            <div class="collapse primary-address show" id="primaryAddressPreview">
-                                <ul class="list-unstyled fs-sm m-0">
-                                    <li>New York 11741, USA</li>
-                                    <li>396 Lillian Bolavandy, Holbrook</li>
-                                </ul>
-                            </div>
-                            <div class="collapse primary-address" id="primaryAddressEdit">
-                                <form class="row g-3 g-sm-4 needs-validation" novalidate="">
-                                    <div class="col-sm-6">
-                                        <div class="position-relative">
-                                            <label class="form-label">Country</label>
-                                            <select class="form-select" data-select="{&quot;searchEnabled&quot;: true}" aria-label="Select country" required="">
-                          <option value="">Select country...</option>
-                          <optgroup label="Africa">
-                            <option value="Nigeria">Nigeria</option>
-                            <option value="South Africa">South Africa</option>
-                            <option value="Kenya">Kenya</option>
-                            <option value="Egypt">Egypt</option>
-                            <option value="Ethiopia">Ethiopia</option>
-                          </optgroup>
-                          <optgroup label="Asia">
-                            <option value="China">China</option>
-                            <option value="India">India</option>
-                            <option value="Japan">Japan</option>
-                            <option value="South Korea">South Korea</option>
-                            <option value="Saudi Arabia">Saudi Arabia</option>
-                          </optgroup>
-                          <optgroup label="Europe">
-                            <option value="Germany">Germany</option>
-                            <option value="France">France</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Spain">Spain</option>
-                          </optgroup>
-                          <optgroup label="North America">
-                            <option value="United States" selected="">United States</option>
-                            <option value="Canada">Canada</option>
-                            <option value="Mexico">Mexico</option>
-                            <option value="Jamaica">Jamaica</option>
-                            <option value="Costa Rica">Costa Rica</option>
-                          </optgroup>
-                          <optgroup label="South America">
-                            <option value="Brazil">Brazil</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Colombia">Colombia</option>
-                            <option value="Chile">Chile</option>
-                            <option value="Peru">Peru</option>
-                          </optgroup>
-                          <optgroup label="Oceania">
-                            <option value="Australia">Australia</option>
-                            <option value="New Zealand">New Zealand</option>
-                            <option value="Papua New Guinea">Papua New Guinea</option>
-                            <option value="Fiji">Fiji</option>
-                            <option value="Solomon Islands">Solomon Islands</option>
-                          </optgroup>
-                        </select>
-                                            <div class="invalid-feedback">Please select your country!</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="position-relative">
-                                            <label class="form-label">City</label>
-                                            <select class="form-select" data-select="{&quot;searchEnabled&quot;: true}" aria-label="Select city" required="">
-                          <option value="">Select city...</option>
-                          <option value="Austin">Austin</option>
-                          <option value="Charlotte">Charlotte</option>
-                          <option value="Chicago">Chicago</option>
-                          <option value="Columbus">Columbus</option>
-                          <option value="Dallas">Dallas</option>
-                          <option value="Houston">Houston</option>
-                          <option value="Jacksonville">Jacksonville</option>
-                          <option value="Los Angeles">Los Angeles</option>
-                          <option value="New York" selected="">New York</option>
-                          <option value="Orlando">Orlando</option>
-                          <option value="Philadelphia">Philadelphia</option>
-                          <option value="Phoenix">Phoenix</option>
-                          <option value="San Antonio">San Antonio</option>
-                          <option value="San Diego">San Diego</option>
-                          <option value="San Jose">San Jose</option>
-                        </select>
-                                            <div class="invalid-feedback">Please select your city!</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="position-relative">
-                                            <label for="psa-zip" class="form-label">ZIP code</label>
-                                            <input type="text" class="form-control" id="psa-zip" value="11741" required="">
-                                            <div class="invalid-feedback">Please enter your ZIP code!</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <div class="position-relative">
-                                            <label for="psa-address" class="form-label">Address</label>
-                                            <input type="text" class="form-control" id="psa-address" value="396 Lillian Bolavandy, Holbrook" required="">
-                                            <div class="invalid-feedback">Please enter your address!</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-check mb-0">
-                                            <input type="checkbox" class="form-check-input" id="set-primary-1" checked="">
-                                            <label for="set-primary-1" class="form-check-label">Set as primary address</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="d-flex gap-3 pt-2 pt-sm-0">
-                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target=".primary-address" aria-expanded="true" aria-controls="primaryAddressPreview primaryAddressEdit">Close</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
 
-                        <!-- Alternative shipping address -->
-                        <div class="border-bottom py-4">
-                            <div class="nav flex-nowrap align-items-center justify-content-between pb-1 mb-3">
-                                <div class="d-flex align-items-center gap-3 me-4">
-                                    <h2 class="h6 mb-0">Alternative shipping address</h2>
+                                <div class="collapse show address-toggle-${address.id}" id="addressPreview-${address.id}">
+                                    <ul class="list-unstyled fs-sm m-0">
+                                        <li>${address.address}</li>
+                                        <li>${address.state}, ${address.zipCode}, ${address.country}</li>
+                                    </ul>
                                 </div>
-                                <a class="nav-link hiding-collapse-toggle text-decoration-underline p-0 collapsed" href=".alternative-address" data-bs-toggle="collapse" aria-expanded="false" aria-controls="alternativeAddressPreview alternativeAddressEdit">Edit</a>
-                            </div>
-                            <div class="collapse alternative-address show" id="alternativeAddressPreview">
-                                <ul class="list-unstyled fs-sm m-0">
-                                    <li>Florida 32806, USA</li>
-                                    <li>514 S. Magnolia St., Orlando</li>
-                                </ul>
-                            </div>
-                            <div class="collapse alternative-address" id="alternativeAddressEdit">
-                                <form class="row g-3 g-sm-4 needs-validation" novalidate="">
-                                    <div class="col-sm-6">
-                                        <div class="position-relative">
-                                            <label class="form-label">Country</label>
-                                            <select class="form-select" data-select="{&quot;searchEnabled&quot;: true}" aria-label="Select country" required="">
-                          <option value="">Select country...</option>
-                          <optgroup label="Africa">
-                            <option value="Nigeria">Nigeria</option>
-                            <option value="South Africa">South Africa</option>
-                            <option value="Kenya">Kenya</option>
-                            <option value="Egypt">Egypt</option>
-                            <option value="Ethiopia">Ethiopia</option>
-                          </optgroup>
-                          <optgroup label="Asia">
-                            <option value="China">China</option>
-                            <option value="India">India</option>
-                            <option value="Japan">Japan</option>
-                            <option value="South Korea">South Korea</option>
-                            <option value="Saudi Arabia">Saudi Arabia</option>
-                          </optgroup>
-                          <optgroup label="Europe">
-                            <option value="Germany">Germany</option>
-                            <option value="France">France</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Spain">Spain</option>
-                          </optgroup>
-                          <optgroup label="North America">
-                            <option value="United States" selected="">United States</option>
-                            <option value="Canada">Canada</option>
-                            <option value="Mexico">Mexico</option>
-                            <option value="Jamaica">Jamaica</option>
-                            <option value="Costa Rica">Costa Rica</option>
-                          </optgroup>
-                          <optgroup label="South America">
-                            <option value="Brazil">Brazil</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Colombia">Colombia</option>
-                            <option value="Chile">Chile</option>
-                            <option value="Peru">Peru</option>
-                          </optgroup>
-                          <optgroup label="Oceania">
-                            <option value="Australia">Australia</option>
-                            <option value="New Zealand">New Zealand</option>
-                            <option value="Papua New Guinea">Papua New Guinea</option>
-                            <option value="Fiji">Fiji</option>
-                            <option value="Solomon Islands">Solomon Islands</option>
-                          </optgroup>
-                        </select>
-                                            <div class="invalid-feedback">Please select your country!</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="position-relative">
-                                            <label class="form-label">City</label>
-                                            <select class="form-select" data-select="{&quot;searchEnabled&quot;: true}" aria-label="Select city" required="">
-                          <option value="">Select city...</option>
-                          <option value="Austin">Austin</option>
-                          <option value="Charlotte">Charlotte</option>
-                          <option value="Chicago">Chicago</option>
-                          <option value="Columbus">Columbus</option>
-                          <option value="Dallas">Dallas</option>
-                          <option value="Houston">Houston</option>
-                          <option value="Jacksonville">Jacksonville</option>
-                          <option value="Los Angeles">Los Angeles</option>
-                          <option value="New York">New York</option>
-                          <option value="Orlando" selected="">Orlando</option>
-                          <option value="Philadelphia">Philadelphia</option>
-                          <option value="Phoenix">Phoenix</option>
-                          <option value="San Antonio">San Antonio</option>
-                          <option value="San Diego">San Diego</option>
-                          <option value="San Jose">San Jose</option>
-                        </select>
-                                            <div class="invalid-feedback">Please select your city!</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="position-relative">
-                                            <label for="asa-zip" class="form-label">ZIP code</label>
-                                            <input type="text" class="form-control" id="asa-zip" value="32806" required="">
-                                            <div class="invalid-feedback">Please enter your ZIP code!</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <div class="position-relative">
-                                            <label for="asa-address" class="form-label">Address</label>
-                                            <input type="text" class="form-control" id="asa-address" value="514 S. Magnolia St." required="">
-                                            <div class="invalid-feedback">Please enter your address!</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-check mb-0">
-                                            <input type="checkbox" class="form-check-input" id="set-primary-2">
-                                            <label for="set-primary-2" class="form-check-label">Set as primary address</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="d-flex gap-3 pt-2 pt-sm-0">
-                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target=".alternative-address" aria-expanded="true" aria-controls="alternativeAddressPreview alternativeAddressEdit">Close</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
 
-                        <!-- Add address button -->
-                        <div class="nav pt-4">
-                            <a class="nav-link animate-underline fs-base px-0" href="#newAddressModal" data-bs-toggle="modal">
-                  <i class="ci-plus fs-lg ms-n1 me-2"></i>
-                  <span class="animate-target">Add address</span>
-                </a>
+                                <div class="collapse address-toggle-${address.id}" id="addressEdit-${address.id}">
+                                        <%-- This is now the ONLY form for both updating and deleting --%>
+                                    <form class="row g-3 g-sm-4 mt-2 needs-validation" method="post" action="account-addresses" novalidate>
+                                        <input type="hidden" name="addressId" value="${address.id}">
+
+                                        <div class="col-sm-6"><label class="form-label" for="country-${address.id}">Country</label><input class="form-control" type="text" name="country" value="${address.country}" id="country-${address.id}" required></div>
+                                        <div class="col-sm-6"><label class="form-label" for="state-${address.id}">State</label><input class="form-control" type="text" name="state" value="${address.state}" id="state-${address.id}" required></div>
+                                        <div class="col-sm-4"><label class="form-label" for="zip-${address.id}">ZIP Code</label><input class="form-control" type="text" name="zipCode" value="${address.zipCode}" id="zip-${address.id}" required></div>
+                                        <div class="col-sm-8"><label class="form-label" for="address-${address.id}">Address</label><input class="form-control" type="text" name="address" value="${address.address}" id="address-${address.id}" required></div>
+
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="setPrimary" id="set-primary-${address.id}" <c:if test="${address.primary}">checked</c:if>>
+                                                <label class="form-check-label" for="set-primary-${address.id}">Set as primary address</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 d-flex flex-wrap gap-3">
+                                                <%-- The Save button sends action=update --%>
+                                            <button class="btn btn-primary" type="submit" name="action" value="update">Save changes</button>
+
+                                            <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target=".address-toggle-${address.id}" aria-expanded="false">Close</button>
+
+                                                <%-- The Delete button sends action=delete and has the confirmation dialog --%>
+                                            <button class="btn btn-danger ms-auto" type="submit" name="action" value="delete" onclick="return confirm('Are you sure you want to delete this address?');">Delete</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </c:forEach>
+
+                        <div class="pt-4">
+                            <a class="nav-link animate-underline fs-base px-0" href="#" data-bs-toggle="modal" data-bs-target="#newAddressModal">
+                                <i class="ci-plus fs-lg me-2"></i>
+                                <span class="animate-target">Add a new address</span>
+                            </a>
                         </div>
                     </div>
                 </div>

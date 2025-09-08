@@ -1698,7 +1698,7 @@
                                 <i class="ci-user fs-base opacity-75 me-2"></i>
                                 Personal info
                             </a>
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-addresses.jsp">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-addresses">
                                 <i class="ci-map-pin fs-base opacity-75 me-2"></i>
                                 Addresses
                             </a>
