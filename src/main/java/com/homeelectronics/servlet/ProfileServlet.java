@@ -34,7 +34,7 @@ public class ProfileServlet extends HttpServlet {
         System.out.println("✅ User email from session: " + userEmail);
 
         try (Connection conn = DBConnection.getConnection()) {
-            ProfileDAO profileDAO = new ProfileDAO(conn);
+            ProfileDAO profileDAO = new ProfileDAO();
             int userId = profileDAO.getUserIdByEmail(userEmail);
 
             System.out.println("🔍 User ID: " + userId);
@@ -74,7 +74,7 @@ public class ProfileServlet extends HttpServlet {
         String servletPath = request.getServletPath();
 
         try (Connection conn = DBConnection.getConnection()) {
-            ProfileDAO profileDAO = new ProfileDAO(conn);
+            ProfileDAO profileDAO = new ProfileDAO();
             UserDAO userDAO = new UserDAO();
 
             int userId = profileDAO.getUserIdByEmail(userEmail);

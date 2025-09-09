@@ -55,7 +55,7 @@ public class SigninServlet extends HttpServlet {
                 // implimented mainly to show the username everywhere
                 // Fetch user details and add them to the session
                 try (Connection conn = DBConnection.getConnection()) {
-                    ProfileDAO profileDAO = new ProfileDAO(conn);
+                    ProfileDAO profileDAO = new ProfileDAO();          // here i changed the conn
                     int userId = profileDAO.getUserIdByEmail(email);
                     if (userId != -1) {
                         // Add this line to store the userId in the session

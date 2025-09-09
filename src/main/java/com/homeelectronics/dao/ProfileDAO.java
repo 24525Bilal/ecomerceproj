@@ -5,11 +5,12 @@ import com.homeelectronics.db.DBConnection;
 import java.sql.*;
 
 public class ProfileDAO {
-    private Connection conn;
-    public ProfileDAO(Connection conn) {
-        this.conn = conn;
+//    private Connection conn;
+//    public ProfileDAO(Connection conn) {
+//        this.conn = conn;
+//    }
+    public ProfileDAO() {
     }
-
 
 
     // Get user ID by email - like UserDAO style
