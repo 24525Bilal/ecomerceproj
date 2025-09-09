@@ -1,3 +1,8 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.homeelectronics.model.CartItem" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -349,7 +354,7 @@
             </div>
             <div class="d-flex w-100 gap-3">
                 <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.jsp">View cart</a>
-                <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.html">Checkout</a>
+                <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.jsp">Checkout</a>
             </div>
         </div>
     </div>
@@ -1673,13 +1678,13 @@
                       </button>
                                     </h2>
                                     <div class="nav ms-auto">
-                                        <a class="nav-link text-decoration-underline p-0" href="checkout-v1-delivery-2.html">Edit</a>
+                                        <a class="nav-link text-decoration-underline p-0" href="checkout-v1-delivery-2.jsp">Edit</a>
                                     </div>
                                 </div>
                                 <div class="accordion-collapse collapse d-lg-block" id="deliveryInfo" aria-labelledby="deliveryInfoHeading" data-bs-parent="#checkout">
                                     <div class="accordion-body p-0 pt-3 pt-md-4">
                                         <h3 class="fs-sm mb-2">Postcode</h3>
-                                        <p class="fs-sm">15006</p>
+                                        <p class="fs-sm"><c:out value="${sessionScope.primaryAddress.zipCode}"/></p>
 
 
                                     </div>

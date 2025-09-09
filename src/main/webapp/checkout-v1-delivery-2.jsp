@@ -1,3 +1,10 @@
+
+<%@ page import="java.util.List" %>
+<%@ page import="com.homeelectronics.model.CartItem" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -8,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
 
     <!-- SEO Meta Tags -->
-    <title>BuyHive | Checkout v.1 - Delivery Info Step 1</title>
+    <title>BuyHive | Checkout v.1 - Delivery Info Step 2</title>
     <meta name="description" content="BuyHive - Multipurpose E-Commerce Bootstrap HTML Template">
     <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
     <meta name="author" content="Createx Studio">
@@ -28,6 +35,10 @@
     <!-- Font icons -->
     <link rel="preload" href="assets/icons/BuyHive-icons.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="stylesheet" href="assets/icons/BuyHive-icons.min.css">
+
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendor/choices.js/choices.min.css">
 
     <!-- Bootstrap + Theme styles -->
     <link rel="preload" href="assets/css/theme.min.css" as="style">
@@ -187,59 +198,41 @@
 
     <!-- Order preview offcanvas -->
     <div class="offcanvas offcanvas-end pb-sm-2 px-sm-2" id="orderPreview" tabindex="-1" aria-labelledby="orderPreviewLabel" style="width: 500px">
+
         <div class="offcanvas-header py-3 pt-lg-4">
             <h4 class="offcanvas-title" id="orderPreviewLabel">Your order</h4>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+
         <div class="offcanvas-body d-flex flex-column gap-3 py-2">
 
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-electronics.jsp">
-            <img src="assets/img/shop/electronics/thumbs/08.png" width="110" alt="iPhone 14">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Apple iPhone 14 128GB White</a>
-                    </h5>
-                    <div class="h6 mb-0">$899.00</div>
-                    <div class="fs-xs pt-2">Qty: 1</div>
+            <%-- This loop will create a new item block for each product in the cart --%>
+            <c:forEach items="${cartItems}" var="item">
+                <div class="d-flex align-items-center">
+                    <a class="flex-shrink-0" href="product-details?productId=${item.product.id}">
+                        <img src="${pageContext.request.contextPath}/${item.product.thumbnailUrl}" width="110" alt="${item.product.name}">
+                    </a>
+                    <div class="w-100 min-w-0 ps-2 ps-sm-3">
+                        <h5 class="d-flex animate-underline mb-2">
+                            <a class="d-block fs-sm fw-medium text-truncate animate-target" href="product-details?productId=${item.product.id}">
+                                <c:out value="${item.product.name}"/>
+                            </a>
+                        </h5>
+                        <div class="h6 mb-0">
+                            <fmt:formatNumber value="${item.product.price}" type="currency" currencySymbol="$"/>
+                        </div>
+                        <div class="fs-xs pt-2">Qty: <c:out value="${item.quantity}"/></div>
+                    </div>
                 </div>
-            </div>
+            </c:forEach>
 
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="position-relative flex-shrink-0" href="shop-product-electronics.jsp">
-            <span class="badge text-bg-danger position-absolute top-0 start-0">-10%</span>
-            <img src="assets/img/shop/electronics/thumbs/09.png" width="110" alt="iPad Pro">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Tablet Apple iPad Pro M2</a>
-                    </h5>
-                    <div class="h6 mb-0">$989.00 <del class="text-body-tertiary fs-xs fw-normal">$1,099.00</del></div>
-                    <div class="fs-xs pt-2">Qty: 1</div>
-                </div>
-            </div>
-
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-electronics.jsp">
-            <img src="assets/img/shop/electronics/thumbs/01.png" width="110" alt="Smart Watch">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Smart Watch Series 7, White</a>
-                    </h5>
-                    <div class="h6 mb-0">$429.00</div>
-                    <div class="fs-xs pt-2">Qty: 1</div>
-                </div>
-            </div>
         </div>
 
         <div class="offcanvas-header">
-            <a class="btn btn-lg btn-outline-secondary w-100" href="checkout-v1-cart.jsp">Edit cart</a>
+            <a class="btn btn-lg btn-outline-secondary w-100" href="cart">Edit cart</a>
         </div>
+
+
     </div>
 
 
@@ -346,7 +339,7 @@
             </div>
             <div class="d-flex w-100 gap-3">
                 <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.jsp">View cart</a>
-                <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.html">Checkout</a>
+                <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.jsp">Checkout</a>
             </div>
         </div>
     </div>
@@ -1613,7 +1606,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                         <a class="nav-link" href="admin-signin.html">Admin</a>
+                                        <a class="nav-link" href="admin-signin.html">Admin</a>
                                     </li>
 
                                     <li class="nav-item me-lg-n2 me-xl-0">
@@ -1659,27 +1652,220 @@
                     <div class="d-flex flex-column gap-5 pe-lg-4 pe-xl-0">
                         <div class="d-flex align-items-start">
                             <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle fs-sm fw-semibold lh-1 flex-shrink-0" style="width: 2rem; height: 2rem; margin-top: -.125rem">1</div>
-                            <div class="w-100 ps-3 ps-md-4">
+                            <div class="flex-grow-0 flex-shrink-0 ps-3 ps-md-4" style="width: calc(100% - 2rem)">
                                 <h1 class="h5 mb-md-4">Delivery information</h1>
                                 <div class="ms-n5 ms-sm-0">
-                                    <p class="fs-sm mb-md-4">Add your Postcode to see the delivery and collection options available in your area.</p>
-                                    <div class="d-flex flex-column flex-md-row align-items-md-end gap-3 gap-xl-4">
-                                        <div class="w-100">
-                                            <label for="postcode" class="form-label">Postcode</label>
-                                            <input type="text" class="form-control form-control-lg" id="postcode" placeholder="e.g. H1 1AG">
+                                    <p class="fs-sm mb-2">Add your Postcode to see the delivery and collection options available in your area.</p>
+                                    <p class="fs-sm mb-4">
+                                        <span class="text-dark-emphasis fw-semibold me-1"><c:out value="${sessionScope.primaryAddress.zipCode}"/></span>
+                                        <a class="text-body" href="checkout">Edit</a>
+                                    </p>
+                                    <h3 class="h6 border-bottom pb-4 mb-0">Choose shipping method</h3>
+                                    <div class="mb-lg-4" id="shippingMethod" role="list">
+
+                                        <!-- Courier delivery option -->
+                                        <div class="border-bottom">
+                                            <div class="form-check mb-0" role="listitem" data-bs-toggle="collapse" data-bs-target="#courier" aria-expanded="true" aria-controls="courier">
+                                                <label class="form-check-label d-flex align-items-center text-dark-emphasis fw-semibold py-4">
+                            <input type="radio" class="form-check-input fs-base me-2 me-sm-3" name="payment-method" checked="">
+                            Courier delivery
+                            <span class="fw-normal ms-auto">$16.50</span>
+                          </label>
+                                            </div>
+                                            <div class="collapse show" id="courier" data-bs-parent="#shippingMethod">
+
+                                            </div>
                                         </div>
-                                        <a class="btn btn-lg btn-primary" href="checkout-v1-delivery-2.html">
-                        Calculate cost and availability
-                        <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
-                      </a>
+
+                                        <!-- Pickup from store option -->
+                                        <div class="border-bottom">
+
+                                            <div class="collapse" id="pickup" data-bs-parent="#shippingMethod">
+                                                <div class="pb-4 ps-3 ms-2 ms-sm-3">
+                                                    <p class="fs-sm mb-2">Choose a store nearby:</p>
+                                                    <div class="w-100 mb-4" style="max-width: 300px">
+                                                        <select class="form-select" data-select="{
+                                &quot;removeItemButton&quot;: false,
+                                &quot;choices&quot;: [
+                                  {
+                                    &quot;value&quot;: &quot;BuyHive Supercenter&quot;,
+                                    &quot;label&quot;: &quot;<span class=\&quot;text-dark-emphasis fw-medium\&quot;>BuyHive Supercenter</span>&quot;,
+                                    &quot;customProperties&quot;: {
+                                      &quot;address&quot;: &quot;<span class=\&quot;d-block text-body-secondary fs-xs fw-normal\&quot;>755 Riverpoint Ct, West Sacramento</span>&quot;,
+                                      &quot;selected&quot;: &quot;<span class=\&quot;text-dark-emphasis fw-medium\&quot;>BuyHive Supercenter</span>&quot;
+                                    }
+                                  },
+                                  {
+                                    &quot;value&quot;: &quot;BuyHive Electronics&quot;,
+                                    &quot;label&quot;: &quot;<span class=\&quot;text-dark-emphasis fw-medium\&quot;>BuyHive Electronics</span>&quot;,
+                                    &quot;customProperties&quot;: {
+                                      &quot;address&quot;: &quot;<span class=\&quot;d-block text-body-secondary fs-xs fw-normal\&quot;>8270 Delta Shores Cir S, Sacramento</span>&quot;,
+                                      &quot;selected&quot;: &quot;<span class=\&quot;text-dark-emphasis fw-medium\&quot;>BuyHive Electronics</span>&quot;
+                                    }
+                                  },
+                                  {
+                                    &quot;value&quot;: &quot;BuyHive Great Mall&quot;,
+                                    &quot;label&quot;: &quot;<span class=\&quot;text-dark-emphasis fw-medium\&quot;>BuyHive Great Mall</span>&quot;,
+                                    &quot;customProperties&quot;: {
+                                      &quot;address&quot;: &quot;<span class=\&quot;d-block text-body-secondary fs-xs fw-normal\&quot;>10655 Folsom Blvd, Sacramento</span>&quot;,
+                                      &quot;selected&quot;: &quot;<span class=\&quot;text-dark-emphasis fw-medium\&quot;>BuyHive Great Mall</span>&quot;
+                                    }
+                                  }
+                                ]
+                              }" data-select-template="true"></select>
+                                                    </div>
+                                                    <p class="fs-sm">Choose a pickup time convenient for you:</p>
+                                                    <div class="d-flex justify-content-start">
+                                                        <button type="button" class="btn btn-icon btn-sm btn-outline-secodary ms-n2" id="pickupTimePrev" aria-label="Prev">
+                                <i class="ci-chevron-left fs-lg"></i>
+                              </button>
+                                                        <div class="swiper swiper-load pt-2" data-swiper="{
+                                &quot;slidesPerView&quot;: 2,
+                                &quot;spaceBetween&quot;: 12,
+                                &quot;navigation&quot;: {
+                                  &quot;prevEl&quot;: &quot;#pickupTimePrev&quot;,
+                                  &quot;nextEl&quot;: &quot;#pickupTimeNext&quot;
+                                },
+                                &quot;breakpoints&quot;: {
+                                  &quot;600&quot;: {
+                                    &quot;slidesPerView&quot;: 3,
+                                    &quot;spaceBetween&quot;: 16
+                                  },
+                                  &quot;768&quot;: {
+                                    &quot;slidesPerView&quot;: 4,
+                                    &quot;spaceBetween&quot;: 16
+                                  },
+                                  &quot;991&quot;: {
+                                    &quot;slidesPerView&quot;: 3,
+                                    &quot;spaceBetween&quot;: 16
+                                  },
+                                  &quot;1100&quot;: {
+                                    &quot;slidesPerView&quot;: 4,
+                                    &quot;spaceBetween&quot;: 12
+                                  },
+                                  &quot;1250&quot;: {
+                                    &quot;slidesPerView&quot;: 4,
+                                    &quot;spaceBetween&quot;: 24
+                                  }
+                                }
+                              }">
+                                                            <div class="swiper-wrapper">
+                                                                <div class="swiper-slide text-center">
+                                                                    <div class="h6 fs-sm pb-2 mb-0">Monday, 13</div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-mon-1" checked="">
+                                                                        <label for="p-mon-1" class="btn btn-outline-secondary w-100 rounded-pill">12:00 - 15:00</label>
+                                                                    </div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-mon-2">
+                                                                        <label for="p-mon-2" class="btn btn-outline-secondary w-100 rounded-pill">17:00 - 20:00</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="swiper-slide text-center">
+                                                                    <div class="h6 fs-sm pb-2 mb-0">Tuesday, 14</div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-tue-1">
+                                                                        <label for="p-tue-1" class="btn btn-outline-secondary w-100 rounded-pill">09:00 - 12:00</label>
+                                                                    </div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-tue-2">
+                                                                        <label for="p-tue-2" class="btn btn-outline-secondary w-100 rounded-pill">14:00 - 19:00</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="swiper-slide text-center">
+                                                                    <div class="h6 fs-sm pb-2 mb-0">Wednesday, 15</div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-wed-1">
+                                                                        <label for="p-wed-1" class="btn btn-outline-secondary w-100 rounded-pill">09:00 - 12:00</label>
+                                                                    </div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-wed-2">
+                                                                        <label for="p-wed-2" class="btn btn-outline-secondary w-100 rounded-pill">14:00 - 19:00</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="swiper-slide text-center">
+                                                                    <div class="h6 fs-sm pb-2 mb-0">Thursday, 16</div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-thu-1">
+                                                                        <label for="p-thu-1" class="btn btn-outline-secondary w-100 rounded-pill">12:00 - 15:00</label>
+                                                                    </div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-thu-2">
+                                                                        <label for="p-thu-2" class="btn btn-outline-secondary w-100 rounded-pill">17:00 - 20:00</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="swiper-slide text-center">
+                                                                    <div class="h6 fs-sm pb-2 mb-0">Friday, 17</div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-fri-1">
+                                                                        <label for="p-fri-1" class="btn btn-outline-secondary w-100 rounded-pill">09:00 - 12:00</label>
+                                                                    </div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-fri-2">
+                                                                        <label for="p-fri-2" class="btn btn-outline-secondary w-100 rounded-pill">14:00 - 19:00</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="swiper-slide text-center">
+                                                                    <div class="h6 fs-sm pb-2 mb-0">Saturday, 18</div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-sat-1">
+                                                                        <label for="p-sat-1" class="btn btn-outline-secondary w-100 rounded-pill">09:00 - 11:00</label>
+                                                                    </div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-sat-2">
+                                                                        <label for="p-sat-2" class="btn btn-outline-secondary w-100 rounded-pill">13:00 - 15:00</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="swiper-slide text-center">
+                                                                    <div class="h6 fs-sm pb-2 mb-0">Sunday, 19</div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-sun-1">
+                                                                        <label for="p-sun-1" class="btn btn-outline-secondary w-100 rounded-pill">09:00 - 11:00</label>
+                                                                    </div>
+                                                                    <div class="py-1 my-1">
+                                                                        <input type="radio" class="btn-check" name="pickup-time" id="p-sun-2">
+                                                                        <label for="p-sun-2" class="btn btn-outline-secondary w-100 rounded-pill">13:00 - 15:00</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn btn-icon btn-sm btn-outline-secodary me-n2" id="pickupTimeNext" aria-label="Next">
+                                <i class="ci-chevron-right fs-lg"></i>
+                              </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Local shipping option -->
+                                        <div class="border-bottom">
+
+                                            <div class="collapse" id="shipping" data-bs-parent="#shippingMethod">
+                                                <div class="pb-4 ps-3 ms-2 ms-sm-3">
+                                                    <div class="alert d-flex align-items-center alert-info mb-3" role="alert">
+                                                        <i class="ci-info fs-lg me-2"></i>
+                                                        <div class="fs-sm">Local shipping can take up to <span class="text-info-emphasis fw-semibold">5</span> business days.</div>
+                                                    </div>
+                                                    <p class="fs-sm mb-0">Estimated date of delivery - <span class="text-body-emphasis fw-medium">March 15, 2024</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <a class="btn btn-lg btn-primary w-100 d-none d-lg-flex" href="checkout-v1-shipping.jsp">
+                      Continue
+                      <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
+                    </a>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Shipping address -->
                         <div class="d-flex align-items-start">
                             <div class="d-flex align-items-center justify-content-center bg-body-secondary text-body-secondary rounded-circle fs-sm fw-semibold lh-1 flex-shrink-0" style="width: 2rem; height: 2rem; margin-top: -.125rem">2</div>
                             <h2 class="h5 text-body-secondary ps-3 ps-md-4 mb-0">Shipping address</h2>
                         </div>
+
+                        <!-- Payment -->
                         <div class="d-flex align-items-start">
                             <div class="d-flex align-items-center justify-content-center bg-body-secondary text-body-secondary rounded-circle fs-sm fw-semibold lh-1 flex-shrink-0" style="width: 2rem; height: 2rem; margin-top: -.125rem">3</div>
                             <h2 class="h5 text-body-secondary ps-3 ps-md-4 mb-0">Payment</h2>
@@ -1701,40 +1887,34 @@
                                         </div>
                                     </div>
                                     <a class="d-flex align-items-center gap-2 text-decoration-none" href="#orderPreview" data-bs-toggle="offcanvas">
-                                        <div class="ratio ratio-1x1" style="max-width: 64px">
-                                            <img src="assets/img/shop/electronics/thumbs/08.png" class="d-block p-1" alt="iPhone">
-                                        </div>
-                                        <div class="ratio ratio-1x1" style="max-width: 64px">
-                                            <img src="assets/img/shop/electronics/thumbs/09.png" class="d-block p-1" alt="iPad Pro">
-                                        </div>
-                                        <div class="ratio ratio-1x1" style="max-width: 64px">
-                                            <img src="assets/img/shop/electronics/thumbs/01.png" class="d-block p-1" alt="Smart Watch">
-                                        </div>
+                                        <c:forEach items="${cartItems}" var="item" begin="0" end="2">
+                                            <div class="ratio ratio-1x1" style="max-width: 64px">
+                                                <img src="${pageContext.request.contextPath}/${item.product.thumbnailUrl}" class="d-block p-1" alt="${item.product.name}">
+                                            </div>
+                                        </c:forEach>
                                         <i class="ci-chevron-right text-body fs-xl p-0 ms-auto"></i>
                                     </a>
                                 </div>
+
                                 <ul class="list-unstyled fs-sm gap-3 mb-0">
                                     <li class="d-flex justify-content-between">
-                                        Subtotal (3 items):
-                                        <span class="text-dark-emphasis fw-medium">$2,427.00</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        Saving:
-                                        <span class="text-danger fw-medium">-$110.00</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        Tax collected:
-                                        <span class="text-dark-emphasis fw-medium">$73.40</span>
+                                        Subtotal (<c:out value="${cartItems.size()}"/> items):
+                                        <span class="text-dark-emphasis fw-medium">
+                                                 <fmt:formatNumber value="${subtotal}" type="currency" currencySymbol="$"/>
+                                        </span>
                                     </li>
                                     <li class="d-flex justify-content-between">
                                         Shipping:
                                         <span class="text-dark-emphasis fw-medium">Calculated at checkout</span>
                                     </li>
                                 </ul>
+
                                 <div class="border-top pt-4 mt-4">
                                     <div class="d-flex justify-content-between mb-3">
                                         <span class="fs-sm">Estimated total:</span>
-                                        <span class="h5 mb-0">$2,390.40</span>
+                                        <span class="h5 mb-0">
+                                             <fmt:formatNumber value="${subtotal}" type="currency" currencySymbol="$"/>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -1968,7 +2148,19 @@
             <!-- Copyright + Payment methods -->
             
         </div>
+
+        <!-- Additional spacing to accommodate the fixed button -->
+        <div class="d-lg-none" style="height: 4rem"></div>
     </footer>
+
+
+    <!-- Fixed positioned pay button that is visible on screens < 992px wide (lg breakpoint) -->
+    <div class="fixed-bottom z-sticky w-100 py-2 px-3 bg-body border-top shadow d-lg-none">
+        <a class="btn btn-lg btn-primary w-100" href="checkout-v1-shipping.jsp">
+        Continue
+        <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
+      </a>
+    </div>
 
 
     <!-- Back to top button -->
@@ -1981,9 +2173,13 @@
           <rect x=".75" y=".75" width="60.5" height="30.5" rx="15.25" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></rect>
         </svg>
       </a>
-      </a>
+        
     </div>
 
+
+    <!-- Vendor scripts -->
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/choices.js/choices.min.js"></script>
 
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>

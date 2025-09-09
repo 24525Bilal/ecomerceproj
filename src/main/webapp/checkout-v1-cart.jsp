@@ -252,7 +252,7 @@
             </div>
             <div class="d-flex w-100 gap-3">
                 <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.jsp">View cart</a>
-                <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.html">Checkout</a>
+                <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.jsp">Checkout</a>
             </div>
         </div>
     </div>
@@ -1726,7 +1726,7 @@
                                         <span class="fs-sm">Estimated total:</span>
                                         <span class="h5 mb-0">₹<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
                                     </div>
-                                    <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.html">
+                                    <a class="btn btn-lg btn-primary w-100" href="checkout">
                       Proceed to checkout
                       <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
                     </a>
