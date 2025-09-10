@@ -1,4 +1,8 @@
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -1680,7 +1684,7 @@
                             <div class="accordion-collapse collapse d-lg-block" id="deliveryInfo" aria-labelledby="deliveryInfoHeading" data-bs-parent="#checkout">
                                 <div class="accordion-body p-0 pt-3 pt-md-4">
                                     <h3 class="fs-sm mb-2">Postcode</h3>
-<!--                                    <p class="fs-sm"><c:out value="${sessionScope.primaryAddress.zipCode}"/></p>-->
+                                    <p class="fs-sm"><c:out value="${sessionScope.primaryAddress.zipCode}"/></p>
 
 
                                 </div>
@@ -1695,73 +1699,56 @@
                         <div class="w-100 ps-3 ps-md-4">
                             <h1 class="h5 mb-md-4">Shipping address</h1>
                             <form class="needs-validation" novalidate="">
+                                <%-- ... inside the shipping address form ... --%>
+
                                 <div class="row row-cols-1 row-cols-sm-2 g-3 g-sm-4 mb-4">
                                     <div class="col">
                                         <label for="shipping-fn" class="form-label">First name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control form-control-lg" id="shipping-fn" required="">
+                                        <%-- Use the profile object to get the first name --%>
+                                        <input type="text" class="form-control form-control-lg" id="shipping-fn" value="${profile.firstName}" required="">
                                     </div>
                                     <div class="col">
                                         <label for="shipping-ln" class="form-label">Last name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control form-control-lg" id="shipping-ln" required="">
+                                        <%-- Use the profile object to get the last name --%>
+                                        <input type="text" class="form-control form-control-lg" id="shipping-ln" value="${profile.lastName}" required="">
                                     </div>
                                     <div class="col">
                                         <label for="shipping-email" class="form-label">Email address <span class="text-danger">*</span></label>
-                                        <input type="email" class="form-control form-control-lg" id="shipping-email" required="">
+                                        <%-- The email is available directly --%>
+                                        <input type="email" class="form-control form-control-lg" id="shipping-email" value="${userEmail}" required="">
                                     </div>
                                     <div class="col">
                                         <label for="shipping-mobile" class="form-label">Mobile number</label>
-                                        <input type="text" class="form-control form-control-lg" id="shipping-mobile">
+                                        <%-- Use the profile object to get the phone number --%>
+                                        <input type="text" class="form-control form-control-lg" id="shipping-mobile" value="${profile.phoneNumber}">
                                     </div>
+
+                                    <%-- The rest of the fields for city, postcode, and address use the primaryAddress object, which is correct --%>
+
                                     <div class="col">
-                                        <label class="form-label">City <span class="text-danger">*</span></label>
-                                        <select class="form-select" data-select="{
-                          &quot;searchEnabled&quot;: true,
-                          &quot;classNames&quot;: {
-                            &quot;containerInner&quot;: [&quot;form-select&quot;, &quot;form-select-lg&quot;]
-                          }
-                        }" required="">
-                                            <option value="">Select your city</option>
-                                            <option value="New York City">New York City</option>
-                                            <option value="Los Angeles">Los Angeles</option>
-                                            <option value="Chicago">Chicago</option>
-                                            <option value="Houston">Houston</option>
-                                            <option value="Phoenix">Phoenix</option>
-                                            <option value="Philadelphia">Philadelphia</option>
-                                            <option value="San Antonio">San Antonio</option>
-                                            <option value="San Diego">San Diego</option>
-                                            <option value="Dallas">Dallas</option>
-                                            <option value="San Jose">San Jose</option>
-                                            <option value="Austin">Austin</option>
-                                            <option value="Seattle">Seattle</option>
-                                        </select>
+                                        <label for="shipping-city" class="form-label">City <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control form-control-lg" id="shipping-city" value="${primaryAddress.state}" required="">
                                     </div>
                                     <div class="col">
                                         <label for="shipping-postcode" class="form-label">Postcode <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control form-control-lg" id="shipping-postcode" required="">
+                                        <input type="text" class="form-control form-control-lg" id="shipping-postcode" value="${primaryAddress.zipCode}" required="">
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="shipping-address" class="form-label">House / apartment number and street address <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="shipping-address" required="">
+                                    <input type="text" class="form-control form-control-lg" id="shipping-address" value="${primaryAddress.address}" required="">
                                 </div>
-                                <div class="nav mb-4">
-                                    <a class="nav-link px-0" href="#!">
-                                        Add address line
-                                        <i class="ci-plus fs-base ms-1"></i>
+                                    <div class="nav mb-4">
+                                        <%-- Change the href to point to the address management page --%>
+                                        <a class="nav-link px-0" href="account-addresses">
+                                            Edit or change address
+                                            <i class="ci-edit fs-base ms-1"></i>
+                                        </a>
+                                    </div>
+                                    <a class="btn btn-lg btn-primary w-100 d-none d-lg-flex" href="checkout-v1-payment.html">
+                                        Continue
+                                        <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
                                     </a>
-                                </div>
-                                <h3 class="h6">
-                                    Billing address
-                                    <i class="ci-info text-body-secondary align-middle ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-custom-class="popover-sm" data-bs-content="Uncheck the checkbox below if your Billing address should be different from your Shipping address."></i>
-                                </h3>
-                                <div class="form-check mb-lg-4">
-                                    <input type="checkbox" class="form-check-input" id="same-address" checked="">
-                                    <label for="same-address" class="form-check-label">Same as delivery address</label>
-                                </div>
-                                <a class="btn btn-lg btn-primary w-100 d-none d-lg-flex" href="checkout-v1-payment.html">
-                                    Continue
-                                    <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
-                                </a>
                             </form>
                         </div>
                     </div>
@@ -1788,50 +1775,39 @@
                                     </div>
                                 </div>
                                 <a class="d-flex align-items-center gap-2 text-decoration-none" href="#orderPreview" data-bs-toggle="offcanvas">
-                                    <div class="ratio ratio-1x1" style="max-width: 64px">
-                                        <img src="assets/img/shop/electronics/thumbs/08.png" class="d-block p-1" alt="iPhone">
-                                    </div>
-                                    <div class="ratio ratio-1x1" style="max-width: 64px">
-                                        <img src="assets/img/shop/electronics/thumbs/09.png" class="d-block p-1" alt="iPad Pro">
-                                    </div>
-                                    <div class="ratio ratio-1x1" style="max-width: 64px">
-                                        <img src="assets/img/shop/electronics/thumbs/01.png" class="d-block p-1" alt="Smart Watch">
-                                    </div>
+                                    <c:forEach items="${cartItems}" var="item" begin="0" end="2">
+                                        <div class="ratio ratio-1x1" style="max-width: 64px">
+                                            <img src="${pageContext.request.contextPath}/assets/img/shop/electronics/thumbs/${item.getProductImage()}" class="d-block p-1" alt="${item.getProductName()}">
+                                        </div>
+                                    </c:forEach>
                                     <i class="ci-chevron-right text-body fs-xl p-0 ms-auto"></i>
                                 </a>
                             </div>
                             <ul class="list-unstyled fs-sm gap-3 mb-0">
                                 <li class="d-flex justify-content-between">
-                                    Subtotal (3 items):
-                                    <span class="text-dark-emphasis fw-medium">$2,427.00</span>
-                                </li>
-                                <li class="d-flex justify-content-between">
-                                    Saving:
-                                    <span class="text-danger fw-medium">-$110.00</span>
-                                </li>
-                                <li class="d-flex justify-content-between">
-                                    Tax collected:
-                                    <span class="text-dark-emphasis fw-medium">$73.40</span>
+                                    Subtotal:
+                                    <span class="text-dark-emphasis fw-medium">
+                            <fmt:formatNumber value="${cartSubtotal}" type="currency" currencySymbol="$"/>
+                        </span>
                                 </li>
                                 <li class="d-flex justify-content-between">
                                     Shipping:
-                                    <span class="text-dark-emphasis fw-medium">$16.50</span>
+                                    <span class="text-dark-emphasis fw-medium">
+                            <fmt:formatNumber value="${shippingCost}" type="currency" currencySymbol="$"/>
+                        </span>
                                 </li>
                             </ul>
                             <div class="border-top pt-4 mt-4">
                                 <div class="d-flex justify-content-between mb-3">
                                     <span class="fs-sm">Estimated total:</span>
-                                    <span class="h5 mb-0">$2,406.90</span>
+                                    <span class="h5 mb-0">
+                            <fmt:formatNumber value="${totalCost}" type="currency" currencySymbol="$"/>
+                        </span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-body-tertiary rounded-5 p-4">
-                        <div class="d-flex align-items-center px-sm-2 px-lg-0 px-xl-2">
-                            <svg class="text-warning flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M1.333 9.667H7.5V16h-5c-.64 0-1.167-.527-1.167-1.167V9.667zm13.334 0v5.167c0 .64-.527 1.167-1.167 1.167h-5V9.667h6.167zM0 5.833V7.5c0 .64.527 1.167 1.167 1.167h.167H7.5v-1-3H1.167C.527 4.667 0 5.193 0 5.833zm14.833-1.166H8.5v3 1h6.167.167C15.473 8.667 16 8.14 16 7.5V5.833c0-.64-.527-1.167-1.167-1.167z"></path><path d="M8 5.363a.5.5 0 0 1-.495-.573C7.752 3.123 9.054-.03 12.219-.03c1.807.001 2.447.977 2.447 1.813 0 1.486-2.069 3.58-6.667 3.58zM12.219.971c-2.388 0-3.295 2.27-3.595 3.377 1.884-.088 3.072-.565 3.756-.971.949-.563 1.287-1.193 1.287-1.595 0-.599-.747-.811-1.447-.811z"></path><path d="M8.001 5.363c-4.598 0-6.667-2.094-6.667-3.58 0-.836.641-1.812 2.448-1.812 3.165 0 4.467 3.153 4.713 4.819a.5.5 0 0 1-.495.573zM3.782.971c-.7 0-1.448.213-1.448.812 0 .851 1.489 2.403 5.042 2.566C7.076 3.241 6.169.971 3.782.971z"></path></svg>
-                            <div class="text-dark-emphasis fs-sm ps-2 ms-1">Congratulations! You have earned <span class="fw-semibold">240 bonuses</span></div>
-                        </div>
-                    </div>
+
                 </div>
             </aside>
         </div>

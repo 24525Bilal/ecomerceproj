@@ -1648,7 +1648,7 @@
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-delivery-2.jsp">Delivery Info (Step 2)</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-shipping.html">Shipping Address</a>
+                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-shipping.jsp">Shipping Address</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-payment.html">Payment</a>
