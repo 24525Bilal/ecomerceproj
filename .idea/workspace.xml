@@ -11,9 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/ShippingServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/AddProductToCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/AddProductToCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/CartPageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/CartPageServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/account-addresses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-addresses.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-info.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-dashboard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-payouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-payouts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.jsp" afterDir="false" />
@@ -25,10 +27,14 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/account-payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-payment.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/account-reviews.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-reviews.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/account-wishlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-wishlist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-1.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-2.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-thankyou.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-thankyou.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/help-topics-v1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/help-topics-v1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-categories-electronics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-categories-electronics.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-product-electronics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-product-electronics.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/terms-and-conditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/terms-and-conditions.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -278,7 +284,7 @@
       <workItem from="1756901460984" duration="33179000" />
       <workItem from="1756982137585" duration="152642000" />
       <workItem from="1757306687238" duration="46549000" />
-      <workItem from="1757465256563" duration="5478000" />
+      <workItem from="1757465256563" duration="6313000" />
     </task>
     <servers />
   </component>
