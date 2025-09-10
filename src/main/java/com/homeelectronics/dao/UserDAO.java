@@ -82,4 +82,23 @@ public class UserDAO {
             return false;
         }
     }
+
+
+    // New method to get a user by ID
+    public User getUserById(int userId) throws SQLException {
+        String sql = "SELECT * FROM users WHERE id = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, userId);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                // Assuming you have a constructor in User.java that takes email and password
+                return new User(rs.getString("email"), rs.getString("password"));
+            }
+        }
+        return null;
+    }
+
 }
