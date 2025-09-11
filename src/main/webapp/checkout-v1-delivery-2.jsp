@@ -1,4 +1,4 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="com.homeelectronics.model.CartItem" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -1669,7 +1669,8 @@
                                                 <label class="form-check-label d-flex align-items-center text-dark-emphasis fw-semibold py-4">
                             <input type="radio" class="form-check-input fs-base me-2 me-sm-3" name="payment-method" checked="">
                             Courier delivery
-                            <span class="fw-normal ms-auto">$16.50</span>
+                            <span class="fw-normal ms-auto">₹100.00</span>
+
                           </label>
                                             </div>
                                             <div class="collapse show" id="courier" data-bs-parent="#shippingMethod">
