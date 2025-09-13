@@ -58,45 +58,71 @@ public class CartDAO {
      * Adds a product to the user's cart or updates the quantity if it already exists.
      */
     public void addOrUpdateCartItem(int userId, int productId, int quantity) {
-        String cartSql = "INSERT INTO carts (user_id) VALUES (?) ON CONFLICT (user_id) DO NOTHING";
-        String cartItemsSql = "INSERT INTO cart_items (cart_id, product_id, quantity) VALUES ((SELECT id FROM carts WHERE user_id = ?), ?, ?) ON CONFLICT (cart_id, product_id) DO UPDATE SET quantity = cart_items.quantity + EXCLUDED.quantity";
+        Integer cartId = null;
 
-        Connection conn = null;  // Declare outside so it’s visible in catch
+        // SQL to find the user's existing cart ID
+        String findCartSql = "SELECT id FROM carts WHERE user_id = ?";
+        // SQL to insert a new cart and get the generated ID
+        String createCartSql = "INSERT INTO carts (user_id) VALUES (?)";
+        // SQL to add or update the item in the cart
+        String cartItemsSql = "INSERT INTO cart_items (cart_id, product_id, quantity) VALUES (?, ?, ?) ON CONFLICT (cart_id, product_id) DO UPDATE SET quantity = cart_items.quantity + EXCLUDED.quantity";
+
+        Connection conn = null;
         try {
             conn = DBConnection.getConnection();
-            conn.setAutoCommit(false);
+            conn.setAutoCommit(false); // Start transaction
 
-            // Ensure cart exists
-            try (PreparedStatement cartStmt = conn.prepareStatement(cartSql)) {
-                cartStmt.setInt(1, userId);
-                cartStmt.executeUpdate();
+            // Step 1: Check if the user already has a cart
+            try (PreparedStatement findStmt = conn.prepareStatement(findCartSql)) {
+                findStmt.setInt(1, userId);
+                try (ResultSet rs = findStmt.executeQuery()) {
+                    if (rs.next()) {
+                        cartId = rs.getInt("id"); // Cart exists, get its ID
+                    }
+                }
             }
 
-            // Add or update item
+            // Step 2: If no cart was found, create one
+            if (cartId == null) {
+                try (PreparedStatement createStmt = conn.prepareStatement(createCartSql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+                    createStmt.setInt(1, userId);
+                    createStmt.executeUpdate();
+                    try (ResultSet generatedKeys = createStmt.getGeneratedKeys()) {
+                        if (generatedKeys.next()) {
+                            cartId = generatedKeys.getInt(1); // Get the new cart ID
+                        } else {
+                            throw new SQLException("Creating cart failed, no ID obtained.");
+                        }
+                    }
+                }
+            }
+
+            // Step 3: Add or update the item in the cart_items table using the cartId
             try (PreparedStatement itemStmt = conn.prepareStatement(cartItemsSql)) {
-                itemStmt.setInt(1, userId);
+                itemStmt.setInt(1, cartId);
                 itemStmt.setInt(2, productId);
                 itemStmt.setInt(3, quantity);
                 itemStmt.executeUpdate();
             }
 
-            conn.commit();
+            conn.commit(); // Commit the transaction
 
         } catch (SQLException e) {
-            if (conn != null) {   // Check if connection was established
+            if (conn != null) {
                 try {
-                    conn.rollback();
-                } catch (SQLException rollbackException) {
-                    rollbackException.printStackTrace();
+                    conn.rollback(); // Rollback on error
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
                 }
             }
             e.printStackTrace();
         } finally {
             if (conn != null) {
                 try {
-                    conn.close(); // Always close connection
-                } catch (SQLException closeException) {
-                    closeException.printStackTrace();
+                    conn.setAutoCommit(true);
+                    conn.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
                 }
             }
         }

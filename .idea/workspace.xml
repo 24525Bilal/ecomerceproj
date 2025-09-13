@@ -11,14 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-1.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-delivery-2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-shipping.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home-electronics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home-electronics.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-catalog-electronics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-catalog-electronics.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-product-electronics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop-product-electronics.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/dao/CartDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/dao/CartDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +99,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JavaScript Debug.shop-catalog-electronics.jsp">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.441">
     <configuration name="account-marketplace-products.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/home_electronics/account-marketplace-products.jsp">
       <method v="2" />
     </configuration>
@@ -268,7 +261,7 @@
       <workItem from="1756982137585" duration="152642000" />
       <workItem from="1757306687238" duration="46549000" />
       <workItem from="1757465256563" duration="28831000" />
-      <workItem from="1757732933195" duration="4484000" />
+      <workItem from="1757732933195" duration="11246000" />
     </task>
     <servers />
   </component>
