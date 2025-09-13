@@ -574,7 +574,7 @@
                                         <li><a class="dropdown-item" href="account-marketplace-dashboard.jsp">Dashboard</a></li>
                                         <li><a class="dropdown-item" href="account-marketplace-products.jsp">Products</a></li>
                                         <li><a class="dropdown-item" href="account-marketplace-sales.html">Sales</a></li>
-                                        <li><a class="dropdown-item" href="account-marketplace-payouts.html">Payouts</a></li>
+                                        <li><a class="dropdown-item" href="account-marketplace-users.html">Payouts</a></li>
                                         <li><a class="dropdown-item" href="account-marketplace-purchases.html">Purchases</a></li>
                                         <li><a class="dropdown-item" href="account-marketplace-favorites.html">Favorites</a></li>
                                         <li><a class="dropdown-item" href="account-marketplace-settings.html">Settings</a></li>
@@ -711,7 +711,7 @@
                 </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="account-marketplace-products.jsp">
+                            <a class="dropdown-item" href="account-marketplace-products">
                   <i class="ci-layers fs-base opacity-75 me-2"></i>
                   Products (4)
                 </a>
@@ -723,7 +723,7 @@
                 </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="account-marketplace-payouts.html">
+                            <a class="dropdown-item" href="account-marketplace-users.html">
                   <i class="ci-dollar-sign fs-base opacity-75 me-2"></i>
                   Payouts
                 </a>
@@ -813,7 +813,7 @@
                     <i class="ci-pie-chart fs-base opacity-75 me-2"></i>
                     Sales
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill pe-none active" href="account-marketplace-payouts.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill pe-none active" href="account-marketplace-users.html">
                     <i class="ci-dollar-sign fs-base opacity-75 me-2"></i>
                     Users
                   </a>

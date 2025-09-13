@@ -1880,7 +1880,7 @@
                                                     <li><a class="dropdown-item" href="account-marketplace-dashboard.jsp">Dashboard</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-products.jsp">Products</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-sales.html">Sales</a></li>
-                                                    <li><a class="dropdown-item" href="account-marketplace-payouts.html">Payouts</a></li>
+                                                    <li><a class="dropdown-item" href="account-marketplace-users.jsp">Payouts</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-purchases.html">Purchases</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-favorites.html">Favorites</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-settings.html">Settings</a></li>
