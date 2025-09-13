@@ -1779,14 +1779,14 @@
                                     Subtotal (<c:out value="${cartItems.size()}"/> items):
                                     <span class="text-dark-emphasis fw-medium">
                                  <%-- USE cartSubtotal, NOT subtotal --%>
-                                 <fmt:formatNumber value="${cartSubtotal}" type="currency" currencySymbol="$"/>
+                                 <fmt:formatNumber value="${cartSubtotal}" type="currency" currencySymbol="₹"/>
                         </span>
                                 </li>
                                 <li class="d-flex justify-content-between">
                                     Shipping:
                                     <span class="text-dark-emphasis fw-medium">
                                  <%-- USE shippingCost --%>
-                                 <fmt:formatNumber value="${shippingCost}" type="currency" currencySymbol="$"/>
+                                 <fmt:formatNumber value="${shippingCost}" type="currency" currencySymbol="₹"/>
                         </span>
                                 </li>
                             </ul>
@@ -1796,7 +1796,7 @@
                                     <span class="fs-sm">Estimated total:</span>
                                     <span class="h5 mb-0">
                              <%-- USE totalCost --%>
-                             <fmt:formatNumber value="${totalCost}" type="currency" currencySymbol="$"/>
+                             <fmt:formatNumber value="${totalCost}" type="currency" currencySymbol="₹"/>
                         </span>
                                 </div>
                             </div>

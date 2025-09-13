@@ -912,7 +912,7 @@
                                                 <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-electronics.jsp">${product.name}</a>
                                             </h6>
                                             <div class="d-flex flex-md-column align-items-center align-items-md-start gap-2">
-                                                <div class="h6 mb-0 me-1 me-md-0"><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="$" /></div>
+                                                <div class="h6 mb-0 me-1 me-md-0"><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="₹" /></div>
                                                 <div class="d-flex gap-2">
                                                     <div class="d-flex align-items-center fs-xs text-body-emphasis bg-body-tertiary rounded-pill px-2 py-1">
                                                         <i class="ci-heart text-body-secondary me-1"></i> 0
@@ -1205,7 +1205,7 @@
 
                     <div class="row">
                         <div class="col-md-4 mb-3">
-                            <label for="price" class="form-label fw-medium">Price ($)</label>
+                            <label for="price" class="form-label fw-medium">Price (₹)</label>
                             <input type="number" class="form-control" id="price" name="price" placeholder="Enter price" step="0.01" required>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -1328,7 +1328,7 @@
 
                     <div class="row">
                         <div class="col-md-4 mb-3">
-                            <label for="editPrice" class="form-label fw-medium">Price ($)</label>
+                            <label for="editPrice" class="form-label fw-medium">Price (₹)</label>
                             <input type="number" class="form-control rounded-pill" id="editPrice" name="price" step="0.01" required>
                         </div>
                         <div class="col-md-4 mb-3">

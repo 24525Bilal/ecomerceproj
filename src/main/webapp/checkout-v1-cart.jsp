@@ -223,7 +223,7 @@
                         <h5 class="d-flex animate-underline mb-2">
                             <a class="d-block fs-sm fw-medium text-truncate animate-target" href="productDetails?id=${item.product.id}">${item.product.name}</a>
                         </h5>
-                        <div class="h6 pb-1 mb-2">$<fmt:formatNumber value="${item.product.price}" pattern="0.00"/></div>
+                        <div class="h6 pb-1 mb-2">₹<fmt:formatNumber value="${item.product.price}" pattern="0.00"/></div>
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="count-input rounded-2">
                                 <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
@@ -248,7 +248,7 @@
         <div class="offcanvas-header flex-column align-items-start">
             <div class="d-flex align-items-center justify-content-between w-100 mb-3 mb-md-4">
                 <span class="text-light-emphasis">Subtotal:</span>
-                <span class="h6 mb-0">$<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
+                <span class="h6 mb-0">₹<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
             </div>
             <div class="d-flex w-100 gap-3">
                 <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.jsp">View cart</a>
@@ -1652,7 +1652,7 @@
                                         </div>
                                     </td>
                                     <td class="h6 py-3 d-none d-xl-table-cell">
-                                        <div class="h6 mb-0">$<fmt:formatNumber value="${item.product.price}" pattern="0.00"/></div>
+                                        <div class="h6 mb-0">₹<fmt:formatNumber value="${item.product.price}" pattern="0.00"/></div>
                                     </td>
                                     <td class="py-3 px-0 text-center d-none d-md-table-cell">
 
@@ -1673,7 +1673,7 @@
 
                                     </td>
                                     <td class="h6 py-3 px-0 text-end d-none d-md-table-cell">
-                                        <div class="h6 mb-0">$<fmt:formatNumber value="${item.totalPrice}" pattern="0.00"/></div>
+                                        <div class="h6 mb-0">₹<fmt:formatNumber value="${item.totalPrice}" pattern="0.00"/></div>
                                     </td>
                                     <td class="py-3 ps-0 text-end">
                                         <form action="removeFromCart" method="post" class="d-inline">
@@ -1706,7 +1706,7 @@
                                 <ul class="list-unstyled fs-sm gap-3 mb-0">
                                     <li class="d-flex justify-content-between">
                                         Subtotal (<c:out value="${cartItems.size()}"/> items):
-                                        <span class="text-dark-emphasis fw-medium">$<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
+                                        <span class="text-dark-emphasis fw-medium">₹<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
                                     </li>
                                     <li class="d-flex justify-content-between">
                                         Saving:

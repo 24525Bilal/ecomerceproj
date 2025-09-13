@@ -225,7 +225,7 @@
                         <h5 class="d-flex animate-underline mb-2">
                             <a class="d-block fs-sm fw-medium text-truncate animate-target" href="productDetails?id=${item.product.id}">${item.product.name}</a>
                         </h5>
-                        <div class="h6 pb-1 mb-2">$<fmt:formatNumber value="${item.product.price}" pattern="0.00"/></div>
+                        <div class="h6 pb-1 mb-2">₹<fmt:formatNumber value="${item.product.price}" pattern="0.00"/></div>
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="count-input rounded-2">
                                 <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
@@ -250,7 +250,7 @@
         <div class="offcanvas-header flex-column align-items-start">
             <div class="d-flex align-items-center justify-content-between w-100 mb-3 mb-md-4">
                 <span class="text-light-emphasis">Subtotal:</span>
-                <span class="h6 mb-0">$<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
+                <span class="h6 mb-0">₹<fmt:formatNumber value="${subtotal}" pattern="0.00"/></span>
             </div>
             <div class="d-flex w-100 gap-3">
                 <a class="btn btn-lg btn-secondary w-100" href="cartPage">View cart</a>
@@ -1987,7 +1987,7 @@
                                             </a>
                                         </h3>
                                         <div class="d-flex align-items-center justify-content-between">
-                                            <div class="h5 lh-1 mb-0">$<c:out value="${product.price}"/></div>
+                                            <div class="h5 lh-1 mb-0">₹<c:out value="${product.price}"/></div>
 
                                             <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart" data-product-id="${product.id}" onclick="handleAddToCart(event, false)">
                                                 <i class="ci-shopping-cart fs-base animate-target"></i>

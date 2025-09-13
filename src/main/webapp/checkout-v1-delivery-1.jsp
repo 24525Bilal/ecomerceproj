@@ -215,7 +215,7 @@
                             </a>
                         </h5>
                         <div class="h6 mb-0">
-                            <fmt:formatNumber value="${item.product.price}" type="currency" currencySymbol="$"/>
+                            <fmt:formatNumber value="${item.product.price}" type="currency" currencySymbol="₹"/>
                         </div>
                         <div class="fs-xs pt-2">Qty: <c:out value="${item.quantity}"/></div>
                     </div>
@@ -1703,7 +1703,7 @@
                                     <li class="d-flex justify-content-between">
                                         Subtotal (<c:out value="${cartItems.size()}"/> items):
                                         <span class="text-dark-emphasis fw-medium">
-                                              <fmt:formatNumber value="${subtotal}" type="currency" currencySymbol="$"/>
+                                              <fmt:formatNumber value="${subtotal}" type="currency" currencySymbol="₹"/>
                                         </span>
                                     </li>
                                     <li class="d-flex justify-content-between">
@@ -1716,7 +1716,7 @@
                                     <div class="d-flex justify-content-between mb-3">
                                         <span class="fs-sm">Estimated total:</span>
                                         <span class="h5 mb-0">
-                                            <fmt:formatNumber value="${subtotal}" type="currency" currencySymbol="$"/>
+                                            <fmt:formatNumber value="${subtotal}" type="currency" currencySymbol="₹"/>
                                         </span>
                                     </div>
                                 </div>

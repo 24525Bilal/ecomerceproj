@@ -1810,7 +1810,7 @@
 
                         <!-- Price -->
                         <div class="d-flex flex-wrap align-items-center mb-3">
-                            <div class="h4 mb-0 me-3">$${product.price}</div>
+                            <div class="h4 mb-0 me-3">₹${product.price}</div>
                             <div class="d-flex align-items-center fs-sm ms-auto
                                 <c:choose>
                                     <c:when test="${product.stockQuantity > 0}">text-success">
@@ -1936,7 +1936,7 @@
                         </div>
                         <div class="w-100 min-w-0 ps-2">
                             <h4 class="fs-sm fw-medium text-truncate mb-1">${product.name}</h4>
-                            <div class="h6 mb-0">$${product.price}</div>
+                            <div class="h6 mb-0">₹${product.price}</div>
                         </div>
                     </div>
                     <div class="d-flex gap-2 ms-auto">
