@@ -860,103 +860,91 @@
                     <!-- Payouts table -->
 <div class="table-responsive" data-filter-list='{"listClass":"payouts-list","sortClass":"payouts-sort","valueNames":["amount","date"]}'>
 <style>
-  /* Match product table spacing, increase column width and row height */
+  /* Increased padding for larger row height and bigger gaps */
   .table.order-table th,
   .table.order-table td {
-    padding: 40px 50px;   /* increased vertical and horizontal padding */
+    padding: 30px 40px;   /* Larger padding */
     vertical-align: middle;
-    line-height: 1.5;     /* ensures rows are taller */
+    line-height: 1.7;
   }
 
-  /* First column wider (User ID) */
+  /* First column (User ID) much wider */
   .table.order-table th:first-child,
   .table.order-table td:first-child {
+    min-width: 250px;
+  }
+
+  /* Other columns consistent, larger width */
+  .table.order-table th,
+  .table.order-table td {
     min-width: 200px;
   }
 
-  /* Other columns consistent width */
-  .table.order-table th,
-  .table.order-table td {
-    min-width: 160px;
-  }
-
-  /* Optional: make header more prominent */
+  /* Bold header text */
   .table.order-table thead th {
     font-weight: 600;
   }
 </style>
 
-<table class="table align-middle fs-sm order-table">
+<table class="table order-table align-middle fs-sm mb-0">
   <thead>
     <tr>
-      <th class="ps-0" scope="col">
-        <button type="button" class="btn fw-normal text-body p-0">User ID</button>
-      </th>
       <th scope="col">
-        <span class="fw-normal text-body">Name</span>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;">User ID</button>
       </th>
-      <th scope="col">
-        <span class="fw-normal text-body">Email</span>
-      </th>
-      <th scope="col">
-        <span class="fw-normal text-body">Phone</span>
-      </th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="fw-medium py-3 ps-0">
-        <button type="button" class="btn p-0 fw-medium text-body" 
-                data-bs-toggle="modal" data-bs-target="#userModal">1001</button>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1001</button>
       </td>
-      <td class="py-3">Alice Johnson</td>
-      <td class="py-3">alice.johnson@example.com</td>
-      <td class="py-3">+1-202-555-0134</td>
+      <td>Alice Johnson</td>
+      <td>alice.johnson@example.com</td>
+      <td>+1-202-555-0134</td>
     </tr>
     <tr>
-      <td class="fw-medium py-3 ps-0">
-        <button type="button" class="btn p-0 fw-medium text-body" 
-                data-bs-toggle="modal" data-bs-target="#userModal">1002</button>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1002</button>
       </td>
-      <td class="py-3">Brian Smith</td>
-      <td class="py-3">brian.smith@example.com</td>
-      <td class="py-3">+1-202-555-0189</td>
+      <td>Brian Smith</td>
+      <td>brian.smith@example.com</td>
+      <td>+1-202-555-0189</td>
     </tr>
     <tr>
-      <td class="fw-medium py-3 ps-0">
-        <button type="button" class="btn p-0 fw-medium text-body" 
-                data-bs-toggle="modal" data-bs-target="#userModal">1003</button>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1003</button>
       </td>
-      <td class="py-3">Catherine Lee</td>
-      <td class="py-3">catherine.lee@example.com</td>
-      <td class="py-3">+1-202-555-0147</td>
+      <td>Catherine Lee</td>
+      <td>catherine.lee@example.com</td>
+      <td>+1-202-555-0147</td>
     </tr>
     <tr>
-      <td class="fw-medium py-3 ps-0">
-        <button type="button" class="btn p-0 fw-medium text-body" 
-                data-bs-toggle="modal" data-bs-target="#userModal">1004</button>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1004</button>
       </td>
-      <td class="py-3">David Brown</td>
-      <td class="py-3">david.brown@example.com</td>
-      <td class="py-3">+1-202-555-0193</td>
+      <td>David Brown</td>
+      <td>david.brown@example.com</td>
+      <td>+1-202-555-0193</td>
     </tr>
     <tr>
-      <td class="fw-medium py-3 ps-0">
-        <button type="button" class="btn p-0 fw-medium text-body" 
-                data-bs-toggle="modal" data-bs-target="#userModal">1005</button>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1005</button>
       </td>
-      <td class="py-3">Ella Martinez</td>
-      <td class="py-3">ella.martinez@example.com</td>
-      <td class="py-3">+1-202-555-0172</td>
+      <td>Ella Martinez</td>
+      <td>ella.martinez@example.com</td>
+      <td>+1-202-555-0172</td>
     </tr>
     <tr>
-      <td class="fw-medium py-3 ps-0">
-        <button type="button" class="btn p-0 fw-medium text-body" 
-                data-bs-toggle="modal" data-bs-target="#userModal">1006</button>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1006</button>
       </td>
-      <td class="py-3">Frank Wilson</td>
-      <td class="py-3">frank.wilson@example.com</td>
-      <td class="py-3">+1-202-555-0168</td>
+      <td>Frank Wilson</td>
+      <td>frank.wilson@example.com</td>
+      <td>+1-202-555-0168</td>
     </tr>
   </tbody>
 </table>
