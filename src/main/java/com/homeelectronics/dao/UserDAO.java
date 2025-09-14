@@ -13,7 +13,7 @@ public class UserDAO {
     public boolean saveUser(User user) {
         // Step 1: Check if the user already exists
         if (isUserExists(user.getEmail())) {
-            System.out.println("❌ Signup failed. Email already exists.");
+            System.out.println(" Signup failed. Email already exists.");
             return false; // Return false if user exists
         }
 
