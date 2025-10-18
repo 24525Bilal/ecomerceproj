@@ -1713,84 +1713,78 @@
                             <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle fs-sm fw-semibold lh-1 flex-shrink-0" style="width: 2rem; height: 2rem; margin-top: -.125rem">3</div>
                             <div class="w-100 ps-3 ps-md-4">
                                 <h2 class="h5 mb-0">Payment</h2>
-                                <div class="mb-4" id="paymentMethod" role="list">
 
-                                    <!-- Cash on delivery -->
-                                    <div class="mt-4">
-                                        <div class="form-check mb-0" role="listitem" data-bs-toggle="collapse" data-bs-target="#cash" aria-expanded="false" aria-controls="cash">
-                                            <label class="form-check-label w-100 text-dark-emphasis fw-semibold">
-                          <input type="radio" class="form-check-input fs-base me-2 me-sm-3" name="payment-method">
-                          Cash on delivery
-                        </label>
-                                        </div>
-                                        <div class="collapse" id="cash" data-bs-parent="#paymentMethod">
+                                <form id="paymentForm" action="payment" method="POST" class="needs-validation" novalidate>
 
+                                    <c:if test="${not empty paymentError}">
+                                        <div class="alert alert-danger mt-3" role="alert">
+                                            <c:out value="${paymentError}"/>
                                         </div>
-                                    </div>
+                                    </c:if>
 
-                                    <!-- Credit card -->
-                                    <div class="mt-4">
-                                        <div class="form-check mb-0" role="listitem" data-bs-toggle="collapse" data-bs-target="#card" aria-expanded="true" aria-controls="card">
-                                            <label class="form-check-label d-flex align-items-center text-dark-emphasis fw-semibold">
-                          <input type="radio" class="form-check-input fs-base me-2 me-sm-3" name="payment-method" checked="">
-                          Credit or debit card
-                          <span class="d-none d-sm-flex gap-2 ms-3">
-                            <img src="assets/img/payment-methods/amex.svg" class="d-block bg-info rounded-1" width="36" alt="Amex">
-                            <img src="assets/img/payment-methods/visa-light-mode.svg" class="d-none-dark" width="36" alt="Visa">
-                            <img src="assets/img/payment-methods/visa-dark-mode.svg" class="d-none d-block-dark" width="36" alt="Visa">
-                            <img src="assets/img/payment-methods/mastercard.svg" width="36" alt="Mastercard">
-                            <img src="assets/img/payment-methods/maestro.svg" width="36" alt="Maestro">
-                          </span>
-                        </label>
+                                    <div class="mb-4" id="paymentMethod" role="list">
+                                        <div class="mt-4">
+                                            <div class="form-check mb-0" role="listitem" data-bs-toggle="collapse" data-bs-target="#cash" aria-expanded="false" aria-controls="cash">
+                                                <label class="form-check-label w-100 text-dark-emphasis fw-semibold">
+                                                    <input type="radio" class="form-check-input fs-base me-2 me-sm-3" name="paymentMethod" value="cod" required>
+                                                    Cash on delivery
+                                                </label>
+                                            </div>
+                                            <div class="collapse" id="cash" data-bs-parent="#paymentMethod">
+                                            </div>
                                         </div>
-                                        <div class="collapse show" id="card" data-bs-parent="#paymentMethod">
-                                            <form class="needs-validation pt-4 pb-2 ps-3 ms-2 ms-sm-3" novalidate="">
-                                                <div class="position-relative mb-3 mb-sm-4" data-input-format="{&quot;creditCard&quot;: true}">
-                                                    <input type="text" class="form-control form-control-lg form-icon-end" placeholder="Card number" required="">
-                                                    <span class="position-absolute d-flex top-50 end-0 translate-middle-y fs-5 text-body-tertiary me-3" data-card-icon=""></span>
-                                                </div>
-                                                <div class="row row-cols-1 row-cols-sm-2 g-3 g-sm-4">
-                                                    <div class="col">
-                                                        <input type="text" class="form-control form-control-lg" data-input-format="{&quot;date&quot;: true, &quot;datePattern&quot;: [&quot;m&quot;, &quot;y&quot;]}" placeholder="MM/YY">
+
+                                        <div class="mt-4">
+                                            <div class="form-check mb-0" role="listitem" data-bs-toggle="collapse" data-bs-target="#card" aria-expanded="true" aria-controls="card">
+                                                <label class="form-check-label d-flex align-items-center text-dark-emphasis fw-semibold">
+                                                    <input type="radio" class="form-check-input fs-base me-2 me-sm-3" name="paymentMethod" value="card" checked="" required>
+                                                    Credit or debit card
+                                                    <span class="d-none d-sm-flex gap-2 ms-3">
+                                <img src="assets/img/payment-methods/amex.svg" class="d-block bg-info rounded-1" width="36" alt="Amex">
+                                 <img src="assets/img/payment-methods/visa-light-mode.svg" class="d-none-dark" width="36" alt="Visa">
+                                 <img src="assets/img/payment-methods/visa-dark-mode.svg" class="d-none d-block-dark" width="36" alt="Visa">
+                                 <img src="assets/img/payment-methods/mastercard.svg" width="36" alt="Mastercard">
+                                 <img src="assets/img/payment-methods/maestro.svg" width="36" alt="Maestro">
+                            </span>
+                                                </label>
+                                            </div>
+                                            <div class="collapse show" id="card" data-bs-parent="#paymentMethod">
+                                                <div class="needs-validation pt-4 pb-2 ps-3 ms-2 ms-sm-3" novalidate="">
+                                                    <div class="position-relative mb-3 mb-sm-4" data-input-format="{&quot;creditCard&quot;: true}">
+                                                        <input type="text" class="form-control form-control-lg form-icon-end" placeholder="Card number" required name="cardNumber">
+                                                        <span class="position-absolute d-flex top-50 end-0 translate-middle-y fs-5 text-body-tertiary me-3" data-card-icon=""></span>
                                                     </div>
-                                                    <div class="col">
-                                                        <input type="text" class="form-control form-control-lg" maxlength="4" data-input-format="{&quot;numeral&quot;: true, &quot;numeralPositiveOnly&quot;: true, &quot;numeralThousandsGroupStyle&quot;: &quot;none&quot;}" placeholder="CVC">
+                                                    <div class="row row-cols-1 row-cols-sm-2 g-3 g-sm-4">
+                                                        <div class="col">
+                                                            <input type="text" class="form-control form-control-lg" data-input-format="{&quot;date&quot;: true, &quot;datePattern&quot;: [&quot;m&quot;, &quot;y&quot;]}" placeholder="MM/YY" required name="expiryDate">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" class="form-control form-control-lg" maxlength="4" data-input-format="{&quot;numeral&quot;: true, &quot;numeralPositiveOnly&quot;: true, &quot;numeralThousandsGroupStyle&quot;: &quot;none&quot;}" placeholder="CVC" required name="cvc">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </form>
+                                                </div> </div>
                                         </div>
-                                    </div>
 
-                                    <!-- PayPal -->
-                                    <div class="mt-4">
+                                        <div class="mt-4">
+                                            <div class="collapse" id="paypal" data-bs-parent="#paymentMethod"></div>
+                                        </div>
 
-                                        <div class="collapse" id="paypal" data-bs-parent="#paymentMethod"></div>
-                                    </div>
-
-                                    <!-- Google Pay -->
-                                    <div class="mt-4">
-
-                                        <div class="collapse" id="googlepay" data-bs-parent="#paymentMethod"></div>
-                                    </div>
+                                        <div class="mt-4">
+                                            <div class="collapse" id="googlepay" data-bs-parent="#paymentMethod"></div>
+                                        </div>
+                                    </div> <div class="form-check mb-lg-4">
+                                    <input type="checkbox" class="form-check-input" id="accept-terms" required> <label for="accept-terms" class="form-check-label nav align-items-center">
+                                    I accept the
+                                    <a class="nav-link text-decoration-underline fw-normal ms-1 p-0" href="terms-and-conditions.html">Terms and Conditions</a>
+                                </label>
                                 </div>
 
-                                <!-- Add promo code button -->
+                                    <button type="submit" class="btn btn-lg btn-primary w-100 d-none d-lg-flex">
+                                        Pay
+                                        <fmt:formatNumber value="${totalCost}" type="currency" currencySymbol="₹"/>
+                                    </button>
 
-
-                                <!-- Additional comments -->
-
-
-                                <div class="form-check mb-lg-4">
-                                    <input type="checkbox" class="form-check-input" id="accept-terms">
-                                    <label for="accept-terms" class="form-check-label nav align-items-center">
-                      I accept the
-                      <a class="nav-link text-decoration-underline fw-normal ms-1 p-0" href="terms-and-conditions.html">Terms and Conditions</a>
-                    </label>
-                                </div>
-
-                                <!-- Pay button visible on screens > 991px wide (lg breakpoint) -->
-                                <a class="btn btn-lg btn-primary w-100 d-none d-lg-flex" href="checkout-v1-thankyou.html">Pay $2,406.90</a>
-                            </div>
+                                </form> </div>
                         </div>
                     </div>
                 </div>
@@ -2085,8 +2079,12 @@
 
     <!-- Fixed positioned pay button that is visible on screens < 992px wide (lg breakpoint) -->
     <div class="fixed-bottom z-sticky w-100 py-2 px-3 bg-body border-top shadow d-lg-none">
-        <a class="btn btn-lg btn-primary w-100" href="checkout-v1-thankyou.html">Pay $2,406.90</a>
+        <button type="submit" form="paymentForm" class="btn btn-lg btn-primary w-100">
+            Pay
+            <fmt:formatNumber value="${totalCost}" type="currency" currencySymbol="₹"/>
+        </button>
     </div>
+
 
 
     <!-- Back to top button -->

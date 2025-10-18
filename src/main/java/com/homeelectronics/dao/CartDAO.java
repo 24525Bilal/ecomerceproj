@@ -146,7 +146,7 @@ public class CartDAO {
     /**
      * Deletes all products from the user's cart.
      */
-    public void clearCartByUserId(int userId) {
+    public void clearCartByUserId(int userId) throws SQLException {
         String sql = "DELETE FROM cart_items WHERE cart_id = (SELECT id FROM carts WHERE user_id = ?)";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {

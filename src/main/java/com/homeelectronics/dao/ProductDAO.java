@@ -343,6 +343,65 @@ public class ProductDAO {
     }
 
 
+    /**
+     * Updates the stock quantity for a specific product.
+     * Decreases the stock by the quantity sold.
+     *
+     * @param productId    The ID of the product to update.
+     * @param quantitySold The number of items sold (positive integer).
+     * @return true if the update was successful, false otherwise.
+     * @throws SQLException If a database error occurs.
+     */
+    public boolean updateStockQuantity(int productId, int quantitySold) throws SQLException {
+        // Ensure quantitySold is positive to prevent accidental stock increase
+        if (quantitySold <= 0) {
+            System.err.println("Warning: Attempted to update stock with non-positive quantity: " + quantitySold + " for product ID: " + productId);
+            return false; // Or throw an IllegalArgumentException
+        }
 
+        // SQL to decrease stock. Ensure stock doesn't go below zero.
+        // The GREATEST function ensures the stock doesn't become negative.
+        String sql = "UPDATE products SET stock_quantity = GREATEST(0, stock_quantity - ?) WHERE id = ? AND stock_quantity >= ?";
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            conn = DBConnection.getConnection();
+            // Important: Start transaction if you need atomicity (all updates succeed or none)
+            // conn.setAutoCommit(false); // Uncomment for transactions
+
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, quantitySold); // Amount to decrease by
+            ps.setInt(2, productId);
+            ps.setInt(3, quantitySold); // Ensure current stock is sufficient
+
+            int rowsAffected = ps.executeUpdate();
+
+            // Optional: Check if the row was actually updated (rowsAffected == 1)
+            // If rowsAffected == 0, it might mean the product ID didn't exist or stock was insufficient.
+            if (rowsAffected == 0) {
+                System.err.println("Warning: Stock update failed for product ID: " + productId + ". Product not found or insufficient stock.");
+                // Rollback if using transactions
+                // if (conn != null) conn.rollback();
+                return false;
+            }
+
+            // Commit transaction if used
+            // if (conn != null) conn.commit();
+            return true; // Successfully updated
+
+        } catch (SQLException e) {
+            // Rollback transaction on error
+            // if (conn != null) try { conn.rollback(); } catch (SQLException ex) { ex.printStackTrace(); }
+            e.printStackTrace();
+            throw e; // Re-throw exception
+        } finally {
+            // Restore auto-commit if changed
+            // if (conn != null) try { conn.setAutoCommit(true); } catch (SQLException e) { e.printStackTrace(); }
+            try { if (ps != null) ps.close(); } catch (SQLException e) { e.printStackTrace(); }
+            try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+    }
 
 }
