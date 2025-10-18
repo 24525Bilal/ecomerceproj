@@ -1732,7 +1732,7 @@
                                             <i class="ci-edit fs-base ms-1"></i>
                                         </a>
                                     </div>
-                                    <a class="btn btn-lg btn-primary w-100 d-none d-lg-flex" href="checkout-v1-payment.html">
+                                    <a class="btn btn-lg btn-primary w-100 d-none d-lg-flex" href="payment">
                                         Continue
                                         <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
                                     </a>
@@ -2038,7 +2038,7 @@
 
 <!-- Fixed positioned pay button that is visible on screens < 992px wide (lg breakpoint) -->
 <div class="fixed-bottom z-sticky w-100 py-2 px-3 bg-body border-top shadow d-lg-none">
-    <a class="btn btn-lg btn-primary w-100" href="checkout-v1-payment.html">
+    <a class="btn btn-lg btn-primary w-100" href="checkout-v1-payment.jsp">
         Continue
         <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
     </a>

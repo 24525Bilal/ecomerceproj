@@ -1,3 +1,16 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
+<%@ page isELIgnored="false" %>
+
+<%@ page import="com.homeelectronics.dao.ProductDAO" %>
+<%@ page import="com.homeelectronics.model.Product" %>
+
+<%@ page import="java.util.List" %>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -193,48 +206,26 @@
         </div>
         <div class="offcanvas-body d-flex flex-column gap-3 py-2">
 
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-electronics.jsp">
-            <img src="assets/img/shop/electronics/thumbs/08.png" width="110" alt="iPhone 14">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Apple iPhone 14 128GB White</a>
-                    </h5>
-                    <div class="h6 mb-0">$899.00</div>
-                    <div class="fs-xs pt-2">Qty: 1</div>
+            <%-- This loop will create a new item block for each product in the cart --%>
+            <c:forEach items="${cartItems}" var="item">
+                <div class="d-flex align-items-center">
+                    <a class="flex-shrink-0" href="product-details?productId=${item.product.id}">
+                        <img src="${pageContext.request.contextPath}/${item.product.thumbnailUrl}" width="110" alt="${item.product.name}">
+                    </a>
+                    <div class="w-100 min-w-0 ps-2 ps-sm-3">
+                        <h5 class="d-flex animate-underline mb-2">
+                            <a class="d-block fs-sm fw-medium text-truncate animate-target" href="product-details?productId=${item.product.id}">
+                                <c:out value="${item.product.name}"/>
+                            </a>
+                        </h5>
+                        <div class="h6 mb-0">
+                            <fmt:formatNumber value="${item.product.price}" type="currency" currencySymbol="$"/>
+                        </div>
+                        <div class="fs-xs pt-2">Qty: <c:out value="${item.quantity}"/></div>
+                    </div>
                 </div>
-            </div>
+            </c:forEach>
 
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="position-relative flex-shrink-0" href="shop-product-electronics.jsp">
-            <span class="badge text-bg-danger position-absolute top-0 start-0">-10%</span>
-            <img src="assets/img/shop/electronics/thumbs/09.png" width="110" alt="iPad Pro">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Tablet Apple iPad Pro M2</a>
-                    </h5>
-                    <div class="h6 mb-0">$989.00 <del class="text-body-tertiary fs-xs fw-normal">$1,099.00</del></div>
-                    <div class="fs-xs pt-2">Qty: 1</div>
-                </div>
-            </div>
-
-            <!-- Item -->
-            <div class="d-flex align-items-center">
-                <a class="flex-shrink-0" href="shop-product-electronics.jsp">
-            <img src="assets/img/shop/electronics/thumbs/01.png" width="110" alt="Smart Watch">
-          </a>
-                <div class="w-100 min-w-0 ps-2 ps-sm-3">
-                    <h5 class="d-flex animate-underline mb-2">
-                        <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-electronics.jsp">Smart Watch Series 7, White</a>
-                    </h5>
-                    <div class="h6 mb-0">$429.00</div>
-                    <div class="fs-xs pt-2">Qty: 1</div>
-                </div>
-            </div>
         </div>
 
         <div class="offcanvas-header">
@@ -1676,7 +1667,7 @@
                                 <div class="accordion-collapse collapse d-lg-block" id="deliveryInfo" aria-labelledby="deliveryInfoHeading" data-bs-parent="#checkout">
                                     <div class="accordion-body p-0 pt-3 pt-md-4">
                                         <h3 class="fs-sm mb-2">Postcode</h3>
-                                        <p class="fs-sm">15006</p>
+                                        <p class="fs-sm"><c:out value="${primaryAddress.zipCode}" /></p>
 
 
                                     </div>
@@ -1704,11 +1695,13 @@
                                 </div>
                                 <div class="accordion-collapse collapse d-lg-block" id="shippingAddress" aria-labelledby="shippingAddressHeading" data-bs-parent="#checkout">
                                     <ul class="accordion-body list-unstyled fs-sm p-0 pt-3 pt-md-4 mb-0">
-                                        <li>Jane Cooper</li>
-                                        <li>jane.cooper@email.com</li>
-                                        <li>(215) 555-1234</li>
-                                        <li>Pennsylvania 15006</li>
-                                        <li>567 Cherry Lane Apt B12 Harrisburg</li>
+
+                                        <!-- address rendering dyanamically  -->
+                                        <li><c:out value="${profile.firstName}" /> <c:out value="${profile.lastName}" /></li>
+                                        <li><c:out value="${userEmail}" /></li> <%-- Assuming email passed via request/session --%>
+                                        <li><c:out value="${profile.phoneNumber}" /></li> <%-- Assuming phone in profile --%>
+                                        <li><c:out value="${primaryAddress.state}" /> <c:out value="${primaryAddress.zipCode}" /></li>
+                                        <li><c:out value="${primaryAddress.address}" /></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1776,13 +1769,7 @@
 
                                     <!-- Google Pay -->
                                     <div class="mt-4">
-                                        <div class="form-check mb-0" role="listitem" data-bs-toggle="collapse" data-bs-target="#googlepay" aria-expanded="false" aria-controls="googlepay">
-                                            <label class="form-check-label d-flex align-items-center text-dark-emphasis fw-semibold">
-                          <input type="radio" class="form-check-input fs-base me-2 me-sm-3" name="payment-method">
-                          Google Pay
-                          <img src="assets/img/payment-methods/google-icon.svg" class="ms-3" width="20" alt="Google Pay">
-                        </label>
-                                        </div>
+
                                         <div class="collapse" id="googlepay" data-bs-parent="#paymentMethod"></div>
                                     </div>
                                 </div>
@@ -1822,45 +1809,46 @@
                                         </div>
                                     </div>
                                     <a class="d-flex align-items-center gap-2 text-decoration-none" href="#orderPreview" data-bs-toggle="offcanvas">
-                                        <div class="ratio ratio-1x1" style="max-width: 64px">
-                                            <img src="assets/img/shop/electronics/thumbs/08.png" class="d-block p-1" alt="iPhone">
-                                        </div>
-                                        <div class="ratio ratio-1x1" style="max-width: 64px">
-                                            <img src="assets/img/shop/electronics/thumbs/09.png" class="d-block p-1" alt="iPad Pro">
-                                        </div>
-                                        <div class="ratio ratio-1x1" style="max-width: 64px">
-                                            <img src="assets/img/shop/electronics/thumbs/01.png" class="d-block p-1" alt="Smart Watch">
-                                        </div>
+                                        <c:forEach items="${cartItems}" var="item" begin="0" end="2">
+                                            <%-- Safety check for the product image loop --%>
+                                            <c:if test="${not empty item.product}">
+                                                <div class="ratio ratio-1x1" style="max-width: 64px">
+                                                    <img src="${pageContext.request.contextPath}/${item.product.thumbnailUrl}" class="d-block p-1" alt="${item.product.name}">
+                                                </div>
+                                            </c:if>
+                                        </c:forEach>
                                         <i class="ci-chevron-right text-body fs-xl p-0 ms-auto"></i>
                                     </a>
                                 </div>
+
                                 <ul class="list-unstyled fs-sm gap-3 mb-0">
                                     <li class="d-flex justify-content-between">
-                                        Subtotal (3 items):
-                                        <span class="text-dark-emphasis fw-medium">$2,427.00</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        Saving:
-                                        <span class="text-danger fw-medium">-$110.00</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        Tax collected:
-                                        <span class="text-dark-emphasis fw-medium">$73.40</span>
+                                        Subtotal (<c:out value="${cartItems.size()}"/> items):
+                                        <span class="text-dark-emphasis fw-medium">
+                                 <%-- USE cartSubtotal, NOT subtotal --%>
+                                 <fmt:formatNumber value="${cartSubtotal}" type="currency" currencySymbol="₹"/>
+                        </span>
                                     </li>
                                     <li class="d-flex justify-content-between">
                                         Shipping:
-                                        <span class="text-dark-emphasis fw-medium">$16.50</span>
+                                        <span class="text-dark-emphasis fw-medium">
+                                 <%-- USE shippingCost --%>
+                                 <fmt:formatNumber value="${shippingCost}" type="currency" currencySymbol="₹"/>
+                        </span>
                                     </li>
                                 </ul>
+
                                 <div class="border-top pt-4 mt-4">
                                     <div class="d-flex justify-content-between mb-3">
                                         <span class="fs-sm">Estimated total:</span>
-                                        <span class="h5 mb-0">$2,406.90</span>
+                                        <span class="h5 mb-0">
+                             <%-- USE totalCost --%>
+                             <fmt:formatNumber value="${totalCost}" type="currency" currencySymbol="₹"/>
+                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </aside>
             </div>

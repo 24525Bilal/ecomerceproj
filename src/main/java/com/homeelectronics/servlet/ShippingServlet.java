@@ -13,6 +13,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -71,6 +73,11 @@ public class ShippingServlet extends HttpServlet {
                 request.setAttribute("primaryAddress", primaryAddress);
                 request.setAttribute("profile", profile);
                 request.setAttribute("userEmail", session.getAttribute("userEmail"));
+
+
+                session.setAttribute("sessionCartSubtotal", subtotal); // Storing in session
+                session.setAttribute("sessionShippingCost", shippingCost); // Storing in session
+                session.setAttribute("sessionTotalCost", totalCost);       // Storing in session
 
                 request.setAttribute("cartSubtotal", subtotal);
                 request.setAttribute("shippingCost", shippingCost);
