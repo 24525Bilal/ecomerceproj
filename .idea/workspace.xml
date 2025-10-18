@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="" />
+    <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,10 +92,10 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.30114943&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.platform.ide.impl.presentationAssistant.PresentationAssistantConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -260,7 +263,23 @@
       <workItem from="1757465256563" duration="28831000" />
       <workItem from="1757732933195" duration="15086000" />
       <workItem from="1757816428495" duration="2830000" />
-      <workItem from="1757852515962" duration="2175000" />
+      <workItem from="1757852515962" duration="3736000" />
+      <workItem from="1757856685405" duration="121000" />
+      <workItem from="1757856818492" duration="863000" />
+      <workItem from="1757857696269" duration="241000" />
+      <workItem from="1757857951498" duration="552000" />
+      <workItem from="1757858518513" duration="738000" />
+      <workItem from="1757996937009" duration="2627000" />
+      <workItem from="1758007638571" duration="507000" />
+      <workItem from="1758032967272" duration="6000" />
+      <workItem from="1758038255588" duration="24000" />
+      <workItem from="1758087592861" duration="182000" />
+      <workItem from="1758094505842" duration="3588000" />
+      <workItem from="1758482080986" duration="1241000" />
+      <workItem from="1759148031262" duration="1606000" />
+      <workItem from="1759385751022" duration="1454000" />
+      <workItem from="1760167505699" duration="1507000" />
+      <workItem from="1760186115843" duration="1301000" />
     </task>
     <servers />
   </component>

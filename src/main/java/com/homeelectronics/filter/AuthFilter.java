@@ -30,7 +30,12 @@ public class AuthFilter implements Filter {
                 || uri.endsWith("account-notifications.jsp")
                 || uri.endsWith("account-payment.jsp")
                 || uri.endsWith("checkout-v1-cart.jsp")
-                || uri.endsWith("account-reviews.jsp");
+                || uri.endsWith("account-reviews.jsp")
+                || path.equals("/cartPage")
+                || uri.endsWith("checkout-v1-cart.jsp")
+                || path.equals("/checkout")
+                || uri.endsWith("checkout-v1-delivery-1.jsp");
+
 
 
         // Define a list of pages that require a logged-in admin.
