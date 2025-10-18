@@ -9,7 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="" />
+    <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/PaymentPageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/PaymentPageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-addresses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-addresses.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-purchases.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-purchases.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-sales.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-users.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-notifications.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-notifications.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-payment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-reviews.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-reviews.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-wishlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-wishlist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-payment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout-v1-thankyou.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout-v1-thankyou.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/help-topics-v1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/help-topics-v1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/terms-and-conditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/terms-and-conditions.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -277,7 +297,7 @@
       <workItem from="1759385751022" duration="1454000" />
       <workItem from="1760167505699" duration="1507000" />
       <workItem from="1760186115843" duration="1301000" />
-      <workItem from="1760762615008" duration="19620000" />
+      <workItem from="1760762615008" duration="25271000" />
     </task>
     <servers />
   </component>

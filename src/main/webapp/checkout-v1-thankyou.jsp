@@ -1,3 +1,11 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%-- For c:out, c:if --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> <%-- For formatting dates --%>
+<%@ page import="java.util.Date" %> <%-- Import Date for formatting --%>
+<%@ page import="com.homeelectronics.model.Address" %> <%-- Import Address model --%>
+<%@ page isELIgnored="false" %> <%-- Ensure EL is enabled --%>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
@@ -1592,48 +1600,60 @@
 
 
     <!-- Page content -->
-<main class="content-wrapper">
-    <div class="d-flex flex-column justify-content-center py-5 px-3">
-        <div class="w-100 mx-auto" style="max-width: 600px;">
-            
-            <div class="d-flex align-items-center border-bottom pb-4 mb-4">
-                <div class="d-flex align-items-center justify-content-center bg-success text-white rounded-circle flex-shrink-0" style="width: 3rem; height: 3rem;">
-                    <i class="ci-check fs-4"></i>
-                </div>
-                <div class="w-100 ps-3">
-                    <div class="fs-sm mb-1">Order #234000</div>
-                    <div class="d-sm-flex align-items-center">
-                        <h1 class="h4 mb-0 me-3">Thank you for your order!</h1>
-                        <div class="nav mt-2 mt-sm-0 ms-auto">
-                            <a class="nav-link text-decoration-underline p-0" href="#!">Track order</a>
+    <main class="content-wrapper">
+        <div class="d-flex flex-column justify-content-center py-5 px-3">
+            <div class="w-100 mx-auto" style="max-width: 600px;">
+
+                <div class="d-flex align-items-center border-bottom pb-4 mb-4">
+                    <div class="d-flex align-items-center justify-content-center bg-success text-white rounded-circle flex-shrink-0" style="width: 3rem; height: 3rem;">
+                        <i class="ci-check fs-4"></i>
+                    </div>
+                    <div class="w-100 ps-3">
+                        <div class="fs-sm mb-1">Order #<c:out value="${sessionScope.latestOrderId}" default="N/A"/></div>
+                        <div class="d-sm-flex align-items-center">
+                            <h1 class="h4 mb-0 me-3">Thank you for your order!</h1>
+                            <div class="nav mt-2 mt-sm-0 ms-auto">
+                                <%-- <a class="nav-link text-decoration-underline p-0" href="#!">Track order</a> --%>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="mb-4">
+                    <h3 class="h6 mb-3">Order Summary</h3>
+                    <p class="fs-sm mb-2">
+                        <strong>Placed On:</strong><br>
+                        <fmt:formatDate value="<%= new Date() %>" pattern="MMMM dd, yyyy 'at' h:mm a"/>
+                    </p>
+                    <p class="fs-sm mb-2">
+                        <strong>Delivery Address:</strong><br>
+                        <%-- Safely display Address details --%>
+                        <c:set var="addr" value="${sessionScope.thankYouAddress}"/>
+                        <c:if test="${not empty addr}">
+                            <c:out value="${addr.address}"/>,
+                            <c:out value="${addr.state}"/>,
+                            <c:out value="${addr.zipCode}"/>
+                        </c:if>
+                        <c:if test="${empty addr}">
+                            Address details not available.
+                        </c:if>
+                    </p>
+                    <p class="fs-sm mb-0">
+                        <strong>Payment Method:</strong><br>
+                        <c:out value="${sessionScope.thankYouPaymentMethod}" default="N/A"/>
+                        <c:if test="${sessionScope.thankYouPaymentMethod == 'Card' && not empty sessionScope.thankYouCardLast4}">
+                            : **** **** **** <c:out value="${sessionScope.thankYouCardLast4}"/>
+                        </c:if>
+                    </p>
+                </div>
+
+                <p class="fs-sm text-center pt-4 mb-0">
+                    Need help with your order? <a class="fw-medium ms-1" href="#!">Contact us</a>
+                </p>
+
             </div>
-
-            <div class="mb-4">
-                <h3 class="h6 mb-3">Order Summary</h3>
-                <p class="fs-sm mb-2">
-                    <strong>Placed On:</strong><br>
-                    October 18, 2025 at 1:58 PM
-                </p>
-                <p class="fs-sm mb-2">
-                    <strong>Delivery Address:</strong><br>
-                    567 Cherry Souse Lane Sacramento, 95829
-                </p>
-                <p class="fs-sm mb-0">
-                    <strong>Payment Method:</strong><br>
-                    Visa: **** **** **** 8395
-                </p>
-            </div>
-
-            <p class="fs-sm text-center pt-4 mb-0">
-                Need help with your order? <a class="fw-medium ms-1" href="#!">Contact us</a>
-            </p>
-
         </div>
-    </div>
-</main>
+    </main>
 
 
     <!-- Page footer -->

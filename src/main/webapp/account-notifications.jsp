@@ -1654,7 +1654,7 @@
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-payment.jsp">Payment</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-thankyou.html">Thank You Page</a>
+                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-thankyou.jsp">Thank You Page</a>
                                                         </li>
                                                     </ul>
                                                     <div class="h6 pt-4 mb-2">Checkout v.2</div>

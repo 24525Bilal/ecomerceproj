@@ -21,8 +21,6 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
-import java.util.UUID; // Import for generating IDs
 
 @WebServlet("/payment")
 public class PaymentPageServlet extends HttpServlet {
@@ -256,6 +254,26 @@ public class PaymentPageServlet extends HttpServlet {
                     }
 
 
+                    // --- Store necessary data in session for Thank You page ---
+                    session.setAttribute("latestOrderId", orderId);
+                    session.setAttribute("thankYouAddress", primaryAddress); // Store the address object used
+                    session.setAttribute("thankYouPaymentMethod", paymentMethodString); // Store the payment method string ("Card" or "Cash on Delivery")
+                    // Optional: Store the raw card number if needed, but be VERY careful with security.
+                    // It's better to store only the last 4 digits if displaying.
+
+                    if ("Card".equals(paymentMethodString) && request.getParameter("cardNumber") != null) {
+                        String fullCardNum = request.getParameter("cardNumber").replaceAll("[^\\d]", "");
+                        if (fullCardNum.length() > 4) {
+                            session.setAttribute("thankYouCardLast4", fullCardNum.substring(fullCardNum.length() - 4));
+
+                        }
+                    } else {
+                        session.removeAttribute("thankYouCardLast4"); // Ensure it's removed for COD
+                    }
+
+
+
+
                     // --- Clear Cart from Session ---
                     session.removeAttribute("cartItems");
                     session.removeAttribute("sessionCartSubtotal");
@@ -263,11 +281,10 @@ public class PaymentPageServlet extends HttpServlet {
                     session.removeAttribute("sessionTotalCost");
                     // Add any other cart-related session attributes you might have
 
-                    // Store orderId in session for thank you page
-                    session.setAttribute("latestOrderId", orderId);
+
 
                     // Redirect to Thank You page
-                    response.sendRedirect("checkout-v1-thankyou.html");
+                    response.sendRedirect("checkout-v1-thankyou.jsp");
 
                 } else {
                     // Order creation failed (DB issue)
