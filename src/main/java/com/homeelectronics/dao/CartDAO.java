@@ -157,4 +157,28 @@ public class CartDAO {
         }
     }
 
+    // REPLACE your old getCartItemQuantity with this one
+    public int getCartItemQuantity(int userId, int productId) {
+        // --- THIS SQL IS NOW CORRECT ---
+        // It first finds the cart_id from the user_id, then gets the quantity
+        String sql = "SELECT quantity FROM cart_items WHERE cart_id = (SELECT id FROM carts WHERE user_id = ?) AND product_id = ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, userId);
+            stmt.setInt(2, productId);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("quantity"); // Return current quantity
+                } else {
+                    return 0; // Not in cart yet
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0; // Return 0 on error
+        }
+    }
 }

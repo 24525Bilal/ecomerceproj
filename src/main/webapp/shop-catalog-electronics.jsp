@@ -1989,7 +1989,11 @@
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="h5 lh-1 mb-0">₹<c:out value="${product.price}"/></div>
 
-                                            <button type="button" class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" aria-label="Add to Cart" data-product-id="${product.id}" onclick="handleAddToCart(event, false)">
+                                            <button type="button"
+                                                    class="btn btn-icon btn-primary"
+                                                    data-product-id="${product.id}"
+                                                    data-product-stock="${product.stockQuantity}"
+                                                    onclick="handleAddToCart(event, false)">
                                                 <i class="ci-shopping-cart fs-base animate-target"></i>
                                             </button>
 

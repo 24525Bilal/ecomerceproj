@@ -112,6 +112,8 @@ public class ProductDAO {
                     product.setPrice(rs.getDouble("price"));
                     product.setThumbnailUrl(rs.getString("image_path")); // Set the thumbnail URL
 
+                    product.setStockQuantity(rs.getInt("stock_quantity"));
+
                     // --- Details for Hover Panel ---
                     product.setModel(rs.getString("model"));
                     product.setManufacturer(rs.getString("manufacturer"));
@@ -325,6 +327,8 @@ public class ProductDAO {
                     product.setName(rs.getString("name"));
                     product.setPrice(rs.getDouble("price"));
                     product.setThumbnailUrl(rs.getString("image_path"));
+
+                    product.setStockQuantity(rs.getInt("stock_quantity"));
 
                     product.setModel(rs.getString("model"));
                     product.setManufacturer(rs.getString("manufacturer"));

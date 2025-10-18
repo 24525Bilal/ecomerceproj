@@ -5,75 +5,89 @@
  * @param {boolean} shouldRedirect - True to redirect to the cart page, false otherwise.
  */
 function handleAddToCart(event, shouldRedirect) {
-    const productId = event.currentTarget.getAttribute('data-product-id');
+    const button = event.currentTarget;
+    const productId = button.getAttribute('data-product-id');
 
-    var totalStockElement = document.getElementById('stockQuantity');
-    var totalStock = totalStockElement ? parseInt(totalStockElement.value) : 9999;
+    // --- Stock Checking Logic (Keep as is) ---
+    const buttonStock = button.getAttribute('data-product-stock');
+    const totalStockElement = document.getElementById('stockQuantity');
+    let totalStock;
+    if (buttonStock) {
+        totalStock = parseInt(buttonStock);
+    } else if (totalStockElement) {
+        totalStock = parseInt(totalStockElement.value);
+    } else {
+        console.warn('Could not determine stock for product ' + productId);
+        alert("Could not verify stock. Please try again from the product page.");
+        return;
+    }
+    const selectedQuantityElement = document.getElementById('productQuantity');
+    const selectedQuantity = selectedQuantityElement ? parseInt(selectedQuantityElement.value) : 1;
 
-    var selectedQuantityElement = document.getElementById('productQuantity');
-    var selectedQuantity = selectedQuantityElement ? parseInt(selectedQuantityElement.value) : 1;
-
+    // Client-side stock validation (Keep as is)
+    // This part still works for stock = 0
     if (totalStock <= 0) {
         alert("Product Sold Out\nCheck later");
         return;
     } else if (selectedQuantity > totalStock) {
+        // This client-side check also still works
         alert("Cannot add " + selectedQuantity + " items. Only " + totalStock + " available.");
         return;
     }
+    // --- End Stock Checking ---
 
-    if (shouldRedirect) {
-        const form = document.createElement('form');
-        form.setAttribute('method', 'POST');
-        form.setAttribute('action', 'addProductToCart');
 
-        const productIdInput = document.createElement('input');
-        productIdInput.setAttribute('type', 'hidden');
-        productIdInput.setAttribute('name', 'productId');
-        productIdInput.setAttribute('value', productId);
-        form.appendChild(productIdInput);
+    // --- ALWAYS USE FETCH ---
+    fetch('addProductToCart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `productId=${productId}&quantity=${selectedQuantity}&redirect=false`
+    })
+        .then(response => {
+            if (response.redirected) {
+                window.location.href = response.url;
+                return Promise.reject(new Error('Redirecting...'));
+            }
 
-        const quantityInput = document.createElement('input');
-        quantityInput.setAttribute('type', 'hidden');
-        quantityInput.setAttribute('name', 'quantity');
-        quantityInput.setAttribute('value', selectedQuantity);
-        form.appendChild(quantityInput);
+            if (!response.ok) { // Check if response status is 2xx
+                // Try to parse error JSON from server.
+                // If this fails, it will now go directly to the outer catch.
+                return response.json().then(errorData => {
+                    // Throw error with the specific message from the server
+                    throw new Error(errorData.message || 'Error adding product to cart.');
+                });
+                // --- REMOVED THE INNER CATCH BLOCK ---
+            }
 
-        const redirectInput = document.createElement('input');
-        redirectInput.setAttribute('type', 'hidden');
-        redirectInput.setAttribute('name', 'redirect');
-        redirectInput.setAttribute('value', 'true');
-        form.appendChild(redirectInput);
-
-        document.body.appendChild(form);
-        form.submit();
-    } else {
-        fetch('addProductToCart', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `productId=${productId}&quantity=${selectedQuantity}&redirect=false`
+            // Response is OK (2xx), parse success JSON (cart items)
+            return response.json();
         })
-            .then(response => {
-                if (response.redirected) {
-                    window.location.href = response.url;
-                    return;
-                }
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(cartItems => {
-                if (cartItems) {
-                    updateCartUI(cartItems);
-                }
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-                alert("Error adding product to cart.");
-            });
-    }
+        .then(cartItems => {
+            // --- SUCCESS ---
+            if (cartItems) {
+                updateCartUI(cartItems);
+            }
+
+            if (shouldRedirect) {
+                window.location.href = 'checkout-v1-cart.jsp';
+            } else {
+                alert("Product added to cart!");
+            }
+        })
+        .catch(error => {
+            // --- OUTER CATCH (Handles all errors now) ---
+            if (error.message === 'Redirecting...') {
+                return; // Don't show alert for expected redirects
+            }
+            console.error('There has been a problem with your fetch operation:', error);
+
+            // This will show EITHER the specific server message (if JSON parsing succeeded)
+            // OR a generic parsing error (if JSON parsing failed because server sent HTML).
+            alert(error.message);
+        });
+    // --- END FETCH LOGIC ---
 }
 
 /**
@@ -130,3 +144,5 @@ function updateCartUI(cartItems) {
     cartOffcanvasBody.innerHTML = cartHtml;
     subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
 }
+
+// --- EDITED: Removed extra closing brace } that was at the end of your file ---
