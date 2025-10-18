@@ -520,7 +520,7 @@
                                                 <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-shipping.jsp">Shipping Address</a>
                                             </li>
                                             <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-payment.jsp">Payment</a>
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-payment.html">Payment</a>
                                             </li>
                                             <li class="d-flex w-100 pt-1">
                                                 <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-thankyou.html">Thank You Page</a>
@@ -878,176 +878,102 @@
                             </div>
                         </div>
 
-                        <!-- Sales list (table) -->
-<style>
-  /* Match product table spacing */
-  .table.order-table th,
-  .table.order-table td {
-    padding: 15px 20px;   /* increase row height */
-    vertical-align: middle;
-  }
-
-  /* First column wider (similar to product image column) */
-  .table.order-table th:first-child,
-  .table.order-table td:first-child {
-    min-width: 180px;
-  }
-
-  /* Other columns consistent width */
-  .table.order-table th,
-  .table.order-table td {
-    min-width: 140px;
-  }
-
-  /* Optional: make header more prominent */
-  .table.order-table thead th {
-    font-weight: 600;
-  }
-</style>
-
-<table class="table order-table align-middle fs-sm mb-0">
-  <thead>
+<table class="table" style="width: 100%; border-collapse: separate; border-spacing: 0 1rem; color: #e0e0e0; font-family: sans-serif;">
+  <thead style="color: #888; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px;">
     <tr>
-      <th scope="col">
-        <button type="button" class="btn p-0 text-body" style="background: none; border: none;">Order ID</button>
-      </th>
-      <th scope="col">Order Date</th>
-      <th scope="col">Customer ID</th>
-      <th scope="col">Delivery Date</th>
-      <th scope="col">Order Status</th>
-      <th scope="col" class="text-end">Amount</th>
+      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Order ID</th>
+      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Order Date</th>
+      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Customer ID</th>
+      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Delivery Date</th>
+      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Order Status</th>
+      <th scope="col" style="padding: 0 1rem; text-align: right; font-weight: 500;">Amount</th>
     </tr>
   </thead>
-  <tbody class="order-list">
-
-    <!-- Order 1 -->
-    <tr>
-      <td>
-        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
-                data-bs-toggle="modal" data-bs-target="#orderModal">#1001</button>
+  <tbody>
+    <tr style="background-color: #2a2a2a;" data-status="pending">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1001</button>
       </td>
-      <td>September 4, 2025</td>
-      <td>CUST12345</td>
-      <td>September 6, 2025</td>
-      <td>
-        <select class="form-select form-select-sm">
-          <option value="pending" selected>Pending</option>
-          <option value="packed">Packed</option>
-          <option value="shipped">Shipped</option>
-          <option value="out_for_delivery">Out for Delivery</option>
-          <option value="delivered">Delivered</option>
-        </select>
+      <td style="padding: 1.25rem 1rem;">September 4, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST12345</td>
+      <td style="padding: 1.25rem 1rem;">September 6, 2025</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
       </td>
-      <td class="text-end">$120.00</td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$120.00</td>
     </tr>
 
-    <!-- Order 2 -->
-    <tr>
-      <td>
-        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
-                data-bs-toggle="modal" data-bs-target="#orderModal">#1002</button>
+    <tr style="background-color: #2a2a2a;" data-status="pending">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1002</button>
       </td>
-      <td>September 3, 2025</td>
-      <td>CUST67890</td>
-      <td>September 5, 2025</td>
-      <td>
-        <select class="form-select form-select-sm">
-          <option value="pending" selected>Pending</option>
-          <option value="packed">Packed</option>
-          <option value="shipped">Shipped</option>
-          <option value="out_for_delivery">Out for Delivery</option>
-          <option value="delivered">Delivered</option>
-        </select>
+      <td style="padding: 1.25rem 1rem;">September 3, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST67890</td>
+      <td style="padding: 1.25rem 1rem;">September 5, 2025</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
       </td>
-      <td class="text-end">$75.00</td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$75.00</td>
     </tr>
 
-    <!-- Order 3 -->
-    <tr>
-      <td>
-        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
-                data-bs-toggle="modal" data-bs-target="#orderModal">#1003</button>
+    <tr style="background-color: #2a2a2a;" data-status="shipped">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1003</button>
       </td>
-      <td>September 2, 2025</td>
-      <td>CUST24680</td>
-      <td>September 4, 2025</td>
-      <td>
-        <select class="form-select form-select-sm">
-          <option value="pending">Pending</option>
-          <option value="packed">Packed</option>
-          <option value="shipped" selected>Shipped</option>
-          <option value="out_for_delivery">Out for Delivery</option>
-          <option value="delivered">Delivered</option>
-        </select>
+      <td style="padding: 1.25rem 1rem;">September 2, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST24680</td>
+      <td style="padding: 1.25rem 1rem;">September 4, 2025</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
       </td>
-      <td class="text-end">$95.00</td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$95.00</td>
     </tr>
 
-    <!-- Order 4 -->
-    <tr>
-      <td>
-        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
-                data-bs-toggle="modal" data-bs-target="#orderModal">#1004</button>
+    <tr style="background-color: #2a2a2a;" data-status="packed">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1004</button>
       </td>
-      <td>September 1, 2025</td>
-      <td>CUST13579</td>
-      <td>September 3, 2025</td>
-      <td>
-        <select class="form-select form-select-sm">
-          <option value="pending">Pending</option>
-          <option value="packed" selected>Packed</option>
-          <option value="shipped">Shipped</option>
-          <option value="out_for_delivery">Out for Delivery</option>
-          <option value="delivered">Delivered</option>
-        </select>
+      <td style="padding: 1.25rem 1rem;">September 1, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST13579</td>
+      <td style="padding: 1.25rem 1rem;">September 3, 2025</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
       </td>
-      <td class="text-end">$60.00</td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$60.00</td>
     </tr>
 
-    <!-- Order 5 -->
-    <tr>
-      <td>
-        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
-                data-bs-toggle="modal" data-bs-target="#orderModal">#1005</button>
+    <tr style="background-color: #2a2a2a;" data-status="out_for_delivery">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1005</button>
       </td>
-      <td>August 31, 2025</td>
-      <td>CUST11223</td>
-      <td>September 2, 2025</td>
-      <td>
-        <select class="form-select form-select-sm">
-          <option value="pending">Pending</option>
-          <option value="packed">Packed</option>
-          <option value="shipped">Shipped</option>
-          <option value="out_for_delivery" selected>Out for Delivery</option>
-          <option value="delivered">Delivered</option>
-        </select>
+      <td style="padding: 1.25rem 1rem;">August 31, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST11223</td>
+      <td style="padding: 1.25rem 1rem;">September 2, 2025</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
       </td>
-      <td class="text-end">$150.00</td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$150.00</td>
     </tr>
 
-    <!-- Order 6 -->
-    <tr>
-      <td>
-        <button type="button" class="btn p-0 text-body" style="background: none; border: none;"
-                data-bs-toggle="modal" data-bs-target="#orderModal">#1006</button>
+    <tr style="background-color: #2a2a2a;" data-status="delivered">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1006</button>
       </td>
-      <td>August 30, 2025</td>
-      <td>CUST44556</td>
-      <td>September 1, 2025</td>
-      <td>
-        <select class="form-select form-select-sm">
-          <option value="pending">Pending</option>
-          <option value="packed">Packed</option>
-          <option value="shipped">Shipped</option>
-          <option value="out_for_delivery">Out for Delivery</option>
-          <option value="delivered" selected>Delivered</option>
-        </select>
+      <td style="padding: 1.25rem 1rem;">August 30, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST44556</td>
+      <td style="padding: 1.25rem 1rem;">September 1, 2025</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
       </td>
-      <td class="text-end">$200.00</td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$200.00</td>
     </tr>
 
   </tbody>
 </table>
+
+<script src="assets/js/salesstatusupdate.js"></script>
+
+
 
                         <!-- Pagination -->
                         <div class="d-flex align-items-center justify-content-between pt-4 gap-3">
@@ -1345,5 +1271,4 @@
   </div>
 </div>
 </body>
-
 </html>
