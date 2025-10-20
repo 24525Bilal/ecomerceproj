@@ -7,6 +7,7 @@ package com.homeelectronics.dao;
 import com.homeelectronics.db.DBConnection;
 import com.homeelectronics.model.CartItem;
 import com.homeelectronics.model.Product;
+import com.homeelectronics.model.Order;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -181,4 +182,23 @@ public class CartDAO {
             return 0; // Return 0 on error
         }
     }
+
+    /**
+     * --- ADD THIS NEW METHOD ---
+     * Deletes all products from the user's cart using an existing connection.
+     * This is the "transactional" version of clearCartByUserId.
+     */
+    public void clearCartByUserId(int userId, Connection conn) throws SQLException {
+        String sql = "DELETE FROM cart_items WHERE cart_id = (SELECT id FROM carts WHERE user_id = ?)";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, userId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e; // Re-throw to trigger rollback
+        }
+    }
+
+
+
 }

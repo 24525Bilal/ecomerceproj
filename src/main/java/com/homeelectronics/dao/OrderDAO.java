@@ -8,23 +8,33 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet; // Import ResultSet
 import java.sql.SQLException;
 import java.sql.Types; // Import Types for setNull
+import java.sql.Statement; // <-- Import Statement
+import com.homeelectronics.model.CartItem; // <-- Import CartItem
+
+import java.util.ArrayList;
+import java.util.List;
+import com.homeelectronics.model.Product;
+import com.homeelectronics.model.OrderItem;
 
 public class OrderDAO {
 
     /**
      * Creates a new order in the database.
+     * MODIFIED: Now accepts a Connection (for transactions) and returns the new order's INT ID.
      * @param order The Order object to be saved.
-     * @return true if the order was created successfully, false otherwise.
+     * @param conn An active database connection.
+     * @return The new integer primary key (id) of the created order.
      * @throws SQLException
      */
-    public boolean createOrder(Order order) throws SQLException {
+    public int createOrder(Order order, Connection conn) throws SQLException {
         String sql = "INSERT INTO orders (order_id, user_id, address_id, total_amount, payment_method, payment_status, transaction_id, order_date) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
-        Connection conn = null;
         PreparedStatement ps = null;
+        ResultSet rs = null;
+        int orderId = -1;
 
         try {
-            conn = DBConnection.getConnection();
-            ps = conn.prepareStatement(sql);
+            // We pass Statement.RETURN_GENERATED_KEYS to get the new 'id' back
+            ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, order.getOrderId());
             ps.setInt(2, order.getUserId());
@@ -40,14 +50,23 @@ public class OrderDAO {
             }
 
             int rowsAffected = ps.executeUpdate();
-            return rowsAffected > 0;
+
+            if (rowsAffected > 0) {
+                // Get the generated primary key (the 'id' column)
+                rs = ps.getGeneratedKeys();
+                if (rs.next()) {
+                    orderId = rs.getInt(1); // <-- This is the new integer ID
+                }
+            }
+            return orderId;
 
         } catch (SQLException e) {
             e.printStackTrace();
-            throw e;
+            throw e; // Re-throw to trigger rollback in the servlet
         } finally {
+            // DO NOT close the connection here, the servlet will
+            try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
             try { if (ps != null) ps.close(); } catch (SQLException e) { e.printStackTrace(); }
-            try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
         }
     }
 
@@ -133,4 +152,167 @@ public class OrderDAO {
         }
         return lastNumber;
     }
+
+
+    // added when needed in the order page
+    /**
+     * Retrieves all orders for a specific user.
+     * @param userId The ID of the user whose orders are to be fetched.
+     * @return A list of Order objects.
+     * @throws SQLException
+     */
+    public List<Order> getOrdersByUserId(int userId) throws SQLException {
+        List<Order> orders = new ArrayList<>();
+        // Added payment_status to the SELECT query
+        String sql = "SELECT id, order_id, user_id, address_id, total_amount, payment_method, payment_status, transaction_id, order_date FROM orders WHERE user_id = ? ORDER BY order_date DESC";
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBConnection.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Order order = new Order();
+                order.setId(rs.getInt("id"));
+                order.setOrderId(rs.getString("order_id"));
+                order.setUserId(rs.getInt("user_id"));
+                order.setAddressId(rs.getInt("address_id"));
+                order.setTotalAmount(rs.getDouble("total_amount"));
+                order.setPaymentMethod(rs.getString("payment_method"));
+                order.setPaymentStatus(rs.getString("payment_status")); // Fetch the status
+                order.setTransactionId(rs.getString("transaction_id"));
+                order.setOrderDate(rs.getTimestamp("order_date"));
+                orders.add(order);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Consider logging instead
+            throw e;
+        } finally {
+            // Ensure resources are closed properly
+            try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+            try { if (ps != null) ps.close(); } catch (SQLException e) { e.printStackTrace(); }
+            try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+        return orders;
+    }
+
+    /**
+     * Retrieves a single order by its integer ID, including all its items.
+     * (This is the method for the offcanvas - should already be here from my previous answer)
+     */
+    public Order getOrderDetailsById(int orderIntId) throws SQLException {
+        Order order = null;
+        List<OrderItem> items = new ArrayList<>();
+
+        // --- UPDATED SQL ---
+        // Joins with product_images like CartDAO does
+        String sql = "SELECT " +
+                "o.id, o.order_id, o.order_date, o.payment_status, o.total_amount, o.payment_method, " +
+                "oi.order_item_id, oi.quantity, oi.price, " +
+                "p.id as product_pk_id, p.name, " +
+                "pi.image_path " + // <-- Select image_path from product_images
+                "FROM orders o " +
+                "JOIN order_items oi ON o.id = oi.order_id " +
+                "JOIN products p ON oi.product_id = p.id " +
+                // --- ADDED JOIN ---
+                "LEFT JOIN (SELECT product_id, image_path, ROW_NUMBER() OVER(PARTITION BY product_id ORDER BY id) as rn FROM product_images) pi " +
+                "ON p.id = pi.product_id AND pi.rn = 1 " + // Join with product_images to get the first image
+                "WHERE o.id = ?";
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBConnection.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, orderIntId);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                if (order == null) {
+                    order = new Order();
+                    order.setId(rs.getInt("id"));
+                    order.setOrderId(rs.getString("order_id"));
+                    order.setOrderDate(rs.getTimestamp("order_date"));
+                    order.setPaymentStatus(rs.getString("payment_status"));
+                    order.setTotalAmount(rs.getDouble("total_amount"));
+                    order.setPaymentMethod(rs.getString("payment_method"));
+                    order.setItems(items);
+                }
+
+                Product product = new Product();
+                product.setId(rs.getInt("product_pk_id"));
+                product.setName(rs.getString("name"));
+                // --- Use image_path, but store it in thumbnailUrl field ---
+                product.setThumbnailUrl(rs.getString("image_path")); // <-- Get image_path from result
+
+                OrderItem item = new OrderItem();
+                item.setId(rs.getInt("order_item_id"));
+                item.setQuantity(rs.getInt("quantity"));
+                item.setPrice(rs.getDouble("price"));
+                item.setProduct(product);
+
+                items.add(item);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("SQL Error fetching order details for ID " + orderIntId + ": " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        } catch (Exception e) {
+            System.err.println("General Error fetching order details for ID " + orderIntId + ": " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+            try { if (ps != null) ps.close(); } catch (SQLException e) { e.printStackTrace(); }
+            try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+
+        return order;
+    }
+
+    /**
+     * NEW METHOD: Adds a list of cart items to the order_items table.
+     * @param orderId The new integer ID from createOrder.
+     * @param cartItems The list of items from the user's cart.
+     * @param conn An active database connection.
+     * @throws SQLException
+     */
+    public void addOrderItems(int orderId, List<CartItem> cartItems, Connection conn) throws SQLException {
+        String sql = "INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (?, ?, ?, ?)";
+        PreparedStatement ps = null;
+
+        try {
+            ps = conn.prepareStatement(sql);
+
+            for (CartItem item : cartItems) {
+                ps.setInt(1, orderId);
+                ps.setInt(2, item.getProduct().getId());
+                ps.setInt(3, item.getQuantity());
+                ps.setDouble(4, item.getProduct().getPrice()); // Or item.getPrice() if cart has a snapshot price
+                ps.addBatch(); // Add this query to the batch
+            }
+
+            ps.executeBatch(); // Execute all queries at once
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e; // Re-throw to trigger rollback
+        } finally {
+            // DO NOT close the connection
+            try { if (ps != null) ps.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+
+
+
+    }
+
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.homeelectronics.model;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Order {
     private int id;
@@ -12,6 +13,8 @@ public class Order {
     private String paymentStatus;
     private String transactionId; // Nullable, for card payments
     private Timestamp orderDate;
+
+    private List<OrderItem> items;
 
     // Constructors
     public Order() {}
@@ -70,5 +73,12 @@ public class Order {
     }
     public void setOrderDate(Timestamp orderDate) {
         this.orderDate = orderDate;
+    }
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
+    public void setItems(List<OrderItem> items) {
+        this.items = items;
     }
 }
