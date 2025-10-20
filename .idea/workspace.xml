@@ -12,10 +12,10 @@
     <list default="true" id="8f27fc80-55fb-4de1-8a6e-6c682f4b5682" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/filter/AuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/OrderDetailsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/homeelectronics/servlet/OrderDetailsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-products.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/account-marketplace-sales.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-marketplace-sales.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account-orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account-orders.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/salesstatusupdate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/salesstatusupdate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -286,7 +286,7 @@
       <workItem from="1760167505699" duration="1507000" />
       <workItem from="1760186115843" duration="1301000" />
       <workItem from="1760762615008" duration="38681000" />
-      <workItem from="1760876139846" duration="47363000" />
+      <workItem from="1760876139846" duration="52346000" />
     </task>
     <servers />
   </component>

@@ -1003,29 +1003,29 @@
                                                         <li class="d-flex align-items-center">
                                                                 <%-- Dynamic Status for Mobile --%>
                                                             <c:choose>
-                                                                <c:when test="${order.paymentStatus == 'inprogress' || order.paymentStatus == 'pending'}">
+                                                                <c:when test="${order.orderStatus == 'inprogress' || order.orderStatus == 'pending'}">
                                                                     <span class="bg-info rounded-circle p-1 me-2"></span> In progress
                                                                 </c:when>
-                                                                <c:when test="${order.paymentStatus == 'shipped'}">
+                                                                <c:when test="${order.orderStatus == 'shipped'}">
                                                                     <span class="bg-primary rounded-circle p-1 me-2"></span> Shipped
                                                                 </c:when>
-                                                                <c:when test="${order.paymentStatus == 'delivered'}">
+                                                                <c:when test="${order.orderStatus == 'delivered'}">
                                                                     <span class="bg-success rounded-circle p-1 me-2"></span> Delivered
                                                                 </c:when>
-                                                                <c:when test="${order.paymentStatus == 'packed'}">
+                                                                <c:when test="${order.orderStatus == 'packed'}">
                                                                     <span class="bg-secondary rounded-circle p-1 me-2"></span> Packed
                                                                 </c:when>
-                                                                <c:when test="${order.paymentStatus == 'out_for_delivery'}">
+                                                                <c:when test="${order.orderStatus == 'out_for_delivery'}">
                                                                     <span class="bg-warning rounded-circle p-1 me-2"></span> Out for Delivery
                                                                 </c:when>
-                                                                <c:when test="${order.paymentStatus == 'canceled'}">
+                                                                <c:when test="${order.orderStatus == 'canceled'}">
                                                                     <span class="bg-danger rounded-circle p-1 me-2"></span> Canceled
                                                                 </c:when>
-                                                                <c:when test="${order.paymentStatus == 'delayed'}">
+                                                                <c:when test="${order.orderStatus == 'delayed'}">
                                                                     <span class="bg-warning rounded-circle p-1 me-2"></span> Delayed
                                                                 </c:when>
                                                                 <c:otherwise>
-                                                                    <span class="bg-secondary rounded-circle p-1 me-2"></span> ${order.paymentStatus}
+                                                                    <span class="bg-secondary rounded-circle p-1 me-2"></span> ${order.orderStatus}
                                                                 </c:otherwise>
                                                             </c:choose>
                                                         </li>
@@ -1045,29 +1045,29 @@
                                                         <%-- Dynamic Status for Desktop --%>
                                                     <span class="d-flex align-items-center">
                                 <c:choose>
-                                    <c:when test="${order.paymentStatus == 'inprogress' || order.paymentStatus == 'pending'}">
+                                    <c:when test="${order.orderStatus == 'inprogress' || order.orderStatus == 'pending'}">
                                         <span class="bg-info rounded-circle p-1 me-2"></span> In progress
                                     </c:when>
-                                    <c:when test="${order.paymentStatus == 'shipped'}">
+                                    <c:when test="${order.orderStatus == 'shipped'}">
                                         <span class="bg-primary rounded-circle p-1 me-2"></span> Shipped
                                     </c:when>
-                                    <c:when test="${order.paymentStatus == 'delivered'}">
+                                    <c:when test="${order.orderStatus == 'delivered'}">
                                         <span class="bg-success rounded-circle p-1 me-2"></span> Delivered
                                     </c:when>
-                                    <c:when test="${order.paymentStatus == 'packed'}">
+                                    <c:when test="${order.orderStatus == 'packed'}">
                                         <span class="bg-secondary rounded-circle p-1 me-2"></span> Packed
                                     </c:when>
-                                    <c:when test="${order.paymentStatus == 'out_for_delivery'}">
+                                    <c:when test="${order.orderStatus == 'out_for_delivery'}">
                                         <span class="bg-warning rounded-circle p-1 me-2"></span> Out for Delivery
                                     </c:when>
-                                    <c:when test="${order.paymentStatus == 'canceled'}">
+                                    <c:when test="${order.orderStatus == 'canceled'}">
                                         <span class="bg-danger rounded-circle p-1 me-2"></span> Canceled
                                     </c:when>
-                                    <c:when test="${order.paymentStatus == 'delayed'}">
+                                    <c:when test="${order.orderStatus == 'delayed'}">
                                         <span class="bg-warning rounded-circle p-1 me-2"></span> Delayed
                                     </c:when>
                                     <c:otherwise>
-                                        <span class="bg-secondary rounded-circle p-1 me-2"></span> ${order.paymentStatus}
+                                        <span class="bg-secondary rounded-circle p-1 me-2"></span> ${order.orderStatus}
                                     </c:otherwise>
                                 </c:choose>
                             </span>

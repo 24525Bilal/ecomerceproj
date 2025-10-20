@@ -580,8 +580,8 @@
                                 <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Marketplace User</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="account-marketplace-dashboard.jsp">Dashboard</a></li>
-                                    <li><a class="dropdown-item" href="account-marketplace-products.html">Products</a></li>
-                                    <li><a class="dropdown-item" href="account-marketplace-sales.jsp">Sales</a></li>
+                                    <li><a class="dropdown-item" href="account-marketplace-products.html">Psroducts</a></li>
+                                    <li><a class="dropdown-item" href="admin-sales">Sales</a></li>
                                     <li><a class="dropdown-item" href="account-marketplace-users.jsp">Payouts</a></li>
                                     <li><a class="dropdown-item" href="account-marketplace-purchases.html">Purchases</a></li>
                                     <li><a class="dropdown-item" href="account-marketplace-favorites.html">Favorites</a></li>
@@ -725,7 +725,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="account-marketplace-sales.jsp">
+                        <a class="dropdown-item" href="admin-sales">
                             <i class="ci-pie-chart fs-base opacity-75 me-2"></i>
                             Sales
                         </a>
@@ -817,7 +817,7 @@
                                 <i class="ci-layers fs-base opacity-75 me-2"></i>
                                 Products (${totalProducts})
                             </a>
-                            <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-sales.jsp">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="admin-sales">
                                 <i class="ci-pie-chart fs-base opacity-75 me-2"></i>
                                 Sales
                             </a>

@@ -158,6 +158,9 @@ public class OrderDAO {
     // added when needed in the order page
     /**
      * Retrieves a paginated list of orders for a specific user.
+     *
+     * [CORRECTED] Now selects 'order_status' instead of 'payment_status'
+     *
      * @param userId The ID of the user.
      * @param pageNumber The current page number (e.g., 1, 2, 3...).
      * @param pageSize The number of orders per page (e.g., 8).
@@ -166,12 +169,10 @@ public class OrderDAO {
      */
     public List<Order> getOrdersByUserId(int userId, int pageNumber, int pageSize) throws SQLException {
         List<Order> orders = new ArrayList<>();
-        // Calculate the OFFSET based on the page number and size
-        // (pageNumber - 1) * pageSize, e.g., Page 1: (1-1)*8=0, Page 2: (2-1)*8=8
         int offset = (pageNumber - 1) * pageSize;
 
-        // SQL query updated with LIMIT and OFFSET
-        String sql = "SELECT id, order_id, user_id, address_id, total_amount, payment_method, payment_status, transaction_id, order_date " +
+        // --- 1. FIXED SQL: Select 'order_status' ---
+        String sql = "SELECT id, order_id, user_id, address_id, total_amount, payment_method, order_status, transaction_id, order_date " +
                 "FROM orders " +
                 "WHERE user_id = ? " +
                 "ORDER BY order_date DESC " +
@@ -198,7 +199,10 @@ public class OrderDAO {
                 order.setAddressId(rs.getInt("address_id"));
                 order.setTotalAmount(rs.getDouble("total_amount"));
                 order.setPaymentMethod(rs.getString("payment_method"));
-                order.setPaymentStatus(rs.getString("payment_status"));
+
+                // --- 2. FIXED METHOD: Use setOrderStatus ---
+                order.setOrderStatus(rs.getString("order_status")); //
+
                 order.setTransactionId(rs.getString("transaction_id"));
                 order.setOrderDate(rs.getTimestamp("order_date"));
                 orders.add(order);
@@ -384,30 +388,27 @@ public class OrderDAO {
         int offset = (pageNumber - 1) * pageSize; // Calculate offset
 
         // Use StringBuilder for cleaner SQL building
-        StringBuilder sql = new StringBuilder("SELECT id, order_id, user_id, total_amount, payment_status, order_date FROM orders ");
+        // --- 1. FIXED: Select order_status
+        StringBuilder sql = new StringBuilder("SELECT id, order_id, user_id, total_amount, order_status, order_date FROM orders ");
 
-        List<Object> params = new ArrayList<>(); // To hold our ? parameters safely
+        // ... (The search logic for 'WHERE' clauses remains the same) ...
+        List<Object> params = new ArrayList<>();
         boolean hasSearch = searchQuery != null && !searchQuery.trim().isEmpty();
 
         if (hasSearch) {
             List<String> whereClauses = new ArrayList<>();
-
-            // 1. Always search by order_id (string)
-            whereClauses.add("order_id ILIKE ?"); // ILIKE for PostgreSQL case-insensitivity
+            whereClauses.add("order_id ILIKE ?");
             params.add("%" + searchQuery + "%");
 
-            // 2. Try to search by user_id (number)
             int searchUserId = -1;
             try {
-                // Check if user typed "CUST123"
                 if (searchQuery.toUpperCase().startsWith("CUST")) {
-                    searchUserId = Integer.parseInt(searchQuery.substring(4)); // Get number after "CUST"
+                    searchUserId = Integer.parseInt(searchQuery.substring(4));
                 } else {
-                    // Try to parse the whole string as a number
                     searchUserId = Integer.parseInt(searchQuery);
                 }
             } catch (NumberFormatException e) {
-                // Not a valid number or "CUST" prefix, so we just ignore it
+                // Ignore
             }
 
             if (searchUserId != -1) {
@@ -415,13 +416,11 @@ public class OrderDAO {
                 params.add(searchUserId);
             }
 
-            // Append all WHERE clauses, joined by "OR"
             if (!whereClauses.isEmpty()) {
                 sql.append(" WHERE ").append(String.join(" OR ", whereClauses));
             }
         }
 
-        // 3. Add Ordering and Pagination
         sql.append(" ORDER BY order_date DESC LIMIT ? OFFSET ?");
         params.add(pageSize);   // LIMIT
         params.add(offset);     // OFFSET
@@ -434,7 +433,6 @@ public class OrderDAO {
             conn = DBConnection.getConnection();
             ps = conn.prepareStatement(sql.toString());
 
-            // Set all parameters dynamically
             for (int i = 0; i < params.size(); i++) {
                 ps.setObject(i + 1, params.get(i));
             }
@@ -447,7 +445,10 @@ public class OrderDAO {
                 order.setOrderId(rs.getString("order_id"));
                 order.setUserId(rs.getInt("user_id"));
                 order.setTotalAmount(rs.getDouble("total_amount"));
-                order.setPaymentStatus(rs.getString("payment_status"));
+
+                // --- 2. FIXED: Use setOrderStatus ---
+                order.setOrderStatus(rs.getString("order_status")); //
+
                 order.setOrderDate(rs.getTimestamp("order_date"));
                 orders.add(order);
             }
@@ -536,19 +537,27 @@ public class OrderDAO {
     /**
      * [ADMIN] Updates the payment_status of an order based on its integer ID.
      * This is the method the admin's dropdown will call.
+     *
+     * [CORRECTED] Now includes proper transaction handling with commit() and rollback().
+     *
      * @param orderIntId The integer primary key (id) of the order
      * @param newStatus The new status string (e.g., "shipped", "delivered")
      * @return true if the update was successful, false otherwise
      * @throws SQLException
      */
     public boolean updateOrderStatus(int orderIntId, String newStatus) throws SQLException {
-        String sql = "UPDATE orders SET payment_status = ? WHERE id = ?";
+        String sql = "UPDATE orders SET order_status = ? WHERE id = ?";
         Connection conn = null;
         PreparedStatement ps = null;
         boolean success = false;
 
         try {
             conn = DBConnection.getConnection();
+
+            // --- 1. Start Transaction ---
+            // Explicitly turn off autocommit to manage the transaction
+            conn.setAutoCommit(false);
+
             ps = conn.prepareStatement(sql);
             ps.setString(1, newStatus);
             ps.setInt(2, orderIntId);
@@ -556,11 +565,42 @@ public class OrderDAO {
             int rowsAffected = ps.executeUpdate();
             success = (rowsAffected > 0); // Will be true if 1 row was updated
 
+            // --- 2. Commit or Rollback ---
+            if (success) {
+                // If the update worked, make it permanent
+                conn.commit();
+            } else {
+                // If no rows were affected (e.g., bad ID), roll back
+                conn.rollback();
+            }
+
         } catch (SQLException e) {
             System.err.println("Error in updateOrderStatus: " + e.getMessage());
+
+            // --- 3. Rollback on Error ---
+            // If any exception happens, roll back the transaction
+            if (conn != null) {
+                try {
+                    conn.rollback();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
             e.printStackTrace();
-            throw e;
+            throw e; // Re-throw the exception so the servlet knows it failed
+
         } finally {
+            // --- 4. Clean up ---
+            // Reset autocommit to true before returning connection to the pool
+            if (conn != null) {
+                try {
+                    conn.setAutoCommit(true);
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+
+            // Close resources
             try { if (ps != null) ps.close(); } catch (SQLException e) { e.printStackTrace(); }
             try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
         }

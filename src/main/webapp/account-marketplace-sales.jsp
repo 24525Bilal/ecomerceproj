@@ -664,7 +664,7 @@
       <th scope="col" style="padding: 0 1rem; text-align: right; font-weight: 500;">Amount</th>
     </tr>
   </thead>
-    <tbody class="product-list">
+    <tbody class="product-list" data-context-path="${pageContext.request.contextPath}">
 
     <c:choose>
         <%-- Check if the salesList from the servlet is not empty --%>
@@ -675,7 +675,7 @@
                     - data-status: Passes the current status to salesstatusupdate.js
                     - data-order-int-id: Passes the order's INTEGER ID (e.g., 1, 2, 3) to our JS
                 --%>
-                <tr style="background-color: #2a2a2a;" data-status="${order.paymentStatus}" data-order-int-id="${order.id}">
+                <tr style="background-color: #2a2a2a;" data-status="${order.orderStatus}" data-order-int-id="${order.id}">
 
                         <%-- Order ID Button (for Modal) --%>
                     <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
@@ -715,7 +715,7 @@
                         <%-- Amount --%>
                     <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" class="earning">
                             <%-- Format the number as $ currency --%>
-                        <fmt:formatNumber value="${order.totalAmount}" type="currency" currencySymbol="$"/>
+                        <fmt:formatNumber value="${order.totalAmount}" type="currency" currencySymbol=""/>
                     </td>
                 </tr>
             </c:forEach>

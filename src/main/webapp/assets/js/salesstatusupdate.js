@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   // --- Central list of statuses ---
-  // These values MUST match the logic in your account-orders.jsp
   const orderStatuses = [
     { value: 'pending', text: 'Pending' },
     { value: 'packed', text: 'Packed' },
@@ -10,11 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
     { value: 'delivered', text: 'Delivered' },
     { value: 'canceled', text: 'Canceled' },
     { value: 'delayed', text: 'Delayed' }
-    // Add any other statuses you use
   ];
   // ----------------------------------------------------
 
   const statusDropdowns = document.querySelectorAll('.status-select');
+
+  // --- FIX: Get the context path from the <tbody> data attribute ---
+  const productListBody = document.querySelector('.product-list');
+  const contextPath = productListBody ? productListBody.dataset.contextPath : "";
+  // -----------------------------------------------------------------
 
   statusDropdowns.forEach(dropdown => {
     // Get the current status from the parent <tr>'s 'data-status' attribute
@@ -47,25 +50,27 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(`Sending update for Order (ID: ${orderIntId}). New status: ${newStatus}`);
 
       // Call the function to send the update to the server
-      updateOrderStatus(orderIntId, newStatus, tableRow, event.target);
+      // --- FIX: Pass the contextPath to the function ---
+      updateOrderStatus(orderIntId, newStatus, tableRow, event.target, contextPath);
     });
   });
 
   /**
    * Sends the status update to the /admin/update-status servlet via AJAX (Fetch)
-   * @param {number} orderId - The integer primary key (id) of the order
+   * @param {string} orderId - The integer primary key (id) of the order (from dataset)
    * @param {string} status - The new status value (e.g., "shipped")
    * @param {HTMLElement} tableRow - The <tr> element to update its data-status
    * @param {HTMLElement} dropdownElement - The <select> element (to show feedback)
+   * @param {string} contextPath - The application's base URL (e.g., "/ecomerceproj")
    */
-  async function updateOrderStatus(orderId, status, tableRow, dropdownElement) {
+  async function updateOrderStatus(orderId, status, tableRow, dropdownElement, contextPath) {
 
-    // Get context path (if your app is not at the root, e.g., "/BuyHive")
-    const contextPath = ""; // Assuming root.
+    // --- FIX: Build the URL with the correct contextPath ---
     const url = `${contextPath}/admin/update-status`;
+    // -----------------------------------------------------
 
     const payload = {
-      orderId: orderId, // This is the integer ID
+      orderId: Number(orderId), // Convert string ID from dataset to a Number
       status: status
     };
 
@@ -83,6 +88,11 @@ document.addEventListener('DOMContentLoaded', function() {
         body: JSON.stringify(payload)
       });
 
+      // Check for 404s, 500s, etc.
+      if (!response.ok) {
+        throw new Error(`Request failed: ${response.status} ${response.statusText}`);
+      }
+
       const result = await response.json();
 
       if (response.ok && result.success) {
@@ -95,8 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Update failed:', result.message);
         // Visual feedback for error
         dropdownElement.style.border = "1px solid #f03d3d"; // Red
-        // Optional: revert the dropdown if the update failed
-        // dropdownElement.value = tableRow.dataset.status;
       }
 
     } catch (error) {

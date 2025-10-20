@@ -460,13 +460,13 @@
                 </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="account-marketplace-products.jsp">
+                            <a class="dropdown-item" href="account-marketplace-products">
                   <i class="ci-layers fs-base opacity-75 me-2"></i>
                   Products (4)
                 </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="account-marketplace-sales.jsp">
+                            <a class="dropdown-item" href="admin-sales">
                   <i class="ci-pie-chart fs-base opacity-75 me-2"></i>
                   Sales
                 </a>
@@ -566,7 +566,7 @@
                     <i class="ci-layers fs-base opacity-75 me-2"></i>
                     Products (4)
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-sales.jsp">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="admin-sales">
                     <i class="ci-pie-chart fs-base opacity-75 me-2"></i>
                     Sales
                   </a>
