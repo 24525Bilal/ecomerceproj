@@ -156,15 +156,26 @@ public class OrderDAO {
 
     // added when needed in the order page
     /**
-     * Retrieves all orders for a specific user.
-     * @param userId The ID of the user whose orders are to be fetched.
-     * @return A list of Order objects.
+     * Retrieves a paginated list of orders for a specific user.
+     * @param userId The ID of the user.
+     * @param pageNumber The current page number (e.g., 1, 2, 3...).
+     * @param pageSize The number of orders per page (e.g., 8).
+     * @return A list of Order objects for the specified page.
      * @throws SQLException
      */
-    public List<Order> getOrdersByUserId(int userId) throws SQLException {
+    public List<Order> getOrdersByUserId(int userId, int pageNumber, int pageSize) throws SQLException {
         List<Order> orders = new ArrayList<>();
-        // Added payment_status to the SELECT query
-        String sql = "SELECT id, order_id, user_id, address_id, total_amount, payment_method, payment_status, transaction_id, order_date FROM orders WHERE user_id = ? ORDER BY order_date DESC";
+        // Calculate the OFFSET based on the page number and size
+        // (pageNumber - 1) * pageSize, e.g., Page 1: (1-1)*8=0, Page 2: (2-1)*8=8
+        int offset = (pageNumber - 1) * pageSize;
+
+        // SQL query updated with LIMIT and OFFSET
+        String sql = "SELECT id, order_id, user_id, address_id, total_amount, payment_method, payment_status, transaction_id, order_date " +
+                "FROM orders " +
+                "WHERE user_id = ? " +
+                "ORDER BY order_date DESC " +
+                "LIMIT ? OFFSET ?"; // LIMIT = pageSize, OFFSET = offset
+
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -173,6 +184,9 @@ public class OrderDAO {
             conn = DBConnection.getConnection();
             ps = conn.prepareStatement(sql);
             ps.setInt(1, userId);
+            ps.setInt(2, pageSize); // Set the LIMIT
+            ps.setInt(3, offset);   // Set the OFFSET
+
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -183,16 +197,15 @@ public class OrderDAO {
                 order.setAddressId(rs.getInt("address_id"));
                 order.setTotalAmount(rs.getDouble("total_amount"));
                 order.setPaymentMethod(rs.getString("payment_method"));
-                order.setPaymentStatus(rs.getString("payment_status")); // Fetch the status
+                order.setPaymentStatus(rs.getString("payment_status"));
                 order.setTransactionId(rs.getString("transaction_id"));
                 order.setOrderDate(rs.getTimestamp("order_date"));
                 orders.add(order);
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Consider logging instead
+            e.printStackTrace();
             throw e;
         } finally {
-            // Ensure resources are closed properly
             try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
             try { if (ps != null) ps.close(); } catch (SQLException e) { e.printStackTrace(); }
             try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
@@ -312,7 +325,38 @@ public class OrderDAO {
 
     }
 
+    /**
+     * Gets the total count of orders for a specific user.
+     * @param userId The ID of the user.
+     * @return The total number of orders.
+     * @throws SQLException
+     */
+    public int getOrderCountByUserId(int userId) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM orders WHERE user_id = ?";
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int totalOrders = 0;
 
+        try {
+            conn = DBConnection.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                totalOrders = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+            try { if (ps != null) ps.close(); } catch (SQLException e) { e.printStackTrace(); }
+            try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+        return totalOrders;
+    }
 
 
 }

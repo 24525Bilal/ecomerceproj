@@ -1674,24 +1674,25 @@
                     <!-- Body (Navigation) -->
                     <div class="offcanvas-body d-block pt-2 pt-lg-4 pb-lg-0">
                         <nav class="list-group list-group-borderless">
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-orders.jsp">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-orders">
                                 <i class="ci-shopping-bag fs-base opacity-75 me-2"></i>
                                 Orders
-                                <span class="badge bg-primary rounded-pill ms-auto">1</span>
+
                             </a>
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-wishlist.jsp">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-wishlist.html">
                                 <i class="ci-heart fs-base opacity-75 me-2"></i>
                                 Wishlist
                             </a>
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-payment.jsp">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-payment.html">
                                 <i class="ci-credit-card fs-base opacity-75 me-2"></i>
                                 Payment methods
                             </a>
-                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-reviews.jsp">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-reviews.html">
                                 <i class="ci-star fs-base opacity-75 me-2"></i>
                                 My reviews
                             </a>
                         </nav>
+
                         <h6 class="pt-4 ps-2 ms-1">Manage account</h6>
                         <nav class="list-group list-group-borderless">
                             <a class="list-group-item list-group-item-action d-flex align-items-center pe-none active" href="account-info.jsp">
@@ -1995,107 +1996,107 @@
             </div>
         </div>
 
-        <!-- Category / tag links -->
-        <div class="d-flex flex-column gap-3 pb-3 pb-md-4 pb-lg-5 mt-n2 mt-sm-n4 mt-lg-0 mb-4">
-            <ul class="nav align-items-center text-body-tertiary gap-2">
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Computers</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Smartphones</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">TV, Video</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Speakers</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Cameras</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Printers</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Video Games</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Headphones</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Wearable</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">HDD/SSD</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Smart Home</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Apple Devices</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Tablets</a>
-                </li>
-            </ul>
-            <ul class="nav align-items-center text-body-tertiary gap-2">
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Monitors</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Scanners</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Servers</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Heating and Cooling</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">E-readers</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Data Storage</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Networking</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Power Strips</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Plugs and Outlets</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Detectors and Sensors</a>
-                </li>
-                <li class="px-1">/</li>
-                <li class="animate-underline">
-                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Accessories</a>
-                </li>
-            </ul>
-        </div>
+<%--        <!-- Category / tag links -->--%>
+<%--        <div class="d-flex flex-column gap-3 pb-3 pb-md-4 pb-lg-5 mt-n2 mt-sm-n4 mt-lg-0 mb-4">--%>
+<%--            <ul class="nav align-items-center text-body-tertiary gap-2">--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Computers</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Smartphones</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">TV, Video</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Speakers</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Cameras</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Printers</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Video Games</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Headphones</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Wearable</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">HDD/SSD</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Smart Home</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Apple Devices</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Tablets</a>--%>
+<%--                </li>--%>
+<%--            </ul>--%>
+<%--            <ul class="nav align-items-center text-body-tertiary gap-2">--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Monitors</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Scanners</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Servers</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Heating and Cooling</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">E-readers</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Data Storage</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Networking</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Power Strips</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Plugs and Outlets</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Detectors and Sensors</a>--%>
+<%--                </li>--%>
+<%--                <li class="px-1">/</li>--%>
+<%--                <li class="animate-underline">--%>
+<%--                    <a class="nav-link fw-normal p-0 animate-target" href="#!">Accessories</a>--%>
+<%--                </li>--%>
+<%--            </ul>--%>
+<%--        </div>--%>
 
         <!-- Copyright + Payment methods -->
 
