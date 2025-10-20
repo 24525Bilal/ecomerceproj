@@ -581,35 +581,11 @@
     <span class="fw-medium">Home</span>
   </a>
 </li>
+                                    <li class="nav-item dropdown position-static me-lg-n1 me-xl-0">
+                                       <a class="nav-link d-block mb-0" href="products">
+                                           <span class="fw-medium">Shop</span>
+                                       </a>
 
-                                   <li class="nav-item dropdown position-static me-lg-n1 me-xl-0">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">
-    Shop
-  </a>
-  <div class="dropdown-menu rounded-4 p-4">
-    <div class="d-flex flex-column flex-lg-row gap-4">
-      <div style="min-width: 190px">
-        <div class="h6 mb-2">Electronics Store</div>
-        <ul class="nav flex-column gap-2 mt-0">
-          <li class="d-flex w-100 pt-1">
-            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-categories-electronics.jsp">Categories Page</a>
-          </li>
-          <li class="d-flex w-100 pt-1">
-            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="/home_electronics/products">Catalog with Side Filters</a>
-          </li>
-          <li class="d-flex w-100 pt-1">
-            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-general-electronics.html">Product General Info</a>
-          </li>
-          <li class="d-flex w-100 pt-1">
-            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-details-electronics.html">Product Details</a>
-          </li>
-          <li class="d-flex w-100 pt-1">
-            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-reviews-electronics.html">Product Reviews</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </li>
 
                                     <li class="nav-item me-lg-n1 me-xl-0">
@@ -621,10 +597,10 @@
                                     </li>
 
                                     <li class="nav-item me-lg-n2 me-xl-0">
-                                        <a class="nav-link" href="">Help</a>
+                                        <a class="nav-link" href="#">Help</a>
                                     </li>
                                     <li class="nav-item me-lg-n2 me-xl-0">
-                                        <a class="nav-link" href="">T&Cs</a>
+                                        <a class="nav-link" href="#">T&Cs</a>
                                     </li>
                                 </ul>
                                 <hr class="d-lg-none my-3">
