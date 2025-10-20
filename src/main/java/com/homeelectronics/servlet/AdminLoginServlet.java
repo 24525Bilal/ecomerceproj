@@ -41,12 +41,12 @@ public class AdminLoginServlet extends HttpServlet {
                 response.sendRedirect(requestedURI);
             } else {
                 // If no specific URL was requested, redirect to the default admin dashboard
-                response.sendRedirect("account-marketplace-dashboard.jsp");
+                response.sendRedirect("account-marketplace-dashboard.html");
             }
 
 
 //            // ✅ valid → redirect to dashboard
-//            response.sendRedirect("account-marketplace-dashboard.jsp");
+//            response.sendRedirect("account-marketplace-dashboard.html");
         } else {
             // ❌ invalid → redirect with error flag
             response.sendRedirect("admin-signin.html?error=invalid");

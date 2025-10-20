@@ -494,14 +494,14 @@
                                         <!-- Mega menu -->
                                         <ul class="dropdown-menu w-100 rounded-top-0 rounded-bottom-4 py-1 p-lg-1" style="--cz-dropdown-spacer: 0; --cz-dropdown-item-padding-y: .625rem; --cz-dropdown-item-spacer: 0">
                                             <li class="d-lg-none pt-2">
-                                                <a class="dropdown-item fw-medium" href="shop-categories-electronics.jsp">
+                                                <a class="dropdown-item fw-medium" href="products">
                                                     <i class="ci-grid fs-xl opacity-60 pe-1 me-2"></i>
                                                     All Categories
                                                 </a>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pt-2 pb-1 px-lg-2">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-computer fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">Computers &amp; Accessories</span>
                                                     </a>
@@ -512,7 +512,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-smartphone-2 fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">Smartphones &amp; Tablets</span>
                                                     </a>
@@ -523,7 +523,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-monitor-2 fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">TV, Video &amp; Audio</span>
                                                     </a>
@@ -534,7 +534,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-speaker-2 fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">Speakers &amp; Home Music</span>
                                                     </a>
@@ -545,7 +545,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-camera-2 fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">Cameras, Photo &amp; Video</span>
                                                     </a>
@@ -556,7 +556,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-printer-2 fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">Printers &amp; Ink</span>
                                                     </a>
@@ -567,7 +567,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-battery-2 fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">Charging Stations</span>
                                                     </a>
@@ -578,7 +578,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-headphones-2 fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">Headphones</span>
                                                     </a>
@@ -589,7 +589,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-watch-2 fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">Wearable Electronics</span>
                                                     </a>
@@ -600,7 +600,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-powerbank fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">Powerbanks</span>
                                                     </a>
@@ -611,7 +611,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-hard-drive-2 fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">HDD/SSD Data Storage</span>
                                                     </a>
@@ -622,7 +622,7 @@
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-2 px-lg-2" tabindex="0">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
                                                         <i class="ci-game fs-xl opacity-60 pe-1 me-2"></i>
                                                         <span class="text-truncate">Video Games</span>
                                                     </a>
@@ -655,7 +655,7 @@
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-categories-electronics.jsp">Categories Page</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
-                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Catalog with Side Filters</a>
+                                                            <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="products">Catalog with Side Filters</a>
                                                         </li>
                                                         <li class="d-flex w-100 pt-1">
                                                             <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-electronics.jsp">Product General Info</a>
@@ -776,10 +776,10 @@
                                             <li class="dropend">
                                                 <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Marketplace User</a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="account-marketplace-dashboard.jsp">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="account-marketplace-dashboard.html">Dashboard</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-products.jsp">Products</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-sales.html">Sales</a></li>
-                                                    <li><a class="dropdown-item" href="account-marketplace-users.jsp">Payouts</a></li>
+                                                    <li><a class="dropdown-item" href="account-marketplace-users.html">Payouts</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-purchases.html">Purchases</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-favorites.html">Favorites</a></li>
                                                     <li><a class="dropdown-item" href="account-marketplace-settings.html">Settings</a></li>
@@ -1337,7 +1337,7 @@
                     </li>
                     <li class="px-1">/</li>
                     <li class="animate-underline">
-                        <a class="nav-link fw-normal p-0 animate-target" href="#!">Smart Homehhhhhh</a>
+                        <a class="nav-link fw-normal p-0 animate-target" href="#!">Smart Home</a>
                     </li>
                     <li class="px-1">/</li>
                     <li class="animate-underline">
