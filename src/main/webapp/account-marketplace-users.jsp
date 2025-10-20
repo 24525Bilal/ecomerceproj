@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
 
     <!-- SEO Meta Tags -->
-    <title>BuyHive | Marketplace Account - Sales</title>
+    <title>BuyHive | Marketplace Account - Payouts</title>
     <meta name="description" content="BuyHive - Multipurpose E-Commerce Bootstrap HTML Template">
     <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
     <meta name="author" content="Createx Studio">
@@ -326,7 +326,7 @@
 
 
     <!-- Navigation bar (Page header) -->
-<header class="navbar navbar-expand-lg bg-body navbar-sticky sticky-top z-fixed px-0" data-sticky-element="">
+ <header class="navbar navbar-expand-lg bg-body navbar-sticky sticky-top z-fixed px-0" data-sticky-element="">
         <div class="container flex-nowrap">
 
             <!-- Mobile offcanvas menu toggler (Hamburger) -->
@@ -373,7 +373,7 @@
 
                 <!-- Account button (logged in state) visible on screens < 768px wide (md breakpoint) -->
                 <div class="offcanvas-header nav border-top px-0 py-3 mt-3 d-md-none">
-                    <a class="nav-link hover-effect-scale justify-content-center w-100 gap-2 py-0" href="account-marketplace-dashboard.html">
+                    <a class="nav-link hover-effect-scale justify-content-center w-100 gap-2 py-0" href="account-marketplace-dashboard.jsp">
                         <div class="btn btn-icon position-relative border rounded-circle overflow-hidden">
                             <img src="assets/img/account/avatar-sm.png" class="hover-effect-target position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Avatar">
                         </div>
@@ -454,7 +454,7 @@
                     <ul class="dropdown-menu dropdown-menu-end" style="--cz-dropdown-spacer: .625rem">
                         <li><span class="h6 dropdown-header">Createx Studio</span></li>
                         <li>
-                            <a class="dropdown-item" href="account-marketplace-dashboard.html">
+                            <a class="dropdown-item" href="account-marketplace-dashboard.jsp">
                   <i class="ci-grid fs-base opacity-75 me-2"></i>
                   Dashboard
                 </a>
@@ -466,7 +466,7 @@
                 </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="account-marketplace-sales.html">
+                            <a class="dropdown-item" href="account-marketplace-sales.jsp">
                   <i class="ci-pie-chart fs-base opacity-75 me-2"></i>
                   Sales
                 </a>
@@ -510,7 +510,6 @@
             </div>
         </div>
     </header>
-
 
 
     <!-- Page content -->
@@ -559,20 +558,20 @@
                         <!-- Body (Navigation) -->
                         <div class="offcanvas-body d-block pt-2 pt-lg-4 pb-lg-0">
                             <nav class="list-group list-group-borderless">
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-dashboard.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-dashboard.jsp">
                     <i class="ci-grid fs-base opacity-75 me-2"></i>
                     Dashboard
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-products.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-products.jsp">
                     <i class="ci-layers fs-base opacity-75 me-2"></i>
                     Products (4)
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill pe-none active" href="account-marketplace-sales.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-sales.jsp">
                     <i class="ci-pie-chart fs-base opacity-75 me-2"></i>
                     Sales
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-users.html">
-                    <i class="ci-dollar-sign fs-base opacity-75 me-2"></i>
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill pe-none active" href="account-marketplace-users.html">
+                    <i class="ci-user fs-base opacity-75 me-2"></i>
                     Users
                   </a>
                             </nav>
@@ -606,149 +605,173 @@
                 </aside>
 
 
-                <!-- Sales content -->
+                <!-- Payouts content -->
                 <div class="col-lg-9 pt-2 pt-xl-3">
-                    <div data-filter-list="{&quot;searchClass&quot;: &quot;product-search&quot;, &quot;listClass&quot;: &quot;product-list&quot;, &quot;sortClass&quot;: &quot;product-sort&quot;, &quot;valueNames&quot;: [&quot;product&quot;, &quot;date&quot;, &quot;tendered&quot;, &quot;earning&quot;]}">
 
-                        <!-- Header -->
-                        <div class="d-md-flex align-items-center justify-content-between gap-3 pb-2 pb-sm-3 mb-md-2">
-                            <h1 class="h2 mb-md-0">Sales</h1>
-                            <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3">
-                                <div class="position-relative w-100">
-                                    <i class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                                    <input type="search" class="product-search form-control form-icon-start rounded-pill" placeholder="Search">
-                                </div>
-                                <div class="position-relative" style="min-width: 190px">
-                                    <i class="ci-calendar position-absolute top-50 start-0 translate-middle-y z-1 ms-3"></i>
-                                    <select class="form-select form-icon-start rounded-pill" data-select="{
-                      &quot;classNames&quot;: {
-                        &quot;containerInner&quot;: [&quot;form-select&quot;, &quot;form-icon-start&quot;, &quot;rounded-pill&quot;]
-                      },
-                      &quot;removeItemButton&quot;: false
-                    }" aria-label="Period select">
-                      <option value="Current">Current month</option>
-                      <option value="Last month">Last month</option>
-                      <option value="Last 3 months">Last 3 months</option>
-                      <option value="Last 6 months">Last 6 months</option>
-                      <option value="Last year">Last year</option>
-                    </select>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Page title -->
+                    <h1 class="h2 pb-3 mb-2 mb-md-3">Users</h1>
 
-<table class="table" style="width: 100%; border-collapse: separate; border-spacing: 0 1rem; color: #e0e0e0; font-family: sans-serif;">
-  <thead style="color: #888; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px;">
+                    <!-- Info alert -->
+                    
+
+                    <!-- Payouts table -->
+<div class="table-responsive" data-filter-list='{"listClass":"payouts-list","sortClass":"payouts-sort","valueNames":["amount","date"]}'>
+<style>
+  /* Increased padding for larger row height and bigger gaps */
+  .table.order-table th,
+  .table.order-table td {
+    padding: 30px 40px;   /* Larger padding */
+    vertical-align: middle;
+    line-height: 1.7;
+  }
+
+  /* First column (User ID) much wider */
+  .table.order-table th:first-child,
+  .table.order-table td:first-child {
+    min-width: 250px;
+  }
+
+  /* Other columns consistent, larger width */
+  .table.order-table th,
+  .table.order-table td {
+    min-width: 200px;
+  }
+
+  /* Bold header text */
+  .table.order-table thead th {
+    font-weight: 600;
+  }
+</style>
+
+<table class="table order-table align-middle fs-sm mb-0">
+  <thead>
     <tr>
-      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Order ID</th>
-      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Order Date</th>
-      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Customer ID</th>
-      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Order Status</th>
-      <th scope="col" style="padding: 0 1rem; text-align: right; font-weight: 500;">Amount</th>
+      <th scope="col">
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;">User ID</button>
+      </th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="background-color: #2a2a2a;" data-status="pending">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-        <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1001</button>
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1001</button>
       </td>
-      <td style="padding: 1.25rem 1rem;">September 4, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST12345</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$120.00</td>
+      <td>Alice Johnson</td>
+      <td>alice.johnson@example.com</td>
+      <td>+1-202-555-0134</td>
     </tr>
-
-    <tr style="background-color: #2a2a2a;" data-status="pending">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1002</button>
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1002</button>
       </td>
-      <td style="padding: 1.25rem 1rem;">September 3, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST67890</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$75.00</td>
+      <td>Brian Smith</td>
+      <td>brian.smith@example.com</td>
+      <td>+1-202-555-0189</td>
     </tr>
-
-    <tr style="background-color: #2a2a2a;" data-status="shipped">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1003</button>
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1003</button>
       </td>
-      <td style="padding: 1.25rem 1rem;">September 2, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST24680</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$95.00</td>
+      <td>Catherine Lee</td>
+      <td>catherine.lee@example.com</td>
+      <td>+1-202-555-0147</td>
     </tr>
-
-    <tr style="background-color: #2a2a2a;" data-status="packed">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1004</button>
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1004</button>
       </td>
-      <td style="padding: 1.25rem 1rem;">September 1, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST13579</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$60.00</td>
+      <td>David Brown</td>
+      <td>david.brown@example.com</td>
+      <td>+1-202-555-0193</td>
     </tr>
-
-    <tr style="background-color: #2a2a2a;" data-status="out_for_delivery">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1005</button>
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1005</button>
       </td>
-      <td style="padding: 1.25rem 1rem;">August 31, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST11223</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$150.00</td>
+      <td>Ella Martinez</td>
+      <td>ella.martinez@example.com</td>
+      <td>+1-202-555-0172</td>
     </tr>
-
-    <tr style="background-color: #2a2a2a;" data-status="delivered">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1006</button>
+    <tr>
+      <td>
+        <button type="button" class="btn p-0 text-body" style="background: none; border: none;" data-bs-toggle="modal" data-bs-target="#userModal">1006</button>
       </td>
-      <td style="padding: 1.25rem 1rem;">August 30, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST44556</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$200.00</td>
+      <td>Frank Wilson</td>
+      <td>frank.wilson@example.com</td>
+      <td>+1-202-555-0168</td>
     </tr>
-
   </tbody>
 </table>
+</div>
 
-<script src="assets/js/salesstatusupdate.js"></script>
+<!-- User Details Modal -->
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="userModalLabel">User Details - #USERID</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
 
+        <!-- User Information -->
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> john.doe@example.com</p>
+        <p><strong>Phone:</strong> +1-202-555-0134</p>
+        <p><strong>Date of Birth:</strong> January 15, 1990</p>
 
+        <!-- Orders (IDs only) -->
+        <h6>Orders Placed</h6>
+        <div class="d-flex flex-column gap-2 align-items-start">
+          <button type="button" class="btn p-0 fw-medium text-body text-start" 
+                  style="background:none; border:none;" onclick="window.location.href='#';">#5001</button>
+          <button type="button" class="btn p-0 fw-medium text-body text-start" 
+                  style="background:none; border:none;" onclick="window.location.href='#';">#5002</button>
+          <button type="button" class="btn p-0 fw-medium text-body text-start" 
+                  style="background:none; border:none;" onclick="window.location.href='#';">#5003</button>
+          <button type="button" class="btn p-0 fw-medium text-body text-start" 
+                  style="background:none; border:none;" onclick="window.location.href='#';">#5004</button>
+        </div>
 
-                        <!-- Pagination -->
-                        <div class="d-flex align-items-center justify-content-between pt-4 gap-3">
-                            <div class="fs-sm">Showing <span class="fw-semibold">8</span> of <span class="fw-semibold">30</span><span class="d-none d-sm-inline"> results</span></div>
-                            <nav aria-label="Pagination">
-                                <ul class="pagination">
-                                    <li class="page-item active" aria-current="page">
-                                        <span class="page-link">
-                        1
-                        <span class="visually-hidden">(current)</span>
-                                        </span>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">4</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+        <!-- User Address -->
+        <h6>Address</h6>
+        <p>John Doe, 123 Main St, Springfield, IL, 62704</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger">Delete User</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="d-flex align-items-center justify-content-between pt-2  gap-3">
+                        <div class="fs-sm">Showing <span class="fw-semibold">8</span> of <span class="fw-semibold">30</span><span class="d-none d-sm-inline"> results</span></div>
+                        <nav aria-label="Pagination">
+                            <ul class="pagination">
+                                <li class="page-item active" aria-current="page">
+                                    <span class="page-link">
+                      1
+                      <span class="visually-hidden">(current)</span>
+                                    </span>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">4</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -934,92 +957,7 @@
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
 
-<!-- Static Order Details Modal -->
-<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="orderModalLabel">Order Details - #ORDERID</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
 
-        <!-- Order ID -->
-        <p><strong>Order ID:</strong> #ORDERID</p>
-
-<!-- Products Table -->
-<h6>Products</h6>
-<table class="table table-bordered table-sm align-middle">
-  <thead>
-    <tr>
-      <th>P_ID</th>
-      <th>Product Detail</th>
-      <th>Quantity</th>
-      <th>Price ($)</th>
-      <th>Total ($)</th> <!-- New column -->
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>101</td>
-      <td>
-        <div class="d-flex align-items-center">
-          <div style="width:60px; height:60px; overflow:hidden; margin-right:10px;">
-            <img src="assets/img/account/products/01.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
-                  onclick="window.location.href='shop-product-general-electronics.html';">
-            Smart Watch Series 9
-          </button>
-        </div>
-      </td>
-      <td>2</td>
-      <td>60.00</td>
-      <td>120.00</td> <!-- Total per item -->
-    </tr>
-    <tr>
-      <td>102</td>
-      <td>
-        <div class="d-flex align-items-center">
-          <div style="width:60px; height:60px; overflow:hidden; margin-right:10px;">
-            <img src="assets/img/account/products/02.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
-                  onclick="window.location.href='shop-product-general-electronics.html';">
-            3D Box Mockup
-          </button>
-        </div>
-      </td>
-      <td>1</td>
-      <td>60.00</td>
-      <td>60.00</td> <!-- Total per item -->
-    </tr>
-    <!-- Total Row -->
-    <tr>
-      <td colspan="4" class="text-end fw-bold">Total</td>
-      <td class="fw-bold">180.00</td>
-    </tr>
-  </tbody>
-</table>
-
-        <!-- Shipping Address -->
-        <h6>Shipping Address</h6>
-        <p>John Doe, 123 Main St, Springfield, IL, 62704</p>
-
-        <!-- Payment Method -->
-        <h6>Payment Method</h6>
-        <p>Credit Card (Visa)</p>
-
-        <!-- Transaction ID -->
-        <h6>Transaction ID</h6>
-        <p>TXN1234567890</p>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
+
 </html>

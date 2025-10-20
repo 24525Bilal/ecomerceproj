@@ -593,7 +593,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link" href="account-marketplace-dashboard.html">Admin</a>
+                                        <a class="nav-link" href="account-marketplace-dashboard.jsp">Admin</a>
                                     </li>
 
                                     <li class="nav-item me-lg-n2 me-xl-0">

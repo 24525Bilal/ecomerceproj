@@ -39,14 +39,14 @@ public class AuthFilter implements Filter {
 
 
         // Define a list of pages that require a logged-in admin.
-        boolean isAdminPage = path.contains("account-marketplace-dashboard.html")
+        boolean isAdminPage = path.contains("account-marketplace-dashboard.jsp")
                 || path.contains("account-marketplace-products.jsp")
                 || path.contains("account-marketplace-products")
                 || path.contains("account-marketplace-orders.html")
                 || path.contains("addProduct")
                 || path.contains("account-marketplace-purchases.html")
-                || path.contains("account-marketplace-users.html")
-                || path.contains("account-marketplace-sales.html");
+                || path.contains("account-marketplace-users.jsp")
+                || path.contains("account-marketplace-sales.jsp");
 
 
         if (isUserProtectedPage) {

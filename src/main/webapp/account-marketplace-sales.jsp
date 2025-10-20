@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
 
     <!-- SEO Meta Tags -->
-    <title>BuyHive | Marketplace Account - Dashboard</title>
+    <title>BuyHive | Marketplace Account - Sales</title>
     <meta name="description" content="BuyHive - Multipurpose E-Commerce Bootstrap HTML Template">
     <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
     <meta name="author" content="Createx Studio">
@@ -326,7 +326,7 @@
 
 
     <!-- Navigation bar (Page header) -->
-    <header class="navbar navbar-expand-lg bg-body navbar-sticky sticky-top z-fixed px-0" data-sticky-element="">
+<header class="navbar navbar-expand-lg bg-body navbar-sticky sticky-top z-fixed px-0" data-sticky-element="">
         <div class="container flex-nowrap">
 
             <!-- Mobile offcanvas menu toggler (Hamburger) -->
@@ -373,7 +373,7 @@
 
                 <!-- Account button (logged in state) visible on screens < 768px wide (md breakpoint) -->
                 <div class="offcanvas-header nav border-top px-0 py-3 mt-3 d-md-none">
-                    <a class="nav-link hover-effect-scale justify-content-center w-100 gap-2 py-0" href="account-marketplace-dashboard.html">
+                    <a class="nav-link hover-effect-scale justify-content-center w-100 gap-2 py-0" href="account-marketplace-dashboard.jsp">
                         <div class="btn btn-icon position-relative border rounded-circle overflow-hidden">
                             <img src="assets/img/account/avatar-sm.png" class="hover-effect-target position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Avatar">
                         </div>
@@ -454,7 +454,7 @@
                     <ul class="dropdown-menu dropdown-menu-end" style="--cz-dropdown-spacer: .625rem">
                         <li><span class="h6 dropdown-header">Createx Studio</span></li>
                         <li>
-                            <a class="dropdown-item" href="account-marketplace-dashboard.html">
+                            <a class="dropdown-item" href="account-marketplace-dashboard.jsp">
                   <i class="ci-grid fs-base opacity-75 me-2"></i>
                   Dashboard
                 </a>
@@ -472,7 +472,7 @@
                 </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="account-marketplace-users.html">
+                            <a class="dropdown-item" href="account-marketplace-users.jsp">
                   <i class="ci-dollar-sign fs-base opacity-75 me-2"></i>
                   Users
                 </a>
@@ -510,6 +510,7 @@
             </div>
         </div>
     </header>
+
 
 
     <!-- Page content -->
@@ -558,19 +559,19 @@
                         <!-- Body (Navigation) -->
                         <div class="offcanvas-body d-block pt-2 pt-lg-4 pb-lg-0">
                             <nav class="list-group list-group-borderless">
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill pe-none active" href="account-marketplace-dashboard.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-dashboard.jsp">
                     <i class="ci-grid fs-base opacity-75 me-2"></i>
                     Dashboard
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-products">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-products.html">
                     <i class="ci-layers fs-base opacity-75 me-2"></i>
                     Products (4)
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-sales.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill pe-none active" href="account-marketplace-sales.html">
                     <i class="ci-pie-chart fs-base opacity-75 me-2"></i>
                     Sales
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-users.html">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-marketplace-users.jsp">
                     <i class="ci-dollar-sign fs-base opacity-75 me-2"></i>
                     Users
                   </a>
@@ -589,7 +590,7 @@
                     <i class="ci-settings fs-base opacity-75 me-2"></i>
                     Settings
                   </a>
-                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="logout">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center rounded-pill" href="account-signin.html">
                     <i class="ci-log-out fs-base opacity-75 me-2"></i>
                     Log out
                   </a>
@@ -605,286 +606,148 @@
                 </aside>
 
 
-                <!-- Dashboard content -->
+                <!-- Sales content -->
                 <div class="col-lg-9 pt-2 pt-xl-3">
+                    <div data-filter-list="{&quot;searchClass&quot;: &quot;product-search&quot;, &quot;listClass&quot;: &quot;product-list&quot;, &quot;sortClass&quot;: &quot;product-sort&quot;, &quot;valueNames&quot;: [&quot;product&quot;, &quot;date&quot;, &quot;tendered&quot;, &quot;earning&quot;]}">
 
-                    <!-- Header -->
-                    <div class="d-flex align-items-center justify-content-between gap-3 pb-3 mb-2 mb-md-3">
-                        <h1 class="h2 mb-0">Dashboard</h1>
-                        <div class="position-relative" style="width: 190px">
-                            <i class="ci-calendar position-absolute top-50 start-0 translate-middle-y z-1 ms-3"></i>
-                            <select class="form-select form-icon-start rounded-pill" data-select="{
-                  &quot;classNames&quot;: {
-                    &quot;containerInner&quot;: [&quot;form-select&quot;, &quot;form-icon-start&quot;, &quot;rounded-pill&quot;]
-                  },
-                  &quot;removeItemButton&quot;: false
-                }" aria-label="Period select">
-                  <option value="Current">Current month</option>
-                  <option value="Last month">Last month</option>
-                  <option value="Last 3 months">Last 3 months</option>
-                  <option value="Last 6 months">Last 6 months</option>
-                  <option value="Last year">Last year</option>
-                </select>
-                        </div>
-                    </div>
-
-                    <!-- Stats -->
-                    <div class="row g-3 g-xl-4 pb-3 mb-2 mb-sm-3">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="h-100 bg-success-subtle rounded-4 text-center p-4">
-                                <h2 class="fs-sm pb-2 mb-1">Earnings (before taxes)</h2>
-                                <div class="h2 pb-1 mb-2">$842.00</div>
-                                <p class="fs-sm text-body-secondary mb-0">Sales 01/09/2024 - 13/09/2024</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="h-100 bg-info-subtle rounded-4 text-center p-4">
-                                <h2 class="fs-sm pb-2 mb-1">Your balance</h2>
-                                <div class="h2 pb-1 mb-2">$735.00</div>
-                                <p class="fs-sm text-body-secondary mb-0">To be paid on 15/09/2024</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12">
-                            <div class="h-100 bg-warning-subtle rounded-4 text-center p-4">
-                                <h2 class="fs-sm pb-2 mb-1">Lifetime earnings</h2>
-                                <div class="h2 pb-1 mb-2">$9,156.74</div>
-                                <p class="fs-sm text-body-secondary mb-0">Based on list price</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Earnings chart -->
-                    <div class="pb-3 mb-2 mb-sm-3">
-                        <div class="border rounded-4 py-4 px-3 px-sm-4">
-                            <h2 class="h5 text-center text-sm-start mb-sm-4">Earnings history</h2>
-                            <canvas data-chart="{
-                  &quot;type&quot;: &quot;line&quot;,
-                  &quot;data&quot;: {
-                    &quot;labels&quot;: [&quot;22 Aug&quot;, &quot;&quot;, &quot;24 Aug&quot;, &quot;&quot;, &quot;26 Aug&quot;, &quot;&quot;, &quot;28 Aug&quot;, &quot;&quot;, &quot;30 Aug&quot;, &quot;&quot;, &quot;01 Sep&quot;, &quot;&quot;, &quot;03 Sep&quot;, &quot;&quot;, &quot;05 Sep&quot;],
-                    &quot;datasets&quot;: [
-                      {
-                        &quot;label&quot;: &quot;Sales, USD&quot;,
-                        &quot;fill&quot;: true,
-                        &quot;data&quot;: [0, 100, 200, 175, 100, 50, 75, 0, 0, 50, 50, 50, 0, 100, 0],
-                        &quot;backgroundColor&quot;: &quot;rgba(51,179,107,.1)&quot;,
-                        &quot;borderWidth&quot;: 2,
-                        &quot;borderColor&quot;: &quot;rgba(51,179,107,.6)&quot;,
-                        &quot;pointBackgroundColor&quot;: &quot;#33b36b&quot;,
-                        &quot;pointBorderWidth&quot;: 3,
-                        &quot;pointBorderColor&quot;: &quot;#33b36b&quot;,
-                        &quot;pointHoverBorderColor&quot;: &quot;#33b36b&quot;,
-                        &quot;pointHoverBorderWidth&quot;: 6
-                      }
-                    ]
-                  },
-                  &quot;options&quot;: {
-                    &quot;responsive&quot;: true,
-                    &quot;scales&quot;: {
-                      &quot;y&quot;: {
-                        &quot;beginAtZero&quot;: true,
-                        &quot;border&quot;: {
-                          &quot;color&quot;: &quot;rgba(133,140,151,.18)&quot;
-                        },
-                        &quot;grid&quot;: {
-                          &quot;color&quot;: &quot;rgba(133,140,151,.18)&quot;
-                        }
-                      },
-                      &quot;x&quot;: {
-                        &quot;border&quot;: {
-                          &quot;color&quot;: &quot;rgba(133,140,151,.18)&quot;
-                        },
-                        &quot;grid&quot;: {
-                          &quot;color&quot;: &quot;rgba(133,140,151,.18)&quot;
-                        }
-                      }
-                    }
-                  }
-                }"></canvas>
-                        </div>
-                    </div>
-
-                    <!-- Most recent sales -->
-                    <div class="border rounded-4 py-4 px-3 px-sm-4">
-                        <div data-filter-list="{&quot;searchClass&quot;: &quot;product-search&quot;, &quot;listClass&quot;: &quot;product-list&quot;, &quot;sortClass&quot;: &quot;product-sort&quot;, &quot;valueNames&quot;: [&quot;product&quot;, &quot;date&quot;, &quot;tendered&quot;, &quot;earning&quot;]}">
-                            <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 mb-2 mb-sm-3 mb-md-4">
-                                <h2 class="h5 text-center text-sm-start mb-0">Most recent sales</h2>
-                                <div class="position-relative w-100" style="max-width: 250px">
+                        <!-- Header -->
+                        <div class="d-md-flex align-items-center justify-content-between gap-3 pb-2 pb-sm-3 mb-md-2">
+                            <h1 class="h2 mb-md-0">Sales</h1>
+                            <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3">
+                                <div class="position-relative w-100">
                                     <i class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                                     <input type="search" class="product-search form-control form-icon-start rounded-pill" placeholder="Search">
                                 </div>
+                                <div class="position-relative" style="min-width: 190px">
+                                    <i class="ci-calendar position-absolute top-50 start-0 translate-middle-y z-1 ms-3"></i>
+                                    <select class="form-select form-icon-start rounded-pill" data-select="{
+                      &quot;classNames&quot;: {
+                        &quot;containerInner&quot;: [&quot;form-select&quot;, &quot;form-icon-start&quot;, &quot;rounded-pill&quot;]
+                      },
+                      &quot;removeItemButton&quot;: false
+                    }" aria-label="Period select">
+                      <option value="Current">Current month</option>
+                      <option value="Last month">Last month</option>
+                      <option value="Last 3 months">Last 3 months</option>
+                      <option value="Last 6 months">Last 6 months</option>
+                      <option value="Last year">Last year</option>
+                    </select>
+                                </div>
                             </div>
-                            <table class="table align-middle fs-sm mb-0">
-                                <thead>
-                                    <tr>
-                                        <th class="ps-0" scope="col">
-                                            <span class="fw-normal text-body">Product</span>
-                                        </th>
-                                        <th class="d-none d-md-table-cell" scope="col">
-                                            <button type="button" class="btn fw-normal text-body product-sort p-0" data-sort="date">Date</button>
-                                        </th>
-                                        <th class="d-none d-md-table-cell" scope="col">
-                                            <span class="fw-normal text-body">Status</span>
-                                        </th>
-                                        <th class="text-end d-none d-sm-table-cell" scope="col">
-                                            <button type="button" class="btn fw-normal text-body product-sort p-0 me-n2" data-sort="tendered">Tendered</button>
-                                        </th>
-                                        <th class="text-end pe-0" scope="col">
-                                            <button type="button" class="btn fw-normal text-body product-sort p-0 me-n2" data-sort="earning">Earning</button>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="product-list">
+                        </div>
 
-                                    <!-- Item -->
-                                    <tr>
-                                        <td class="py-3 ps-0">
-                                            <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                                <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                    <img src="assets/img/account/products/03.jpg" class="hover-effect-target" alt="Image">
-                                                </div>
-                                                <div class="ps-2 ms-1">
-                                                    <span class="badge fs-xs text-info bg-info-subtle rounded-pill d-md-none mb-1">Pending</span>
-                                                    <h6 class="product mb-1 mb-md-0">
-                                                        <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">iPhone 15 pro mockups</a>
-                                                    </h6>
-                                                    <div class="fs-body-emphasis d-sm-none mb-1">$19.00</div>
-                                                    <div class="fs-body-emphasis d-md-none">June 30, 2024</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="d-none d-md-table-cell py-3">June 30, 2024<span class="date visually-hidden">1719745200</span></td>
-                                        <td class="d-none d-md-table-cell py-3">
-                                            <span class="badge fs-xs text-info bg-info-subtle rounded-pill">Pending</span>
-                                        </td>
-                                        <td class="tendered text-end d-none d-sm-table-cell py-3">$19.00</td>
-                                        <td class="earning text-end py-3 pe-0">$14.25</td>
-                                    </tr>
+<table class="table" style="width: 100%; border-collapse: separate; border-spacing: 0 1rem; color: #e0e0e0; font-family: sans-serif;">
+  <thead style="color: #888; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px;">
+    <tr>
+      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Order ID</th>
+      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Order Date</th>
+      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Customer ID</th>
+      <th scope="col" style="padding: 0 1rem; text-align: left; font-weight: 500;">Order Status</th>
+      <th scope="col" style="padding: 0 1rem; text-align: right; font-weight: 500;">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: #2a2a2a;" data-status="pending">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1001</button>
+      </td>
+      <td style="padding: 1.25rem 1rem;">September 4, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST12345</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
+      </td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$120.00</td>
+    </tr>
 
-                                    <!-- Item -->
-                                    <tr>
-                                        <td class="py-3 ps-0">
-                                            <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                                <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                    <img src="assets/img/account/products/04.jpg" class="hover-effect-target" alt="Image">
-                                                </div>
-                                                <div class="ps-2 ms-1">
-                                                    <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Completed</span>
-                                                    <h6 class="product mb-1 mb-md-0">
-                                                        <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">A collection of colorful items</a>
-                                                    </h6>
-                                                    <div class="fs-body-emphasis d-sm-none mb-1">$21.00</div>
-                                                    <div class="fs-body-emphasis d-md-none">June 29, 2024</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="d-none d-md-table-cell py-3">June 29, 2024<span class="date visually-hidden">1719658800</span></td>
-                                        <td class="d-none d-md-table-cell py-3">
-                                            <span class="badge fs-xs text-success bg-success-subtle rounded-pill">Completed</span>
-                                        </td>
-                                        <td class="tendered text-end d-none d-sm-table-cell py-3">$21.00</td>
-                                        <td class="earning text-end py-3 pe-0">$15.75</td>
-                                    </tr>
+    <tr style="background-color: #2a2a2a;" data-status="pending">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1002</button>
+      </td>
+      <td style="padding: 1.25rem 1rem;">September 3, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST67890</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
+      </td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$75.00</td>
+    </tr>
 
-                                    <!-- Item -->
-                                    <tr>
-                                        <td class="py-3 ps-0">
-                                            <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                                <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                    <img src="assets/img/account/products/05.jpg" class="hover-effect-target" alt="Image">
-                                                </div>
-                                                <div class="ps-2 ms-1">
-                                                    <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Completed</span>
-                                                    <h6 class="product mb-1 mb-md-0">
-                                                        <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">House plants website template</a>
-                                                    </h6>
-                                                    <div class="fs-body-emphasis d-sm-none mb-1">$35.00</div>
-                                                    <div class="fs-body-emphasis d-md-none">June 28, 2024</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="d-none d-md-table-cell py-3">June 28, 2024<span class="date visually-hidden">1719572400</span></td>
-                                        <td class="d-none d-md-table-cell py-3">
-                                            <span class="badge fs-xs text-success bg-success-subtle rounded-pill">Completed</span>
-                                        </td>
-                                        <td class="tendered text-end d-none d-sm-table-cell py-3">$35.00</td>
-                                        <td class="earning text-end py-3 pe-0">$26.25</td>
-                                    </tr>
+    <tr style="background-color: #2a2a2a;" data-status="shipped">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1003</button>
+      </td>
+      <td style="padding: 1.25rem 1rem;">September 2, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST24680</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
+      </td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$95.00</td>
+    </tr>
 
-                                    <!-- Item -->
-                                    <tr>
-                                        <td class="py-3 ps-0">
-                                            <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                                <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                    <img src="assets/img/account/products/07.jpg" class="hover-effect-target" alt="Image">
-                                                </div>
-                                                <div class="ps-2 ms-1">
-                                                    <span class="badge fs-xs text-success bg-success-subtle rounded-pill d-md-none mb-1">Completed</span>
-                                                    <h6 class="product mb-1 mb-md-0">
-                                                        <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">A stunning set of tablet pro mockups</a>
-                                                    </h6>
-                                                    <div class="fs-body-emphasis d-sm-none mb-1">$18.00</div>
-                                                    <div class="fs-body-emphasis d-md-none">June 27, 2024</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="d-none d-md-table-cell py-3">June 27, 2024<span class="date visually-hidden">1719486000</span></td>
-                                        <td class="d-none d-md-table-cell py-3">
-                                            <span class="badge fs-xs text-success bg-success-subtle rounded-pill">Completed</span>
-                                        </td>
-                                        <td class="tendered text-end d-none d-sm-table-cell py-3">$18.00</td>
-                                        <td class="earning text-end py-3 pe-0">$13.50</td>
-                                    </tr>
+    <tr style="background-color: #2a2a2a;" data-status="packed">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1004</button>
+      </td>
+      <td style="padding: 1.25rem 1rem;">September 1, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST13579</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
+      </td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$60.00</td>
+    </tr>
 
-                                    <!-- Item -->
-                                    <tr>
-                                        <td class="py-3 ps-0">
-                                            <div class="d-flex align-items-start align-items-md-center hover-effect-scale position-relative">
-                                                <div class="ratio bg-body-secondary rounded-2 overflow-hidden flex-shrink-0" style="--cz-aspect-ratio: calc(52 / 66 * 100%); width: 66px">
-                                                    <img src="assets/img/account/products/08.jpg" class="hover-effect-target" alt="Image">
-                                                </div>
-                                                <div class="ps-2 ms-1">
-                                                    <span class="badge fs-xs text-danger bg-danger-subtle rounded-pill d-md-none mb-1">Canceled</span>
-                                                    <h6 class="product mb-1 mb-md-0">
-                                                        <a class="fs-sm fw-medium hover-effect-underline stretched-link" href="shop-product-marketplace.html">Multi device mockup PSD</a>
-                                                    </h6>
-                                                    <div class="fs-body-emphasis d-sm-none mb-1">$27.00</div>
-                                                    <div class="fs-body-emphasis d-md-none">June 26, 2024</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="d-none d-md-table-cell py-3">June 26, 2024<span class="date visually-hidden">1719399600</span></td>
-                                        <td class="d-none d-md-table-cell py-3">
-                                            <span class="badge fs-xs text-danger bg-danger-subtle rounded-pill">Canceled</span>
-                                        </td>
-                                        <td class="tendered text-end d-none d-sm-table-cell py-3">$27.00</td>
-                                        <td class="earning text-end py-3 pe-0">$0.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+    <tr style="background-color: #2a2a2a;" data-status="out_for_delivery">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1005</button>
+      </td>
+      <td style="padding: 1.25rem 1rem;">August 31, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST11223</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
+      </td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$150.00</td>
+    </tr>
 
-                            <!-- Pagination -->
-                            <div class="d-flex align-items-center justify-content-between pt-4 gap-3">
-                                <div class="fs-sm">Showing <span class="fw-semibold">5</span> of <span class="fw-semibold">20</span><span class="d-none d-sm-inline"> results</span></div>
-                                <nav aria-label="Pagination">
-                                    <ul class="pagination">
-                                        <li class="page-item active" aria-current="page">
-                                            <span class="page-link">
-                          1
-                          <span class="visually-hidden">(current)</span>
-                                            </span>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">2</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">3</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">4</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
+    <tr style="background-color: #2a2a2a;" data-status="delivered">
+      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1006</button>
+      </td>
+      <td style="padding: 1.25rem 1rem;">August 30, 2025</td>
+      <td style="padding: 1.25rem 1rem;">CUST44556</td>
+      <td style="padding: 1.25rem 1rem;">
+        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
+      </td>
+      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$200.00</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<script src="assets/js/salesstatusupdate.js"></script>
+
+
+
+                        <!-- Pagination -->
+                        <div class="d-flex align-items-center justify-content-between pt-4 gap-3">
+                            <div class="fs-sm">Showing <span class="fw-semibold">8</span> of <span class="fw-semibold">30</span><span class="d-none d-sm-inline"> results</span></div>
+                            <nav aria-label="Pagination">
+                                <ul class="pagination">
+                                    <li class="page-item active" aria-current="page">
+                                        <span class="page-link">
+                        1
+                        <span class="visually-hidden">(current)</span>
+                                        </span>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">4</a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -1065,14 +928,98 @@
 
 
     <!-- Vendor scripts -->
-    <script src="assets/vendor/chart.js/chart.umd.js"></script>
     <script src="assets/vendor/choices.js/choices.min.js"></script>
     <script src="assets/vendor/list.js/list.min.js"></script>
 
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
 
+<!-- Static Order Details Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderModalLabel">Order Details - #ORDERID</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
 
+        <!-- Order ID -->
+        <p><strong>Order ID:</strong> #ORDERID</p>
+
+<!-- Products Table -->
+<h6>Products</h6>
+<table class="table table-bordered table-sm align-middle">
+  <thead>
+    <tr>
+      <th>P_ID</th>
+      <th>Product Detail</th>
+      <th>Quantity</th>
+      <th>Price ($)</th>
+      <th>Total ($)</th> <!-- New column -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>101</td>
+      <td>
+        <div class="d-flex align-items-center">
+          <div style="width:60px; height:60px; overflow:hidden; margin-right:10px;">
+            <img src="assets/img/account/products/01.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
+                  onclick="window.location.href='shop-product-general-electronics.html';">
+            Smart Watch Series 9
+          </button>
+        </div>
+      </td>
+      <td>2</td>
+      <td>60.00</td>
+      <td>120.00</td> <!-- Total per item -->
+    </tr>
+    <tr>
+      <td>102</td>
+      <td>
+        <div class="d-flex align-items-center">
+          <div style="width:60px; height:60px; overflow:hidden; margin-right:10px;">
+            <img src="assets/img/account/products/02.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
+                  onclick="window.location.href='shop-product-general-electronics.html';">
+            3D Box Mockup
+          </button>
+        </div>
+      </td>
+      <td>1</td>
+      <td>60.00</td>
+      <td>60.00</td> <!-- Total per item -->
+    </tr>
+    <!-- Total Row -->
+    <tr>
+      <td colspan="4" class="text-end fw-bold">Total</td>
+      <td class="fw-bold">180.00</td>
+    </tr>
+  </tbody>
+</table>
+
+        <!-- Shipping Address -->
+        <h6>Shipping Address</h6>
+        <p>John Doe, 123 Main St, Springfield, IL, 62704</p>
+
+        <!-- Payment Method -->
+        <h6>Payment Method</h6>
+        <p>Credit Card (Visa)</p>
+
+        <!-- Transaction ID -->
+        <h6>Transaction ID</h6>
+        <p>TXN1234567890</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
-
 </html>
