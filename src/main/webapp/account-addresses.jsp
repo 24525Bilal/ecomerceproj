@@ -500,13 +500,13 @@
                         <div class="row">
 
                             <!-- Categories mega menu -->
-                            <div class="col-lg-3">
+                          <div class="col-lg-3">
                                 <div class="navbar-nav">
                                     <div class="dropdown w-100">
 
                                         <!-- Buttton visible on screens > 991px wide (lg breakpoint) -->
                                         <div class="cursor-pointer d-none d-lg-block" data-bs-toggle="dropdown" data-bs-trigger="hover" data-bs-theme="dark">
-                                            <a class="position-absolute top-0 start-0 w-100 h-100" href="shop-categories-electronics.jsp">
+                                            <a class="position-absolute top-0 start-0 w-100 h-100" href="products">
                           <span class="visually-hidden">Categories</span>
                         </a>
                                             <button type="button" class="btn btn-lg btn-secondary dropdown-toggle w-100 rounded-bottom-0 justify-content-start pe-none">
@@ -522,1068 +522,156 @@
                       </button>
 
                                         <!-- Mega menu -->
-                                        <ul class="dropdown-menu w-100 rounded-top-0 rounded-bottom-4 py-1 p-lg-1" style="--cz-dropdown-spacer: 0; --cz-dropdown-item-padding-y: .625rem; --cz-dropdown-item-spacer: 0">
+                                        <ul class="dropdown-menu dropdown-menu-static w-100 rounded-top-0 rounded-bottom-4 py-1 p-lg-1" style="--cz-dropdown-spacer: 0; --cz-dropdown-item-padding-y: .625rem; --cz-dropdown-item-spacer: 0">
                                             <li class="d-lg-none pt-2">
-                                                <a class="dropdown-item fw-medium" href="shop-categories-electronics.jsp">
+                                                <a class="dropdown-item fw-medium" href="products">
                             <i class="ci-grid fs-xl opacity-60 pe-1 me-2"></i>
                             All Categories
-                            <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
+                            
                           </a>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pt-2 pb-1 px-lg-2" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-computer fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">Computers &amp; Accessories</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
+                              
                             </a>
                                                     <div class="dropdown-item fw-medium text-wrap stretched-link d-lg-none">
                                                         <i class="ci-computer fs-xl opacity-60 pe-1 me-2"></i> Computers &amp; Accessories
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Computers</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Laptops &amp; Tablets</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Desktop Computers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">External Components</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Interal Components</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Networking Products (NAS)</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Single Board Computers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Desktop Barebones</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Accessories</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Monitors</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Bags, Cases &amp; Sleeves</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Batteries</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Charges &amp; Adapters</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Cooling Pads</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Mounts</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Replacement Screens</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Security Locks</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Stands</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <span class="badge bg-danger bg-opacity-10 text-danger fs-sm rounded-pill mb-2">Save up to $400</span>
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Starts from <del>$1,599.00</del> $1,399.00</div>
-                                                                    <div class="h2 mb-4">Surface Laptop Studio</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/01.png" width="252" alt="Surface Laptop Studio">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-smartphone-2 fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">Smartphones &amp; Tablets</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
+                              
                             </a>
-                                                    <div class="dropdown-item fw-medium stretched-link d-lg-none">
-                                                        <i class="ci-smartphone-2 fs-xl opacity-60 pe-1 me-2"></i> Smartphones &amp; Tablets
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Smartphones</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Apple iPhone</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Google Pixel</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Android Smartphones</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Phablets</a>
-                                                                </li>
-                                                            </ul>
-                                                            <div class="d-flex w-100 pt-4">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Tablets</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Apple iPad</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Android Tablets</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Tablets with Keyboard</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Accessories</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Accessory Kits</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Batteries &amp; Battery Packs</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Bags &amp; Cases</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Cables</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Car Accessories</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Charges &amp; Power Adapters</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">FM Transmitters</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Lens Attachments</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Mounts &amp; Standsv</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Repair Kits</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Replacement Parts</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Styluses</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <i class="ci-apple fs-1 text-dark-emphasis mb-2"></i>
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Deal of the week</div>
-                                                                    <div class="h2 mb-4">iPad Pro M1</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/02.png" width="252" alt="iPad Pro">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                                </div>   </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-monitor-2 fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">TV, Video &amp; Audio</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
+                              
                             </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-monitor-2 fs-xl opacity-60 pe-1 me-2"></i> TV, Video &amp; Audio
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-lg-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">TV, Video &amp; Audio</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">TV Sets</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Home Theater Systems</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">DVD Players &amp; Recorders</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Blue-ray Players &amp; Recorders</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">HD DVD Players &amp; Recorders</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">DVD-VCR Combos</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">DTV Converters</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">AV Receivers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">AV Amplifiers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Projectors</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Projection Screens</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Satellite Television</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">TV-DTD Combos</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Sound Systems</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div style="min-width: 194px">
-                                                            <ul class="nav flex-column gap-2 mt-2 mt-lg-0">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Home Cinema Systems</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Streaming Media Players</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">VCRs</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Video Glasses</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Lens Attachments</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Subwoofers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Sound Boosters</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Best deal! Save up to <span class="fw-semibold">$500</span></div>
-                                                                    <div class="h2 mb-4">LG OLED 4K Smart TV</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/03.png" width="252" alt="Smart TV">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-speaker-2 fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">Speakers &amp; Home Music</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
+                              
                             </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-speaker-2 fs-xl opacity-60 pe-1 me-2"></i> Speakers &amp; Home Music
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Speakers</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Smart Speakers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Bluetooth Speakers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Bookshelf Speakers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Ceiling &amp; In-Wall Speakers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Center-Channel Speakers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Floorstanding Speakers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Outdoor Speakers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Satellite Speakers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Sound Bars</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Surround Sound Systems</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Home Audio</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Home Theater</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Wireless &amp; Streaming Audio</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Stereo System Components</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Compact Radios &amp; Stereos</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Home Audio Accessories</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Subwoofers</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <i class="ci-google fs-2 text-dark-emphasis mb-3"></i>
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Deal of the week</div>
-                                                                    <div class="h2 mb-4">Nest Audio</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/04.png" width="252" alt="Nest Audio">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-camera-2 fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">Cameras, Photo &amp; Video</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
+                              
                             </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-camera-2 fs-xl opacity-60 pe-1 me-2"></i> Cameras, Photo &amp; Video
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Cameras &amp; Lenses</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Point &amp; Shoot Cameras</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">DSLR Cameras</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Mirrorless Cameras</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Body Mounted Cameras</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Camcorders</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Camcorder Lenses</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Camera Lenses</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Macro &amp; Ringlight Flashes</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Shoe Mount Flashes</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Tripods &amp; Monopods</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Video Studio</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Accessories</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Bags &amp; Cases</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Binoculars &amp; Scopes</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Batteries &amp; Chargers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Cables &amp; Cords</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Camcorder Accessories</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Cleaning Equipment</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Protector Foils</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Filters &amp; Accessories</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Remote Controls</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Rain Covers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Viewfinders</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <span class="badge bg-danger bg-opacity-10 text-danger fs-sm rounded-pill mb-2">Save up to $300</span>
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Starts from <del>$1,100.00</del> 899.00</div>
-                                                                    <div class="h2 mb-4">Canon Digital Cameras</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/05.png" width="252" alt="Canon Camera">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-printer-2 fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">Printers &amp; Ink</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
+                              
                             </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-printer-2 fs-xl opacity-60 pe-1 me-2"></i> Printers &amp; Ink
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">By type</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">All-in-One</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Copying</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Faxing</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Photo Printing</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Printing Only</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Scanning</a>
-                                                                </li>
-                                                            </ul>
-                                                            <div class="d-flex w-100 pt-4">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Scanners</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Business Card Scanners</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Document Scanners</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Flatbed &amp; Photo Scanners</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Slide &amp; Negative Scanners</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Printers</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Dot Matrix Printers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Inkjet Printers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Label Printers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Laser Printers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Photo Printers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Wide Format Printers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Plotter Printers</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Best deal! Save up to <span class="fw-semibold">$200</span></div>
-                                                                    <div class="h2 mb-4">Epson Color Printers</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/06.png" width="252" alt="Epson Printer">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-battery-2 fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">Charging Stations</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
                             </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-battery-2 fs-xl opacity-60 pe-1 me-2"></i> Charging Stations
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Charging Stations</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Portable Power Stations</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Inverter Power Stations</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Outdoor Generators</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Gasoline Generators</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Cell Phone Chargers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Power Strips</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Wall Charges</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <span class="badge bg-danger bg-opacity-10 text-danger fs-sm rounded-pill mb-2">Huge sale!</span>
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Save up to <span class="fw-semibold">$350</span></div>
-                                                                    <div class="h2 mb-4">Portable Power Stations</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/07.png" width="252" alt="Power Station">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-headphones-2 fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">Headphones</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
                             </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-headphones-2 fs-xl opacity-60 pe-1 me-2"></i> Headphones
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Headphones</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Earbud Headphones</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Over-Ear Headphones</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">On-Ear Headphones</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Bluetooth Headphones</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Sports &amp; Fitness</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Noise-Cancelling</a>
-                                                                </li>
-                                                            </ul>
-                                                            <div class="d-flex w-100 pt-4">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Accessories</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Cases &amp; Sleeves</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Cables &amp; Cords</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Ear Pads</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Repair Kits</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Cleaning Equipment</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <span class="badge bg-danger bg-opacity-10 text-danger fs-sm rounded-pill mb-2">Save up to $200</span>
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Starts from $119.99</div>
-                                                                    <div class="h2 mb-4">Wireless Headphones</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/08.png" width="252" alt="Wireless Headphones">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-watch-2 fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">Wearable Electronics</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
                             </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-watch-2 fs-xl opacity-60 pe-1 me-2"></i> Wearable Electronics
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Wearable Gadgets</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Smartwatches</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Fitness Trackers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Smart Glasses</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Rings</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Virtual Reality</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Clips, Arm &amp; Wristbands</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Accessories</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <i class="ci-google fs-2 text-dark-emphasis mb-3"></i>
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Deal of the week</div>
-                                                                    <div class="h2 mb-4">Pixel Watch</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/09.png" width="252" alt="Pixel Watch">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-powerbank fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">Powerbanks</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
                             </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-powerbank fs-xl opacity-60 pe-1 me-2"></i> Powerbanks
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Powerbanks</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Fast Charging</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Built In Cable</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Built In Wall Plug</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">LED Indicator Lights</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Pocket Size</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Wireless Charging</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Short Circuit Protection</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Scratch Resistant</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Flashlight</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Lightweight</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Save up to <span class="fw-semibold">$50</span> on our</div>
-                                                                    <div class="h2 mb-4">Powerbank Deals</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/10.png" width="252" alt="Powerbank">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-hard-drive-2 fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">HDD/SSD Data Storage</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
                             </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-hard-drive-2 fs-xl opacity-60 pe-1 me-2"></i> HDD/SSD Data Storage
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Data Storage</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">External Hard Drives</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">External SSD</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">External Zip Drives</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Floppy &amp; Tape Drives</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Internal Hard Drives</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Internal SSD</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Network Attached Storage</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">USB Flash Drives</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <span class="badge bg-danger bg-opacity-10 text-danger fs-sm rounded-pill mb-2">Save up to $100</span>
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Starts from $89.99</div>
-                                                                    <div class="h2 mb-4">Samsung SSD Deals</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/11.png" width="252" alt="SSD">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </li>
                                             <li class="dropend position-static">
                                                 <div class="position-relative rounded pb-2 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="shop-catalog-electronics.jsp">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
                               <i class="ci-game fs-xl opacity-60 pe-1 me-2"></i>
                               <span class="text-truncate">Video Games</span>
-                              <i class="ci-chevron-right fs-base ms-auto me-n1"></i>
                             </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-game fs-xl opacity-60 pe-1 me-2"></i> Video Games
                                                         <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-menu rounded-4 p-4" style="top: 1rem; height: calc(100% - .1875rem); --cz-dropdown-spacer: .3125rem; animation: none;">
-                                                    <div class="d-flex flex-column flex-lg-row h-100 gap-lg-4">
-                                                        <div style="min-width: 194px">
-                                                            <div class="d-flex w-100">
-                                                                <a class="animate-underline animate-target d-inline h6 text-dark-emphasis text-decoration-none text-truncate" href="shop-catalog-electronics.jsp">Games &amp; Hardware</a>
-                                                            </div>
-                                                            <ul class="nav flex-column gap-2 mt-n2">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Video Games</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">PlayStation 5</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">PlayStation 4</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Xbox Series X</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Xbox Series S</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Nintendo Switch</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Gaming PC</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Gaming Laptops</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Wii U</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Wii</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Nintendo 3DS</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Nintendo 2DS</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Nintendo DS</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Wii</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div style="min-width: 194px">
-                                                            <ul class="nav flex-column gap-2 mt-2 mt-lg-0">
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Mac</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">PlayStation Vita</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Sony PSP</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Retro Gaming</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Microconsoles</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Controllers</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Accessories</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Digital Games Screens</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">Game Pass</a>
-                                                                </li>
-                                                                <li class="d-flex w-100 pt-1">
-                                                                    <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.jsp">PlayStation Plus</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="d-none d-lg-block">
-                                                            <div class="d-none d-xl-block" style="width: 284px"></div>
-                                                            <div class="d-xl-none" style="width: 240px"></div>
-                                                            <div class="position-relative d-flex flex-column justify-content-center h-100 bg-body-secondary rounded-5 py-4 px-3">
-                                                                <div class="text-center px-2">
-                                                                    <span class="badge bg-danger bg-opacity-10 text-danger fs-sm rounded-pill mb-2">Save $100</span>
-                                                                    <div class="fs-sm text-light-emphasis mb-2">Starts from <del>$599.00</del> $499.00</div>
-                                                                    <div class="h2 mb-4">Xbox Series X</div>
-                                                                </div>
-                                                                <img src="assets/img/mega-menu/electronics/12.png" width="252" alt="Xbox">
-                                                                <div class="text-center mt-4">
-                                                                    <a class="btn btn-sm btn-primary stretched-link" href="shop-catalog-electronics.jsp">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </li>
@@ -1591,6 +679,7 @@
                                     </div>
                                 </div>
                             </div>
+
 
                             <!-- Navbar nav -->
                             <div class="col-lg-9 d-lg-flex pt-3 pt-lg-0 ps-lg-0">
