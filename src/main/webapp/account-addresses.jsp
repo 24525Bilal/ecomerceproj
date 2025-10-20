@@ -500,13 +500,13 @@
                         <div class="row">
 
                             <!-- Categories mega menu -->
-                          <div class="col-lg-3">
+                         <div class="col-lg-3">
                                 <div class="navbar-nav">
                                     <div class="dropdown w-100">
 
                                         <!-- Buttton visible on screens > 991px wide (lg breakpoint) -->
                                         <div class="cursor-pointer d-none d-lg-block" data-bs-toggle="dropdown" data-bs-trigger="hover" data-bs-theme="dark">
-                                            <a class="position-absolute top-0 start-0 w-100 h-100" href="products">
+                                            <a class="position-absolute top-0 start-0 w-100 h-100" href="shop-categories-electronics.jsp">
                           <span class="visually-hidden">Categories</span>
                         </a>
                                             <button type="button" class="btn btn-lg btn-secondary dropdown-toggle w-100 rounded-bottom-0 justify-content-start pe-none">
@@ -522,156 +522,142 @@
                       </button>
 
                                         <!-- Mega menu -->
-                                        <ul class="dropdown-menu dropdown-menu-static w-100 rounded-top-0 rounded-bottom-4 py-1 p-lg-1" style="--cz-dropdown-spacer: 0; --cz-dropdown-item-padding-y: .625rem; --cz-dropdown-item-spacer: 0">
+                                        <ul class="dropdown-menu w-100 rounded-top-0 rounded-bottom-4 py-1 p-lg-1" style="--cz-dropdown-spacer: 0; --cz-dropdown-item-padding-y: .625rem; --cz-dropdown-item-spacer: 0">
                                             <li class="d-lg-none pt-2">
                                                 <a class="dropdown-item fw-medium" href="products">
-                            <i class="ci-grid fs-xl opacity-60 pe-1 me-2"></i>
-                            All Categories
-                            
-                          </a>
+                                                    <i class="ci-grid fs-xl opacity-60 pe-1 me-2"></i>
+                                                    All Categories
+                                                </a>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pt-2 pb-1 px-lg-2" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-computer fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">Computers &amp; Accessories</span>
-                              
-                            </a>
+                                                <div class="position-relative rounded pt-2 pb-1 px-lg-2">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-computer fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">Computers &amp; Accessories</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium text-wrap stretched-link d-lg-none">
                                                         <i class="ci-computer fs-xl opacity-60 pe-1 me-2"></i> Computers &amp; Accessories
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-smartphone-2 fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">Smartphones &amp; Tablets</span>
-                              
-                            </a>
-                                                </div>   </li>
+                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-smartphone-2 fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">Smartphones &amp; Tablets</span>
+                                                    </a>
+                                                    <div class="dropdown-item fw-medium stretched-link d-lg-none">
+                                                        <i class="ci-smartphone-2 fs-xl opacity-60 pe-1 me-2"></i> Smartphones &amp; Tablets
+                                                    </div>
+                                                </div>
+                                            </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-monitor-2 fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">TV, Video &amp; Audio</span>
-                              
-                            </a>
+                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-monitor-2 fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">TV, Video &amp; Audio</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-monitor-2 fs-xl opacity-60 pe-1 me-2"></i> TV, Video &amp; Audio
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-speaker-2 fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">Speakers &amp; Home Music</span>
-                              
-                            </a>
+                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-speaker-2 fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">Speakers &amp; Home Music</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-speaker-2 fs-xl opacity-60 pe-1 me-2"></i> Speakers &amp; Home Music
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-camera-2 fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">Cameras, Photo &amp; Video</span>
-                              
-                            </a>
+                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-camera-2 fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">Cameras, Photo &amp; Video</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-camera-2 fs-xl opacity-60 pe-1 me-2"></i> Cameras, Photo &amp; Video
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-printer-2 fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">Printers &amp; Ink</span>
-                              
-                            </a>
+                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-printer-2 fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">Printers &amp; Ink</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-printer-2 fs-xl opacity-60 pe-1 me-2"></i> Printers &amp; Ink
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-battery-2 fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">Charging Stations</span>
-                            </a>
+                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-battery-2 fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">Charging Stations</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-battery-2 fs-xl opacity-60 pe-1 me-2"></i> Charging Stations
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-headphones-2 fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">Headphones</span>
-                            </a>
+                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-headphones-2 fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">Headphones</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-headphones-2 fs-xl opacity-60 pe-1 me-2"></i> Headphones
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-watch-2 fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">Wearable Electronics</span>
-                            </a>
+                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-watch-2 fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">Wearable Electronics</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-watch-2 fs-xl opacity-60 pe-1 me-2"></i> Wearable Electronics
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-powerbank fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">Powerbanks</span>
-                            </a>
+                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-powerbank fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">Powerbanks</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-powerbank fs-xl opacity-60 pe-1 me-2"></i> Powerbanks
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-hard-drive-2 fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">HDD/SSD Data Storage</span>
-                            </a>
+                                                <div class="position-relative rounded pb-1 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-hard-drive-2 fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">HDD/SSD Data Storage</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-hard-drive-2 fs-xl opacity-60 pe-1 me-2"></i> HDD/SSD Data Storage
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="dropend position-static">
-                                                <div class="position-relative rounded pb-2 px-lg-2" tabindex="0" data-bs-toggle="dropdown" data-bs-trigger="hover">
-                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="/home_electronics/products">
-                              <i class="ci-game fs-xl opacity-60 pe-1 me-2"></i>
-                              <span class="text-truncate">Video Games</span>
-                            </a>
+                                                <div class="position-relative rounded pb-2 px-lg-2" tabindex="0">
+                                                    <a class="dropdown-item fw-medium stretched-link d-none d-lg-flex" href="products">
+                                                        <i class="ci-game fs-xl opacity-60 pe-1 me-2"></i>
+                                                        <span class="text-truncate">Video Games</span>
+                                                    </a>
                                                     <div class="dropdown-item fw-medium stretched-link d-lg-none">
                                                         <i class="ci-game fs-xl opacity-60 pe-1 me-2"></i> Video Games
-                                                        <i class="ci-chevron-down fs-base ms-auto me-n1"></i>
                                                     </div>
                                                 </div>
                                             </li>
