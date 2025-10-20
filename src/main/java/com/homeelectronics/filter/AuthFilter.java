@@ -46,7 +46,8 @@ public class AuthFilter implements Filter {
                 || path.contains("addProduct")
                 || path.contains("account-marketplace-purchases.html")
                 || path.contains("account-marketplace-users.jsp")
-                || path.contains("account-marketplace-sales.jsp");
+                || path.contains("account-marketplace-sales.jsp")
+                || path.contains("admin-sales");
 
 
         if (isUserProtectedPage) {

@@ -1,7 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
 
 <head>
+
+
     <meta charset="utf-8">
 
     <!-- Viewport -->
@@ -611,27 +618,38 @@
                     <div data-filter-list="{&quot;searchClass&quot;: &quot;product-search&quot;, &quot;listClass&quot;: &quot;product-list&quot;, &quot;sortClass&quot;: &quot;product-sort&quot;, &quot;valueNames&quot;: [&quot;product&quot;, &quot;date&quot;, &quot;tendered&quot;, &quot;earning&quot;]}">
 
                         <!-- Header -->
+                        <%-- REPLACE the div containing the search input and period select --%>
                         <div class="d-md-flex align-items-center justify-content-between gap-3 pb-2 pb-sm-3 mb-md-2">
                             <h1 class="h2 mb-md-0">Sales</h1>
+
                             <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3">
-                                <div class="position-relative w-100">
+                                <%-- This form submits back to the MarketplaceSalesServlet --%>
+                                <form action="${pageContext.request.contextPath}/admin-sales" method="GET" class="position-relative w-100">
                                     <i class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                                    <input type="search" class="product-search form-control form-icon-start rounded-pill" placeholder="Search">
-                                </div>
+                                    <%--
+                                        The search input:
+                                        - name="search" is read by the servlet
+                                        - value="${searchQuery}" "remembers" the last search
+                                    --%>
+                                    <input type="search" name="search" class="product-search form-control form-icon-start rounded-pill" placeholder="Search by Order ID or User ID" value="<c:out value='${searchQuery}'/>">
+                                    <button type="submit" class="visually-hidden">Search</button>
+                                </form>
+
+                                <%-- This period dropdown is static (as per your code), but kept for styling --%>
                                 <div class="position-relative" style="min-width: 190px">
                                     <i class="ci-calendar position-absolute top-50 start-0 translate-middle-y z-1 ms-3"></i>
                                     <select class="form-select form-icon-start rounded-pill" data-select="{
-                      &quot;classNames&quot;: {
-                        &quot;containerInner&quot;: [&quot;form-select&quot;, &quot;form-icon-start&quot;, &quot;rounded-pill&quot;]
-                      },
-                      &quot;removeItemButton&quot;: false
-                    }" aria-label="Period select">
-                      <option value="Current">Current month</option>
-                      <option value="Last month">Last month</option>
-                      <option value="Last 3 months">Last 3 months</option>
-                      <option value="Last 6 months">Last 6 months</option>
-                      <option value="Last year">Last year</option>
-                    </select>
+                &quot;classNames&quot;: {
+                &quot;containerInner&quot;: [&quot;form-select&quot;, &quot;form-icon-start&quot;, &quot;rounded-pill&quot;]
+                },
+                &quot;removeItemButton&quot;: false
+            }" aria-label="Period select">
+                                        <option value="Current">Current month</option>
+                                        <option value="Last month">Last month</option>
+                                        <option value="Last 3 months">Last 3 months</option>
+                                        <option value="Last 6 months">Last 6 months</option>
+                                        <option value="Last year">Last year</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -646,108 +664,113 @@
       <th scope="col" style="padding: 0 1rem; text-align: right; font-weight: 500;">Amount</th>
     </tr>
   </thead>
-  <tbody>
-    <tr style="background-color: #2a2a2a;" data-status="pending">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-        <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1001</button>
-      </td>
-      <td style="padding: 1.25rem 1rem;">September 4, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST12345</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$120.00</td>
-    </tr>
+    <tbody class="product-list">
 
-    <tr style="background-color: #2a2a2a;" data-status="pending">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1002</button>
-      </td>
-      <td style="padding: 1.25rem 1rem;">September 3, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST67890</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$75.00</td>
-    </tr>
+    <c:choose>
+        <%-- Check if the salesList from the servlet is not empty --%>
+        <c:when test="${not empty salesList}">
+            <%-- Loop through each 'order' in the 'salesList' --%>
+            <c:forEach var="order" items="${salesList}">
+                <%--
+                    - data-status: Passes the current status to salesstatusupdate.js
+                    - data-order-int-id: Passes the order's INTEGER ID (e.g., 1, 2, 3) to our JS
+                --%>
+                <tr style="background-color: #2a2a2a;" data-status="${order.paymentStatus}" data-order-int-id="${order.id}">
 
-    <tr style="background-color: #2a2a2a;" data-status="shipped">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1003</button>
-      </td>
-      <td style="padding: 1.25rem 1rem;">September 2, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST24680</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$95.00</td>
-    </tr>
+                        <%-- Order ID Button (for Modal) --%>
+                    <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+                            <%--
+                              This button now triggers the modal.
+                              'data-bs-target' opens the modal.
+                              'data-order-id' passes the INTEGER ID to our new JavaScript.
+                            --%>
+                        <button type.="button" class="animate-underline animate-target"
+                                data-bs-toggle="modal"
+                                data-bs-target="#orderModal"
+                                data-order-id="${order.id}" <%-- Pass the INTEGER ID --%>
+                                style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">
+                                ${order.orderId} <%-- This displays the STRING ID like 'ORDNO1001' --%>
+                        </button>
+                    </td>
 
-    <tr style="background-color: #2a2a2a;" data-status="packed">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1004</button>
-      </td>
-      <td style="padding: 1.25rem 1rem;">September 1, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST13579</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$60.00</td>
-    </tr>
+                        <%-- Order Date --%>
+                    <td style="padding: 1.25rem 1rem;" class="date">
+                        <fmt:formatDate value="${order.orderDate}" pattern="MMMM d, yyyy"/>
+                    </td>
 
-    <tr style="background-color: #2a2a2a;" data-status="out_for_delivery">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1005</button>
-      </td>
-      <td style="padding: 1.25rem 1rem;">August 31, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST11223</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$150.00</td>
-    </tr>
+                        <%-- Customer ID (using user_id from orders table) --%>
+                    <td style="padding: 1.25rem 1rem;" class="product">
+                        CUST-${order.userId}
+                    </td>
 
-    <tr style="background-color: #2a2a2a;" data-status="delivered">
-      <td style="padding: 1.25rem 1rem; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#orderModal" style="background: none; border: none; color: inherit; padding: 0; font-weight: bold; font-family: inherit; font-size: inherit; cursor: pointer;">#1006</button>
-      </td>
-      <td style="padding: 1.25rem 1rem;">August 30, 2025</td>
-      <td style="padding: 1.25rem 1rem;">CUST44556</td>
-      <td style="padding: 1.25rem 1rem;">
-        <select class="status-select" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
-      </td>
-      <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">$200.00</td>
-    </tr>
+                        <%-- Order Status (Dynamic Select) --%>
+                    <td style="padding: 1.25rem 1rem;">
+                            <%--
+                               This select is now empty. 'salesstatusupdate.js' will fill it.
+                               'data-order-int-id' passes the INTEGER ID to the update script.
+                            --%>
+                        <select class="status-select" data-order-int-id="${order.id}" aria-label="Order status" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 0.25rem 0.5rem;"></select>
+                    </td>
 
-  </tbody>
+                        <%-- Amount --%>
+                    <td style="padding: 1.25rem 1rem; font-weight: bold; text-align: right; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" class="earning">
+                            <%-- Format the number as $ currency --%>
+                        <fmt:formatNumber value="${order.totalAmount}" type="currency" currencySymbol="$"/>
+                    </td>
+                </tr>
+            </c:forEach>
+        </c:when>
+        <%-- This 'otherwise' block runs if 'salesList' is empty --%>
+        <c:otherwise>
+            <tr style="background-color: #2a2a2a;">
+                <td colspan="5" class="text-center" style="padding: 1.25rem 1rem; border-radius: 8px;">
+                    No sales found matching your criteria.
+                </td>
+            </tr>
+        </c:otherwise>
+    </c:choose>
+
+    </tbody>
 </table>
 
 <script src="assets/js/salesstatusupdate.js"></script>
-
+                        <script src="assets/js/admin-order-modal.js" defer></script>
 
 
                         <!-- Pagination -->
                         <div class="d-flex align-items-center justify-content-between pt-4 gap-3">
-                            <div class="fs-sm">Showing <span class="fw-semibold">8</span> of <span class="fw-semibold">30</span><span class="d-none d-sm-inline"> results</span></div>
-                            <nav aria-label="Pagination">
-                                <ul class="pagination">
-                                    <li class="page-item active" aria-current="page">
-                                        <span class="page-link">
-                        1
-                        <span class="visually-hidden">(current)</span>
-                                        </span>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">4</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <%-- Show counts from the servlet --%>
+                            <div class="fs-sm">
+                                Showing <span class="fw-semibold"><c:out value="${salesList.size()}"/></span> of
+                                <span class="fw-semibold"><c:out value="${totalOrders}"/></span>
+                                <span class="d-none d-sm-inline"> results</span>
+                            </div>
+
+                            <%-- Only show pagination links if there is more than 1 page --%>
+                            <c:if test="${totalPages > 1}">
+                                <nav aria-label="Pagination">
+                                    <ul class="pagination">
+                                            <%-- Previous Page Link --%>
+                                        <li class="page-item <c:if test='${currentPage == 1}'>disabled</c:if>">
+                                            <a class="page-link" href="${pageContext.request.contextPath}/admin-sales?page=${currentPage - 1}&search=<c:out value='${searchQuery}'/>" aria-label="Previous">&laquo;</a>
+                                        </li>
+
+                                            <%-- Page Number Links --%>
+                                        <c:forEach begin="1" end="${totalPages}" var="pageNumber">
+                                            <li class="page-item <c:if test='${pageNumber == currentPage}'>active</c:if>"
+                                                <c:if test='${pageNumber == currentPage}'>aria-current="page"</c:if>>
+
+                                                <a class="page-link" href="${pageContext.request.contextPath}/admin-sales?page=${pageNumber}&search=<c:out value='${searchQuery}'/>">${pageNumber}</a>
+                                            </li>
+                                        </c:forEach>
+
+                                            <%-- Next Page Link --%>
+                                        <li class="page-item <c:if test='${currentPage == totalPages}'>disabled</c:if>">
+                                            <a class="page-link" href="${pageContext.request.contextPath}/admin-sales?page=${currentPage + 1}&search=<c:out value='${searchQuery}'/>" aria-label="Next">&raquo;</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </c:if>
                         </div>
                     </div>
                 </div>
@@ -929,97 +952,124 @@
 
     <!-- Vendor scripts -->
     <script src="assets/vendor/choices.js/choices.min.js"></script>
-    <script src="assets/vendor/list.js/list.min.js"></script>
+<%--    <script src="assets/vendor/list.js/list.min.js"></script>--%>
 
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
 
 <!-- Static Order Details Modal -->
-<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="orderModalLabel">Order Details - #ORDERID</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
 
-        <!-- Order ID -->
-        <p><strong>Order ID:</strong> #ORDERID</p>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">
+                        Order Details:
+                        <span id="modal-order-id-display" class="fw-normal text-body-secondary">#...</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
-<!-- Products Table -->
-<h6>Products</h6>
-<table class="table table-bordered table-sm align-middle">
-  <thead>
-    <tr>
-      <th>P_ID</th>
-      <th>Product Detail</th>
-      <th>Quantity</th>
-      <th>Price ($)</th>
-      <th>Total ($)</th> <!-- New column -->
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>101</td>
-      <td>
-        <div class="d-flex align-items-center">
-          <div style="width:60px; height:60px; overflow:hidden; margin-right:10px;">
-            <img src="assets/img/account/products/01.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
-                  onclick="window.location.href='shop-product-general-electronics.html';">
-            Smart Watch Series 9
-          </button>
+                <div class="modal-body">
+
+                    <!-- Loader -->
+                    <div id="modal-loader" class="text-center p-5">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                    <!-- Actual Content -->
+                    <div id="modal-content-area" style="display: none;">
+
+                        <div class="bg-body-tertiary rounded p-4 mb-4">
+                            <div class="row g-4">
+
+                                <!-- Delivery Address -->
+                                <div class="col-lg-4">
+                                    <h6 class="d-flex align-items-center fs-base text-body-secondary mb-3">
+                                        <i class="ci-location fs-lg me-2 text-primary"></i>
+                                        Delivery Address
+                                    </h6>
+                                    <p id="modal-shipping-address" class="mb-0 fs-sm">
+                                        Address details not yet implemented in OrderDAO.getOrderDetailsById.
+                                    </p>
+                                </div>
+
+                                <!-- Payment Information -->
+                                <div class="col-lg-4 border-start-lg">
+                                    <h6 class="d-flex align-items-center fs-base text-body-secondary mb-3">
+                                        <i class="ci-card fs-lg me-2 text-primary"></i>
+                                        Payment Information
+                                    </h6>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center fs-sm bg-transparent px-0 py-1">
+                                            <span class="text-body-secondary">Method:</span>
+                                            <span id="modal-payment-method" class="fw-medium">...</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center fs-sm bg-transparent px-0 py-1">
+                                            <span class="text-body-secondary">Transaction ID:</span>
+                                            <span id="modal-transaction-id" class="fw-medium text-truncate" style="max-width: 150px;">...</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Order Summary -->
+                                <div class="col-lg-4 border-start-lg">
+                                    <h6 class="d-flex align-items-center fs-base text-body-secondary mb-3">
+                                        <i class="ci-book fs-lg me-2 text-primary"></i>
+                                        Order Summary
+                                    </h6>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center fs-sm bg-transparent px-0 py-1">
+                                            <span class="text-body-secondary">Order ID:</span>
+                                            <span id="modal-order-id" class="fw-medium">...</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center fs-sm bg-transparent px-0 py-1">
+                                            <span class="text-body-secondary">Grand Total:</span>
+                                            <span class="fw-bold fs-5 text-dark-emphasis" id="modal-total-amount-summary">$0.00</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Product Table -->
+                        <h6 class="mb-3">Items in this Order</h6>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle">
+                                <thead class="table-light">
+                                <tr>
+                                    <th scope="col" class="py-2">P_ID</th>
+                                    <th scope="col" class="py-2">Product Detail</th>
+                                    <th scope="col" class="py-2 text-end">Quantity</th>
+                                    <th scope="col" class="py-2 text-end">Price (₹)</th>
+                                    <th scope="col" class="py-2 text-end">Total (₹)</th>
+                                </tr>
+                                </thead>
+                                <tbody id="modal-product-list">
+                                <!-- Product rows dynamically added here -->
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="4" class="text-end fw-bold border-0 pt-3">Grand Total</td>
+                                    <td class="text-end fw-bold fs-5 border-0 pt-3" id="modal-total-amount">$0.00</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
         </div>
-      </td>
-      <td>2</td>
-      <td>60.00</td>
-      <td>120.00</td> <!-- Total per item -->
-    </tr>
-    <tr>
-      <td>102</td>
-      <td>
-        <div class="d-flex align-items-center">
-          <div style="width:60px; height:60px; overflow:hidden; margin-right:10px;">
-            <img src="assets/img/account/products/02.jpg" alt="Product" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <button type="button" class="btn p-0 text-body" style="background: none; border: none;" 
-                  onclick="window.location.href='shop-product-general-electronics.html';">
-            3D Box Mockup
-          </button>
-        </div>
-      </td>
-      <td>1</td>
-      <td>60.00</td>
-      <td>60.00</td> <!-- Total per item -->
-    </tr>
-    <!-- Total Row -->
-    <tr>
-      <td colspan="4" class="text-end fw-bold">Total</td>
-      <td class="fw-bold">180.00</td>
-    </tr>
-  </tbody>
-</table>
-
-        <!-- Shipping Address -->
-        <h6>Shipping Address</h6>
-        <p>John Doe, 123 Main St, Springfield, IL, 62704</p>
-
-        <!-- Payment Method -->
-        <h6>Payment Method</h6>
-        <p>Credit Card (Visa)</p>
-
-        <!-- Transaction ID -->
-        <h6>Transaction ID</h6>
-        <p>TXN1234567890</p>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
     </div>
-  </div>
-</div>
+
 </body>
 </html>

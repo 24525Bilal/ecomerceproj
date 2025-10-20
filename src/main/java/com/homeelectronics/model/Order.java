@@ -2,6 +2,7 @@ package com.homeelectronics.model;
 
 import java.sql.Timestamp;
 import java.util.List;
+import com.homeelectronics.model.Address;
 
 public class Order {
     private int id;
@@ -15,6 +16,9 @@ public class Order {
     private Timestamp orderDate;
 
     private List<OrderItem> items;
+
+    private String orderStatus;
+    private Address address;
 
     // Constructors
     public Order() {}
@@ -81,4 +85,21 @@ public class Order {
     public void setItems(List<OrderItem> items) {
         this.items = items;
     }
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
 }

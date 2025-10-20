@@ -16,6 +16,12 @@ import java.io.PrintWriter;
 public class OrderDetailsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // --- ADD LOGGING ---
+        System.out.println("--- OrderDetailsServlet: doGet() CALLED ---");
+        String orderIdParam = request.getParameter("id");
+        System.out.println("OrderDetailsServlet: Received id parameter: " + orderIdParam);
+        // --- END LOGGING --
+
         try {
             // 1. Get the integer 'id' from the request
             int orderId = Integer.parseInt(request.getParameter("id"));
